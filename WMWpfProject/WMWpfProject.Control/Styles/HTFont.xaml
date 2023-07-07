@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--  字体  -->
+    <FontFamily x:Key="FontNormal">微软雅黑,SimSun</FontFamily>
+    <!--<FontFamily x:Key="FontNormal">/DMSkin.CloudMusic;component/Font/#Roboto Light,SimSun</FontFamily>-->
+    <FontFamily x:Key="FontTitle">微软雅黑</FontFamily>
+</ResourceDictionary>
