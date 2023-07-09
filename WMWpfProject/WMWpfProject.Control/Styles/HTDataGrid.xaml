@@ -2,6 +2,11 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="clr-namespace:WMWpfProject.Control.Controls"
                     xmlns:s="clr-namespace:System;assembly=mscorlib">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTColor.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTIcon.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTSkin.xaml" />
+    </ResourceDictionary.MergedDictionaries>
     <!--  DataGrid***********************************************************************************************************  -->
     <Style TargetType="DataGrid">
         <!--  网格线颜色  -->

@@ -14,7 +14,7 @@ namespace WMWpfProject.Control.Controls
             set { SetValue(SystemButtonSizeProperty, value); }
         }
         public static readonly DependencyProperty SystemButtonSizeProperty =
-            DependencyProperty.Register("SystemButtonSize", typeof(double), typeof(HTSystemButton), new PropertyMetadata(30.0));
+            DependencyProperty.Register("SystemButtonSize", typeof(double), typeof(HTSystemButton), new PropertyMetadata(40.0));
 
         [Description("窗体系统按钮鼠标悬浮背景颜色"), Category("ButtonSkin")]
         public SolidColorBrush SystemButtonHoverColor
@@ -69,7 +69,7 @@ namespace WMWpfProject.Control.Controls
             set { SetValue(IconWidthProperty, value); }
         }
         public static readonly DependencyProperty IconWidthProperty =
-            DependencyProperty.Register("IconWidth", typeof(double), typeof(HTSystemButton), new PropertyMetadata(15.0));
+            DependencyProperty.Register("IconWidth", typeof(double), typeof(HTSystemButton), new PropertyMetadata(20.0));
 
         /// <summary>
         /// 图标高度
@@ -80,7 +80,7 @@ namespace WMWpfProject.Control.Controls
             set { SetValue(IconHeightProperty, value); }
         }
         public static readonly DependencyProperty IconHeightProperty =
-            DependencyProperty.Register("IconHeight", typeof(double), typeof(HTSystemButton), new PropertyMetadata(15.0));
+            DependencyProperty.Register("IconHeight", typeof(double), typeof(HTSystemButton), new PropertyMetadata(20.0));
 
 
 

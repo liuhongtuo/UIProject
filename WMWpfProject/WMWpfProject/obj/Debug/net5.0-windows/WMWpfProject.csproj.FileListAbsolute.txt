@@ -15,12 +15,14 @@ E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject\bin\Debug\net5.0-windows\WMWpfProj
 E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject\bin\Debug\net5.0-windows\WMWpfProject.Control.pdb
 E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject\obj\Debug\net5.0-windows\WMWpfProject.csproj.AssemblyReference.cache
 E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject\obj\Debug\net5.0-windows\Views\MainStartView.g.cs
+E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject\obj\Debug\net5.0-windows\Views\ProductionView.g.cs
 E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject\obj\Debug\net5.0-windows\App.g.cs
 E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs
 E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject\obj\Debug\net5.0-windows\WMWpfProject_MarkupCompile.cache
 E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject\obj\Debug\net5.0-windows\WMWpfProject_MarkupCompile.lref
 E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject\obj\Debug\net5.0-windows\App.baml
 E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject\obj\Debug\net5.0-windows\Views\MainStartView.baml
+E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject\obj\Debug\net5.0-windows\Views\ProductionView.baml
 E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject\obj\Debug\net5.0-windows\WMWpfProject.g.resources
 E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject\obj\Debug\net5.0-windows\WMWpfProject.GeneratedMSBuildEditorConfig.editorconfig
 E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject\obj\Debug\net5.0-windows\WMWpfProject.AssemblyInfoInputs.cache

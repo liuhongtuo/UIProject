@@ -19,7 +19,6 @@ namespace WMWpfProject
         protected override void OnStartup(object sender, StartupEventArgs e)
         {
             DisplayRootViewForAsync<MainStartViewModel>();
-            
         }
     }
 }

@@ -38,6 +38,9 @@
     <Page Update="Styles\HTListBox.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Styles\HTMenuControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Styles\HTRadioButton.xaml">
       <SubType>Designer</SubType>
     </Page>

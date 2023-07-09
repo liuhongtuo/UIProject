@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0-windows</TargetFramework>
@@ -6,10 +6,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Icons\about_Normal.png" />
+    <None Remove="Icons\about_Pressed.png" />
+    <None Remove="Icons\Data_Normal.png" />
+    <None Remove="Icons\Data_Pressed.png" />
+    <None Remove="Icons\engineering_Normal.png" />
+    <None Remove="Icons\engineering_Pressed.png" />
     <None Remove="Icons\Logos\head.jpg" />
     <None Remove="Icons\Logos\icon.ico" />
     <None Remove="Icons\Logos\ic_launcher.png" />
     <None Remove="Icons\Logos\LingChenIcon.JPG" />
+    <None Remove="Icons\main_Normal.png" />
+    <None Remove="Icons\main_Pressed.png" />
+    <None Remove="Icons\production_Normal.png" />
+    <None Remove="Icons\production_Pressed.png" />
+    <None Remove="Icons\user_Normal.png" />
+    <None Remove="Icons\user_Pressed.png" />
+    <None Remove="Icons\warning_Normal.png" />
+    <None Remove="Icons\warning_Pressed.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +35,24 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Icons\about_Normal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\about_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\Data_Normal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\Data_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\engineering_Normal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\engineering_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Icons\Logos\head.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -31,6 +63,30 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Icons\Logos\LingChenIcon.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\main_Normal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\main_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\production_Normal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\production_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\user_Normal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\user_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\warning_Normal.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\warning_Pressed.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

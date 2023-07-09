@@ -8,14 +8,11 @@
                             xmlns:controls="clr-namespace:WMWpfProject.Control.Controls;assembly=WMWpfProject.Control"
                             xmlns:converters="clr-namespace:WMWpfProject.Base.Converters;assembly=WMWpfProject.Base"
                             xmlns:local="clr-namespace:WMWpfProject.Views"
-                            Title="网易云音乐"
-                            Width="1366"
-                            Height="768"
-                            MinWidth="1062"
-                            MinHeight="710"
-                            HTWindowShadowColor="#888888"
-                            HTWindowShadowOpacity="0.4"
-                            HTWindowShadowSize="20"
+                            Title="HTTecnology"
+                            Width="1440"
+                            Height="900"
+                            MinWidth="1024"
+                            MinHeight="768"
                             Icon="pack://application:,,,/WMWpfProject.Control;Component/Icons/Logos/ic_launcher.png"
                             ResizeMode="CanResizeWithGrip"
                             TextOptions.TextFormattingMode="Display"
@@ -30,25 +27,31 @@
                 <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTFont.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTSkin.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTButton.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTRadioButton.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTScrollViewer.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTExpander.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTSlider.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTTabControl.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTMenuControl.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTResizeGrip.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Windows/HTSkinSimpleWindow.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <converters:EnumToBooleanConverter x:Key="enumToBooleanConverter"></converters:EnumToBooleanConverter>
             <converters:TimeSpanToStringConverter x:Key="timeSpanToStringConverter"></converters:TimeSpanToStringConverter>
         </ResourceDictionary>
     </Window.Resources>
-    <Window.DataContext>
-        <viewModels:MainStartViewModel />
-    </Window.DataContext>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="80" />
+            <RowDefinition Height="70" />
             <RowDefinition />
-            <RowDefinition Height="80" />
+            <RowDefinition Height="70" />
         </Grid.RowDefinitions>
-        <Grid Background="{DynamicResource ThemeColor}">
+        <Grid Background="{DynamicResource ThemeColor}"
+              Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="190" />
                 <ColumnDefinition />
@@ -76,11 +79,13 @@
             </WrapPanel>
             <StackPanel Grid.Column="1"
                         VerticalAlignment="Center"
-                        Orientation="Horizontal">
-                <controls:IconButton Command="{x:Static NavigationCommands.BrowseBack}"
+                        Orientation="Vertical">
+                <!--前进或者返回操作，暂时屏蔽后续有需要在开放-->
+                <!--<controls:IconButton Command="{x:Static NavigationCommands.BrowseBack}"
                                      CommandTarget="{Binding ElementName=Frame}"
                                      CornerRadius="3,0,0,3"
-                                     Style="{StaticResource PageButton}">
+                                     Style="{StaticResource PageButton}"
+                                     Visibility="Collapsed">
                     <Path Width="11"
                           Height="11"
                           Data="{StaticResource Icon_Page_Left}"
@@ -90,38 +95,18 @@
                 <controls:IconButton Command="{x:Static NavigationCommands.BrowseForward}"
                                      CommandTarget="{Binding ElementName=Frame}"
                                      CornerRadius="0,3,3,0"
-                                     Style="{StaticResource PageButton}">
+                                     Style="{StaticResource PageButton}"
+                                     Visibility="Collapsed">
                     <Path Width="11"
                           Height="11"
                           Data="{StaticResource Icon_Page_Right}"
                           Fill="White"
                           Stretch="Uniform" />
-                </controls:IconButton>
-                <Border Width="220"
-                        Margin="10,0,0,0"
-                        Background="{StaticResource ThemeColor3}"
-                        CornerRadius="10">
-                    <Grid Margin="8,0,5,0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition Width="20" />
-                        </Grid.ColumnDefinitions>
-                        <controls:HTTextBox BorderThickness="0"
-                                            CaretBrush="White"
-                                            Foreground="White"
-                                            Hint="搜索音乐，视频，歌词，电台"
-                                            HintColor="#C77373" />
-                        <controls:HTButton Grid.Column="1"
-                                           Background="{StaticResource TransparentColor}"
-                                           BorderThickness="0">
-                            <Path Width="12"
-                                  Height="12"
-                                  Data="{StaticResource Icon_Serach}"
-                                  Fill="White"
-                                  Stretch="Fill" />
-                        </controls:HTButton>
-                    </Grid>
-                </Border>
+                </controls:IconButton>-->
+                <Label Content="{Binding CurrentTime,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
+                       FontSize="16"></Label>
+                <Label Content="{Binding CurrentDate,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
+                       FontSize="16"></Label>
             </StackPanel>
             <StackPanel Grid.Column="2"
                         Margin="0,0,12,0"
@@ -157,9 +142,9 @@
                                          SystemButtonForeground="#EEC1C1"
                                          SystemButtonHoverColor="Transparent"
                                          SystemButtonHoverForeground="White"
-                                         SystemButtonSize="27"
+                                         SystemButtonSize="40"
                                          Icon="{StaticResource Icon_Skin}"
-                                         IconWidth="17" />
+                                         IconWidth="25" />
                 <Grid>
                     <controls:HTSystemButton Margin="0,0,5,0"
                                              HorizontalAlignment="Right"
@@ -169,8 +154,8 @@
                                              SystemButtonHoverForeground="White"
                                              SystemButtonSize="26"
                                              Icon="{StaticResource Icon_Email}"
-                                             IconHeight="12"
-                                             IconWidth="16" />
+                                             IconHeight="20"
+                                             IconWidth="30" />
                     <Border Height="16"
                             Margin="0,0,-5,15"
                             Padding="4,0,4,0"
@@ -189,7 +174,7 @@
                                          SystemButtonForeground="#EEC1C1"
                                          SystemButtonHoverColor="Transparent"
                                          SystemButtonHoverForeground="White"
-                                         SystemButtonSize="26"
+                                         SystemButtonSize="40"
                                          Icon="{StaticResource Icon_Setting}" />
                 <Border Width="1"
                         Height="22"
@@ -199,30 +184,30 @@
                                          SystemButtonForeground="#EEC1C1"
                                          SystemButtonHoverColor="Transparent"
                                          SystemButtonHoverForeground="White"
-                                         SystemButtonSize="26"
-                                         Icon="{StaticResource Icon_Star}"
-                                         IconHeight="16"
-                                         IconWidth="16" />
+                                         SystemButtonSize="40"
+                                         Icon="{StaticResource Icon_Star}" />
                 <controls:HTSystemMinButton Cursor="Hand"
                                             SystemButtonForeground="#EEC1C1"
                                             SystemButtonHoverColor="Transparent"
                                             SystemButtonHoverForeground="White"
-                                            SystemButtonSize="22"
+                                            SystemButtonSize="40"
+                                            IconHeight="3"
                                             Icon="{StaticResource Icon_Min}" />
                 <controls:HTSystemMaxButton Cursor="Hand"
                                             SystemButtonForeground="#EEC1C1"
                                             SystemButtonHoverColor="Transparent"
                                             SystemButtonHoverForeground="White"
-                                            SystemButtonSize="24"
+                                            SystemButtonSize="40"
                                             Icon="{StaticResource Icon_Close}" />
                 <controls:HTSystemCloseButton Cursor="Hand"
                                               SystemButtonForeground="#EEC1C1"
                                               SystemButtonHoverColor="Transparent"
                                               SystemButtonHoverForeground="White"
-                                              SystemButtonSize="22" />
+                                              SystemButtonSize="40" />
             </StackPanel>
         </Grid>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1"
+              Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"
                                   MinWidth="200" />
@@ -232,106 +217,12 @@
             <Grid Background="{StaticResource LeftGridColor}">
                 <ScrollViewer Grid.Row="1"
                               Grid.RowSpan="2"
+                              VerticalAlignment="Top"
                               Style="{StaticResource for_scrollviewer}">
-                    <StackPanel>
-                        <Expander Header="推荐"
-                                  IsExpanded="True"
-                                  Style="{StaticResource NoExpander}">
-                            <StackPanel>
-                                <controls:ImageRadioButton Content="发现音乐"
-                                                           GroupName="Menu"
-                                                           Image="{StaticResource Icon_FindMusic}"
-                                                           IsChecked="{Binding SelectMenu, Mode=TwoWay, Converter={StaticResource enumToBooleanConverter}, ConverterParameter=FindMusic}" />
-                                <controls:ImageRadioButton Content="私人FM"
-                                                           GroupName="Menu"
-                                                           Image="{StaticResource Icon_FM}"
-                                                           ImageHeight="14"
-                                                           ImageWidth="18"
-                                                           IsChecked="{Binding SelectMenu, Mode=TwoWay, Converter={StaticResource enumToBooleanConverter}, ConverterParameter=Home}" />
-                                <controls:ImageRadioButton Content="视频"
-                                                           GroupName="Menu"
-                                                           Image="{StaticResource Icon_Video}"
-                                                           ImageHeight="12"
-                                                           ImageWidth="18"
-                                                           IsChecked="{Binding SelectMenu, Mode=TwoWay, Converter={StaticResource enumToBooleanConverter}, ConverterParameter=Home}" />
-                                <controls:ImageRadioButton Content="朋友"
-                                                           GroupName="Menu"
-                                                           Image="{StaticResource Icon_Group}"
-                                                           ImageWidth="20"
-                                                           IsChecked="{Binding SelectMenu, Mode=TwoWay, Converter={StaticResource enumToBooleanConverter}, ConverterParameter=Home}" />
-                            </StackPanel>
-                        </Expander>
-                        <Expander Margin="0,10,0,0"
-                                  Header="我的音乐"
-                                  IsExpanded="True"
-                                  Style="{StaticResource NoExpander}">
-                            <StackPanel>
-                                <controls:ImageRadioButton Content="本地音乐*"
-                                                           GroupName="Menu"
-                                                           Image="{StaticResource Icon_Music}"
-                                                           ImageWidth="14"
-                                                           IsChecked="{Binding SelectMenu, Mode=TwoWay, Converter={StaticResource enumToBooleanConverter}, ConverterParameter=LocalMusic}" />
-                                <controls:ImageRadioButton Content="下载管理"
-                                                           GroupName="Menu"
-                                                           Image="{StaticResource Icon_Down}"
-                                                           ImageHeight="16"
-                                                           ImageWidth="16"
-                                                           IsChecked="{Binding SelectMenu, Mode=TwoWay, Converter={StaticResource enumToBooleanConverter}, ConverterParameter=DownLoad}" />
-                                <controls:ImageRadioButton Content="我的音乐云盘*"
-                                                           GroupName="Menu"
-                                                           Image="{StaticResource Icon_Cloud}"
-                                                           ImageWidth="19"
-                                                           IsChecked="{Binding SelectMenu, Mode=TwoWay, Converter={StaticResource enumToBooleanConverter}, ConverterParameter=CloudMusic}" />
-                                <controls:ImageRadioButton Content="我的电台"
-                                                           GroupName="Menu"
-                                                           Image="{StaticResource Icon_Radio}"
-                                                           IsChecked="{Binding SelectMenu, Mode=TwoWay, Converter={StaticResource enumToBooleanConverter}, ConverterParameter=Home}" />
-                                <controls:ImageRadioButton Content="我的收藏"
-                                                           GroupName="Menu"
-                                                           Image="{StaticResource Icon_Love}"
-                                                           ImageHeight="16"
-                                                           ImageWidth="16"
-                                                           IsChecked="{Binding SelectMenu, Mode=TwoWay, Converter={StaticResource enumToBooleanConverter}, ConverterParameter=Collection}" />
-                            </StackPanel>
-                        </Expander>
-                        <Expander Margin="0,10,0,0"
-                                  Header="创建的歌单"
-                                  IsExpanded="True">
-                            <StackPanel>
-                                <controls:ImageRadioButton Content="我喜欢的音乐"
-                                                           GroupName="Menu"
-                                                           Image="{StaticResource Icon_Like}"
-                                                           ImageWidth="16"
-                                                           IsChecked="{Binding SelectMenu, Mode=TwoWay, Converter={StaticResource enumToBooleanConverter}, ConverterParameter=Home}" />
-                            </StackPanel>
-                        </Expander>
-                        <Expander Margin="0,10,0,0"
-                                  Header="收藏的歌单"
-                                  IsExpanded="False">
-                            <StackPanel>
-                                <controls:ImageRadioButton Content="Dream.Machine 的音乐"
-                                                           GroupName="Menu"
-                                                           Image="{StaticResource Icon_MusicList}"
-                                                           ImageWidth="16"
-                                                           IsChecked="{Binding SelectMenu, Mode=TwoWay, Converter={StaticResource enumToBooleanConverter}, ConverterParameter=Home}" />
-                                <controls:ImageRadioButton Content="Dream.Machine 的音乐"
-                                                           GroupName="Menu"
-                                                           Image="{StaticResource Icon_MusicList}"
-                                                           ImageWidth="16"
-                                                           IsChecked="{Binding SelectMenu, Mode=TwoWay, Converter={StaticResource enumToBooleanConverter}, ConverterParameter=Home}" />
-                                <controls:ImageRadioButton Content="Dream.Machine 的音乐"
-                                                           GroupName="Menu"
-                                                           Image="{StaticResource Icon_MusicList}"
-                                                           ImageWidth="16"
-                                                           IsChecked="{Binding SelectMenu, Mode=TwoWay, Converter={StaticResource enumToBooleanConverter}, ConverterParameter=Home}" />
-                                <controls:ImageRadioButton Content="Dream.Machine 的音乐"
-                                                           GroupName="Menu"
-                                                           Image="{StaticResource Icon_MusicList}"
-                                                           ImageWidth="16"
-                                                           IsChecked="{Binding SelectMenu, Mode=TwoWay, Converter={StaticResource enumToBooleanConverter}, ConverterParameter=Home}" />
-                            </StackPanel>
-                        </Expander>
-                    </StackPanel>
+                    <controls:HTImageRadioButton Style="{StaticResource HTMainViewRadioButton}"
+                                                 ImageRadioButton_Icon="pack://application:,,,/WMWpfProject.Control;Component/Icons/Logos/head.jpg"
+                                                 Height="30"
+                                                 ></controls:HTImageRadioButton>
                 </ScrollViewer>
             </Grid>
             <GridSplitter Width="1"
@@ -343,10 +234,11 @@
                        NavigationUIVisibility="Hidden" />
             </Grid>
         </Grid>
-        <Border Grid.Row="2"
+        <!--<Border Grid.Row="2" Visibility="Collapsed"
                 Background="{StaticResource BottomGridColor}"
                 BorderBrush="{StaticResource SplitterColor}"
-                BorderThickness="0,1,0,0">
+                BorderThickness="0,1,0,0"
+                Grid.ColumnSpan="2">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="200" />
@@ -398,7 +290,7 @@
                                VerticalAlignment="Center"
                                Foreground="{StaticResource TextColor}"
                                Text="{Binding Position, Mode=OneWay, Converter={StaticResource timeSpanToStringConverter}}" />
-                    <!--<Slider Grid.Column="1"
+                    <Slider Grid.Column="1"
                             VerticalAlignment="Center"
                             IsMoveToPointEnabled="True"
                             IsSelectionRangeEnabled="True"
@@ -406,7 +298,7 @@
                             SelectionEnd="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Value}"
                             SelectionStart="0"
                             Style="{StaticResource HTSlider}"
-                            Value="{Binding Position.TotalSeconds, Mode=OneWay}" />-->
+                            Value="{Binding Position.TotalSeconds, Mode=OneWay}" />
                     <TextBlock Grid.Column="2"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
@@ -414,12 +306,16 @@
                                Text="{Binding Duration, Converter={StaticResource timeSpanToStringConverter}}" />
                     <StackPanel Grid.Column="3"
                                 Orientation="Horizontal">
-                        <!--#region 声音开关-->
+                        -->
+        <!--#region 声音开关-->
+        <!--
                         <ToggleButton Margin="15,0,0,0"
                                       Style="{StaticResource MusicVolumeButton}" />
-                        <!--#endregion-->
-                        <!--#region 音量控制-->
-                        <!--<Slider Grid.Column="1"
+                        -->
+        <!--#endregion-->
+        <!--#region 音量控制-->
+        <!--
+                        <Slider Grid.Column="1"
                                 Width="115"
                                 VerticalAlignment="Center"
                                 IsMoveToPointEnabled="True"
@@ -428,22 +324,28 @@
                                 SelectionEnd="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Value}"
                                 SelectionStart="0"
                                 Style="{StaticResource HTSlider}"
-                                Value="50" />-->
-                        <!--#endregion-->
-                        <!--#region 循环模式-->
+                                Value="50" />
+                        -->
+        <!--#endregion-->
+        <!--#region 循环模式-->
+        <!--
                         <Path Width="16"
                               Height="16"
                               Margin="15,0,10,0"
                               Data="{StaticResource Icon_Love}"
                               Fill="{StaticResource TextColor}"
                               Stretch="Fill" />
-                        <!--#endregion-->
-                        <!--#region 歌词显示-->
+                        -->
+        <!--#endregion-->
+        <!--#region 歌词显示-->
+        <!--
                         <Image Width="35"
                                Height="35"
                                Source="pack://application:,,,/WMWpfProject.Control;Component/Icons/Logos/head.jpg" />
-                        <!--#endregion-->
-                        <!--#region 播放列表-->
+                        -->
+        <!--#endregion-->
+        <!--#region 播放列表-->
+        <!--
                         <StackPanel Margin="10,0,12,0"
                                     VerticalAlignment="Center"
                                     Orientation="Horizontal">
@@ -466,12 +368,15 @@
                                            Text="50" />
                             </Border>
                         </StackPanel>
-                        <!--#endregion-->
+                        -->
+        <!--#endregion-->
+        <!--
                     </StackPanel>
                 </Grid>
             </Grid>
-        </Border>
+        </Border>-->
         <ResizeGrip Grid.Row="2"
-                    Style="{StaticResource HTResizeGrip}" />
+                    Style="{StaticResource HTResizeGrip}"
+                    Grid.Column="1" />
     </Grid>
 </windows:HTSkinSimpleWindow>

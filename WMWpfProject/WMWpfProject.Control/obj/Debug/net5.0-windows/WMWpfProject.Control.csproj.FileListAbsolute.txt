@@ -41,3 +41,4 @@ E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject.Control\obj\Debug\net5.0-windows\W
 E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject.Control\obj\Debug\net5.0-windows\WMWpfProject.Control.dll
 E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject.Control\obj\Debug\net5.0-windows\ref\WMWpfProject.Control.dll
 E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject.Control\obj\Debug\net5.0-windows\WMWpfProject.Control.pdb
+E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject.Control\obj\Debug\net5.0-windows\Styles\HTMenuControl.baml

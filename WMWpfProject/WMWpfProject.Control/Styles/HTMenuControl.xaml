@@ -1,0 +1,258 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:WMWpfProject.Control.Controls">
+    <Geometry x:Key="DownGeometry">M445.406 731.963L93.35 339.737A87.354 87.354 0 0 1 71 281.387C71 233.123 110.15 194 158.444 194h704.111a87.476 87.476 0 0 1 58.39 22.336c35.95 32.226 38.951 87.474 6.704 123.4L575.593 731.964a87.415 87.415 0 0 1-6.705 6.7c-35.95 32.227-91.235 29.227-123.482-6.7z</Geometry>
+    <Geometry x:Key="UpGeometry">M575.594 216.037L927.65 608.263a87.354 87.354 0 0 1 22.35 58.35C950 714.877 910.85 754 862.556 754H158.445a87.476 87.476 0 0 1-58.39-22.336c-35.95-32.226-38.951-87.474-6.704-123.4l352.056-392.227a87.415 87.415 0 0 1 6.705-6.7c35.95-32.227 91.235-29.227 123.482 6.7z</Geometry>
+    <Geometry x:Key="IconInfo">M497 87c245.214 0 444 198.786 444 444S742.214 975 497 975 53 776.214 53 531 251.786 87 497 87z m1.15 331.275c-18.423 0-33.357 14.934-33.357 33.357v331.275c0 18.423 14.934 33.357 33.357 33.357 18.423 0 33.358-14.934 33.358-33.357V451.632c0-18.423-14.935-33.357-33.358-33.357zM497 254.938c-24.14 0-43.71 19.054-43.71 42.56 0 23.504 19.57 42.559 43.71 42.559s43.71-19.055 43.71-42.56c0-23.505-19.57-42.56-43.71-42.56z</Geometry>
+    <Style x:Key="ToggleButtonStyle1"
+           TargetType="ToggleButton">
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Setter Property="Padding"
+                Value="0" />
+        <Setter Property="Margin"
+                Value="0" />
+        <Setter Property="VerticalAlignment"
+                Value="Center" />
+        <Setter Property="HorizontalContentAlignment"
+                Value="Center" />
+        <Setter Property="BorderThickness"
+                Value="0" />
+        <Setter Property="HorizontalAlignment"
+                Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border SnapsToDevicePixels="true"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            Background="{TemplateBinding Background}">
+                        <ContentPresenter Name="UnCheckedElement"
+                                          Margin="{TemplateBinding Padding}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Opacity"
+                                    Value="0.9" />
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+                            <Setter Property="Opacity"
+                                    Value="0.6" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter Property="Opacity"
+                                    Value="0.4" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="MenuHeaderStyle1"
+           TargetType="Expander">
+        <Setter Property="Foreground"
+                Value="LightGray" />
+        <Setter Property="Background"
+                Value="#2D2D30" />
+        <Setter Property="HorizontalContentAlignment"
+                Value="Left" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Setter Property="BorderThickness"
+                Value="0" />
+        <Setter Property="MinHeight"
+                Value="50" />
+        <Setter Property="MinWidth"
+                Value="220" />
+        <Setter Property="FontSize"
+                Value="14" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Expander">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Border x:Name="BorderHeader"
+                                ClipToBounds="True"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}">
+                            <ToggleButton HorizontalAlignment="Stretch"
+                                          HorizontalContentAlignment="Stretch"
+                                          Focusable="False"
+                                          Padding="10,0,0,0"
+                                          Foreground="{TemplateBinding Foreground}"
+                                          IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          Width="{TemplateBinding Width}"
+                                          Height="{TemplateBinding MinHeight}"
+                                          Style="{StaticResource ToggleButtonStyle1}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40" />
+                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="32" />
+                                    </Grid.ColumnDefinitions>
+                                    <Path Name="PathIcon"
+                                          IsHitTestVisible="False"
+                                          Grid.Column="0"
+                                          Stretch="Uniform"
+                                          Fill="{TemplateBinding Foreground}"
+                                          Height="16"
+                                          Data="{Binding DataContext.IconGeometry,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=controls:HTSideMenuItem}}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalAlignment="Center" />
+                                    <ContentPresenter ContentSource="Header"
+                                                      Grid.Column="1"
+                                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                    <Path Name="PathArrow"
+                                          IsHitTestVisible="False"
+                                          Grid.Column="2"
+                                          Stretch="Uniform"
+                                          Fill="{TemplateBinding Foreground}"
+                                          Data="{StaticResource DownGeometry}"
+                                          Margin="0,0,10,0"
+                                          Width="12"
+                                          Height="12"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalAlignment="Center" />
+                                </Grid>
+                            </ToggleButton>
+                        </Border>
+                        <Border x:Name="LeftFlag"
+                                Width="5"
+                                Visibility="Collapsed"
+                                Background="#009688"
+                                HorizontalAlignment="Left" />
+                        <ContentPresenter Name="ExpandSite"
+                                          Visibility="Collapsed"
+                                          Grid.Row="1" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsExpanded"
+                                 Value="true">
+                            <Setter Property="Visibility"
+                                    TargetName="ExpandSite"
+                                    Value="Visible" />
+                            <Setter Property="Data"
+                                    TargetName="PathArrow"
+                                    Value="{StaticResource UpGeometry}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True"
+                                 SourceName="BorderHeader">
+                            <Setter Property="Visibility"
+                                    Value="Visible"
+                                    TargetName="LeftFlag" />
+                            <Setter Property="Foreground"
+                                    Value="White" />
+                        </Trigger>
+                        <Trigger Property="IsExpanded"
+                                 Value="True">
+                            <Setter Property="Visibility"
+                                    Value="Visible"
+                                    TargetName="LeftFlag" />
+                            <Setter Property="Foreground"
+                                    Value="White" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ListBoxStyle1"
+           TargetType="ListBox">
+        <Setter Property="BorderThickness"
+                Value="0" />
+        <Setter Property="Margin"
+                Value="0" />
+        <Setter Property="Padding"
+                Value="0" />
+        <Setter Property="Background"
+                Value="Red" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBox">
+                    <Border  BorderThickness="{TemplateBinding BorderThickness}">
+                        <ScrollViewer Margin="{TemplateBinding Padding}"
+                                      Focusable="false">
+                            <StackPanel IsItemsHost="True" />
+                        </ScrollViewer>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="MenuItemStyle1"
+           TargetType="ListBoxItem">
+        <Setter Property="SnapsToDevicePixels"
+                Value="true" />
+        <Setter Property="FocusVisualStyle"
+                Value="{x:Null}" />
+        <Setter Property="Foreground"
+                Value="LightGray" />
+        <Setter Property="Margin"
+                Value="0" />
+        <Setter Property="Padding"
+                Value="0" />
+        <Setter Property="MinHeight"
+                Value="40" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Border Name="Border"
+                            BorderThickness="0"
+                            Padding="40 0 0 0"
+                            Background="{Binding MenuItemBackground,Mode=TwoWay,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=controls:HTSideMenuItem}}"
+                            SnapsToDevicePixels="True">
+                        <ContentPresenter VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected"
+                                 Value="true">
+                            <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="{Binding MenuItemSelectedBackground,Mode=TwoWay,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=controls:HTSideMenuItem}}" />
+                            <Setter Property="Foreground"
+                                    Value="White" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="false">
+                            <Setter Property="Foreground"
+                                    Value="LightGray" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="controls:HTSideMenuItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:HTSideMenuItem">
+                    <Expander BorderThickness="0"
+                              Header="{Binding HeaderText}"
+                              IsExpanded="{Binding IsExpanded,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=controls:HTSideMenuItem}}"
+                              Background="{TemplateBinding ToggleBackground}"
+                              Style="{StaticResource MenuHeaderStyle1}">
+                        <ListBox x:Name="LB"
+                                 Style="{StaticResource ListBoxStyle1}"
+                                 ItemsSource="{Binding Items}"
+                                 ItemContainerStyle="{StaticResource MenuItemStyle1}"></ListBox>
+                    </Expander>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

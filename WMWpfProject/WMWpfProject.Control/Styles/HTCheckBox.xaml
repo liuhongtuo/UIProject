@@ -1,6 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="clr-namespace:WMWpfProject.Control.Controls">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTColor.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTIcon.xaml" />
+    </ResourceDictionary.MergedDictionaries>
     <!--#region 选择框-->
     <Style TargetType="{x:Type controls:HTCheckBox}">
         <Setter Property="BorderBrush"

@@ -45,9 +45,9 @@ namespace WMWpfProject.Control.Windows
         /// </summary>
         private void InitializeWindowStyle()
         {
-            ResourceDictionary dic = new ResourceDictionary { Source = new Uri(@"/WMWpfProject.Control;component/Windows/HTSkinSimpleWindow.xaml", UriKind.Relative) };
-            Resources.MergedDictionaries.Add(dic);
-            Style = (Style)dic["HTSkinSimpleWindow"];
+            //ResourceDictionary dic = new ResourceDictionary { Source = new Uri(@"/WMWpfProject.Control;component/Windows/HTSkinSimpleWindow.xaml", UriKind.Relative) };
+            //Resources.MergedDictionaries.Add(dic);
+            //Style = (Style)dic["HTSkinSimpleWindow"];
 
             //string packUriAnimation = @"/HTSkin.WPF;component/Themes/Animation.xaml";
             //ResourceDictionary dicAnimation = new ResourceDictionary { Source = new Uri(packUriAnimation, UriKind.Relative) };
@@ -97,7 +97,7 @@ namespace WMWpfProject.Control.Windows
         #region 系统函数
         IntPtr Handle = IntPtr.Zero;
         HwndSource source;
-        void MainWindow_SourceInitialized(object sender, EventArgs e)
+        private void MainWindow_SourceInitialized(object sender, EventArgs e)
         {
             Handle = new WindowInteropHelper(this).Handle;
             source = HwndSource.FromHwnd(Handle);
@@ -105,7 +105,8 @@ namespace WMWpfProject.Control.Windows
             { throw new Exception("Cannot get HwndSource instance."); }
             source.AddHook(new HwndSourceHook(this.WndProc));
         }
-        IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+
+        private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
             switch (msg)
             {
@@ -147,7 +148,7 @@ namespace WMWpfProject.Control.Windows
             return IntPtr.Zero;
         }
 
-        void WmGetMinMaxInfo(IntPtr hwnd, IntPtr lParam)
+        private void WmGetMinMaxInfo(IntPtr hwnd, IntPtr lParam)
         {
             // MINMAXINFO structure  
             MINMAXINFO mmi = (MINMAXINFO)Marshal.PtrToStructure(lParam, typeof(MINMAXINFO));
@@ -206,8 +207,12 @@ namespace WMWpfProject.Control.Windows
         Thickness MaxThickness = new Thickness(0);
         Thickness NormalThickness = new Thickness(20);
 
-        //窗体最大化 隐藏阴影
-        void MainWindow_StateChanged(object sender, EventArgs e)
+        /// <summary>
+        /// 窗体最大化 隐藏阴影
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainWindow_StateChanged(object sender, EventArgs e)
         {
             //最大化
             if (WindowState == WindowState.Maximized)
@@ -226,8 +231,12 @@ namespace WMWpfProject.Control.Windows
             }
         }
 
-        //窗体移动
-        void MainWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        /// <summary>
+        /// 窗体移动
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (e.OriginalSource is Grid || e.OriginalSource is Window || e.OriginalSource is Border)
             {
