@@ -52,7 +52,7 @@ namespace WMWpfProject.Control.Windows {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WMWpfProject.Control;V1.0.0.0;component/windows/shadowwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WMWpfProject.Control;component/windows/shadowwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Windows\ShadowWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

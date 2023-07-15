@@ -33,3 +33,7 @@ E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject\obj\Debug\net5.0-windows\WMWpfProj
 E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject\obj\Debug\net5.0-windows\ref\WMWpfProject.dll
 E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject\obj\Debug\net5.0-windows\WMWpfProject.pdb
 E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject\obj\Debug\net5.0-windows\WMWpfProject.genruntimeconfig.cache
+E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject\obj\Debug\net5.0-windows\Views\EngineeringView.g.cs
+E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject\obj\Debug\net5.0-windows\Views\HomeView.g.cs
+E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject\obj\Debug\net5.0-windows\Views\EngineeringView.baml
+E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject\obj\Debug\net5.0-windows\Views\HomeView.baml

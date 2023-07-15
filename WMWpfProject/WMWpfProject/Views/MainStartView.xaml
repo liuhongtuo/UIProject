@@ -209,20 +209,109 @@
         <Grid Grid.Row="1"
               Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200"
-                                  MinWidth="200" />
+                <ColumnDefinition Width="100"
+                                  MinWidth="80" />
                 <ColumnDefinition Width="*"
                                   MinWidth="822" />
             </Grid.ColumnDefinitions>
-            <Grid Background="{StaticResource LeftGridColor}">
+            <Grid Background="{StaticResource LeftGridColor}"
+                  Margin="10">
                 <ScrollViewer Grid.Row="1"
-                              Grid.RowSpan="2"
                               VerticalAlignment="Top"
                               Style="{StaticResource for_scrollviewer}">
-                    <controls:HTImageRadioButton Style="{StaticResource HTMainViewRadioButton}"
-                                                 ImageRadioButton_Icon="pack://application:,,,/WMWpfProject.Control;Component/Icons/Logos/head.jpg"
-                                                 Height="30"
-                                                 ></controls:HTImageRadioButton>
+                    <StackPanel>
+                        <!--首页-->
+                        <controls:HTImageRadioButton Style="{DynamicResource HTMainViewRadioButton}"
+                                                     ImageRadioButton_Icon="pack://application:,,,/WMWpfProject.Control;Component/Icons/main_Normal.png"
+                                                     ImageRadioButton_MouseOverIcon="pack://application:,,,/WMWpfProject.Control;Component/Icons/main_Pressed.png"
+                                                     ImageRadioButton_MousePressedIcon="pack://application:,,,/WMWpfProject.Control;Component/Icons/main_Pressed.png"
+                                                     Height="80"
+                                                     Content="Main"
+                                                     ImageHeight="50"
+                                                     ImageWidth="50"
+                                                     CornerRadius="15"
+                                                     Margin="0,10,0,10"
+                                                     Command="{Binding MainViewSelectMenuCommand}"
+                                                     CommandParameter="Main"/>
+                        <!--量产-->
+                        <controls:HTImageRadioButton Style="{StaticResource HTMainViewRadioButton}"
+                                                     ImageRadioButton_Icon="pack://application:,,,/WMWpfProject.Control;Component/Icons/production_Normal.png"
+                                                     ImageRadioButton_MouseOverIcon="pack://application:,,,/WMWpfProject.Control;Component/Icons/production_Pressed.png"
+                                                     ImageRadioButton_MousePressedIcon="pack://application:,,,/WMWpfProject.Control;Component/Icons/production_Pressed.png"
+                                                     Height="80"
+                                                     Content="Main"
+                                                     ImageHeight="50"
+                                                     ImageWidth="50"
+                                                     CornerRadius="15"
+                                                     Margin="0,10,0,10"
+                                                     Command="{Binding MainViewSelectMenuCommand}"
+                                                     CommandParameter="Production" />
+                        <!--工程-->
+                        <controls:HTImageRadioButton Style="{StaticResource HTMainViewRadioButton}"
+                                                     ImageRadioButton_Icon="pack://application:,,,/WMWpfProject.Control;Component/Icons/engineering_Normal.png"
+                                                     ImageRadioButton_MouseOverIcon="pack://application:,,,/WMWpfProject.Control;Component/Icons/engineering_Pressed.png"
+                                                     ImageRadioButton_MousePressedIcon="pack://application:,,,/WMWpfProject.Control;Component/Icons/engineering_Pressed.png"
+                                                     Height="80"
+                                                     Content="Main"
+                                                     ImageHeight="50"
+                                                     ImageWidth="50"
+                                                     CornerRadius="15"
+                                                     Margin="0,10,0,10"
+                                                     Command="{Binding MainViewSelectMenuCommand}"
+                                                     CommandParameter="Engineering" />
+                        <!--数据-->
+                        <controls:HTImageRadioButton Style="{StaticResource HTMainViewRadioButton}"
+                                                     ImageRadioButton_Icon="pack://application:,,,/WMWpfProject.Control;Component/Icons/Data_Normal.png"
+                                                     ImageRadioButton_MouseOverIcon="pack://application:,,,/WMWpfProject.Control;Component/Icons/Data_Pressed.png"
+                                                     ImageRadioButton_MousePressedIcon="pack://application:,,,/WMWpfProject.Control;Component/Icons/Data_Pressed.png"
+                                                     Height="80"
+                                                     Content="Main"
+                                                     ImageHeight="50"
+                                                     ImageWidth="50"
+                                                     CornerRadius="15"
+                                                     Margin="0,10,0,10"
+                                                     Command="{Binding MainViewSelectMenuCommand}"
+                                                     CommandParameter="Data" />
+                        <!--警报-->
+                        <controls:HTImageRadioButton Style="{StaticResource HTMainViewRadioButton}"
+                                                     ImageRadioButton_Icon="pack://application:,,,/WMWpfProject.Control;Component/Icons/warning_Normal.png"
+                                                     ImageRadioButton_MouseOverIcon="pack://application:,,,/WMWpfProject.Control;Component/Icons/warning_Pressed.png"
+                                                     ImageRadioButton_MousePressedIcon="pack://application:,,,/WMWpfProject.Control;Component/Icons/warning_Pressed.png"
+                                                     Height="80"
+                                                     Content="Main"
+                                                     ImageHeight="50"
+                                                     ImageWidth="50"
+                                                     CornerRadius="15"
+                                                     Margin="0,10,0,10"
+                                                     Command="{Binding MainViewSelectMenuCommand}"
+                                                     CommandParameter="Warning" />
+                        <!--用户-->
+                        <controls:HTImageRadioButton Style="{StaticResource HTMainViewRadioButton}"
+                                                     ImageRadioButton_Icon="pack://application:,,,/WMWpfProject.Control;Component/Icons/user_Normal.png"
+                                                     ImageRadioButton_MouseOverIcon="pack://application:,,,/WMWpfProject.Control;Component/Icons/user_Pressed.png"
+                                                     ImageRadioButton_MousePressedIcon="pack://application:,,,/WMWpfProject.Control;Component/Icons/user_Pressed.png"
+                                                     Height="80"
+                                                     Content="Main"
+                                                     ImageHeight="50"
+                                                     ImageWidth="50"
+                                                     CornerRadius="15"
+                                                     Margin="0,10,0,10"
+                                                     Command="{Binding MainViewSelectMenuCommand}"
+                                                     CommandParameter="User" />
+                        <!--关于-->
+                        <controls:HTImageRadioButton Style="{StaticResource HTMainViewRadioButton}"
+                                                     ImageRadioButton_Icon="pack://application:,,,/WMWpfProject.Control;Component/Icons/about_Normal.png"
+                                                     ImageRadioButton_MouseOverIcon="pack://application:,,,/WMWpfProject.Control;Component/Icons/about_Pressed.png"
+                                                     ImageRadioButton_MousePressedIcon="pack://application:,,,/WMWpfProject.Control;Component/Icons/about_Pressed.png"
+                                                     Height="80"
+                                                     Content="Main"
+                                                     ImageHeight="50"
+                                                     ImageWidth="50"
+                                                     CornerRadius="15"
+                                                     Margin="0,10,0,10"
+                                                     Command="{Binding MainViewSelectMenuCommand}"
+                                                     CommandParameter="About" />
+                    </StackPanel>
                 </ScrollViewer>
             </Grid>
             <GridSplitter Width="1"
@@ -230,7 +319,7 @@
             <Grid Grid.Column="1"
                   Background="{StaticResource RightGridColor}">
                 <Frame x:Name="Frame"
-                       Content="{Binding CurrentPage}"
+                       Content="{Binding CurrentShowPage,UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"
                        NavigationUIVisibility="Hidden" />
             </Grid>
         </Grid>

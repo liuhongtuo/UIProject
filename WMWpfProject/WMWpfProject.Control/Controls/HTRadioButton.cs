@@ -94,7 +94,7 @@ namespace WMWpfProject.Control.Controls
         }
 
         public static readonly DependencyProperty ImageRadioButton_IconProperty =
-            DependencyProperty.Register("ImageRadioButton_Icon", typeof(string), typeof(HTImageRadioButton), new PropertyMetadata(string.Empty, OnImgSourceChanged));
+            DependencyProperty.Register("ImageRadioButton_Icon", typeof(string), typeof(HTImageRadioButton), new PropertyMetadata(string.Empty));
 
         public string ImageRadioButton_MouseOverIcon
         {
@@ -103,7 +103,7 @@ namespace WMWpfProject.Control.Controls
         }
 
         public static readonly DependencyProperty ImageRadioButton_MouseOverIconProperty =
-            DependencyProperty.Register("ImageRadioButton_MouseOverIcon", typeof(string), typeof(HTImageRadioButton), new PropertyMetadata(string.Empty, OnImgSourceChanged));
+            DependencyProperty.Register("ImageRadioButton_MouseOverIcon", typeof(string), typeof(HTImageRadioButton), new PropertyMetadata(string.Empty));
 
         public string ImageRadioButton_MousePressedIcon
         {
@@ -112,7 +112,7 @@ namespace WMWpfProject.Control.Controls
         }
 
         public static readonly DependencyProperty ImageRadioButton_MousePressedIconProperty =
-            DependencyProperty.Register("ImageRadioButton_MousePressedIcon", typeof(string), typeof(HTImageRadioButton), new PropertyMetadata(string.Empty, OnImgSourceChanged));
+            DependencyProperty.Register("ImageRadioButton_MousePressedIcon", typeof(string), typeof(HTImageRadioButton), new PropertyMetadata(string.Empty));
 
         private static void OnImgSourceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -127,6 +127,7 @@ namespace WMWpfProject.Control.Controls
             }
 
             bitmapImageSource = new BitmapImage(new Uri(newImgPath));
+            radioButton.ImageSource = bitmapImageSource;
             //using (var ms = new MemoryStream(File.ReadAllBytes(newImgPath)))
             //{
             //    bitmapImageSource.BeginInit();
@@ -135,7 +136,6 @@ namespace WMWpfProject.Control.Controls
             //    bitmapImageSource.EndInit();
             //    bitmapImageSource.Freeze();
             //}
-            radioButton.ImageSource = bitmapImageSource;
         }
 
         public double ImageWidth
