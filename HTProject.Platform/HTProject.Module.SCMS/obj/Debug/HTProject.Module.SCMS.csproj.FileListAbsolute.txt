@@ -1,0 +1,5 @@
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Module.SCMS\bin\Debug\HTProject.Module.SCMS.dll
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Module.SCMS\bin\Debug\HTProject.Module.SCMS.pdb
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Module.SCMS\obj\Debug\HTProject.Module.SCMS.csproj.CoreCompileInputs.cache
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Module.SCMS\obj\Debug\HTProject.Module.SCMS.dll
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Module.SCMS\obj\Debug\HTProject.Module.SCMS.pdb

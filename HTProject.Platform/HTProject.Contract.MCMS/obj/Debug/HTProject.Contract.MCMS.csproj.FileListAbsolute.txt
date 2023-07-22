@@ -1,0 +1,6 @@
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Contract.MCMS\bin\Debug\HTProject.Contract.MCMS.dll
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Contract.MCMS\bin\Debug\HTProject.Contract.MCMS.pdb
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Contract.MCMS\obj\Debug\HTProject.Contract.MCMS.csproj.AssemblyReference.cache
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Contract.MCMS\obj\Debug\HTProject.Contract.MCMS.csproj.CoreCompileInputs.cache
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Contract.MCMS\obj\Debug\HTProject.Contract.MCMS.dll
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Contract.MCMS\obj\Debug\HTProject.Contract.MCMS.pdb
