@@ -8,14 +8,12 @@
                             xmlns:controls="clr-namespace:WMWpfProject.Control.Controls;assembly=WMWpfProject.Control"
                             xmlns:converters="clr-namespace:WMWpfProject.Base.Converters;assembly=WMWpfProject.Base"
                             xmlns:local="clr-namespace:WMWpfProject.Views"
-                            Title="HTTecnology"
                             Width="1440"
                             Height="900"
                             MinWidth="1024"
                             MinHeight="768"
-                            Icon="pack://application:,,,/WMWpfProject.Control;Component/Icons/Logos/ic_launcher.png"
                             ResizeMode="CanResizeWithGrip"
-                            TextOptions.TextFormattingMode="Display"
+                            TextOptions.TextFormattingMode="Ideal"
                             WindowStartupLocation="CenterScreen"
                             mc:Ignorable="d">
     <Window.Resources>

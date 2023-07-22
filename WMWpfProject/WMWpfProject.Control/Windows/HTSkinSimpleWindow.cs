@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media;
 using SystemCommands = WMWpfProject.Base.WIN32.SystemCommands;
+using System.Windows.Media.Animation;
 
 namespace WMWpfProject.Control.Windows
 {
@@ -34,27 +35,29 @@ namespace WMWpfProject.Control.Windows
         /// <summary>
         /// 慢慢显示的动画
         /// </summary>
-        ///Storyboard StoryboardSlowShow;
+        Storyboard StoryboardSlowShow;
+
         /// <summary>
         /// 慢慢隐藏的动画
         /// </summary>
-        //Storyboard StoryboardSlowHide;
+        Storyboard StoryboardSlowHide;
 
         /// <summary>
         /// 加载双层窗口的样式
         /// </summary>
         private void InitializeWindowStyle()
         {
-            //ResourceDictionary dic = new ResourceDictionary { Source = new Uri(@"/WMWpfProject.Control;component/Windows/HTSkinSimpleWindow.xaml", UriKind.Relative) };
-            //Resources.MergedDictionaries.Add(dic);
-            //Style = (Style)dic["HTSkinSimpleWindow"];
+            ResourceDictionary dic = new ResourceDictionary { Source = new Uri(@"/WMWpfProject.Control;component/Windows/HTSkinSimpleWindow.xaml", UriKind.Relative) };
+            Resources.MergedDictionaries.Add(dic);
+            Style = (Style)dic["HTSkinSimpleWindow"];
 
-            //string packUriAnimation = @"/HTSkin.WPF;component/Themes/Animation.xaml";
-            //ResourceDictionary dicAnimation = new ResourceDictionary { Source = new Uri(packUriAnimation, UriKind.Relative) };
-            //Resources.MergedDictionaries.Add(dicAnimation);
+            string packUriAnimation = @"/WMWpfProject.Control;component/Styles/HTAnimation.xaml";
+            ResourceDictionary dicAnimation = new ResourceDictionary { Source = new Uri(packUriAnimation, UriKind.Relative) };
+            Resources.MergedDictionaries.Add(dicAnimation);
 
-            //StoryboardSlowShow = (Storyboard)FindResource("SlowShow");
-            //StoryboardSlowHide = (Storyboard)FindResource("SlowHide");
+            StoryboardSlowShow = (Storyboard)FindResource("SlowShow");
+            StoryboardSlowHide = (Storyboard)FindResource("SlowHide");
+            
         }
         #endregion
 
@@ -65,10 +68,10 @@ namespace WMWpfProject.Control.Windows
         private void StoryboardHide()
         {
             //启动最小化动画
-            //StoryboardSlowHide.Begin(this);
+            StoryboardSlowHide.Begin(this);
             Task.Factory.StartNew(() =>
             {
-                Thread.Sleep(300);
+                Thread.Sleep(1000);
                 Dispatcher.Invoke(new Action(() =>
                 {
                     WindowState = WindowState.Minimized;
@@ -82,13 +85,14 @@ namespace WMWpfProject.Control.Windows
         private void WindowRestore()
         {
             Opacity = 0;
+            StoryboardSlowShow.Begin(this);
             Task.Factory.StartNew(() =>
             {
-                Thread.Sleep(50);
+                Thread.Sleep(20);
                 Dispatcher.Invoke(new Action(() =>
                 {
                     WindowState = WindowState.Normal;
-                    Opacity = 1;
+                    //Opacity = 1;
                 }));
             });
         }
@@ -113,15 +117,20 @@ namespace WMWpfProject.Control.Windows
                 //获取窗口的最大化最小化信息
                 case (int)WindowMessages.WM_GETMINMAXINFO:
                     WmGetMinMaxInfo(hwnd, lParam);
+                    if (wParam.ToInt32() == (int)SystemCommands.SC_MINIMIZE)//最小化消息
+                    {
+                        StoryboardHide();//执行最小化动画
+                        handled = true;
+                    }
                     handled = true;
                     break;
                 //case Win32.WM_NCHITTEST:
                 //     return WmNCHitTest(lParam, ref handled);
                 case (int)WindowMessages.WM_SYSCOMMAND:
-                    //if (wParam.ToInt32() == Win32.SC_MINIMIZE)//最小化消息
+                    //if (wParam.ToInt32() == (int)SystemCommands.SC_MINIMIZE)//最小化消息
                     //{
-                    //StoryboardHide();//执行最小化动画
-                    //handled = true;
+                    //    StoryboardHide();//执行最小化动画
+                    //    handled = true;
                     //}
                     if (wParam.ToInt32() == (int)SystemCommands.SC_RESTORE)//恢复消息
                     {
@@ -227,7 +236,6 @@ namespace WMWpfProject.Control.Windows
             //最小化-隐藏阴影
             if (WindowState == WindowState.Minimized)
             {
-
             }
         }
 

@@ -87,7 +87,7 @@
         </Setter>
     </Style>
     <!--#endregion-->
-    <Style TargetType="{x:Type controls:HTNumericBox}">
+    <Style x:Key="HTNumericBoxStyle" TargetType="{x:Type controls:HTNumericBox}">
         <Setter Property="Width"
                 Value="100" />
         <Setter Property="Height"

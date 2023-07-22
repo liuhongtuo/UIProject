@@ -4,13 +4,37 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WMWpfProject.Views"
+      xmlns:controls="clr-namespace:WMWpfProject.Control.Controls;assembly=WMWpfProject.Control"
+      xmlns:converters="clr-namespace:WMWpfProject.Base.Converters;assembly=WMWpfProject.Base"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Width="1340"
       Height="830"
       Title="EngineeringView">
-
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTColor.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTTextBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTIcon.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTImage.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTFont.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTSkin.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTButton.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTRadioButton.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTScrollViewer.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTExpander.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTSlider.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTTabControl.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTMenuControl.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Styles/HTResizeGrip.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/WMWpfProject.Control;Component/Windows/HTSkinSimpleWindow.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <converters:EnumToBooleanConverter x:Key="enumToBooleanConverter"></converters:EnumToBooleanConverter>
+            <converters:TimeSpanToStringConverter x:Key="timeSpanToStringConverter"></converters:TimeSpanToStringConverter>
+        </ResourceDictionary>
+    </Page.Resources>
     <Grid Background="Gainsboro">
-        
+        <controls:HTNumericBox  Style="{StaticResource HTNumericBoxStyle}" Width="160" Height="40"/>
     </Grid>
 </Page>
