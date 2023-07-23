@@ -3,3 +3,4 @@ E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Module.MCMS\bin\Debug\HTProject
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Module.MCMS\obj\Debug\HTProject.Module.MCMS.csproj.CoreCompileInputs.cache
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Module.MCMS\obj\Debug\HTProject.Module.MCMS.dll
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Module.MCMS\obj\Debug\HTProject.Module.MCMS.pdb
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Module.MCMS\obj\Debug\HTProject.Module.MCMS.csproj.AssemblyReference.cache

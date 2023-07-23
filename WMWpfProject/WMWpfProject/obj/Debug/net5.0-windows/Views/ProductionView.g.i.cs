@@ -53,7 +53,7 @@ namespace WMWpfProject.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WMWpfProject;component/views/productionview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WMWpfProject;V1.0.0.0;component/views/productionview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\ProductionView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
