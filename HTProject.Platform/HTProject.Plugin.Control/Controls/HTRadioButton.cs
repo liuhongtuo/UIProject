@@ -157,4 +157,52 @@ namespace HTProject.Plugin.Control.Controls
             DependencyProperty.Register("ImageHeight", typeof(double), typeof(HTImageRadioButton), new PropertyMetadata(15.0));
 
     }
+
+    public class HTCustomRadioButton : RadioButton
+    {
+        static HTCustomRadioButton()
+        {
+            FrameworkElement.DefaultStyleKeyProperty.OverrideMetadata(typeof(HTCustomRadioButton), new FrameworkPropertyMetadata(typeof(HTCustomRadioButton)));
+        }
+
+        /// <summary>
+        /// 单选项文本属性
+        /// </summary>
+        public string OptionTxt
+        {
+            get
+            {
+                return (string)GetValue(OptionTxtProperty);
+            }
+            set
+            {
+                SetValue(OptionTxtProperty, value);
+            }
+        }
+
+        /// <summary>
+        /// 单选项文本属性
+        /// </summary>
+        public static readonly DependencyProperty OptionTxtProperty = DependencyProperty.Register("OptionTxt", typeof(string), typeof(HTCustomRadioButton), new PropertyMetadata(null));
+
+        /// <summary>
+        /// 单选项提示信息属性
+        /// </summary>
+        public string TxtToolTip
+        {
+            get
+            {
+                return (string)GetValue(TxtToolTipProperty);
+            }
+            set
+            {
+                SetValue(TxtToolTipProperty, value);
+            }
+        }
+
+        /// <summary>
+        /// 单选项提示信息属性
+        /// </summary>
+        public static readonly DependencyProperty TxtToolTipProperty = DependencyProperty.Register("TxtToolTip", typeof(string), typeof(HTCustomRadioButton), new PropertyMetadata(null));
+    }
 }

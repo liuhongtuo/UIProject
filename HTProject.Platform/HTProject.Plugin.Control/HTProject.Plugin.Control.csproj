@@ -33,8 +33,23 @@
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Prism">
+      <HintPath>..\..\ThridOfPartReference\Prism.Core.6.2.0\lib\net45\Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Mef.Wpf">
+      <HintPath>..\..\ThridOfPartReference\Prism.Mef.6.2.0\lib\net45\Prism.Mef.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Wpf">
+      <HintPath>..\..\ThridOfPartReference\Prism.Wpf.6.2.0\lib\net45\Prism.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="PropertyChanged">
+      <HintPath>..\..\ThridOfPartReference\PropertyChanged.Fody.1.52.1\Lib\dotnet\PropertyChanged.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\..\ThridOfPartReference\Prism.Wpf.6.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,11 +60,19 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\HTCustomButton.cs" />
+    <Compile Include="Controls\HTCustomCheckBox.cs" />
+    <Compile Include="Controls\HTCustomCloseTabItem.cs" />
+    <Compile Include="Controls\HTCustomComboBox.cs" />
+    <Compile Include="Controls\HTCustomTextBox.cs" />
+    <Compile Include="Controls\HTCustomToolTip.cs" />
     <Compile Include="Controls\HTRadioButton.cs" />
     <Compile Include="Controls\HTScrollBar.cs" />
     <Compile Include="Controls\HTScrollViewer.cs" />
     <Compile Include="Controls\HTSystemButton.cs" />
     <Compile Include="Controls\HTThumb.cs" />
+    <Compile Include="Helper\MathHelper.cs" />
+    <Compile Include="Helper\VisualTreeFindHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Windows\HTSkinComplexWindow.cs" />
     <Compile Include="Windows\HTSkinSimpleWindow.cs" />
@@ -64,31 +87,31 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Styles\HTDataGrid.xaml">
+    <Page Include="Themes\HTDataGrid.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\HTExpander.xaml">
+    <Page Include="Themes\HTExpander.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\HTImage.xaml">
+    <Page Include="Themes\HTImage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\HTRadioButton.xaml">
+    <Page Include="Themes\HTRadioButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\HTResizeGrip.xaml">
+    <Page Include="Themes\HTResizeGrip.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\HTScrollViewer.xaml">
+    <Page Include="Themes\HTScrollViewer.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\HTSlider.xaml">
+    <Page Include="Themes\HTSlider.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

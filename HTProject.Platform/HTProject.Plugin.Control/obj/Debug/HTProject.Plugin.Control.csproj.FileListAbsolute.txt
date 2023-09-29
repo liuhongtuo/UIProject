@@ -21,3 +21,12 @@ E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\HTProj
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\HTProject.Plugin.Control.csproj.CopyComplete
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\HTProject.Plugin.Control.dll
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\HTProject.Plugin.Control.pdb
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\bin\Debug\Prism.dll
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\bin\Debug\Prism.Mef.Wpf.dll
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\bin\Debug\Prism.Wpf.dll
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\bin\Debug\PropertyChanged.dll
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\bin\Debug\System.Windows.Interactivity.dll
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\bin\Debug\Prism.xml
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\bin\Debug\Prism.Mef.Wpf.xml
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\bin\Debug\Prism.Wpf.xml
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\bin\Debug\PropertyChanged.xml
