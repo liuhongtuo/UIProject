@@ -1,0 +1,153 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:AOI.Plugin.UIControl.Controls">
+
+    <Style x:Key="CustomToolTipStyle"
+           TargetType="ToolTip">
+        <Setter Property="Placement"
+                Value="Bottom" />
+        <Setter Property="HorizontalOffset"
+                Value="0" />
+        <Setter Property="VerticalOffset"
+                Value="6" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToolTip">
+                    <Grid>
+                        <StackPanel>
+                            <Path HorizontalAlignment="Center"
+                                  VerticalAlignment="Center">
+                                <Path.Data>
+                                    M 6 0 L 0 6 L12 6 Z
+                                </Path.Data>
+                                <Path.Fill>
+                                    <LinearGradientBrush EndPoint="0,1"
+                                                         StartPoint="0,0">
+                                        <GradientStop Color="#FFF2F2F2"
+                                                      Offset="0" />
+                                        <GradientStop Color="LightGray"
+                                                      Offset="1" />
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Border CornerRadius="5"
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    ClipToBounds="True"
+                                    SnapsToDevicePixels="True">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint="0,1"
+                                                         StartPoint="0,0">
+                                        <GradientStop Color="#FFF2F2F2"
+                                                      Offset="0" />
+                                        <GradientStop Color="#FFE0E0E0"
+                                                      Offset="1" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <TextBlock Text="{TemplateBinding ContentControl.Content}"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center"
+                                           Foreground="Black"
+                                           LineHeight="20"
+                                           Margin="5"
+                                           TextWrapping="Wrap" />
+                            </Border>
+                        </StackPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style  x:Key="HTToolTip"
+            TargetType="{x:Type controls:CustomToolTip}">
+        <Setter Property="controls:CustomToolTip.CornerRadius"
+                Value="3" />
+        <Setter Property="controls:CustomToolTip.NormalToolTipBackground">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0"
+                                     EndPoint="0,1">
+                    <GradientStop Color="#FAFAFA"
+                                  Offset="0" />
+                    <GradientStop Color="#E2E2E2"
+                                  Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="controls:CustomToolTip.ErrorToolTipBackground">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0"
+                                     EndPoint="0,1">
+                    <GradientStop Color="#F5515F"
+                                  Offset="0" />
+                    <GradientStop Color="#9F041B"
+                                  Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Placement"
+                Value="Bottom" />
+        <Setter Property="HorizontalOffset"
+                Value="0" />
+        <Setter Property="VerticalOffset"
+                Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:CustomToolTip}">
+                    <StackPanel>
+                        <Path Name="Arrow"
+                              Width="8"
+                              Height="4"
+                              Stretch="Fill"
+                              Margin="0,0,0,-15"
+                              HorizontalAlignment="Center"
+                              Data="M48.75,16.75 L40.5,124 L57.2,124"
+                              Visibility="Collapsed"
+                              Fill="{Binding ErrorToolTipBackground, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <Border Name="Border"
+                                Height="32"
+                                CornerRadius="{TemplateBinding CornerRadius}"
+                                Margin="10"
+                                HorizontalAlignment="Stretch">
+                            <UIElement.Effect>
+                                <DropShadowEffect ShadowDepth="2"
+                                                  BlurRadius="10"
+                                                  Color="#707070" />
+                            </UIElement.Effect>
+                            <ContentPresenter Name="Txt"
+                                              Margin="6,5,6,5"
+                                              TextBlock.FontSize="13"
+                                              TextBlock.Foreground="#FFFFFFFF"
+                                              TextBlock.FontFamily="#PingFang SC Medium" />
+                        </Border>
+                    </StackPanel>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Value="NormalToolTip"
+                                     Binding="{Binding Path=ToolTipType, RelativeSource={RelativeSource Self}}">
+                            <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="{Binding NormalToolTipBackground, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="Txt"
+                                    Property="TextBlock.Foreground"
+                                    Value="#041430" />
+                        </DataTrigger>
+                        <DataTrigger Value="ErrorToolTip"
+                                     Binding="{Binding Path=ToolTipType, RelativeSource={RelativeSource Self}}">
+                            <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="{Binding ErrorToolTipBackground, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="Arrow"
+                                    Property="Visibility"
+                                    Value="Visible" />
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--定义CustomToolTip控件默认样式-->
+    <Style BasedOn="{StaticResource HTToolTip}"
+           TargetType="{x:Type controls:CustomToolTip}"
+           x:Key="{x:Type controls:CustomToolTip}" />
+</ResourceDictionary>

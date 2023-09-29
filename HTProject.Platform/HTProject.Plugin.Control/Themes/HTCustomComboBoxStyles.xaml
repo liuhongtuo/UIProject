@@ -1,0 +1,292 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:AOI.Plugin.UIControl.Converters"
+                    xmlns:controls="clr-namespace:AOI.Plugin.UIControl.Controls">
+
+    <converters:StringToCollapsedConverter x:Key="StringToCollapsedConverter" />
+
+    <Style x:Key="HTToggleButtonWithComboBox"
+           TargetType="ToggleButton">
+        <Setter Property="FrameworkElement.OverridesDefaultStyle"
+                Value="True" />
+        <Setter Property="KeyboardNavigation.IsTabStop"
+                Value="False" />
+        <Setter Property="UIElement.Focusable"
+                Value="False" />
+        <Setter Property="ButtonBase.ClickMode"
+                Value="Press" />
+        <Setter Property="VerticalAlignment"
+                Value="Center" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border BorderThickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=BorderThickness}"
+                            BorderBrush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=BorderBrush}"
+                            Name="templateRoot"
+                            SnapsToDevicePixels="True"
+                            Margin="2"
+                            CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type controls:CustomComboBox}}}">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1"
+                                                 StartPoint="0.5,0">
+                                <GradientStop Color="#F2F2F2" />
+                                <GradientStop Color="#D6D4D4"
+                                              Offset="1" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border Name="splitBorder"
+                                Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}"
+                                HorizontalAlignment="Center"
+                                SnapsToDevicePixels="True"
+                                Margin="1.5"
+                                CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type controls:CustomComboBox}}}">
+                            <Path Name="Arrow"
+                                  Data="M-10 0 L0 10 10 0 8 -2 0 6 -8 -2Z"
+                                  Stretch="Uniform"
+                                  Fill="#FF606060"
+                                  Margin="0,0,0,0"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  Opacity="0.9" />
+                        </Border>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked"
+                                 Value="True">
+                            <Setter Property="Data"
+                                    TargetName="Arrow"
+                                    Value="M-10 0 L0 -10 10 0 8 2 0 -6 -8 2Z" />
+                        </Trigger>
+                        <Trigger Property="UIElement.IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Shape.Fill"
+                                    TargetName="Arrow"
+                                    Value="#FF000000" />
+                        </Trigger>
+                        <Trigger Property="ButtonBase.IsPressed"
+                                 Value="True">
+                            <Setter Property="Shape.Fill"
+                                    TargetName="Arrow"
+                                    Value="#FF000000" />
+                        </Trigger>
+                        <Trigger Property="UIElement.IsEnabled"
+                                 Value="False">
+                            <Setter Property="Shape.Fill"
+                                    TargetName="Arrow"
+                                    Value="#FFBFBFBF" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="HTComboBoxStyle"
+           TargetType="{x:Type controls:CustomComboBox}">
+        <Setter Property="Width"
+                Value="160" />
+        <Setter Property="Height"
+                Value="34" />
+        <Setter Property="CornerRadius"
+                Value="6" />
+        <Setter Property="FontSize"
+                Value="16" />
+        <Setter Property="Foreground"
+                Value="#FF041430" />
+        <Setter Property="FontFamily"
+                Value="Times New Roman" />
+        <Setter Property="BorderBrush"
+                Value="#FF787980" />
+        <Setter Property="BorderThickness"
+                Value="1" />
+        <Setter Property="Background"
+                Value="White" />
+        <Setter Property="MouseOverComboBorderBrush"
+                Value="#FF585858" />
+        <Setter Property="MousePressedComboBorderBrush"
+                Value="#FF585858" />
+        <Setter Property="MouseDisableComboBorderBrush"
+                Value="#FFB2B3B6" />
+        <Setter Property="MouseOverComboBackground"
+                Value="White" />
+        <Setter Property="MousePressedComboBackground"
+                Value="White" />
+        <Setter Property="MouseDisableComboBackground"
+                Value="#FFF2F2F2" />
+        <Setter Property="ComboMenuBorderBrush"
+                Value="#FFACACAA" />
+        <Setter Property="ComboMenuBackground">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0,1"
+                                     StartPoint="0,0">
+                    <GradientStop Color="#FFF1F1F1"
+                                  Offset="0" />
+                    <GradientStop Color="#FFE3E3E3"
+                                  Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:CustomComboBox}">
+                    <Grid Height="{Binding Height, RelativeSource={RelativeSource TemplatedParent}}"
+                          Width="{Binding Width, RelativeSource={RelativeSource TemplatedParent}}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Border x:Name="Border"
+                                BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource TemplatedParent}}"
+                                BorderThickness="{Binding BorderThickness, RelativeSource={RelativeSource TemplatedParent}}"
+                                Background="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}"
+                                Grid.ColumnSpan="2"
+                                CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource TemplatedParent}}"
+                                SnapsToDevicePixels="True">
+                            <Border.ToolTip>
+                                <controls:CustomToolTip HorizontalAlignment="Center"
+                                                        Visibility="{Binding TxtToolTip,Converter={StaticResource StringToCollapsedConverter},RelativeSource={RelativeSource TemplatedParent}}"
+                                                        Content="{Binding TxtToolTip, RelativeSource={RelativeSource TemplatedParent}}" />
+                            </Border.ToolTip>
+                        </Border>
+                        <ToggleButton BorderThickness="{Binding BorderThickness, RelativeSource={RelativeSource TemplatedParent}}"
+                                      BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource TemplatedParent}}"
+                                      ClickMode="Press"
+                                      Grid.Column="1"
+                                      Focusable="False"
+                                      Height="{Binding Height, RelativeSource={RelativeSource TemplatedParent}}"
+                                      Width="{Binding Height, RelativeSource={RelativeSource TemplatedParent}}"
+                                      IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                      IsEnabled="{TemplateBinding IsEnabled}"
+                                      Style="{StaticResource HTToggleButtonWithComboBox}" />
+                        <ContentPresenter ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                          Content="{TemplateBinding SelectionBoxItem}"
+                                          HorizontalAlignment="Left"
+                                          VerticalAlignment="Center"
+                                          IsHitTestVisible="False"
+                                          Margin="8,0" />
+                        <Popup AllowsTransparency="True"
+                               Focusable="False"
+                               IsOpen="{TemplateBinding IsDropDownOpen}"
+                               PopupAnimation="Fade"
+                               Placement="Bottom">
+                            <Grid MinWidth="{Binding Width, RelativeSource={RelativeSource TemplatedParent}}"
+                                  SnapsToDevicePixels="True">
+                                <Border BorderBrush="{Binding ComboMenuBorderBrush, RelativeSource={RelativeSource TemplatedParent}}"
+                                        BorderThickness="0.75"
+                                        Background="{Binding ComboMenuBackground, RelativeSource={RelativeSource TemplatedParent}}"
+                                        CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource TemplatedParent}}"
+                                        Margin="1,2"
+                                        Padding="0,6">
+                                    <Border.Effect>
+                                        <DropShadowEffect BlurRadius="4"
+                                                          Color="#FF676767"
+                                                          Direction="270"
+                                                          Opacity="0.5"
+                                                          ShadowDepth="1" />
+                                    </Border.Effect>
+                                    <ScrollViewer CanContentScroll="True"
+                                                  HorizontalScrollBarVisibility="Auto"
+                                                  Margin="1"
+                                                  SnapsToDevicePixels="True"
+                                                  VerticalScrollBarVisibility="Auto">
+                                        <StackPanel Background="Transparent"
+                                                    IsItemsHost="True" />
+                                    </ScrollViewer>
+                                </Border>
+                            </Grid>
+                        </Popup>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDropDownOpen"
+                                 Value="True">
+                            <Setter Property="Background"
+                                    TargetName="Border"
+                                    Value="{Binding MousePressedComboBackground, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="Border"
+                                    Value="{Binding MousePressedComboBorderBrush, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Trigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}"
+                                           Value="True" />
+                                <Condition Binding="{Binding IsDropDownOpen, RelativeSource={RelativeSource Self}}"
+                                           Value="False" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Background"
+                                    TargetName="Border"
+                                    Value="{Binding MouseOverComboBackground, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="Border"
+                                    Value="{Binding MouseOverComboBorderBrush, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </MultiDataTrigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter Property="Background"
+                                    TargetName="Border"
+                                    Value="{Binding MouseDisableComboBackground, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="Border"
+                                    Value="{Binding MouseDisableComboBorderBrush, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type ComboBoxItem}">
+                    <Setter Property="Cursor"
+                            Value="Hand" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ComboBoxItem}">
+                                <Grid Height="24">
+                                    <Border x:Name="Border"
+                                            Background="Transparent" />
+                                    <TextBlock x:Name="Txt"
+                                               Foreground="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}"
+                                               FontSize="{Binding FontSize, RelativeSource={RelativeSource TemplatedParent}}"
+                                               FontFamily="{Binding FontFamily, RelativeSource={RelativeSource TemplatedParent}}"
+                                               Margin="8,0,0,0"
+                                               Text="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}"
+                                               VerticalAlignment="Center" />
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected"
+                                             Value="True">
+                                        <Setter Property="Background"
+                                                TargetName="Border"
+                                                Value="#FF32A0CE" />
+                                        <Setter Property="Foreground"
+                                                TargetName="Txt"
+                                                Value="White" />
+                                    </Trigger>
+                                    <MultiTrigger>
+                                        <MultiTrigger.Conditions>
+                                            <Condition Property="IsSelected"
+                                                       Value="False" />
+                                            <Condition Property="IsMouseOver"
+                                                       Value="True" />
+                                        </MultiTrigger.Conditions>
+                                        <Setter Property="Background"
+                                                TargetName="Border"
+                                                Value="#FFAED7E6" />
+                                        <Setter Property="Foreground"
+                                                TargetName="Txt"
+                                                Value="#FF041430" />
+                                    </MultiTrigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--定义CustomComboBox控件默认样式-->
+    <Style BasedOn="{StaticResource HTComboBoxStyle}"
+           TargetType="{x:Type controls:CustomComboBox}"
+           x:Key="{x:Type controls:CustomComboBox}" />
+</ResourceDictionary>

@@ -1,0 +1,20 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:AOI.Plugin.UIControl.Controls">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/AOI.Plugin.UIControl;Component/Themes/CustomToolTipStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/AOI.Plugin.UIControl;Component/Themes/CustomButtonStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/AOI.Plugin.UIControl;Component/Themes/CustomCheckBoxStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/AOI.Plugin.UIControl;Component/Themes/CustomComboBoxStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/AOI.Plugin.UIControl;Component/Themes/CustomRadioButtonStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/AOI.Plugin.UIControl;Component/Themes/CustomTextBoxStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/AOI.Plugin.UIControl;Component/Themes/CustomDataGridStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/AOI.Plugin.UIControl;Component/Themes/CustomScollerViewerStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/AOI.Plugin.UIControl;Component/Themes/CustomTabControlStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/AOI.Plugin.UIControl;Component/Themes/CustomTreeViewStyles.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/AOI.Plugin.UIControl;Component/Themes/CustomDialogStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+</ResourceDictionary>
