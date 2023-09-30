@@ -43,3 +43,4 @@ E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\HTProj
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\HTProject.Plugin.Control.csproj.CopyComplete
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\HTProject.Plugin.Control.dll
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\HTProject.Plugin.Control.pdb
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\Themes\HTCustomLabelStyles.baml

@@ -64,6 +64,7 @@
     <Compile Include="Controls\HTCustomCheckBox.cs" />
     <Compile Include="Controls\HTCustomComboBox.cs" />
     <Compile Include="Controls\HTCustomDataGrid.cs" />
+    <Compile Include="Controls\HTCustomLabel.cs" />
     <Compile Include="Controls\HTCustomTabControls.cs" />
     <Compile Include="Controls\HTCustomTextBox.cs" />
     <Compile Include="Controls\HTCustomToolTip.cs" />
@@ -89,6 +90,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\HTCustomLabelStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -177,7 +182,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Icons\HeaderIcons\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\addItem_32x32_disable.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -663,6 +670,55 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Icons\zoomOut_32x32_pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\SingalLightIcons\Blue_Flash_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\SingalLightIcons\Blue_Normal_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\SingalLightIcons\Green_Flash_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\SingalLightIcons\Green_Normal_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\SingalLightIcons\Level_64x64.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\SingalLightIcons\Machine_64x64.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\SingalLightIcons\Message_64x64.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\SingalLightIcons\Red_Flash_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\SingalLightIcons\Red_Normal_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\SingalLightIcons\Setting_64x64.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\SingalLightIcons\User_64x64.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\SingalLightIcons\Version_64x64.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\SingalLightIcons\Yellow_Flash_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\SingalLightIcons\Yellow_Normal_24x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\SingalLightIcons\Light_120x40.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

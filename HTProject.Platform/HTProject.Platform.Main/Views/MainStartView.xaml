@@ -7,13 +7,252 @@
                             xmlns:controls="clr-namespace:HTProject.Plugin.Control.Controls;assembly=HTProject.Plugin.Control"
                             xmlns:local="clr-namespace:HTProject.Platform.Main.Views"
                             mc:Ignorable="d"
-                            Title="MainStartView"
+                            Title=""
                             Width="1440"
                             Height="900"
                             MinWidth="1024"
                             MinHeight="768"
                             ResizeMode="CanResizeWithGrip"
                             TextOptions.TextFormattingMode="Ideal"
+                            Style="{StaticResource HTSkinSimpleWindow}"
                             WindowStartupLocation="CenterScreen">
-    <Grid></Grid>
+    <wondows:HTSkinSimpleWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Windows/HTSkinSimpleWindow.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <LinearGradientBrush x:Key="HeaderBackground"
+                                 StartPoint="0,0"
+                                 EndPoint="0,1">
+                <GradientStop Offset="0"
+                              Color="#f2f2f2" />
+                <GradientStop Offset="1"
+                              Color="#d6d4d4" />
+            </LinearGradientBrush>
+        </ResourceDictionary>
+    </wondows:HTSkinSimpleWindow.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition />
+            <RowDefinition Height="80" />
+        </Grid.RowDefinitions>
+        <Border Background="{DynamicResource HeaderBackground}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="160" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="488" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0"
+                            Grid.Row="0"
+                            Orientation="Horizontal">
+                    <Image Width="86"
+                           Height="72"
+                           Margin="32,0,0,0" />
+                </StackPanel>
+                <StackPanel Margin="0,0,0,0"
+                            Orientation="Horizontal"
+                            Grid.Column="1">
+                    <Label FontSize="16"
+                           Foreground="#4c4c4c"
+                           FontFamily="#PingFang SC Bold"
+                           Padding="0"
+                           VerticalContentAlignment="Center"
+                           Content="{Binding Date,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                           MinWidth="94"
+                           Height="24"
+                           Margin="0,0,8,0" />
+                    <Label FontSize="16"
+                           Foreground="#4c4c4c"
+                           FontFamily="#PingFang SC Bold"
+                           Padding="0"
+                           VerticalContentAlignment="Center"
+                           Content="{Binding Time,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                           MinWidth="94"
+                           Height="24"
+                           Margin="0,0,0,0" />
+                </StackPanel>
+                <StackPanel Grid.Column="2"
+                            Grid.Row="0"
+                            Orientation="Horizontal"
+                            Margin="0,0,0,0"
+                            HorizontalAlignment="Right">
+                    <!--ControlState/CommState-->
+                    <StackPanel Orientation="Horizontal"
+                                Margin="32,0,0,0">
+                        <StackPanel Orientation="Horizontal"
+                                    VerticalAlignment="Center">
+                            <Label FontSize="16"
+                                   Foreground="#4c4c4c"
+                                   FontFamily="#PingFang SC Bold"
+                                   Padding="0"
+                                   VerticalContentAlignment="Center"
+                                   Content="Machine :"
+                                   Height="24"
+                                   Margin="0,0,0,0" />
+                            <Label FontSize="16"
+                                   Foreground="#4c4c4c"
+                                   FontFamily="#PingFang SC Bold"
+                                   Padding="0"
+                                   VerticalContentAlignment="Center"
+                                   Content="1"
+                                   Height="24"
+                                   Margin="4,0,0,0" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"
+                                    VerticalAlignment="Center"
+                                    Margin="32,0,0,0">
+                            <Label FontSize="16"
+                                   Foreground="#4c4c4c"
+                                   FontFamily="#PingFang SC Bold"
+                                   Padding="0"
+                                   VerticalContentAlignment="Center"
+                                   Content="Version :"
+                                   Height="24"
+                                   Style="{DynamicResource LabelStyle1}" />
+                            <Label FontSize="16"
+                                   Foreground="#4c4c4c"
+                                   FontFamily="#PingFang SC Bold"
+                                   Padding="0"
+                                   VerticalContentAlignment="Center"
+                                   Content="1.0"
+                                   Height="24"
+                                   Margin="4,0,0,0" />
+                        </StackPanel>
+                    </StackPanel>
+                    <Border Height="40"
+                            BorderThickness="0.75"
+                            BorderBrush="#BEBEBE"
+                            Margin="32,0,32,0" />
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0,0,0,0">
+                        <StackPanel Orientation="Horizontal"
+                                    VerticalAlignment="Center">
+                            <Label FontSize="16"
+                                   Foreground="#4c4c4c"
+                                   FontFamily="/SMEE.BASE.OIPL.Layout;component/Font/#PingFang SC Bold"
+                                   Padding="0"
+                                   VerticalContentAlignment="Center"
+                                   Content="User :"
+                                   Height="24"
+                                   Margin="0,0,0,0" />
+                            <Label FontSize="16"
+                                   Foreground="#4c4c4c"
+                                   FontFamily="/SMEE.BASE.OIPL.Layout;component/Font/#PingFang SC Bold"
+                                   Padding="0"
+                                   VerticalContentAlignment="Center"
+                                   Content="{Binding UserName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                   Height="24"
+                                   Margin="4,0,0,0" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="32,0,0,0"
+                                    VerticalAlignment="Center">
+                            <Label FontSize="16"
+                                   Foreground="#4c4c4c"
+                                   FontFamily="/SMEE.BASE.OIPL.Layout;component/Font/#PingFang SC Bold"
+                                   Padding="0"
+                                   VerticalContentAlignment="Center"
+                                   Content="Level :"
+                                   Height="24" />
+                            <Label FontSize="16"
+                                   Foreground="#4c4c4c"
+                                   FontFamily="/SMEE.BASE.OIPL.Layout;component/Font/#PingFang SC Bold"
+                                   Padding="0"
+                                   VerticalContentAlignment="Center"
+                                   Content="{Binding Role,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                   Margin="4,0,0,0"
+                                   Height="24" />
+                        </StackPanel>
+                    </StackPanel>
+                    <Border Height="40"
+                            BorderThickness="0.75"
+                            BorderBrush="#BEBEBE"
+                            Margin="32,0,32,0" />
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0,0,0,0">
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="0,0,0,0"
+                                    VerticalAlignment="Center">
+                            <Label FontSize="16"
+                                   Foreground="#4c4c4c"
+                                   FontFamily="/SMEE.BASE.OIPL.Layout;component/Font/#PingFang SC Bold"
+                                   Padding="0"
+                                   VerticalContentAlignment="Center"
+                                   Content="Control :"
+                                   Height="24"
+                                   Margin="0,0,0,0" />
+                            <Label FontSize="16"
+                                   Foreground="#4c4c4c"
+                                   FontFamily="/SMEE.BASE.OIPL.Layout;component/Font/#PingFang SC Bold"
+                                   Padding="0"
+                                   VerticalContentAlignment="Center"
+                                   Content="{Binding ControlState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                   Height="24"
+                                   Margin="4,0,0,0" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="32,0,32,0"
+                                    VerticalAlignment="Center">
+                            <Label FontSize="16"
+                                   Foreground="#4c4c4c"
+                                   FontFamily="/SMEE.BASE.OIPL.Layout;component/Font/#PingFang SC Bold"
+                                   Padding="0"
+                                   VerticalContentAlignment="Center"
+                                   Content="Comm :"
+                                   Height="24" />
+                            <Label FontSize="16"
+                                   Foreground="#4c4c4c"
+                                   FontFamily="/SMEE.BASE.OIPL.Layout;component/Font/#PingFang SC Bold"
+                                   Padding="0"
+                                   VerticalContentAlignment="Center"
+                                   Content="{Binding CommunicateState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                   Height="24"
+                                   Margin="4,0,0,0" />
+                        </StackPanel>
+                    </StackPanel>
+                    <Border Height="40"
+                            BorderThickness="0.75"
+                            BorderBrush="#BEBEBE"
+                            Margin="0,0,0,0" />
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Right"
+                            Orientation="Horizontal"
+                            Grid.Column="3"
+                            Margin="32,0,32,0">
+                    <Border Height="40"
+                            Margin="0,0,32,0"
+                            BorderThickness="0.75"
+                            BorderBrush="#BEBEBE" />
+                    <Image Width="120"
+                           Height="40"
+                           Source="../Images/light.png" />
+                    <StackPanel Width="120"
+                                Height="40"
+                                Orientation="Horizontal"
+                                Margin="-110,0,0,0">
+                        <controls:HTCustomStateLabel NormalIcon="../Images/red_normal.png"
+                                                     FlashIcon="../Images/red_flash.png"
+                                                     State="{Binding RedState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                                     Margin="0,8,0,-8" />
+                        <controls:HTCustomStateLabel NormalIcon="../Images/yellow_normal.png"
+                                                     FlashIcon="../Images/yellow_flash.png"
+                                                     State="{Binding YellowState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                                     Margin="0,8,0,-8" />
+                        <controls:HTCustomStateLabel NormalIcon="../Images/blue_normal.png"
+                                                     FlashIcon="../Images/blue_flash.png"
+                                                     State="{Binding BlueState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                                     Margin="0,8,0,-8" />
+                        <controls:HTCustomStateLabel NormalIcon="../Images/green_normal.png"
+                                                     FlashIcon="../Images/green_flash.png"
+                                                     State="{Binding GreenState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                                     Margin="0,8,0,-8" />
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
 </wondows:HTSkinSimpleWindow>

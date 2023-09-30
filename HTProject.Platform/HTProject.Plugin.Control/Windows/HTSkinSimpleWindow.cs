@@ -47,16 +47,16 @@ namespace HTProject.Plugin.Control.Windows
         /// </summary>
         private void InitializeWindowStyle()
         {
-            ResourceDictionary dic = new ResourceDictionary { Source = new Uri(@"/WMWpfProject.Control;component/Windows/HTSkinSimpleWindow.xaml", UriKind.Relative) };
-            Resources.MergedDictionaries.Add(dic);
-            Style = (Style)dic["HTSkinSimpleWindow"];
+            //ResourceDictionary dic = new ResourceDictionary { Source = new Uri(@"/HTProject.Plugin.Control;component/Windows/HTSkinSimpleWindow.xaml", UriKind.Relative) };
+            //Resources.MergedDictionaries.Add(dic);
+            //Style = (Style)dic["HTSkinSimpleWindow"];
 
-            string packUriAnimation = @"/WMWpfProject.Control;component/Styles/HTAnimation.xaml";
-            ResourceDictionary dicAnimation = new ResourceDictionary { Source = new Uri(packUriAnimation, UriKind.Relative) };
-            Resources.MergedDictionaries.Add(dicAnimation);
+            //string packUriAnimation = @"/WMWpfProject.Control;component/Styles/HTAnimation.xaml";
+            //ResourceDictionary dicAnimation = new ResourceDictionary { Source = new Uri(packUriAnimation, UriKind.Relative) };
+            //Resources.MergedDictionaries.Add(dicAnimation);
 
-            StoryboardSlowShow = (Storyboard)FindResource("SlowShow");
-            StoryboardSlowHide = (Storyboard)FindResource("SlowHide");
+            //StoryboardSlowShow = (Storyboard)FindResource("SlowShow");
+            //StoryboardSlowHide = (Storyboard)FindResource("SlowHide");
             
         }
         #endregion

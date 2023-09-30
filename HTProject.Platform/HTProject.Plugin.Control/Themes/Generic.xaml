@@ -1,20 +1,17 @@
-<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="clr-namespace:AOI.Plugin.UIControl.Controls">
-    
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:HTProject.Plugin.Control.Controls">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/AOI.Plugin.UIControl;Component/Themes/CustomToolTipStyles.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/AOI.Plugin.UIControl;Component/Themes/CustomButtonStyles.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/AOI.Plugin.UIControl;Component/Themes/CustomCheckBoxStyles.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/AOI.Plugin.UIControl;Component/Themes/CustomComboBoxStyles.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/AOI.Plugin.UIControl;Component/Themes/CustomRadioButtonStyles.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/AOI.Plugin.UIControl;Component/Themes/CustomTextBoxStyles.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/AOI.Plugin.UIControl;Component/Themes/CustomDataGridStyles.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/AOI.Plugin.UIControl;Component/Themes/CustomScollerViewerStyles.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/AOI.Plugin.UIControl;Component/Themes/CustomTabControlStyles.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/AOI.Plugin.UIControl;Component/Themes/CustomTreeViewStyles.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/AOI.Plugin.UIControl;Component/Themes/CustomDialogStyles.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomToolTipStyles.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomButtonStyles.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomCheckBoxStyles.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomComboBoxStyles.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomRadioButtonStyles.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomTextBoxStyles.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomDataGridStyles.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomScollerViewerStyles.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomTabControlStyles.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomTreeViewStyles.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomDialogStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    
 </ResourceDictionary>
