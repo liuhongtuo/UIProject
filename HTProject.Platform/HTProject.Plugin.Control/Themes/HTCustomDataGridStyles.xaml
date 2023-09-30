@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:controls="clr-namespace:AOI.Plugin.UIControl.Controls">
+                    xmlns:converters="clr-namespace:HTProject.Plugin.Base.Converters;assembly=HTProject.Plugin.Base"
+                    xmlns:controls="clr-namespace:HTProject.Plugin.Control.Controls">
 
     <Style x:Key="DefaultColumnHeaderGripperStyle"
            TargetType="{x:Type Thumb}">
@@ -23,7 +24,7 @@
     </Style>
 
     <Style x:Key="HeaderAndRowDarkStyle"
-           TargetType="{x:Type controls:CustomDataGrid}">
+           TargetType="{x:Type controls:HTCustomDataGrid}">
         <Setter Property="DataGrid.IsReadOnly"
                 Value="True" />
         <Setter Property="DataGrid.SelectionMode"
@@ -233,7 +234,7 @@
         </Setter>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:CustomDataGrid}">
+                <ControlTemplate TargetType="{x:Type controls:HTCustomDataGrid}">
                     <Border Name="Border"
                             Padding="{TemplateBinding Padding}"
                             Background="{TemplateBinding Background}"
@@ -305,7 +306,7 @@
     </Style>
 
     <Style x:Key="OnlyHeaderDarkStyle"
-           TargetType="{x:Type controls:CustomDataGrid}">
+           TargetType="{x:Type controls:HTCustomDataGrid}">
         <Setter Property="DataGrid.IsReadOnly"
                 Value="True" />
         <Setter Property="DataGrid.SelectionMode"
@@ -515,7 +516,7 @@
         </Setter>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:CustomDataGrid}">
+                <ControlTemplate TargetType="{x:Type controls:HTCustomDataGrid}">
                     <Border Name="Border"
                             Padding="{TemplateBinding Padding}"
                             Background="{TemplateBinding Background}"
@@ -587,7 +588,7 @@
     </Style>
 
     <Style  x:Key="OnlyRowDarkStyle"
-            TargetType="{x:Type controls:CustomDataGrid}">
+            TargetType="{x:Type controls:HTCustomDataGrid}">
         <Setter Property="DataGrid.IsReadOnly"
                 Value="True" />
         <Setter Property="DataGrid.SelectionMode"
@@ -797,7 +798,7 @@
         </Setter>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:CustomDataGrid}">
+                <ControlTemplate TargetType="{x:Type controls:HTCustomDataGrid}">
                     <Border Name="Border"
                             Padding="{TemplateBinding Padding}"
                             Background="{TemplateBinding Background}"
@@ -869,7 +870,7 @@
     </Style>
 
     <Style x:Key="HeaderAndRowWhiteStyle"
-           TargetType="{x:Type controls:CustomDataGrid}">
+           TargetType="{x:Type controls:HTCustomDataGrid}">
         <Setter Property="DataGrid.IsReadOnly"
                 Value="True" />
         <Setter Property="DataGrid.SelectionMode"
@@ -1079,7 +1080,7 @@
         </Setter>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:CustomDataGrid}">
+                <ControlTemplate TargetType="{x:Type controls:HTCustomDataGrid}">
                     <Border Name="Border"
                             Padding="{TemplateBinding Padding}"
                             Background="{TemplateBinding Background}"
@@ -1151,7 +1152,7 @@
     </Style>
 
     <Style x:Key="StateToRowBackgroundStyle"
-           TargetType="{x:Type controls:CustomDataGrid}">
+           TargetType="{x:Type controls:HTCustomDataGrid}">
         <Setter Property="DataGrid.IsReadOnly"
                 Value="True" />
         <Setter Property="DataGrid.SelectionMode"
@@ -1282,7 +1283,7 @@
         </Setter>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:CustomDataGrid}">
+                <ControlTemplate TargetType="{x:Type controls:HTCustomDataGrid}">
                     <Border Name="Border"
                             Padding="{TemplateBinding Padding}"
                             Background="{TemplateBinding Background}"
@@ -1354,8 +1355,8 @@
     </Style>
 
     <Style BasedOn="{StaticResource OnlyHeaderDarkStyle}"
-           TargetType="{x:Type controls:CustomDataGrid}"
-           x:Key="{x:Type controls:CustomDataGrid}" />
+           TargetType="{x:Type controls:HTCustomDataGrid}"
+           x:Key="{x:Type controls:HTCustomDataGrid}" />
 
     <Style x:Key="DefaultDataGrid"
            TargetType="{x:Type DataGrid}">

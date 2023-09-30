@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:converters="clr-namespace:AOI.Plugin.UIControl.Converters"
-                    xmlns:controls="clr-namespace:AOI.Plugin.UIControl.Controls">
+                    xmlns:converters="clr-namespace:HTProject.Plugin.Base.Converters;assembly=HTProject.Plugin.Base"
+                    xmlns:controls="clr-namespace:HTProject.Plugin.Control.Controls">
 
     <converters:StringToCollapsedConverter x:Key="StringToCollapsedConverter" />
 
@@ -25,7 +25,7 @@
                             Name="templateRoot"
                             SnapsToDevicePixels="True"
                             Margin="2"
-                            CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type controls:CustomComboBox}}}">
+                            CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type controls:HTCustomComboBox}}}">
                         <Border.Background>
                             <LinearGradientBrush EndPoint="0.5,1"
                                                  StartPoint="0.5,0">
@@ -39,7 +39,7 @@
                                 HorizontalAlignment="Center"
                                 SnapsToDevicePixels="True"
                                 Margin="1.5"
-                                CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type controls:CustomComboBox}}}">
+                                CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type controls:HTCustomComboBox}}}">
                             <Path Name="Arrow"
                                   Data="M-10 0 L0 10 10 0 8 -2 0 6 -8 -2Z"
                                   Stretch="Uniform"
@@ -82,7 +82,7 @@
     </Style>
 
     <Style x:Key="HTComboBoxStyle"
-           TargetType="{x:Type controls:CustomComboBox}">
+           TargetType="{x:Type controls:HTCustomComboBox}">
         <Setter Property="Width"
                 Value="160" />
         <Setter Property="Height"
@@ -128,7 +128,7 @@
         </Setter>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:CustomComboBox}">
+                <ControlTemplate TargetType="{x:Type controls:HTCustomComboBox}">
                     <Grid Height="{Binding Height, RelativeSource={RelativeSource TemplatedParent}}"
                           Width="{Binding Width, RelativeSource={RelativeSource TemplatedParent}}">
                         <Grid.ColumnDefinitions>
@@ -143,7 +143,7 @@
                                 CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource TemplatedParent}}"
                                 SnapsToDevicePixels="True">
                             <Border.ToolTip>
-                                <controls:CustomToolTip HorizontalAlignment="Center"
+                                <controls:HTCustomToolTip HorizontalAlignment="Center"
                                                         Visibility="{Binding TxtToolTip,Converter={StaticResource StringToCollapsedConverter},RelativeSource={RelativeSource TemplatedParent}}"
                                                         Content="{Binding TxtToolTip, RelativeSource={RelativeSource TemplatedParent}}" />
                             </Border.ToolTip>
@@ -287,6 +287,6 @@
 
     <!--定义CustomComboBox控件默认样式-->
     <Style BasedOn="{StaticResource HTComboBoxStyle}"
-           TargetType="{x:Type controls:CustomComboBox}"
-           x:Key="{x:Type controls:CustomComboBox}" />
+           TargetType="{x:Type controls:HTCustomComboBox}"
+           x:Key="{x:Type controls:HTCustomComboBox}" />
 </ResourceDictionary>

@@ -34,14 +34,14 @@ namespace HTProject.Plugin.Control.Controls
         NoIcon = 2,
     }
 
-    public class CustomTextBox : TextBox
+    public class HTCustomTextBox : TextBox
     {
-        static CustomTextBox()
+        static HTCustomTextBox()
         {
-            FrameworkElement.DefaultStyleKeyProperty.OverrideMetadata(typeof(CustomTextBox), new FrameworkPropertyMetadata(typeof(CustomTextBox)));
+            FrameworkElement.DefaultStyleKeyProperty.OverrideMetadata(typeof(HTCustomTextBox), new FrameworkPropertyMetadata(typeof(HTCustomTextBox)));
         }
 
-        public CustomTextBox()
+        public HTCustomTextBox()
         {
             //自定义RoutedUICommand事件，需要实现CanExecute和Executed事件
             CommandBinding iconClickBinding = new CommandBinding(IconClickCommand);
@@ -71,7 +71,7 @@ namespace HTProject.Plugin.Control.Controls
         /// 文本框图标属性
         /// </summary>
         public static readonly DependencyProperty IconProperty =
-            DependencyProperty.Register("Icon", typeof(ImageSource), typeof(CustomTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register("Icon", typeof(ImageSource), typeof(HTCustomTextBox), new PropertyMetadata(null));
 
         /// <summary>
         /// 文本框图标位置属性
@@ -92,7 +92,7 @@ namespace HTProject.Plugin.Control.Controls
         /// 文本框图标位置属性
         /// </summary>
         public static readonly DependencyProperty IconDirectionProperty =
-            DependencyProperty.Register("IconDirection", typeof(IconDirection), typeof(CustomTextBox), new PropertyMetadata(IconDirection.NoIcon));
+            DependencyProperty.Register("IconDirection", typeof(IconDirection), typeof(HTCustomTextBox), new PropertyMetadata(IconDirection.NoIcon));
         #endregion
 
         #region 文本框一般属性
@@ -115,7 +115,7 @@ namespace HTProject.Plugin.Control.Controls
         /// 文本框圆角属性
         /// </summary>
         public static readonly DependencyProperty CornerRadiusProperty =
-            DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(CustomTextBox), new PropertyMetadata(new CornerRadius(0.0)));
+            DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(HTCustomTextBox), new PropertyMetadata(new CornerRadius(0.0)));
 
         /// <summary>
         /// 文本框水印属性
@@ -136,7 +136,7 @@ namespace HTProject.Plugin.Control.Controls
         /// 文本框水印属性
         /// </summary>
         public static readonly DependencyProperty WaterMarkProperty =
-            DependencyProperty.Register("WaterMark", typeof(string), typeof(CustomTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register("WaterMark", typeof(string), typeof(HTCustomTextBox), new PropertyMetadata(null));
 
         /// <summary>
         /// 文本框提示信息属性
@@ -157,7 +157,7 @@ namespace HTProject.Plugin.Control.Controls
         /// 文本框提示信息属性
         /// </summary>
         public static readonly DependencyProperty TxtToolTipProperty =
-            DependencyProperty.Register("TxtToolTip", typeof(string), typeof(CustomTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register("TxtToolTip", typeof(string), typeof(HTCustomTextBox), new PropertyMetadata(null));
 
         /// <summary>
         /// 文本框文本外边距属性
@@ -178,7 +178,7 @@ namespace HTProject.Plugin.Control.Controls
         /// 文本框文本外边距属性
         /// </summary>
         public static readonly DependencyProperty TxtMarginProperty =
-            DependencyProperty.Register("TxtMargin", typeof(Thickness), typeof(CustomTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register("TxtMargin", typeof(Thickness), typeof(HTCustomTextBox), new PropertyMetadata(null));
         #endregion
 
         #region 焦点时文本框属性
@@ -201,7 +201,7 @@ namespace HTProject.Plugin.Control.Controls
         /// 焦点时文本框边框刷属性
         /// </summary>
         public static readonly DependencyProperty MouseFocusBorderBrushProperty =
-            DependencyProperty.Register("MouseFocusBorderBrush", typeof(Brush), typeof(CustomTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register("MouseFocusBorderBrush", typeof(Brush), typeof(HTCustomTextBox), new PropertyMetadata(null));
         #endregion
 
         #region 文本框禁用时属性
@@ -224,7 +224,7 @@ namespace HTProject.Plugin.Control.Controls
         /// 文本框禁用时文本颜色属性
         /// </summary>
         public static readonly DependencyProperty MouseDisableForegroundProperty =
-            DependencyProperty.Register("MouseDisableForeground", typeof(Brush), typeof(CustomTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register("MouseDisableForeground", typeof(Brush), typeof(HTCustomTextBox), new PropertyMetadata(null));
 
         /// <summary>
         /// 鼠标禁用时文本框边框刷属性
@@ -245,7 +245,7 @@ namespace HTProject.Plugin.Control.Controls
         /// 鼠标禁用时文本框边框刷属性
         /// </summary>
         public static readonly DependencyProperty MouseDisableBorderBrushProperty =
-           DependencyProperty.Register("MouseDisableBorderBrush", typeof(Brush), typeof(CustomTextBox), new PropertyMetadata(null));
+           DependencyProperty.Register("MouseDisableBorderBrush", typeof(Brush), typeof(HTCustomTextBox), new PropertyMetadata(null));
 
         /// <summary>
         /// 鼠标禁用时文本框背景色属性
@@ -266,7 +266,7 @@ namespace HTProject.Plugin.Control.Controls
         /// 鼠标禁用时文本框背景色属性
         /// </summary>
         public static readonly DependencyProperty MouseDisableBackgroundProperty =
-            DependencyProperty.Register("MouseDisableBackground", typeof(Brush), typeof(CustomTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register("MouseDisableBackground", typeof(Brush), typeof(HTCustomTextBox), new PropertyMetadata(null));
         #endregion
 
         #region 只读时文本框属性
@@ -289,7 +289,7 @@ namespace HTProject.Plugin.Control.Controls
         /// 只读时文本框边框刷属性
         /// </summary>
         public static readonly DependencyProperty IsReadOnlyBorderBrushProperty =
-            DependencyProperty.Register("IsReadOnlyBorderBrush", typeof(Brush), typeof(CustomTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register("IsReadOnlyBorderBrush", typeof(Brush), typeof(HTCustomTextBox), new PropertyMetadata(null));
 
         /// <summary>
         /// 只读时文本框背景色属性
@@ -310,7 +310,7 @@ namespace HTProject.Plugin.Control.Controls
         /// 只读时文本框背景色属性
         /// </summary>
         public static readonly DependencyProperty IsReadOnlyBackgroundProperty =
-            DependencyProperty.Register("IsReadOnlyBackground", typeof(Brush), typeof(CustomTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register("IsReadOnlyBackground", typeof(Brush), typeof(HTCustomTextBox), new PropertyMetadata(null));
         #endregion
 
         #region 文本框事件
@@ -332,11 +332,11 @@ namespace HTProject.Plugin.Control.Controls
     }
 
     [ImplementPropertyChanged]
-    public class CustomNumticTextBox : CustomTextBox
+    public class HTCustomNumticTextBox : HTCustomTextBox
     {
-        static CustomNumticTextBox()
+        static HTCustomNumticTextBox()
         {
-            FrameworkElement.DefaultStyleKeyProperty.OverrideMetadata(typeof(CustomNumticTextBox), new FrameworkPropertyMetadata(typeof(CustomNumticTextBox)));
+            FrameworkElement.DefaultStyleKeyProperty.OverrideMetadata(typeof(HTCustomNumticTextBox), new FrameworkPropertyMetadata(typeof(HTCustomNumticTextBox)));
         }
 
 
@@ -350,7 +350,7 @@ namespace HTProject.Plugin.Control.Controls
         }
 
         public static readonly DependencyProperty IsNumticTextProperty =
-           DependencyProperty.Register("IsNumticText", typeof(bool), typeof(CustomNumticTextBox), new PropertyMetadata(false, new PropertyChangedCallback((sender, arg) =>
+           DependencyProperty.Register("IsNumticText", typeof(bool), typeof(HTCustomNumticTextBox), new PropertyMetadata(false, new PropertyChangedCallback((sender, arg) =>
            {
 
            }), new CoerceValueCallback((sender, value) =>
@@ -422,13 +422,13 @@ namespace HTProject.Plugin.Control.Controls
     /// 自带数值校验的Int类型TextBox
     /// </summary>
     [ImplementPropertyChanged]
-    public class IntInputCustomNumticTextBox : CustomNumticTextBox
+    public class HTIntInputCustomNumticTextBox : HTCustomNumticTextBox
     {
-        static IntInputCustomNumticTextBox()
+        static HTIntInputCustomNumticTextBox()
         {
-            TextProperty.OverrideMetadata(typeof(IntInputCustomNumticTextBox), new FrameworkPropertyMetadata(null, new PropertyChangedCallback((sender, arg) =>
+            TextProperty.OverrideMetadata(typeof(HTIntInputCustomNumticTextBox), new FrameworkPropertyMetadata(null, new PropertyChangedCallback((sender, arg) =>
             {
-                var textbox = (IntInputCustomNumticTextBox)sender;
+                var textbox = (HTIntInputCustomNumticTextBox)sender;
                 textbox.IsNumticText = true;
                 int v = 0;
                 if (textbox.Text == null)
@@ -442,12 +442,12 @@ namespace HTProject.Plugin.Control.Controls
                 textbox.AfterInputCommand?.Invoke(v);
             }), new CoerceValueCallback((sender, value) =>
             {
-                var textbox = (IntInputCustomNumticTextBox)sender;
+                var textbox = (HTIntInputCustomNumticTextBox)sender;
                 return value;
             })));
         }
 
-        public IntInputCustomNumticTextBox()
+        public HTIntInputCustomNumticTextBox()
         {
             //this.IsNumticText = false;
         }
@@ -459,13 +459,13 @@ namespace HTProject.Plugin.Control.Controls
         }
 
         public static readonly DependencyProperty ValueProperty =
-            DependencyProperty.Register("Value", typeof(int), typeof(IntInputCustomNumticTextBox), new PropertyMetadata(0, new PropertyChangedCallback((sender, arg) =>
+            DependencyProperty.Register("Value", typeof(int), typeof(HTIntInputCustomNumticTextBox), new PropertyMetadata(0, new PropertyChangedCallback((sender, arg) =>
             {
-                var textbox = (IntInputCustomNumticTextBox)sender;
+                var textbox = (HTIntInputCustomNumticTextBox)sender;
                 textbox.CheckValue(textbox.Value);
             }), new CoerceValueCallback((sender, value) =>
             {
-                var textbox = (IntInputCustomNumticTextBox)sender;
+                var textbox = (HTIntInputCustomNumticTextBox)sender;
                 textbox.Text = value.ToString();
                 return value;
             })));
@@ -478,7 +478,7 @@ namespace HTProject.Plugin.Control.Controls
         }
 
         public static readonly DependencyProperty DefaultValueProperty =
-            DependencyProperty.Register("DefaultValue", typeof(int?), typeof(IntInputCustomNumticTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register("DefaultValue", typeof(int?), typeof(HTIntInputCustomNumticTextBox), new PropertyMetadata(null));
 
         public int Step
         {
@@ -487,7 +487,7 @@ namespace HTProject.Plugin.Control.Controls
         }
 
         public static readonly DependencyProperty StepProperty =
-            DependencyProperty.Register("Step", typeof(int), typeof(IntInputCustomNumticTextBox), new PropertyMetadata(1));
+            DependencyProperty.Register("Step", typeof(int), typeof(HTIntInputCustomNumticTextBox), new PropertyMetadata(1));
 
 
         public ICommand ValueChangedCommand
@@ -497,7 +497,7 @@ namespace HTProject.Plugin.Control.Controls
         }
 
         public static readonly DependencyProperty ValueChangedCommandProperty =
-            DependencyProperty.Register("ValueChangedCommand", typeof(ICommand), typeof(IntInputCustomNumticTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register("ValueChangedCommand", typeof(ICommand), typeof(HTIntInputCustomNumticTextBox), new PropertyMetadata(null));
 
         public Action<int> AfterSelfCheckCommand
         {
@@ -506,7 +506,7 @@ namespace HTProject.Plugin.Control.Controls
         }
 
         public static readonly DependencyProperty AfterSelfCheckCommandProperty =
-            DependencyProperty.Register("AfterSelfCheckCommand", typeof(Action<int>), typeof(IntInputCustomNumticTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register("AfterSelfCheckCommand", typeof(Action<int>), typeof(HTIntInputCustomNumticTextBox), new PropertyMetadata(null));
 
 
         public Action<int> AfterInputCommand
@@ -516,7 +516,7 @@ namespace HTProject.Plugin.Control.Controls
         }
 
         public static readonly DependencyProperty AfterInputCommandProperty =
-            DependencyProperty.Register("AfterInputCommand", typeof(Action<int>), typeof(IntInputCustomNumticTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register("AfterInputCommand", typeof(Action<int>), typeof(HTIntInputCustomNumticTextBox), new PropertyMetadata(null));
 
 
         #region Minimun && Maximun
@@ -527,9 +527,9 @@ namespace HTProject.Plugin.Control.Controls
         }
 
         public static readonly DependencyProperty MaximumProperty =
-            DependencyProperty.Register("Maximum", typeof(int), typeof(IntInputCustomNumticTextBox), new PropertyMetadata(int.MaxValue, new PropertyChangedCallback((sender, arg) =>
+            DependencyProperty.Register("Maximum", typeof(int), typeof(HTIntInputCustomNumticTextBox), new PropertyMetadata(int.MaxValue, new PropertyChangedCallback((sender, arg) =>
             {
-                var textbox = (IntInputCustomNumticTextBox)sender;
+                var textbox = (HTIntInputCustomNumticTextBox)sender;
                 textbox.Value = (textbox.Value).Between(textbox.Maximum, textbox.Minimum);
                 textbox.AfterSelfCheckCommand?.Invoke(textbox.Value);
                 textbox.ValueChangedCommand?.Execute(null);
@@ -547,9 +547,9 @@ namespace HTProject.Plugin.Control.Controls
         }
 
         public static readonly DependencyProperty MinimumProperty =
-           DependencyProperty.Register("Minimum", typeof(int), typeof(IntInputCustomNumticTextBox), new PropertyMetadata(int.MinValue, new PropertyChangedCallback((sender, arg) =>
+           DependencyProperty.Register("Minimum", typeof(int), typeof(HTIntInputCustomNumticTextBox), new PropertyMetadata(int.MinValue, new PropertyChangedCallback((sender, arg) =>
            {
-               var textbox = (IntInputCustomNumticTextBox)sender;
+               var textbox = (HTIntInputCustomNumticTextBox)sender;
                textbox.Value = (textbox.Value).Between(textbox.Maximum, textbox.Minimum);
                textbox.AfterSelfCheckCommand?.Invoke(textbox.Value);
                textbox.ValueChangedCommand?.Execute(null);
@@ -672,13 +672,13 @@ namespace HTProject.Plugin.Control.Controls
     /// 自带数值校验的Doublele类型TextBox
     /// </summary>
     [ImplementPropertyChanged]
-    public class DoubleInputCustomNumticTextBox : CustomNumticTextBox
+    public class HTDoubleInputCustomNumticTextBox : HTCustomNumticTextBox
     {
-        static DoubleInputCustomNumticTextBox()
+        static HTDoubleInputCustomNumticTextBox()
         {
-            TextProperty.OverrideMetadata(typeof(DoubleInputCustomNumticTextBox), new FrameworkPropertyMetadata(null, new PropertyChangedCallback((sender, arg) =>
+            TextProperty.OverrideMetadata(typeof(HTDoubleInputCustomNumticTextBox), new FrameworkPropertyMetadata(null, new PropertyChangedCallback((sender, arg) =>
             {
-                var textbox = (DoubleInputCustomNumticTextBox)sender;
+                var textbox = (HTDoubleInputCustomNumticTextBox)sender;
                 double v = 0;
                 if (textbox.Text == null)
                 {
@@ -691,12 +691,12 @@ namespace HTProject.Plugin.Control.Controls
                 textbox.AfterInputCommand?.Invoke(v);
             }), new CoerceValueCallback((sender, value) =>
             {
-                var textbox = (DoubleInputCustomNumticTextBox)sender;
+                var textbox = (HTDoubleInputCustomNumticTextBox)sender;
                 return value;
             })));
         }
 
-        public DoubleInputCustomNumticTextBox()
+        public HTDoubleInputCustomNumticTextBox()
         {
             this.IsNumticText = true;
         }
@@ -708,13 +708,13 @@ namespace HTProject.Plugin.Control.Controls
         }
 
         public static readonly DependencyProperty ValueProperty =
-            DependencyProperty.Register("Value", typeof(double), typeof(DoubleInputCustomNumticTextBox), new PropertyMetadata(0.0, new PropertyChangedCallback((sender, arg) =>
+            DependencyProperty.Register("Value", typeof(double), typeof(HTDoubleInputCustomNumticTextBox), new PropertyMetadata(0.0, new PropertyChangedCallback((sender, arg) =>
             {
-                var textbox = (DoubleInputCustomNumticTextBox)sender;
+                var textbox = (HTDoubleInputCustomNumticTextBox)sender;
                 textbox.CheckValue(textbox.Value);
             }), new CoerceValueCallback((sender, value) =>
             {
-                var textbox = (DoubleInputCustomNumticTextBox)sender;
+                var textbox = (HTDoubleInputCustomNumticTextBox)sender;
                 textbox.Text = value.ToString();
                 return value;
             })));
@@ -727,7 +727,7 @@ namespace HTProject.Plugin.Control.Controls
         }
 
         public static readonly DependencyProperty DefaultValueProperty =
-            DependencyProperty.Register("DefaultValue", typeof(double?), typeof(DoubleInputCustomNumticTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register("DefaultValue", typeof(double?), typeof(HTDoubleInputCustomNumticTextBox), new PropertyMetadata(null));
 
         public ICommand ValueChangedCommand
         {
@@ -736,7 +736,7 @@ namespace HTProject.Plugin.Control.Controls
         }
 
         public static readonly DependencyProperty ValueChangedCommandProperty =
-            DependencyProperty.Register("ValueChangedCommand", typeof(ICommand), typeof(DoubleInputCustomNumticTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register("ValueChangedCommand", typeof(ICommand), typeof(HTDoubleInputCustomNumticTextBox), new PropertyMetadata(null));
 
         public Action<double> AfterSelfCheckCommand
         {
@@ -745,7 +745,7 @@ namespace HTProject.Plugin.Control.Controls
         }
 
         public static readonly DependencyProperty AfterSelfCheckCommandProperty =
-            DependencyProperty.Register("AfterSelfCheckCommand", typeof(Action<double>), typeof(DoubleInputCustomNumticTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register("AfterSelfCheckCommand", typeof(Action<double>), typeof(HTDoubleInputCustomNumticTextBox), new PropertyMetadata(null));
 
 
         public Action<double> AfterInputCommand
@@ -755,7 +755,7 @@ namespace HTProject.Plugin.Control.Controls
         }
 
         public static readonly DependencyProperty AfterInputCommandProperty =
-            DependencyProperty.Register("AfterInputCommand", typeof(Action<double>), typeof(DoubleInputCustomNumticTextBox), new PropertyMetadata(null));
+            DependencyProperty.Register("AfterInputCommand", typeof(Action<double>), typeof(HTDoubleInputCustomNumticTextBox), new PropertyMetadata(null));
 
 
         public double Step
@@ -765,7 +765,7 @@ namespace HTProject.Plugin.Control.Controls
         }
 
         public static readonly DependencyProperty StepProperty =
-            DependencyProperty.Register("Step", typeof(double), typeof(DoubleInputCustomNumticTextBox), new PropertyMetadata(1.0));
+            DependencyProperty.Register("Step", typeof(double), typeof(HTDoubleInputCustomNumticTextBox), new PropertyMetadata(1.0));
 
 
         #region Minimun && Maximun
@@ -776,9 +776,9 @@ namespace HTProject.Plugin.Control.Controls
         }
 
         public static readonly DependencyProperty MaximumProperty =
-            DependencyProperty.Register("Maximum", typeof(double), typeof(DoubleInputCustomNumticTextBox), new PropertyMetadata(double.MaxValue, new PropertyChangedCallback((sender, arg) =>
+            DependencyProperty.Register("Maximum", typeof(double), typeof(HTDoubleInputCustomNumticTextBox), new PropertyMetadata(double.MaxValue, new PropertyChangedCallback((sender, arg) =>
             {
-                var textbox = (DoubleInputCustomNumticTextBox)sender;
+                var textbox = (HTDoubleInputCustomNumticTextBox)sender;
                 textbox.Value = (textbox.Value).Between(textbox.Maximum, textbox.Minimum, textbox.DefaultValue);
                 textbox.AfterSelfCheckCommand?.Invoke(textbox.Value);
                 textbox.ValueChangedCommand?.Execute(null);
@@ -796,9 +796,9 @@ namespace HTProject.Plugin.Control.Controls
         }
 
         public static readonly DependencyProperty MinimumProperty =
-           DependencyProperty.Register("Minimum", typeof(double), typeof(DoubleInputCustomNumticTextBox), new PropertyMetadata(double.MinValue, new PropertyChangedCallback((sender, arg) =>
+           DependencyProperty.Register("Minimum", typeof(double), typeof(HTDoubleInputCustomNumticTextBox), new PropertyMetadata(double.MinValue, new PropertyChangedCallback((sender, arg) =>
            {
-               var textbox = (DoubleInputCustomNumticTextBox)sender;
+               var textbox = (HTDoubleInputCustomNumticTextBox)sender;
                textbox.Value = (textbox.Value).Between(textbox.Maximum, textbox.Minimum, textbox.DefaultValue);
                textbox.AfterSelfCheckCommand?.Invoke(textbox.Value);
                textbox.ValueChangedCommand?.Execute(null);

@@ -62,8 +62,9 @@
   <ItemGroup>
     <Compile Include="Controls\HTCustomButton.cs" />
     <Compile Include="Controls\HTCustomCheckBox.cs" />
-    <Compile Include="Controls\HTCustomCloseTabItem.cs" />
     <Compile Include="Controls\HTCustomComboBox.cs" />
+    <Compile Include="Controls\HTCustomDataGrid.cs" />
+    <Compile Include="Controls\HTCustomTabControls.cs" />
     <Compile Include="Controls\HTCustomTextBox.cs" />
     <Compile Include="Controls\HTCustomToolTip.cs" />
     <Compile Include="Controls\HTRadioButton.cs" />

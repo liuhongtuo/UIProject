@@ -1,7 +1,18 @@
 ﻿E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\GeneratedInternalTypeHelper.g.cs
 
-FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Styles\HTDataGrid.xaml;;
-FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Styles\HTRadioButton.xaml;;
-FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Styles\HTScrollViewer.xaml;;
+FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Themes\Generic.xaml;;
+FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Themes\HTCustomButtonStyles.xaml;;
+FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Themes\HTCustomCheckBoxStyles.xaml;;
+FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Themes\HTCustomComboBoxStyles.xaml;;
+FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Themes\HTCustomDataGridStyles.xaml;;
+FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Themes\HTCustomDialogStyles.xaml;;
+FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Themes\HTCustomRadioButtonStyles.xaml;;
+FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Themes\HTCustomTabControlStyles.xaml;;
+FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Themes\HTCustomTextBoxStyles.xaml;;
+FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Themes\HTCustomToolTipStyles.xaml;;
+FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Themes\HTCustomTreeViewStyles.xaml;;
+FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Themes\HTDataGrid.xaml;;
+FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Themes\HTRadioButton.xaml;;
+FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Themes\HTScrollViewer.xaml;;
 FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Windows\HTSkinSimpleWindow.xaml;;
 

@@ -2,18 +2,18 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
                     xmlns:interaction="http://schemas.microsoft.com/expression/2010/interactions"
-                    xmlns:converters="clr-namespace:AOI.Plugin.UIControl.Converters"
-                    xmlns:controls="clr-namespace:AOI.Plugin.UIControl.Controls">
+                    xmlns:converters="clr-namespace:HTProject.Plugin.Base.Converters;assembly=HTProject.Plugin.Base"
+                    xmlns:controls="clr-namespace:HTProject.Plugin.Control.Controls">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/AOI.Plugin.UIControl;Component/Themes/CustomButtonStyles.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomButtonStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <converters:StringToCollapsedConverter x:Key="StringToCollapsedConverter" />
     <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
 
 
     <Style x:Key="HTTextBoxStyle"
-           TargetType="{x:Type controls:CustomTextBox}">
+           TargetType="{x:Type controls:HTCustomTextBox}">
         <Setter Property="Width"
                 Value="160" />
         <Setter Property="Height"
@@ -58,7 +58,7 @@
                 Value="#FF787980" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:CustomTextBox}">
+                <ControlTemplate TargetType="{x:Type controls:HTCustomTextBox}">
                     <Grid Height="{Binding Height, RelativeSource={RelativeSource TemplatedParent}}"
                           Width="{Binding Width, RelativeSource={RelativeSource TemplatedParent}}">
                         <Grid.ColumnDefinitions>
@@ -87,7 +87,7 @@
                                       Grid.Column="1"
                                       Margin="{Binding TxtMargin, RelativeSource={RelativeSource TemplatedParent}}">
                             <ScrollViewer.ToolTip>
-                                <controls:CustomToolTip HorizontalAlignment="Center"
+                                <controls:HTCustomToolTip HorizontalAlignment="Center"
                                                         Visibility="{Binding TxtToolTip,Converter={StaticResource StringToCollapsedConverter},RelativeSource={RelativeSource TemplatedParent}}"
                                                         Content="{Binding TxtToolTip, RelativeSource={RelativeSource TemplatedParent}}" />
                             </ScrollViewer.ToolTip>
@@ -110,7 +110,7 @@
                                VerticalAlignment="Center">
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="MouseLeftButtonUp">
-                                    <i:InvokeCommandAction Command="controls:CustomTextBox.IconClickCommand" />
+                                    <i:InvokeCommandAction Command="controls:HTCustomTextBox.IconClickCommand" />
                                 </i:EventTrigger>
                             </i:Interaction.Triggers>
                         </Image>
@@ -179,7 +179,7 @@
     </Style>
 
     <Style x:Key="HTRichTextBox"
-           TargetType="{x:Type controls:CustomTextBox}">
+           TargetType="{x:Type controls:HTCustomTextBox}">
         <Setter	Property="BorderThickness"
                 Value="0" />
         <Setter	Property="Background"
@@ -192,11 +192,11 @@
                 Value="#041430" />
         <Setter	Property="FontFamily"
                 Value="#PingFang SC Medium" />
-        <Setter Property="controls:CustomTextBox.MouseDisableForeground"
+        <Setter Property="controls:HTCustomTextBox.MouseDisableForeground"
                 Value="#4D586B" />
         <Setter	Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:CustomTextBox}">
+                <ControlTemplate TargetType="{x:Type controls:HTCustomTextBox}">
                     <Grid>
                         <Border	Name="Border"
                                 BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource TemplatedParent}}"
@@ -216,7 +216,7 @@
                                    FontSize="16"
                                    Foreground="#B7B8BA"
                                    FontFamily="#PingFang SC Medium"
-                                   Text="{TemplateBinding controls:CustomTextBox.WaterMark}" />
+                                   Text="{TemplateBinding controls:HTCustomTextBox.WaterMark}" />
                     </Grid>
                     <ControlTemplate.Triggers>
                         <DataTrigger Value=""
@@ -238,11 +238,11 @@
     </Style>
 
     <Style BasedOn="{StaticResource HTTextBoxStyle}"
-           TargetType="{x:Type controls:CustomTextBox}"
-           x:Key="{x:Type controls:CustomTextBox}" />
+           TargetType="{x:Type controls:HTCustomTextBox}"
+           x:Key="{x:Type controls:HTCustomTextBox}" />
 
     <Style  x:Key="CustomNumticTextBoxStyle"
-            TargetType="{x:Type controls:CustomNumticTextBox}">
+            TargetType="{x:Type controls:HTCustomNumticTextBox}">
         <Setter Property="Width"
                 Value="160" />
         <Setter Property="Height"
@@ -291,7 +291,7 @@
                 Value="#FF787980" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:CustomNumticTextBox}">
+                <ControlTemplate TargetType="{x:Type controls:HTCustomNumticTextBox}">
                     <Grid Height="{Binding Height, RelativeSource={RelativeSource TemplatedParent}}"
                           Width="{Binding Width, RelativeSource={RelativeSource TemplatedParent}}">
                         <Grid.ColumnDefinitions>
@@ -318,7 +318,7 @@
                                       Grid.Column="1"
                                       Margin="{Binding TxtMargin, RelativeSource={RelativeSource TemplatedParent}}">
                             <ScrollViewer.ToolTip>
-                                <controls:CustomToolTip Content="{Binding TxtToolTip, RelativeSource={RelativeSource TemplatedParent}}"
+                                <controls:HTCustomToolTip Content="{Binding TxtToolTip, RelativeSource={RelativeSource TemplatedParent}}"
                                                         Visibility="{Binding TxtToolTip, RelativeSource={RelativeSource TemplatedParent},Converter= {StaticResource StringToCollapsedConverter}}"
                                                         ToolTipType="{Binding ToolTipType, RelativeSource={RelativeSource TemplatedParent}}"
                                                         Placement="Bottom" />
@@ -350,7 +350,7 @@
                                 CornerRadius="{TemplateBinding CornerRadius}">
                             <UniformGrid Columns="1"
                                          Rows="2">
-                                <controls:CustomButton Command="{Binding UpCommand,RelativeSource= {RelativeSource TemplatedParent}}"
+                                <controls:HTCustomButton Command="{Binding UpCommand,RelativeSource= {RelativeSource TemplatedParent}}"
                                                        Style="{DynamicResource HTButtonStyle}"
                                                        Content="∧"
                                                        Width="Auto"
@@ -361,7 +361,7 @@
                                                        Margin="0"
                                                        ButtonType="OnlyText"
                                                        Focusable="False" />
-                                <controls:CustomButton Command="{Binding DownCommand,RelativeSource= {RelativeSource TemplatedParent}}"
+                                <controls:HTCustomButton Command="{Binding DownCommand,RelativeSource= {RelativeSource TemplatedParent}}"
                                                        Style="{DynamicResource HTButtonStyle}"
                                                        Content="∨"
                                                        Width="Auto"
@@ -440,10 +440,10 @@
     </Style>
 
     <Style BasedOn="{StaticResource CustomNumticTextBoxStyle}"
-           TargetType="{x:Type controls:DoubleInputCustomNumticTextBox}"
-           x:Key="{x:Type controls:DoubleInputCustomNumticTextBox}" />
+           TargetType="{x:Type controls:HTDoubleInputCustomNumticTextBox}"
+           x:Key="{x:Type controls:HTDoubleInputCustomNumticTextBox}" />
 
     <Style BasedOn="{StaticResource CustomNumticTextBoxStyle}"
-           TargetType="{x:Type controls:IntInputCustomNumticTextBox}"
-           x:Key="{x:Type controls:IntInputCustomNumticTextBox}" />
+           TargetType="{x:Type controls:HTIntInputCustomNumticTextBox}"
+           x:Key="{x:Type controls:HTIntInputCustomNumticTextBox}" />
 </ResourceDictionary>

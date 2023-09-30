@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:controls="clr-namespace:AOI.Plugin.UIControl.Controls">
+                    xmlns:converters="clr-namespace:HTProject.Plugin.Base.Converters;assembly=HTProject.Plugin.Base"
+                    xmlns:controls="clr-namespace:HTProject.Plugin.Control.Controls">
 
     <Style x:Key="CustomToolTipStyle"
            TargetType="ToolTip">
@@ -60,10 +61,10 @@
     </Style>
 
     <Style  x:Key="HTToolTip"
-            TargetType="{x:Type controls:CustomToolTip}">
-        <Setter Property="controls:CustomToolTip.CornerRadius"
+            TargetType="{x:Type controls:HTCustomToolTip}">
+        <Setter Property="controls:HTCustomToolTip.CornerRadius"
                 Value="3" />
-        <Setter Property="controls:CustomToolTip.NormalToolTipBackground">
+        <Setter Property="controls:HTCustomToolTip.NormalToolTipBackground">
             <Setter.Value>
                 <LinearGradientBrush StartPoint="0,0"
                                      EndPoint="0,1">
@@ -74,7 +75,7 @@
                 </LinearGradientBrush>
             </Setter.Value>
         </Setter>
-        <Setter Property="controls:CustomToolTip.ErrorToolTipBackground">
+        <Setter Property="controls:HTCustomToolTip.ErrorToolTipBackground">
             <Setter.Value>
                 <LinearGradientBrush StartPoint="0,0"
                                      EndPoint="0,1">
@@ -93,7 +94,7 @@
                 Value="0" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:CustomToolTip}">
+                <ControlTemplate TargetType="{x:Type controls:HTCustomToolTip}">
                     <StackPanel>
                         <Path Name="Arrow"
                               Width="8"
@@ -148,6 +149,6 @@
 
     <!--定义CustomToolTip控件默认样式-->
     <Style BasedOn="{StaticResource HTToolTip}"
-           TargetType="{x:Type controls:CustomToolTip}"
-           x:Key="{x:Type controls:CustomToolTip}" />
+           TargetType="{x:Type controls:HTCustomToolTip}"
+           x:Key="{x:Type controls:HTCustomToolTip}" />
 </ResourceDictionary>

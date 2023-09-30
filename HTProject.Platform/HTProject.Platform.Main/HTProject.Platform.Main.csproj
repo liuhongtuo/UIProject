@@ -34,8 +34,32 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Caliburn.Micro">
+      <HintPath>..\..\ThridOfPartReference\Caliburn.Micro.Core.3.0.3\lib\net45\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform">
+      <HintPath>..\..\ThridOfPartReference\Caliburn.Micro.3.0.3\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform.Core">
+      <HintPath>..\..\ThridOfPartReference\Caliburn.Micro.3.0.3\lib\net45\Caliburn.Micro.Platform.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism">
+      <HintPath>..\..\ThridOfPartReference\Prism.Core.6.2.0\lib\net45\Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Mef.Wpf">
+      <HintPath>..\..\ThridOfPartReference\Prism.Mef.6.2.0\lib\net45\Prism.Mef.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Wpf">
+      <HintPath>..\..\ThridOfPartReference\Prism.Wpf.6.2.0\lib\net45\Prism.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="PropertyChanged">
+      <HintPath>..\..\ThridOfPartReference\PropertyChanged.Fody.1.52.1\Lib\dotnet\PropertyChanged.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\..\ThridOfPartReference\Prism.Wpf.6.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -54,20 +78,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="Managers\PageManager.cs" />
+    <Compile Include="ViewModels\EngineeringViewModel.cs" />
+    <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\MainStartViewModel.cs" />
+    <Compile Include="ViewModels\ProductionViewModel.cs" />
+    <Compile Include="Views\EngineeringView.xaml.cs">
+      <DependentUpon>EngineeringView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainStartView.xaml.cs">
+      <DependentUpon>MainStartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductionView.xaml.cs">
+      <DependentUpon>ProductionView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HelloBootStrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -92,6 +126,37 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\EngineeringView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainStartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProductionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HTProject.Plugin.Base\HTProject.Plugin.Base.csproj">
+      <Project>{aaa29475-b5ed-4350-99b0-287c1066807a}</Project>
+      <Name>HTProject.Plugin.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HTProject.Plugin.Control\HTProject.Plugin.Control.csproj">
+      <Project>{4c371a68-62cc-4c97-af77-17d63e6540da}</Project>
+      <Name>HTProject.Plugin.Control</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

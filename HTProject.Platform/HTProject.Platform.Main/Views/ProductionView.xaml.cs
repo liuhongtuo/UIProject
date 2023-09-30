@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HTProject.Platform.Main
+namespace HTProject.Platform.Main.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ProductionView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ProductionView : Page
     {
-        public MainWindow()
+        public ProductionView()
         {
             InitializeComponent();
         }

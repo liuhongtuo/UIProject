@@ -1,0 +1,19 @@
+﻿<wondows:HTSkinSimpleWindow x:Class="HTProject.Platform.Main.Views.MainStartView"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:wondows="clr-namespace:HTProject.Plugin.Control.Windows;assembly=HTProject.Plugin.Control"
+                            xmlns:controls="clr-namespace:HTProject.Plugin.Control.Controls;assembly=HTProject.Plugin.Control"
+                            xmlns:local="clr-namespace:HTProject.Platform.Main.Views"
+                            mc:Ignorable="d"
+                            Title="MainStartView"
+                            Width="1440"
+                            Height="900"
+                            MinWidth="1024"
+                            MinHeight="768"
+                            ResizeMode="CanResizeWithGrip"
+                            TextOptions.TextFormattingMode="Ideal"
+                            WindowStartupLocation="CenterScreen">
+    <Grid></Grid>
+</wondows:HTSkinSimpleWindow>
