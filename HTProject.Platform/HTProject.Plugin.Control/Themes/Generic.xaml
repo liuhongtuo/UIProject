@@ -13,5 +13,6 @@
         <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomTabControlStyles.xaml" />
         <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomTreeViewStyles.xaml" />
         <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomDialogStyles.xaml" />
+        <!--<ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomLabelStyles.xaml" />-->
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

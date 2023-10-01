@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using HTProject.Platform.Main.Managers;
+using HTProject.Plugin.Control.Controls;
 using Prism.Commands;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,10 @@ namespace HTProject.Platform.Main.ViewModels
             }
         }
 
+        public LightState RedState { get; set; } = LightState.Normal;
+        public LightState YellowState { get; set; } = LightState.Normal;
+        public LightState BlueState { get; set; } = LightState.Normal;
+        public LightState GreenState { get; set; } = LightState.Normal;
         public MainStartViewModel()
         {
 

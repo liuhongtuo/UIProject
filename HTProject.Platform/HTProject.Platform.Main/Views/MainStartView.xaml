@@ -5,6 +5,7 @@
                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                             xmlns:wondows="clr-namespace:HTProject.Plugin.Control.Windows;assembly=HTProject.Plugin.Control"
                             xmlns:controls="clr-namespace:HTProject.Plugin.Control.Controls;assembly=HTProject.Plugin.Control"
+                            xmlns:userControls="clr-namespace:HTProject.Plugin.Control.UserControls;assembly=HTProject.Plugin.Control"
                             xmlns:local="clr-namespace:HTProject.Platform.Main.Views"
                             mc:Ignorable="d"
                             Title=""
@@ -20,6 +21,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Windows/HTSkinSimpleWindow.xaml" />
+                <!--<ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/Generic.xaml" />-->
             </ResourceDictionary.MergedDictionaries>
             <LinearGradientBrush x:Key="HeaderBackground"
                                  StartPoint="0,0"
@@ -43,7 +45,7 @@
                     <ColumnDefinition Width="160" />
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="488" />
+                    <ColumnDefinition Width="100" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0"
@@ -56,7 +58,7 @@
                 <StackPanel Margin="0,0,0,0"
                             Orientation="Horizontal"
                             Grid.Column="1">
-                    <Label FontSize="16"
+                    <!--<Label FontSize="16"
                            Foreground="#4c4c4c"
                            FontFamily="#PingFang SC Bold"
                            Padding="0"
@@ -73,7 +75,7 @@
                            Content="{Binding Time,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                            MinWidth="94"
                            Height="24"
-                           Margin="0,0,0,0" />
+                           Margin="0,0,0,0" />-->
                 </StackPanel>
                 <StackPanel Grid.Column="2"
                             Grid.Row="0"
@@ -111,8 +113,7 @@
                                    Padding="0"
                                    VerticalContentAlignment="Center"
                                    Content="Version :"
-                                   Height="24"
-                                   Style="{DynamicResource LabelStyle1}" />
+                                   Height="24" />
                             <Label FontSize="16"
                                    Foreground="#4c4c4c"
                                    FontFamily="#PingFang SC Bold"
@@ -133,7 +134,7 @@
                                     VerticalAlignment="Center">
                             <Label FontSize="16"
                                    Foreground="#4c4c4c"
-                                   FontFamily="/SMEE.BASE.OIPL.Layout;component/Font/#PingFang SC Bold"
+                                   FontFamily="#PingFang SC Bold"
                                    Padding="0"
                                    VerticalContentAlignment="Center"
                                    Content="User :"
@@ -141,7 +142,7 @@
                                    Margin="0,0,0,0" />
                             <Label FontSize="16"
                                    Foreground="#4c4c4c"
-                                   FontFamily="/SMEE.BASE.OIPL.Layout;component/Font/#PingFang SC Bold"
+                                   FontFamily="#PingFang SC Bold"
                                    Padding="0"
                                    VerticalContentAlignment="Center"
                                    Content="{Binding UserName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
@@ -153,14 +154,14 @@
                                     VerticalAlignment="Center">
                             <Label FontSize="16"
                                    Foreground="#4c4c4c"
-                                   FontFamily="/SMEE.BASE.OIPL.Layout;component/Font/#PingFang SC Bold"
+                                   FontFamily="#PingFang SC Bold"
                                    Padding="0"
                                    VerticalContentAlignment="Center"
                                    Content="Level :"
                                    Height="24" />
                             <Label FontSize="16"
                                    Foreground="#4c4c4c"
-                                   FontFamily="/SMEE.BASE.OIPL.Layout;component/Font/#PingFang SC Bold"
+                                   FontFamily="#PingFang SC Bold"
                                    Padding="0"
                                    VerticalContentAlignment="Center"
                                    Content="{Binding Role,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
@@ -172,56 +173,23 @@
                             BorderThickness="0.75"
                             BorderBrush="#BEBEBE"
                             Margin="32,0,32,0" />
-                    <StackPanel Orientation="Horizontal"
-                                Margin="0,0,0,0">
-                        <StackPanel Orientation="Horizontal"
-                                    Margin="0,0,0,0"
-                                    VerticalAlignment="Center">
-                            <Label FontSize="16"
-                                   Foreground="#4c4c4c"
-                                   FontFamily="/SMEE.BASE.OIPL.Layout;component/Font/#PingFang SC Bold"
-                                   Padding="0"
-                                   VerticalContentAlignment="Center"
-                                   Content="Control :"
-                                   Height="24"
-                                   Margin="0,0,0,0" />
-                            <Label FontSize="16"
-                                   Foreground="#4c4c4c"
-                                   FontFamily="/SMEE.BASE.OIPL.Layout;component/Font/#PingFang SC Bold"
-                                   Padding="0"
-                                   VerticalContentAlignment="Center"
-                                   Content="{Binding ControlState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                                   Height="24"
-                                   Margin="4,0,0,0" />
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal"
-                                    Margin="32,0,32,0"
-                                    VerticalAlignment="Center">
-                            <Label FontSize="16"
-                                   Foreground="#4c4c4c"
-                                   FontFamily="/SMEE.BASE.OIPL.Layout;component/Font/#PingFang SC Bold"
-                                   Padding="0"
-                                   VerticalContentAlignment="Center"
-                                   Content="Comm :"
-                                   Height="24" />
-                            <Label FontSize="16"
-                                   Foreground="#4c4c4c"
-                                   FontFamily="/SMEE.BASE.OIPL.Layout;component/Font/#PingFang SC Bold"
-                                   Padding="0"
-                                   VerticalContentAlignment="Center"
-                                   Content="{Binding CommunicateState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                                   Height="24"
-                                   Margin="4,0,0,0" />
-                        </StackPanel>
-                    </StackPanel>
                     <Border Height="40"
                             BorderThickness="0.75"
                             BorderBrush="#BEBEBE"
                             Margin="0,0,0,0" />
                 </StackPanel>
+                <StackPanel Grid.Column="3"
+                            Grid.Row="0"
+                            Orientation="Horizontal">
+                    <controls:HTCustomIconButton Width="30"
+                                                 Height="30"
+                                                 Margin="32,0,0,0"
+                                                 ButtonType="OnlyIcon"
+                                                 Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Setting_64x64.png"/>
+                </StackPanel>
                 <StackPanel HorizontalAlignment="Right"
                             Orientation="Horizontal"
-                            Grid.Column="3"
+                            Grid.Column="4"
                             Margin="32,0,32,0">
                     <Border Height="40"
                             Margin="0,0,32,0"
@@ -229,25 +197,25 @@
                             BorderBrush="#BEBEBE" />
                     <Image Width="120"
                            Height="40"
-                           Source="../Images/light.png" />
+                           Source="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Light_120x40.png" />
                     <StackPanel Width="120"
                                 Height="40"
                                 Orientation="Horizontal"
                                 Margin="-110,0,0,0">
-                        <controls:HTCustomStateLabel NormalIcon="../Images/red_normal.png"
-                                                     FlashIcon="../Images/red_flash.png"
-                                                     State="{Binding RedState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                                                     Margin="0,8,0,-8" />
-                        <controls:HTCustomStateLabel NormalIcon="../Images/yellow_normal.png"
-                                                     FlashIcon="../Images/yellow_flash.png"
+                        <controls:HTCustomStateLabel StateIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Red_Normal_24x24.png"
+                                                     NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Red_Normal_24x24.png"
+                                                     FlashIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Red_Flash_24x24.png"
+                                                     Margin="0,8,0,-8"/>
+                        <controls:HTCustomStateLabel NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Yellow_Normal_24x24.png"
+                                                     FlashIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Yellow_Flash_24x24.png"
                                                      State="{Binding YellowState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                                                      Margin="0,8,0,-8" />
-                        <controls:HTCustomStateLabel NormalIcon="../Images/blue_normal.png"
-                                                     FlashIcon="../Images/blue_flash.png"
+                        <controls:HTCustomStateLabel NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Blue_Normal_24x24.png"
+                                                     FlashIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Blue_Flash_24x24.png"
                                                      State="{Binding BlueState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                                                      Margin="0,8,0,-8" />
-                        <controls:HTCustomStateLabel NormalIcon="../Images/green_normal.png"
-                                                     FlashIcon="../Images/green_flash.png"
+                        <controls:HTCustomStateLabel NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Green_Normal_24x24.png"
+                                                     FlashIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Green_Flash_24x24.png"
                                                      State="{Binding GreenState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                                                      Margin="0,8,0,-8" />
                     </StackPanel>

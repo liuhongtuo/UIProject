@@ -261,7 +261,7 @@
     </Style>
 
     <Style x:Key="IconOnlyButtonStyle"
-           TargetType="{x:Type controls:HTCustomButton}">
+           TargetType="{x:Type controls:HTCustomIconButton}">
         <Setter Property="Cursor"
                 Value="Hand" />
         <Setter Property="BorderBrush"
@@ -282,12 +282,11 @@
                 Value="Transparent" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:HTCustomButton}">
+                <ControlTemplate TargetType="{x:Type controls:HTCustomIconButton}">
                     <Border x:Name="Border"
                             BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource TemplatedParent}}"
                             BorderThickness="{Binding BorderThickness, RelativeSource={RelativeSource TemplatedParent}}"
                             Background="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}"
-                            CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource TemplatedParent}}"
                             Height="{Binding Height, RelativeSource={RelativeSource TemplatedParent}}"
                             SnapsToDevicePixels="True"
                             Width="{Binding Width, RelativeSource={RelativeSource TemplatedParent}}">
@@ -356,4 +355,9 @@
     <Style BasedOn="{StaticResource HTButtonStyle}"
            TargetType="{x:Type controls:HTCustomButton}"
            x:Key="{x:Type controls:HTCustomButton}" />
+    
+    <!--定义CustomButton控件默认样式-->
+    <Style BasedOn="{StaticResource IconOnlyButtonStyle}"
+           TargetType="{x:Type controls:HTCustomIconButton}"
+           x:Key="{x:Type controls:HTCustomIconButton}" />
 </ResourceDictionary>

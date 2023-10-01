@@ -1,6 +1,6 @@
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Common.Data\bin\Debug\HTProject.Common.Data.dll
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Common.Data\bin\Debug\HTProject.Common.Data.pdb
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Common.Data\obj\Debug\HTProject.Common.Data.csproj.AssemblyReference.cache
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Common.Data\obj\Debug\HTProject.Common.Data.csproj.CoreCompileInputs.cache
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Common.Data\obj\Debug\HTProject.Common.Data.dll
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Common.Data\obj\Debug\HTProject.Common.Data.pdb
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Common.Data\obj\Debug\HTProject.Common.Data.csproj.AssemblyReference.cache

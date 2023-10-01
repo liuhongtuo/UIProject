@@ -10,7 +10,6 @@
                           Offset="1" />
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
-
     <LinearGradientBrush StartPoint="0,0"
                          EndPoint="0,1"
                          x:Key="rectbackgroundBrush">
@@ -21,7 +20,6 @@
                           Offset="1" />
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
-
     <Style x:Key="GridSplitterForResizeColStyle"
            TargetType="{x:Type GridSplitter}">
         <Setter Property="TextElement.Foreground"
@@ -125,7 +123,6 @@
                                            Height="2"
                                            Canvas.Left="0"
                                            Canvas.Top="49" />
-
                                 <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
                                            Width="2"
                                            Height="2"
@@ -191,7 +188,6 @@
                                            Height="2"
                                            Canvas.Left="0"
                                            Canvas.Top="48" />
-
                                 <Rectangle Fill="{StaticResource rectbackgroundBrush}"
                                            Width="2"
                                            Height="2"
@@ -257,7 +253,6 @@
                                            Height="2"
                                            Canvas.Left="4"
                                            Canvas.Top="49" />
-
                                 <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
                                            Width="2"
                                            Height="2"

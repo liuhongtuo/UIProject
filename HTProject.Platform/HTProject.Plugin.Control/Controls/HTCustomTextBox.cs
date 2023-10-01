@@ -626,7 +626,6 @@ namespace HTProject.Plugin.Control.Controls
             SelfCheck();
         }
 
-
         /// <summary>
         /// 鼠标离开区域时候自检
         /// </summary>
@@ -636,7 +635,6 @@ namespace HTProject.Plugin.Control.Controls
             base.OnMouseLeave(e);
             //SelfCheck();
         }
-
 
         public void SelfCheck()
         {
@@ -651,7 +649,6 @@ namespace HTProject.Plugin.Control.Controls
             ValueChangedCommand?.Execute(null);
             SetError(false);
         }
-
 
         public ICommand UpCommand => new DelegateCommand(() =>
         {

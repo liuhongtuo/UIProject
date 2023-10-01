@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="HTProject.Plugin.Control.UserControls.TricolourLight"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:HTProject.Plugin.Control.UserControls"
+             xmlns:controls="clr-namespace:HTProject.Plugin.Control.Controls"
+             mc:Ignorable="d"
+             d:DesignHeight="40"
+             d:DesignWidth="120">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="boolToVisibility" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border>
+        <Viewbox SnapsToDevicePixels="True"
+                 RenderOptions.BitmapScalingMode="NearestNeighbor">
+            <Grid HorizontalAlignment="Center">
+                <Image Width="120"
+                       Height="40"
+                       Source="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Light_120x40.png" />
+                <StackPanel Width="120"
+                            Height="40"
+                            Orientation="Horizontal"
+                            Margin="0,0,0,0">
+                    <controls:HTCustomStateLabel x:Name="RedLight"
+                                                 StateIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Red_Normal_24x24.png"
+                                                 NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Red_Normal_24x24.png"
+                                                 FlashIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Red_Flash_24x24.png"
+                                                 State="{Binding RedLightState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                                 VerticalAlignment="Center"
+                                                 Margin="12,0,0,0" />
+                    <controls:HTCustomStateLabel x:Name="YellowLight"
+                                                 StateIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Yellow_Normal_24x24.png"
+                                                 NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Yellow_Normal_24x24.png"
+                                                 FlashIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Yellow_Flash_24x24.png"
+                                                 State="{Binding YellowLightState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                                 VerticalAlignment="Center" />
+                    <controls:HTCustomStateLabel x:Name="BlueLight"
+                                                 StateIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Blue_Normal_24x24.png"
+                                                 NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Blue_Normal_24x24.png"
+                                                 FlashIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Blue_Flash_24x24.png"
+                                                 State="{Binding BlueLightState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                                 VerticalAlignment="Center" />
+                    <controls:HTCustomStateLabel x:Name="GreenLight"
+                                                 StateIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Green_Normal_24x24.png"
+                                                 NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Green_Normal_24x24.png"
+                                                 FlashIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Green_Flash_24x24.png"
+                                                 State="{Binding GreenLightState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                                 VerticalAlignment="Center" />
+                </StackPanel>
+            </Grid>
+        </Viewbox>
+    </Border>
+</UserControl>

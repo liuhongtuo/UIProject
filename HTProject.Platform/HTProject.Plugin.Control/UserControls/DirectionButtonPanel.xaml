@@ -1,0 +1,189 @@
+﻿<UserControl x:Class="HTProject.Plugin.Control.UserControls.DirectionButtonPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:HTProject.Plugin.Control.UserControls"
+             xmlns:controls="clr-namespace:HTProject.Plugin.Control.Controls"
+             mc:Ignorable="d"
+             d:DesignHeight="150"
+             d:DesignWidth="150">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="boolToVisibility" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border>
+        <Viewbox SnapsToDevicePixels="True"
+                 RenderOptions.BitmapScalingMode="NearestNeighbor">
+            <Grid Name="canvas">
+                <Grid.Clip>
+                    <EllipseGeometry RadiusX="60"
+                                     RadiusY="60"
+                                     Center="60,60"></EllipseGeometry>
+                </Grid.Clip>
+                <Ellipse Panel.ZIndex="-1"
+                         Fill="{Binding PanelBrush,RelativeSource={RelativeSource AncestorType= {x:Type local:DirectionButtonPanel}}}"
+                         Opacity="0.5"
+                         Height="{Binding ElementName=canvas, Path=ActualHeight}"
+                         Width="{Binding ElementName=canvas, Path=ActualHeight}" />
+                <Grid x:Name="grd"
+                      ClipToBounds="True">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40" />
+                        <ColumnDefinition Width="40" />
+                        <ColumnDefinition Width="40" />
+                    </Grid.ColumnDefinitions>
+                    <controls:HTCustomButton x:Name="btnAdjustLeft"
+                                             Grid.Row="1"
+                                             Grid.Column="0"
+                                             Width="34"
+                                             Height="34"
+                                             ButtonType="OnlyIcon"
+                                             Visibility="{Binding IsShowHorizontalDirection, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             Icon="{Binding BtnAdjustLeft_Icon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MouseOverIcon="{Binding BtnAdjustLeft_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MousePressedIcon="{Binding BtnAdjustLeft_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MouseDisableIcon="{Binding BtnAdjustLeft_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             Command="{Binding BtnAdjustCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             CommandParameter="{Binding BtnAdjustLeft_CommandParameter,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             TxtToolTip="{Binding BtnAdjustLeft_TxtToolTip,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
+                    <controls:HTCustomButton x:Name="btnAdjustRight"
+                                             Grid.Row="1"
+                                             Grid.Column="2"
+                                             Width="34"
+                                             Height="34"
+                                             ButtonType="OnlyIcon"
+                                             Visibility="{Binding IsShowHorizontalDirection, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             Icon="{Binding BtnAdjustRight_Icon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MouseOverIcon="{Binding BtnAdjustRight_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MousePressedIcon="{Binding BtnAdjustRight_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MouseDisableIcon="{Binding BtnAdjustRight_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             Command="{Binding BtnAdjustCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             CommandParameter="{Binding BtnAdjustRight_CommandParameter,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             TxtToolTip="{Binding BtnAdjustRight_TxtToolTip,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"></controls:HTCustomButton>
+                    <controls:HTCustomButton x:Name="btnAdjustUp"
+                                             Grid.Row="0"
+                                             Grid.Column="1"
+                                             Width="34"
+                                             Height="34"
+                                             ButtonType="OnlyIcon"
+                                             Visibility="{Binding IsShowVerticalDirection, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             Icon="{Binding BtnAdjustUp_Icon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MouseOverIcon="{Binding BtnAdjustUp_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MousePressedIcon="{Binding BtnAdjustUp_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MouseDisableIcon="{Binding BtnAdjustUp_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             Command="{Binding BtnAdjustCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             CommandParameter="{Binding BtnAdjustUp_CommandParameter,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             TxtToolTip="{Binding BtnAdjustUp_TxtToolTip,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"></controls:HTCustomButton>
+                    <controls:HTCustomButton x:Name="btnAdjustDown"
+                                             Grid.Row="2"
+                                             Grid.Column="1"
+                                             Width="34"
+                                             Height="34"
+                                             ButtonType="OnlyIcon"
+                                             Visibility="{Binding IsShowVerticalDirection, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             Icon="{Binding BtnAdjustDown_Icon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MouseOverIcon="{Binding BtnAdjustDown_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MousePressedIcon="{Binding BtnAdjustDown_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MouseDisableIcon="{Binding BtnAdjustDown_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             Command="{Binding BtnAdjustCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             CommandParameter="{Binding BtnAdjustDown_CommandParameter,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             TxtToolTip="{Binding BtnAdjustDown_TxtToolTip,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"></controls:HTCustomButton>
+                    <controls:HTCustomButton x:Name="btnAdjustLeftUp"
+                                             Grid.Row="0"
+                                             Grid.Column="0"
+                                             Width="34"
+                                             Height="34"
+                                             ButtonType="OnlyIcon"
+                                             Visibility="{Binding IsShowSlantDirection, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             Icon="{Binding BtnAdjustLeftUp_Icon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MouseOverIcon="{Binding BtnAdjustLeftUp_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MousePressedIcon="{Binding BtnAdjustLeftUp_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MouseDisableIcon="{Binding BtnAdjustLeftUp_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             Command="{Binding BtnAdjustCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             CommandParameter="{Binding BtnAdjustLeftUp_CommandParameter,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             TxtToolTip="{Binding BtnAdjustLeftUp_TxtToolTip,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"></controls:HTCustomButton>
+                    <controls:HTCustomButton x:Name="btnAdjustRightUp"
+                                             Grid.Row="0"
+                                             Grid.Column="2"
+                                             Width="34"
+                                             Height="34"
+                                             ButtonType="OnlyIcon"
+                                             Visibility="{Binding IsShowSlantDirection, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             Icon="{Binding BtnAdjustRightUp_Icon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MouseOverIcon="{Binding BtnAdjustRightUp_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MousePressedIcon="{Binding BtnAdjustRightUp_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MouseDisableIcon="{Binding BtnAdjustRightUp_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             Command="{Binding BtnAdjustCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             CommandParameter="{Binding BtnAdjustRightUp_CommandParameter,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             TxtToolTip="{Binding BtnAdjustRightUp_TxtToolTip,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"></controls:HTCustomButton>
+                    <controls:HTCustomButton x:Name="btnAdjustLeftDown"
+                                             Grid.Row="2"
+                                             Grid.Column="0"
+                                             Width="34"
+                                             Height="34"
+                                             ButtonType="OnlyIcon"
+                                             Visibility="{Binding IsShowSlantDirection, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             Icon="{Binding BtnAdjustLeftDown_Icon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MouseOverIcon="{Binding BtnAdjustLeftDown_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MousePressedIcon="{Binding BtnAdjustLeftDown_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MouseDisableIcon="{Binding BtnAdjustLeftDown_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             Command="{Binding BtnAdjustCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             CommandParameter="{Binding BtnAdjustLeftDown_CommandParameter,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             TxtToolTip="{Binding BtnAdjustLeftDown_TxtToolTip,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"></controls:HTCustomButton>
+                    <controls:HTCustomButton x:Name="btnAdjustRightDown"
+                                             Grid.Row="2"
+                                             Grid.Column="2"
+                                             Width="34"
+                                             Height="34"
+                                             ButtonType="OnlyIcon"
+                                             Visibility="{Binding IsShowSlantDirection, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             Icon="{Binding BtnAdjustRightDown_Icon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MouseOverIcon="{Binding BtnAdjustRightDown_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MousePressedIcon="{Binding BtnAdjustRightDown_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MouseDisableIcon="{Binding BtnAdjustRightDown_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             Command="{Binding BtnAdjustCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             CommandParameter="{Binding BtnAdjustRightDown_CommandParameter,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             TxtToolTip="{Binding BtnAdjustRightDown_TxtToolTip,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"></controls:HTCustomButton>
+                    <controls:HTDoubleInputCustomNumticTextBox x:Name="txtStep"
+                                                               HorizontalAlignment="Center"
+                                                               HorizontalContentAlignment="Center"
+                                                               VerticalContentAlignment="Center"
+                                                               IsNumticText="False"
+                                                               Width="34"
+                                                               Height="34"
+                                                               Grid.Row="1"
+                                                               Grid.Column="1"
+                                                               FontSize="10"
+                                                               Value="{Binding TxtAdjustStep,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl},UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                                                               ToolTip="{Binding TxtStep_TxtToolTip,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                                               Minimum="-10"
+                                                               Maximum="10" />
+                    <controls:HTCustomButton x:Name="btnCapture"
+                                             Grid.Row="1"
+                                             Grid.Column="1"
+                                             Width="34"
+                                             Height="34"
+                                             ButtonType="OnlyIcon"
+                                             Visibility="{Binding IsShowCapture, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             Icon="{Binding BtnCapture_Icon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MouseOverIcon="{Binding BtnCapture_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MousePressedIcon="{Binding BtnCapture_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             MouseDisableIcon="{Binding BtnCapture_MouseOverIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             Command="{Binding BtnCaptureCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             CommandParameter="{Binding BtnCapture_CommandParameter,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                             TxtToolTip="{Binding BtnCapture_TxtToolTip,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
+                </Grid>
+            </Grid>
+        </Viewbox>
+    </Border>
+</UserControl>

@@ -334,4 +334,152 @@ namespace HTProject.Plugin.Control.Controls
 
         #endregion
     }
+
+    public class HTCustomIconButton : Button
+    {
+        static HTCustomIconButton()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(HTCustomIconButton), new FrameworkPropertyMetadata(typeof(HTCustomIconButton)));
+        }
+
+        #region 注册按钮一般属性
+
+        /// <summary>
+        /// 注册按钮类型属性
+        /// </summary>
+        public ButtonTypeEnum ButtonType
+        {
+            get { return (ButtonTypeEnum)GetValue(ButtonTypeProperty); }
+            set { SetValue(ButtonTypeProperty, value); }
+        }
+
+        /// <summary>
+        /// 注册按钮类型属性
+        /// </summary>
+        public static readonly DependencyProperty ButtonTypeProperty
+            = DependencyProperty.Register("ButtonType", typeof(ButtonTypeEnum), typeof(HTCustomIconButton), new PropertyMetadata(ButtonTypeEnum.OnlyIcon));
+
+
+        /// <summary>
+        /// 注册按钮提示信息属性
+        /// </summary>
+        public string TxtToolTip
+        {
+            get { return (string)GetValue(TxtToolTipProperty); }
+            set { SetValue(TxtToolTipProperty, value); }
+        }
+
+        /// <summary>
+        /// 注册按钮提示信息属性
+        /// </summary>
+        public static readonly DependencyProperty TxtToolTipProperty
+            = DependencyProperty.Register("TxtToolTip", typeof(string), typeof(HTCustomIconButton), new PropertyMetadata(string.Empty));
+        #endregion
+
+        #region 注册鼠标未触发时图标属性
+        /// <summary>
+        /// 注册鼠标未触发时图标属性
+        /// </summary>
+        public ImageSource Icon
+        {
+            get { return (ImageSource)GetValue(IconProperty); }
+            set { SetValue(IconProperty, value); }
+        }
+
+        /// <summary>
+        /// 注册鼠标未触发时图标属性
+        /// </summary>
+        public static readonly DependencyProperty IconProperty
+            = DependencyProperty.Register("Icon", typeof(ImageSource), typeof(HTCustomIconButton), new PropertyMetadata(null));
+        #endregion
+
+        #region 注册鼠标禁用时属性
+
+        /// <summary>
+        /// 注册鼠标禁用时图标属性
+        /// </summary>
+        public ImageSource MouseDisableIcon
+        {
+            get { return (ImageSource)GetValue(MouseDisableIconProperty); }
+            set { SetValue(MouseDisableIconProperty, value); }
+        }
+
+        /// <summary>
+        /// 注册鼠标禁用时图标属性
+        /// </summary>
+        public static readonly DependencyProperty MouseDisableIconProperty
+            = DependencyProperty.Register("MouseDisableIcon", typeof(ImageSource), typeof(HTCustomIconButton), new PropertyMetadata(null));
+        #endregion
+
+        #region 注册鼠标悬浮时属性
+
+        
+        /// <summary>
+        /// 注册鼠标悬浮时图标属性
+        /// </summary>
+        public ImageSource MouseOverIcon
+        {
+            get { return (ImageSource)GetValue(MouseOverIconProperty); }
+            set { SetValue(MouseOverIconProperty, value); }
+        }
+
+        /// <summary>
+        /// 注册鼠标悬浮时图标属性
+        /// </summary>
+        public static readonly DependencyProperty MouseOverIconProperty
+            = DependencyProperty.Register("MouseOverIcon", typeof(ImageSource), typeof(HTCustomIconButton), new PropertyMetadata(null));
+        #endregion
+
+        #region 注册鼠标点击时属性
+      
+        /// <summary>
+        /// 注册鼠标点击时图标属性
+        /// </summary>
+        public ImageSource MousePressedIcon
+        {
+            get { return (ImageSource)GetValue(MousePressedIconProperty); }
+            set { SetValue(MousePressedIconProperty, value); }
+        }
+
+        /// <summary>
+        /// 注册鼠标点击时图标属性
+        /// </summary>
+        public static readonly DependencyProperty MousePressedIconProperty
+            = DependencyProperty.Register("MousePressedIcon", typeof(ImageSource), typeof(HTCustomIconButton), new PropertyMetadata(null));
+        #endregion
+
+        #region 注册按钮图标属性
+
+        /// <summary>
+        /// 注册按钮图标宽度属性
+        /// </summary>
+        public double IconWidth
+        {
+            get { return (double)GetValue(IconWidthProperty); }
+            set { SetValue(IconWidthProperty, value); }
+        }
+
+        /// <summary>
+        /// 注册按钮图标宽度属性
+        /// </summary>
+        public static readonly DependencyProperty IconWidthProperty =
+            DependencyProperty.Register("IconWidth", typeof(double), typeof(HTCustomIconButton), new PropertyMetadata(80.0));
+
+        /// <summary>
+        /// 注册按钮图标高度属性
+        /// </summary>
+        public double IconHeight
+        {
+            get { return (double)GetValue(IconHeightProperty); }
+            set { SetValue(IconHeightProperty, value); }
+        }
+
+        /// <summary>
+        /// 注册按钮图标高度属性
+        /// </summary>
+        public static readonly DependencyProperty IconHeightProperty =
+            DependencyProperty.Register("IconHeight", typeof(double), typeof(HTCustomIconButton), new PropertyMetadata(80.0));
+
+        #endregion
+    }
 }

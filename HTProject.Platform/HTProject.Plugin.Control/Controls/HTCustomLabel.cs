@@ -9,34 +9,18 @@ using System.Windows.Controls;
 
 namespace HTProject.Plugin.Control.Controls
 {
+    public enum LightState
+    {
+        Normal,
+        Flash
+    }
+
+
     /// <summary>
     /// 自定义Lab风格
     /// </summary>
     public class HTCustomStateLabel : Label
     {
-        /// <summary>
-        /// 状态属性
-        /// </summary>
-        public static readonly DependencyProperty StateIconProperty
-            = DependencyProperty.Register("StateIcon", typeof(ImageSource), typeof(HTCustomStateLabel), new PropertyMetadata(null));
-
-        /// <summary>
-        /// Nomal图片属性
-        /// </summary>
-        public static readonly DependencyProperty NormalIconProperty
-            = DependencyProperty.Register("NormalIcon", typeof(ImageSource), typeof(HTCustomStateLabel), new PropertyMetadata(null));
-
-        /// <summary>
-        /// 点亮图片属性
-        /// </summary>
-        public static readonly DependencyProperty FlashIconProperty
-            = DependencyProperty.Register("FlashIcon", typeof(ImageSource), typeof(HTCustomStateLabel), new PropertyMetadata(null));
-
-        /// <summary>
-        /// 状态属性
-        /// </summary>
-        public static readonly DependencyProperty StateProperty
-            = DependencyProperty.Register("State", typeof(string), typeof(HTCustomStateLabel), new FrameworkPropertyMetadata(OnStateChanged));
 
         static HTCustomStateLabel()
         {
@@ -59,6 +43,13 @@ namespace HTProject.Plugin.Control.Controls
         }
 
         /// <summary>
+        /// 状态属性
+        /// </summary>
+        public static readonly DependencyProperty StateIconProperty
+            = DependencyProperty.Register("StateIcon", typeof(ImageSource), typeof(HTCustomStateLabel), new PropertyMetadata(null));
+
+
+        /// <summary>
         /// NormalIcon
         /// </summary>
         public ImageSource NormalIcon
@@ -72,6 +63,13 @@ namespace HTProject.Plugin.Control.Controls
                 SetValue(NormalIconProperty, value);
             }
         }
+
+
+        /// <summary>
+        /// Nomal图片属性
+        /// </summary>
+        public static readonly DependencyProperty NormalIconProperty
+            = DependencyProperty.Register("NormalIcon", typeof(ImageSource), typeof(HTCustomStateLabel), new PropertyMetadata(null));
 
         /// <summary>
         /// FlashIcon
@@ -88,21 +86,21 @@ namespace HTProject.Plugin.Control.Controls
             }
         }
 
-
         /// <summary>
-        /// State
+        /// 点亮图片属性
         /// </summary>
-        public string State
+        public static readonly DependencyProperty FlashIconProperty
+            = DependencyProperty.Register("FlashIcon", typeof(ImageSource), typeof(HTCustomStateLabel), new PropertyMetadata(null));
+
+
+        public LightState State
         {
-            get
-            {
-                return ((string)GetValue(StateProperty)).ToString();
-            }
-            set
-            {
-                SetValue(StateProperty, value);
-            }
+            get { return (LightState)GetValue(StateProperty); }
+            set { SetValue(StateProperty, value); }
         }
+
+        public static readonly DependencyProperty StateProperty =
+            DependencyProperty.Register("State", typeof(LightState), typeof(HTCustomStateLabel), new FrameworkPropertyMetadata(LightState.Normal, OnStateChanged));
 
         private static void OnStateChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -110,14 +108,14 @@ namespace HTProject.Plugin.Control.Controls
 
             if (labEx != null)
             {
-                labEx.State = (string)e.NewValue;
+                labEx.State = (LightState)e.NewValue;
 
                 switch (labEx.State)
                 {
-                    case "Normal":
+                    case LightState.Normal:
                         labEx.StateIcon = labEx.NormalIcon;
                         break;
-                    case "Flash":
+                    case LightState.Flash:
                         labEx.StateIcon = labEx.FlashIcon;
                         break;
                     default:
@@ -125,6 +123,7 @@ namespace HTProject.Plugin.Control.Controls
                 }
             }
         }
+
     }
 
     /// <summary>

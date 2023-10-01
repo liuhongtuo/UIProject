@@ -9,7 +9,19 @@
                     <local:HelloBootStrapper x:Key="helloBootStrapper" />
                 </ResourceDictionary>
                 <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Windows/HTSkinSimpleWindow.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/Generic.xaml" />
+                <!--<ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/Generic.xmal" />-->
+                <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomToolTipStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomButtonStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomCheckBoxStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomComboBoxStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomRadioButtonStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomTextBoxStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomDataGridStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomScollerViewerStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomTabControlStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomTreeViewStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomDialogStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomLabelStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

@@ -24,6 +24,7 @@ E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\Genera
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\HTProject.Plugin.Control_MarkupCompile.cache
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\HTProject.Plugin.Control_MarkupCompile.lref
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\Themes\Generic.baml
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\Themes\HTCustomLabelStyles.baml
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\Themes\HTCustomButtonStyles.baml
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\Themes\HTCustomCheckBoxStyles.baml
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\Themes\HTCustomComboBoxStyles.baml
@@ -43,4 +44,7 @@ E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\HTProj
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\HTProject.Plugin.Control.csproj.CopyComplete
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\HTProject.Plugin.Control.dll
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\HTProject.Plugin.Control.pdb
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\Themes\HTCustomLabelStyles.baml
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\UserControls\DirectionButtonPanel.g.cs
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\UserControls\TricolourLight.g.cs
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\UserControls\DirectionButtonPanel.baml
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\UserControls\TricolourLight.baml

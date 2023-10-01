@@ -1,6 +1,7 @@
 ﻿
 
 FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Themes\Generic.xaml;;
+FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Themes\HTCustomLabelStyles.xaml;;
 FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Themes\HTCustomButtonStyles.xaml;;
 FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Themes\HTCustomCheckBoxStyles.xaml;;
 FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Themes\HTCustomComboBoxStyles.xaml;;
@@ -15,5 +16,6 @@ FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Themes\HTDataGr
 FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Themes\HTRadioButton.xaml;;
 FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Themes\HTScrollViewer.xaml;;
 FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Windows\HTSkinSimpleWindow.xaml;;
-FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\Themes\HTCustomLabelStyles.xaml;;
+FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\UserControls\DirectionButtonPanel.xaml;;
+FE:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\UserControls\TricolourLight.xaml;;
 
