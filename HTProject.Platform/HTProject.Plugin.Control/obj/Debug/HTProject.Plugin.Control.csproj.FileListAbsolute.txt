@@ -19,6 +19,8 @@ E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\Themes
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\Themes\HTResizeGrip.baml
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\Themes\HTSlider.baml
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\Windows\ShadowWindow.baml
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\UserControls\DirectionButtonPanel.g.cs
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\UserControls\TricolourLight.g.cs
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\Windows\ShadowWindow.g.cs
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\GeneratedInternalTypeHelper.g.cs
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\HTProject.Plugin.Control_MarkupCompile.cache
@@ -36,15 +38,12 @@ E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\Themes
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\Themes\HTCustomToolTipStyles.baml
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\Themes\HTCustomTreeViewStyles.baml
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\Themes\HTDataGrid.baml
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\Themes\HTRadioButton.baml
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\Themes\HTScrollViewer.baml
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\UserControls\DirectionButtonPanel.baml
+E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\UserControls\TricolourLight.baml
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\Windows\HTSkinSimpleWindow.baml
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\HTProject.Plugin.Control.g.resources
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\HTProject.Plugin.Control.csproj.CoreCompileInputs.cache
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\HTProject.Plugin.Control.csproj.CopyComplete
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\HTProject.Plugin.Control.dll
 E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\HTProject.Plugin.Control.pdb
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\UserControls\DirectionButtonPanel.g.cs
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\UserControls\TricolourLight.g.cs
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\UserControls\DirectionButtonPanel.baml
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Control\obj\Debug\UserControls\TricolourLight.baml

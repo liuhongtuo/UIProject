@@ -2,6 +2,7 @@
 using HTProject.Platform.Main.Managers;
 using HTProject.Plugin.Control.Controls;
 using Prism.Commands;
+using PropertyChanged;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ using System.Windows.Input;
 
 namespace HTProject.Platform.Main.ViewModels
 {
+    [ImplementPropertyChanged]
     public class MainStartViewModel : Screen
     {
         private Page _currentShowPage = PageManager.HomeView;

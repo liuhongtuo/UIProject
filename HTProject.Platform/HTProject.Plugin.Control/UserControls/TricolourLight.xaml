@@ -31,26 +31,22 @@
                                                  StateIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Red_Normal_24x24.png"
                                                  NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Red_Normal_24x24.png"
                                                  FlashIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Red_Flash_24x24.png"
-                                                 State="{Binding RedLightState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                                                  VerticalAlignment="Center"
                                                  Margin="12,0,0,0" />
                     <controls:HTCustomStateLabel x:Name="YellowLight"
                                                  StateIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Yellow_Normal_24x24.png"
                                                  NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Yellow_Normal_24x24.png"
                                                  FlashIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Yellow_Flash_24x24.png"
-                                                 State="{Binding YellowLightState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                                                  VerticalAlignment="Center" />
                     <controls:HTCustomStateLabel x:Name="BlueLight"
                                                  StateIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Blue_Normal_24x24.png"
                                                  NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Blue_Normal_24x24.png"
                                                  FlashIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Blue_Flash_24x24.png"
-                                                 State="{Binding BlueLightState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                                                  VerticalAlignment="Center" />
                     <controls:HTCustomStateLabel x:Name="GreenLight"
                                                  StateIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Green_Normal_24x24.png"
                                                  NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Green_Normal_24x24.png"
                                                  FlashIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Green_Flash_24x24.png"
-                                                 State="{Binding GreenLightState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                                                  VerticalAlignment="Center" />
                 </StackPanel>
             </Grid>

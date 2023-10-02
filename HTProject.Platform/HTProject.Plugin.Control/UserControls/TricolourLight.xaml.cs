@@ -1,4 +1,5 @@
 ﻿using HTProject.Plugin.Control.Controls;
+using PropertyChanged;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,24 +20,13 @@ namespace HTProject.Plugin.Control.UserControls
     /// <summary>
     /// Interaction logic for TricolourLight.xaml
     /// </summary>
+    [ImplementPropertyChanged]
     public partial class TricolourLight : UserControl
     {
         public TricolourLight()
         {
             InitializeComponent();
         }
-
-        public LightState RedLightState
-        {
-            get { return (LightState)GetValue(RedLightStateProperty); }
-            set { SetValue(RedLightStateProperty, value); }
-        }
-
-        public static readonly DependencyProperty RedLightStateProperty =
-            DependencyProperty.Register("RedLightState", typeof(LightState), typeof(TricolourLight), new PropertyMetadata(LightState.Normal));
-
-
-
 
 
         public LightColourState LightColourState
@@ -57,14 +47,34 @@ namespace HTProject.Plugin.Control.UserControls
                 switch (lightControl.LightColourState)
                 {
                     case LightColourState.Idle:
+                        lightControl.RedLight.State = LightState.Normal;
+                        lightControl.YellowLight.State = LightState.Normal;
+                        lightControl.BlueLight.State = LightState.Flash;
+                        lightControl.GreenLight.State = LightState.Normal;
                         break;
                     case LightColourState.Initialize:
+                        lightControl.RedLight.State = LightState.Normal;
+                        lightControl.YellowLight.State = LightState.Normal;
+                        lightControl.BlueLight.State = LightState.Flash;
+                        lightControl.GreenLight.State = LightState.Normal;
                         break;
                     case LightColourState.Running:
+                        lightControl.RedLight.State = LightState.Normal;
+                        lightControl.YellowLight.State = LightState.Normal;
+                        lightControl.RedLight.State = LightState.Normal;
+                        lightControl.GreenLight.State = LightState.Flash;
                         break;
                     case LightColourState.Warning:
+                        lightControl.RedLight.State = LightState.Normal;
+                        lightControl.YellowLight.State = LightState.Flash;
+                        lightControl.BlueLight.State = LightState.Normal;
+                        lightControl.GreenLight.State = LightState.Normal;
                         break;
                     case LightColourState.Alarm:
+                        lightControl.RedLight.State = LightState.Flash;
+                        lightControl.YellowLight.State = LightState.Normal;
+                        lightControl.BlueLight.State = LightState.Normal;
+                        lightControl.GreenLight.State = LightState.Normal;
                         break;
                     default:
                         break;

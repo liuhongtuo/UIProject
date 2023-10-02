@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows;
 using System.Windows.Controls;
+using PropertyChanged;
 
 namespace HTProject.Plugin.Control.Controls
 {
@@ -19,6 +20,7 @@ namespace HTProject.Plugin.Control.Controls
     /// <summary>
     /// 自定义Lab风格
     /// </summary>
+    [ImplementPropertyChanged]
     public class HTCustomStateLabel : Label
     {
 

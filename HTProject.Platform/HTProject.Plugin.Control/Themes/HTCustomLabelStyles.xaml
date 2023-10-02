@@ -30,6 +30,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <Style x:Key="HTCustomIconLabelStyle"
            TargetType="{x:Type controls:HTCustomIconLabel}">
         <Setter Property="Template">
@@ -40,10 +41,12 @@
                             Background="{TemplateBinding Background}"
                             Padding="{TemplateBinding Padding}"
                             SnapsToDevicePixels="true">
-                        <StackPanel>
-                            <Image Width="24"
-                                   Height="24"
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="30"
+                                   Height="30"
                                    x:Name="Img"
+                                   VerticalAlignment="Center"
+                                   Margin="0,0,10,0"
                                    Source="{TemplateBinding NormalIcon}" />
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                               RecognizesAccessKey="True"
@@ -62,10 +65,12 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <!--定义CustomLabel控件默认样式-->
     <Style BasedOn="{StaticResource HTCustomStateLabelStyle}"
            TargetType="{x:Type controls:HTCustomStateLabel}"
            x:Key="{x:Type controls:HTCustomStateLabel}" />
+    
     <!--定义CustomLabel控件默认样式-->
     <Style BasedOn="{StaticResource HTCustomIconLabelStyle}"
            TargetType="{x:Type controls:HTCustomIconLabel}"

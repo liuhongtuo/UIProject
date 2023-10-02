@@ -9,7 +9,7 @@
                             xmlns:local="clr-namespace:HTProject.Platform.Main.Views"
                             mc:Ignorable="d"
                             Title=""
-                            Width="1440"
+                            Width="1600"
                             Height="900"
                             MinWidth="1024"
                             MinHeight="768"
@@ -43,10 +43,11 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="160" />
-                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="230" />
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="150" />
                     <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="135" />
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0"
                             Grid.Row="0"
@@ -55,172 +56,189 @@
                            Height="72"
                            Margin="32,0,0,0" />
                 </StackPanel>
-                <StackPanel Margin="0,0,0,0"
-                            Orientation="Horizontal"
-                            Grid.Column="1">
-                    <!--<Label FontSize="16"
-                           Foreground="#4c4c4c"
-                           FontFamily="#PingFang SC Bold"
-                           Padding="0"
-                           VerticalContentAlignment="Center"
-                           Content="{Binding Date,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                           MinWidth="94"
-                           Height="24"
-                           Margin="0,0,8,0" />
-                    <Label FontSize="16"
-                           Foreground="#4c4c4c"
-                           FontFamily="#PingFang SC Bold"
-                           Padding="0"
-                           VerticalContentAlignment="Center"
-                           Content="{Binding Time,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                           MinWidth="94"
-                           Height="24"
-                           Margin="0,0,0,0" />-->
+                <StackPanel Grid.Column="1"
+                            Orientation="Horizontal">
+                    <controls:HTCustomIconLabel FontSize="18"
+                                                Foreground="#4c4c4c"
+                                                FontFamily="#PingFang SC Bold"
+                                                Padding="0"
+                                                VerticalContentAlignment="Center"
+                                                Content="2023/09/30 16:54:30"
+                                                NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/DataTime_64x64.png"
+                                                MinWidth="94"
+                                                Height="30"
+                                                Margin="0,0,8,0" />
                 </StackPanel>
                 <StackPanel Grid.Column="2"
                             Grid.Row="0"
                             Orientation="Horizontal"
                             Margin="0,0,0,0"
                             HorizontalAlignment="Right">
-                    <!--ControlState/CommState-->
+                    <Border Height="40"
+                            BorderThickness="0.75"
+                            BorderBrush="#BEBEBE"
+                            Margin="0,0,20,0" />
                     <StackPanel Orientation="Horizontal"
-                                Margin="32,0,0,0">
+                                Margin="0,0,0,0">
                         <StackPanel Orientation="Horizontal"
                                     VerticalAlignment="Center">
-                            <Label FontSize="16"
+                            <controls:HTCustomIconLabel FontSize="18"
+                                                        Foreground="#4c4c4c"
+                                                        FontFamily="#PingFang SC Bold"
+                                                        Padding="0"
+                                                        VerticalContentAlignment="Center"
+                                                        Content="Machine :"
+                                                        Height="30"
+                                                        NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Machine_64x64.png"
+                                                        Margin="0,0,0,0" />
+                            <Label FontSize="18"
                                    Foreground="#4c4c4c"
                                    FontFamily="#PingFang SC Bold"
                                    Padding="0"
                                    VerticalContentAlignment="Center"
-                                   Content="Machine :"
-                                   Height="24"
-                                   Margin="0,0,0,0" />
-                            <Label FontSize="16"
-                                   Foreground="#4c4c4c"
-                                   FontFamily="#PingFang SC Bold"
-                                   Padding="0"
-                                   VerticalContentAlignment="Center"
-                                   Content="1"
-                                   Height="24"
+                                   Content="CAM"
+                                   Height="30"
                                    Margin="4,0,0,0" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal"
                                     VerticalAlignment="Center"
-                                    Margin="32,0,0,0">
-                            <Label FontSize="16"
-                                   Foreground="#4c4c4c"
-                                   FontFamily="#PingFang SC Bold"
-                                   Padding="0"
-                                   VerticalContentAlignment="Center"
-                                   Content="Version :"
-                                   Height="24" />
-                            <Label FontSize="16"
+                                    Margin="20,0,0,0">
+                            <controls:HTCustomIconLabel FontSize="18"
+                                                        Foreground="#4c4c4c"
+                                                        FontFamily="#PingFang SC Bold"
+                                                        Padding="0"
+                                                        VerticalContentAlignment="Center"
+                                                        NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Version_64x64.png"
+                                                        Content="Version :"
+                                                        Height="30" />
+                            <Label FontSize="18"
                                    Foreground="#4c4c4c"
                                    FontFamily="#PingFang SC Bold"
                                    Padding="0"
                                    VerticalContentAlignment="Center"
                                    Content="1.0"
-                                   Height="24"
+                                   Height="30"
                                    Margin="4,0,0,0" />
                         </StackPanel>
                     </StackPanel>
                     <Border Height="40"
                             BorderThickness="0.75"
                             BorderBrush="#BEBEBE"
-                            Margin="32,0,32,0" />
+                            Margin="20,0,20,0" />
                     <StackPanel Orientation="Horizontal"
                                 Margin="0,0,0,0">
                         <StackPanel Orientation="Horizontal"
                                     VerticalAlignment="Center">
-                            <Label FontSize="16"
-                                   Foreground="#4c4c4c"
-                                   FontFamily="#PingFang SC Bold"
-                                   Padding="0"
-                                   VerticalContentAlignment="Center"
-                                   Content="User :"
-                                   Height="24"
-                                   Margin="0,0,0,0" />
-                            <Label FontSize="16"
+                            <controls:HTCustomIconLabel FontSize="18"
+                                                        Foreground="#4c4c4c"
+                                                        FontFamily="#PingFang SC Bold"
+                                                        Padding="0"
+                                                        Content="User :"
+                                                        VerticalContentAlignment="Center"
+                                                        Height="30"
+                                                        NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/User_64x64.png"
+                                                        Margin="0,0,0,0" />
+                            <Label FontSize="18"
                                    Foreground="#4c4c4c"
                                    FontFamily="#PingFang SC Bold"
                                    Padding="0"
                                    VerticalContentAlignment="Center"
                                    Content="{Binding UserName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                                   Height="24"
+                                   Height="30"
                                    Margin="4,0,0,0" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal"
-                                    Margin="32,0,0,0"
+                                    Margin="20,0,20,0"
                                     VerticalAlignment="Center">
-                            <Label FontSize="16"
-                                   Foreground="#4c4c4c"
-                                   FontFamily="#PingFang SC Bold"
-                                   Padding="0"
-                                   VerticalContentAlignment="Center"
-                                   Content="Level :"
-                                   Height="24" />
-                            <Label FontSize="16"
+                            <controls:HTCustomIconLabel FontSize="18"
+                                                        Foreground="#4c4c4c"
+                                                        FontFamily="#PingFang SC Bold"
+                                                        Padding="0"
+                                                        VerticalContentAlignment="Center"
+                                                        Content="Level :"
+                                                        NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Level_64x64.png"
+                                                        Height="30" />
+                            <Label FontSize="18"
                                    Foreground="#4c4c4c"
                                    FontFamily="#PingFang SC Bold"
                                    Padding="0"
                                    VerticalContentAlignment="Center"
                                    Content="{Binding Role,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                                    Margin="4,0,0,0"
-                                   Height="24" />
+                                   Height="30" />
                         </StackPanel>
                     </StackPanel>
-                    <Border Height="40"
-                            BorderThickness="0.75"
-                            BorderBrush="#BEBEBE"
-                            Margin="32,0,32,0" />
-                    <Border Height="40"
-                            BorderThickness="0.75"
-                            BorderBrush="#BEBEBE"
-                            Margin="0,0,0,0" />
                 </StackPanel>
                 <StackPanel Grid.Column="3"
                             Grid.Row="0"
                             Orientation="Horizontal">
+                    <Border Height="40"
+                            BorderThickness="0.75"
+                            BorderBrush="#BEBEBE"
+                            Margin="0,0,20,0" />
                     <controls:HTCustomIconButton Width="30"
                                                  Height="30"
-                                                 Margin="32,0,0,0"
+                                                 Margin="0,0,0,0"
                                                  ButtonType="OnlyIcon"
-                                                 Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Setting_64x64.png"/>
+                                                 Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Setting_64x64_Normal.png"
+                                                 MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Setting_64x64_Over.png"
+                                                 MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Setting_64x64_Pressed.png" />
+                    <controls:HTCustomIconButton Width="30"
+                                                 Height="30"
+                                                 Margin="15,0,0,0"
+                                                 ButtonType="OnlyIcon"
+                                                 Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Message_64x64_Normal.png"
+                                                 MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Message_64x64_Over.png"
+                                                 MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Message_64x64_Pressed.png" />
                 </StackPanel>
-                <StackPanel HorizontalAlignment="Right"
+                <StackPanel Grid.Column="4"
+                            HorizontalAlignment="Right"
                             Orientation="Horizontal"
-                            Grid.Column="4"
-                            Margin="32,0,32,0">
+                            Margin="0,0,20,0">
                     <Border Height="40"
-                            Margin="0,0,32,0"
+                            Margin="0,0,20,0"
                             BorderThickness="0.75"
                             BorderBrush="#BEBEBE" />
-                    <Image Width="120"
-                           Height="40"
-                           Source="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Light_120x40.png" />
-                    <StackPanel Width="120"
-                                Height="40"
-                                Orientation="Horizontal"
-                                Margin="-110,0,0,0">
-                        <controls:HTCustomStateLabel StateIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Red_Normal_24x24.png"
-                                                     NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Red_Normal_24x24.png"
-                                                     FlashIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Red_Flash_24x24.png"
-                                                     Margin="0,8,0,-8"/>
-                        <controls:HTCustomStateLabel NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Yellow_Normal_24x24.png"
-                                                     FlashIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Yellow_Flash_24x24.png"
-                                                     State="{Binding YellowState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                                                     Margin="0,8,0,-8" />
-                        <controls:HTCustomStateLabel NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Blue_Normal_24x24.png"
-                                                     FlashIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Blue_Flash_24x24.png"
-                                                     State="{Binding BlueState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                                                     Margin="0,8,0,-8" />
-                        <controls:HTCustomStateLabel NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Green_Normal_24x24.png"
-                                                     FlashIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/SignalLightIcons/Green_Flash_24x24.png"
-                                                     State="{Binding GreenState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                                                     Margin="0,8,0,-8" />
-                    </StackPanel>
+                    <userControls:TricolourLight Width="120"
+                                                 Height="40"
+                                                 LightColourState="Warning" />
+                </StackPanel>
+                <StackPanel Grid.Column="5"
+                            Grid.Row="0"
+                            Orientation="Horizontal">
+                    <Border Height="40"
+                            BorderThickness="0.75"
+                            BorderBrush="#BEBEBE"
+                            Margin="0,0,20,0" />
+                    <controls:HTCustomIconButton Width="40"
+                                                 Height="40"
+                                                 Margin="0,0,0,0"
+                                                 ButtonType="OnlyIcon"
+                                                 Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Minimize_64x64_Normal.png"
+                                                 MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Minimize_64x64_Over.png"
+                                                 MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Minimize_64x64_Pressed.png" />
+                    <controls:HTCustomIconButton Width="40"
+                                                 Height="40"
+                                                 Margin="15,0,0,0"
+                                                 ButtonType="OnlyIcon"
+                                                 Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Exit_64x64_Normal.png"
+                                                 MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Exit_64x64_Pressed.png"
+                                                 MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Exit_64x64_Pressed.png" />
                 </StackPanel>
             </Grid>
+        </Border>
+        <Border Grid.Row="2"
+                BorderThickness="0.75"
+                BorderBrush="Black"
+                Background="{DynamicResource HeaderBackground}">
+            <UniformGrid Rows="1">
+                <controls:HTImageRadioButton />
+                <controls:HTImageRadioButton />
+                <controls:HTImageRadioButton />
+                <controls:HTImageRadioButton />
+                <controls:HTImageRadioButton />
+                <controls:HTImageRadioButton />
+            </UniformGrid>
         </Border>
     </Grid>
 </wondows:HTSkinSimpleWindow>
