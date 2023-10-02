@@ -16,5 +16,5 @@ DEBUG;TRACE
 691612100094
 Themes\Generic.xaml;Themes\HTCustomLabelStyles.xaml;Themes\HTCustomButtonStyles.xaml;Themes\HTCustomCheckBoxStyles.xaml;Themes\HTCustomComboBoxStyles.xaml;Themes\HTCustomDataGridStyles.xaml;Themes\HTCustomDialogStyles.xaml;Themes\HTCustomGridSplitterStyles.xaml;Themes\HTCustomRadioButtonStyles.xaml;Themes\HTCustomScollerViewerStyles.xaml;Themes\HTCustomTabControlStyles.xaml;Themes\HTCustomTextBoxStyles.xaml;Themes\HTCustomToolTipStyles.xaml;Themes\HTCustomTreeViewStyles.xaml;Themes\HTDataGrid.xaml;Themes\HTExpander.xaml;Themes\HTImage.xaml;Themes\HTResizeGrip.xaml;Themes\HTScrollViewer.xaml;Themes\HTSlider.xaml;UserControls\DirectionButtonPanel.xaml;UserControls\TricolourLight.xaml;Windows\HTSkinSimpleWindow.xaml;Windows\ShadowWindow.xaml;
 
-True
+False
 

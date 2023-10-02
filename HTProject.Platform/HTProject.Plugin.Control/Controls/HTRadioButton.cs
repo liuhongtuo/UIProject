@@ -11,19 +11,12 @@ using System.Windows.Media.Imaging;
 
 namespace HTProject.Plugin.Control.Controls
 {
-    public class HTRadioButton : RadioButton
-    {
-        public SolidColorBrush IconColor
-        {
-            get { return (SolidColorBrush)GetValue(IconColorProperty); }
-            set { SetValue(IconColorProperty, value); }
-        }
-        public static readonly DependencyProperty IconColorProperty =
-            DependencyProperty.Register("IconColor", typeof(SolidColorBrush), typeof(HTRadioButton), new PropertyMetadata(new SolidColorBrush(Color.FromArgb(255, 255, 255, 255))));
-    }
-
     public class HTIconRadioButton : RadioButton
     {
+        static HTIconRadioButton()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(HTIconRadioButton), new FrameworkPropertyMetadata(typeof(HTIconRadioButton)));
+        }
 
         /// <summary>
         /// 图标
@@ -65,78 +58,46 @@ namespace HTProject.Plugin.Control.Controls
 
     public class HTImageRadioButton : RadioButton
     {
+        static HTImageRadioButton()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(HTImageRadioButton), new FrameworkPropertyMetadata(typeof(HTImageRadioButton)));
+        }
+
         public CornerRadius CornerRadius
         {
             get { return (CornerRadius)GetValue(CornerRadiusProperty); }
             set { SetValue(CornerRadiusProperty, value); }
         }
+
         public static readonly DependencyProperty CornerRadiusProperty =
             DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(HTImageRadioButton), new PropertyMetadata(null));
 
-        public ImageSource ImageSource
+        public ImageSource ImageRadioButton_Icon
         {
-            get
-            {
-                return (ImageSource)GetValue(ImageSourceProperty);
-            }
-            set
-            {
-                SetValue(ImageSourceProperty, value);
-            }
-        }
-
-        public static readonly DependencyProperty ImageSourceProperty = DependencyProperty.Register("ImageSource", typeof(ImageSource), typeof(HTImageRadioButton), new PropertyMetadata(null));
-
-        public string ImageRadioButton_Icon
-        {
-            get { return (string)GetValue(ImageRadioButton_IconProperty); }
+            get { return (ImageSource)GetValue(ImageRadioButton_IconProperty); }
             set { SetValue(ImageRadioButton_IconProperty, value); }
         }
 
         public static readonly DependencyProperty ImageRadioButton_IconProperty =
-            DependencyProperty.Register("ImageRadioButton_Icon", typeof(string), typeof(HTImageRadioButton), new PropertyMetadata(string.Empty));
+            DependencyProperty.Register("ImageRadioButton_Icon", typeof(ImageSource), typeof(HTImageRadioButton), new PropertyMetadata(null));
 
-        public string ImageRadioButton_MouseOverIcon
+        public ImageSource ImageRadioButton_MouseOverIcon
         {
-            get { return (string)GetValue(ImageRadioButton_MouseOverIconProperty); }
+            get { return (ImageSource)GetValue(ImageRadioButton_MouseOverIconProperty); }
             set { SetValue(ImageRadioButton_MouseOverIconProperty, value); }
         }
 
         public static readonly DependencyProperty ImageRadioButton_MouseOverIconProperty =
-            DependencyProperty.Register("ImageRadioButton_MouseOverIcon", typeof(string), typeof(HTImageRadioButton), new PropertyMetadata(string.Empty));
+            DependencyProperty.Register("ImageRadioButton_MouseOverIcon", typeof(ImageSource), typeof(HTImageRadioButton), new PropertyMetadata(null));
 
-        public string ImageRadioButton_MousePressedIcon
+        public ImageSource ImageRadioButton_MousePressedIcon
         {
-            get { return (string)GetValue(ImageRadioButton_MousePressedIconProperty); }
+            get { return (ImageSource)GetValue(ImageRadioButton_MousePressedIconProperty); }
             set { SetValue(ImageRadioButton_MousePressedIconProperty, value); }
         }
 
         public static readonly DependencyProperty ImageRadioButton_MousePressedIconProperty =
-            DependencyProperty.Register("ImageRadioButton_MousePressedIcon", typeof(string), typeof(HTImageRadioButton), new PropertyMetadata(string.Empty));
-
-        private static void OnImgSourceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            HTImageRadioButton radioButton = d as HTImageRadioButton;
-            string newImgPath = e.NewValue as string;
-            if (radioButton == null) return;
-            var bitmapImageSource = new BitmapImage();
-            if (string.IsNullOrWhiteSpace(newImgPath))
-            {
-                radioButton.ImageSource = bitmapImageSource;
-                return;
-            }
-
-            bitmapImageSource = new BitmapImage(new Uri(newImgPath));
-            radioButton.ImageSource = bitmapImageSource;
-            //using (var ms = new MemoryStream(File.ReadAllBytes(newImgPath)))
-            //{
-            //    bitmapImageSource.BeginInit();
-            //    bitmapImageSource.CacheOption = BitmapCacheOption.OnLoad;
-            //    bitmapImageSource.StreamSource = ms;
-            //    bitmapImageSource.EndInit();
-            //    bitmapImageSource.Freeze();
-            //}
-        }
+            DependencyProperty.Register("ImageRadioButton_MousePressedIcon", typeof(ImageSource), typeof(HTImageRadioButton), new PropertyMetadata(null));
 
         public double ImageWidth
         {

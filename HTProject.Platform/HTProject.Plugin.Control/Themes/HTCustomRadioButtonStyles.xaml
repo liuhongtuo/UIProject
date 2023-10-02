@@ -2,10 +2,24 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:converters="clr-namespace:HTProject.Plugin.Base.Converters;assembly=HTProject.Plugin.Base"
                     xmlns:controls="clr-namespace:HTProject.Plugin.Control.Controls">
-
     <converters:StringToCollapsedConverter x:Key="StringToCollapsedConverter" />
-
-    <Style x:Key="HTRadioButton"
+    <LinearGradientBrush x:Key="HeaderBackground_Normal"
+                         StartPoint="0,0"
+                         EndPoint="0,1">
+        <GradientStop Offset="0"
+                      Color="#f2f2f2" />
+        <GradientStop Offset="1"
+                      Color="#d6d4d4" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="HeaderBackground_Pressed"
+                         StartPoint="0,0"
+                         EndPoint="0,1">
+        <GradientStop Offset="0"
+                      Color="#FF0987F7" />
+        <GradientStop Offset="1"
+                      Color="#FF085080" />
+    </LinearGradientBrush>
+    <Style x:Key="HTCustomRadioButtonStyle"
            TargetType="{x:Type controls:HTCustomRadioButton}">
         <Setter Property="FrameworkElement.Cursor"
                 Value="Hand" />
@@ -49,8 +63,8 @@
                                    FontFamily="{Binding FontFamily, RelativeSource={RelativeSource TemplatedParent}}" />
                         <FrameworkElement.ToolTip>
                             <controls:HTCustomToolTip ToolTipType="NormalToolTip"
-                                                    Visibility="{Binding TxtToolTip,Converter={StaticResource StringToCollapsedConverter},RelativeSource={RelativeSource TemplatedParent}}"
-                                                    Content="{Binding TxtToolTip, RelativeSource={RelativeSource TemplatedParent}}" />
+                                                      Visibility="{Binding TxtToolTip,Converter={StaticResource StringToCollapsedConverter},RelativeSource={RelativeSource TemplatedParent}}"
+                                                      Content="{Binding TxtToolTip, RelativeSource={RelativeSource TemplatedParent}}" />
                         </FrameworkElement.ToolTip>
                     </StackPanel>
                     <ControlTemplate.Triggers>
@@ -104,13 +118,12 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
     <Style x:Key="HTMainViewRadioButton"
            TargetType="{x:Type controls:HTImageRadioButton}">
         <Setter Property="Cursor"
                 Value="Hand" />
         <Setter Property="Background"
-                Value="#FFBCDDEE" />
+                Value="{StaticResource HeaderBackground_Normal}" />
         <Setter Property="Foreground"
                 Value="#FF000000" />
         <Setter Property="BorderBrush"
@@ -122,7 +135,7 @@
         <Setter Property="Cursor"
                 Value="Hand" />
         <Setter Property="BorderThickness"
-                Value="0" />
+                Value="1" />
         <Setter Property="Padding"
                 Value="0" />
         <Setter Property="HorizontalContentAlignment"
@@ -138,17 +151,15 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             SnapsToDevicePixels="True">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition></RowDefinition>
-                                <RowDefinition Height="auto"></RowDefinition>
-                            </Grid.RowDefinitions>
+                        <StackPanel VerticalAlignment="Center"
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Center">
                             <Image x:Name="image"
                                    Stretch="Uniform"
-                                   Margin="5"
-                                   Source="{Binding ImageRadioButton_Icon,Converter={StaticResource stringToImageSourceConverter},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=controls:HTImageRadioButton}}"
-                                   Width="{Binding ImageWidth,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=controls:HTImageRadioButton}}"
-                                   Height="{Binding ImageHeight,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=controls:HTImageRadioButton}}"
+                                   Margin="0"
+                                   Source="{TemplateBinding ImageRadioButton_Icon}"
+                                   Width="{TemplateBinding ImageWidth}"
+                                   Height="{TemplateBinding ImageHeight}"
                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
@@ -157,23 +168,19 @@
                                               ContentTemplate="{TemplateBinding ContentTemplate}"
                                               ContentStringFormat="{TemplateBinding ContentStringFormat}"
                                               HorizontalAlignment="Center"
-                                              VerticalAlignment="Center"
+                                              VerticalAlignment="Bottom"
                                               SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                              Margin="0"
+                                              Margin="10,0,0,0"
                                               Name="content"
-                                              Focusable="False"
-                                              Grid.Row="1" />
-                        </Grid>
+                                              Focusable="False" />
+                        </StackPanel>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver"
                                  Value="true">
                             <Setter Property="Panel.Background"
-                                    TargetName="border">
-                                <Setter.Value>
-                                    <SolidColorBrush>#FF4BA3FB</SolidColorBrush>
-                                </Setter.Value>
-                            </Setter>
+                                    TargetName="border"
+                                    Value="{StaticResource HeaderBackground_Pressed}" />
                             <Setter Property="BorderBrush"
                                     TargetName="border">
                                 <Setter.Value>
@@ -184,38 +191,32 @@
                         <Trigger Property="ButtonBase.IsPressed"
                                  Value="True">
                             <Setter Property="Panel.Background"
-                                    TargetName="border">
-                                <Setter.Value>
-                                    <SolidColorBrush>#FF4BA3FB</SolidColorBrush>
-                                </Setter.Value>
-                            </Setter>
+                                    TargetName="border"
+                                    Value="{StaticResource HeaderBackground_Pressed}" />
                             <Setter Property="BorderBrush"
                                     TargetName="border">
                                 <Setter.Value>
                                     <SolidColorBrush>#FF727374</SolidColorBrush>
                                 </Setter.Value>
                             </Setter>
-                            <Setter Property="BorderBrush"
-                                    TargetName="border">
-                                <Setter.Value>
-                                    <SolidColorBrush>#FF727374</SolidColorBrush>
-                                </Setter.Value>
-                            </Setter>
+                            <Setter Property="TextElement.Foreground" 
+                                    TargetName="content"
+                                    Value="white"/>
                             <Setter Property="Image.Source"
                                     TargetName="image"
-                                    Value="{Binding ImageRadioButton_MousePressedIcon,Converter={StaticResource stringToImageSourceConverter},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=controls:HTImageRadioButton}}"></Setter>
+                                    Value="{Binding ImageRadioButton_MousePressedIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=controls:HTImageRadioButton}}" />
                         </Trigger>
                         <Trigger Property="ToggleButton.IsChecked"
                                  Value="True">
                             <Setter Property="Panel.Background"
-                                    TargetName="border">
-                                <Setter.Value>
-                                    <SolidColorBrush>#FF4BA3FB</SolidColorBrush>
-                                </Setter.Value>
-                            </Setter>
+                                    TargetName="border"
+                                    Value="{StaticResource HeaderBackground_Pressed}" />
+                            <Setter Property="TextElement.Foreground"
+                                    TargetName="content"
+                                    Value="white" />
                             <Setter Property="Image.Source"
                                     TargetName="image"
-                                    Value="{Binding ImageRadioButton_MousePressedIcon,Converter={StaticResource stringToImageSourceConverter},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=controls:HTImageRadioButton}}"></Setter>
+                                    Value="{Binding ImageRadioButton_MousePressedIcon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=controls:HTImageRadioButton}}"></Setter>
                         </Trigger>
                         <Trigger Property="IsEnabled"
                                  Value="False">
@@ -242,11 +243,11 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
-    <Style BasedOn="{StaticResource HTRadioButton}"
+    <!--标准RadioButton-->
+    <Style BasedOn="{StaticResource HTCustomRadioButtonStyle}"
            TargetType="{x:Type controls:HTCustomRadioButton}"
            x:Key="{x:Type controls:HTCustomRadioButton}" />
-    
+    <!--主页MainListRadioButton-->
     <Style BasedOn="{StaticResource HTMainViewRadioButton}"
            TargetType="{x:Type controls:HTImageRadioButton}"
            x:Key="{x:Type controls:HTImageRadioButton}" />

@@ -228,16 +228,90 @@
             </Grid>
         </Border>
         <Border Grid.Row="2"
-                BorderThickness="0.75"
+                BorderThickness="0"
                 BorderBrush="Black"
                 Background="{DynamicResource HeaderBackground}">
             <UniformGrid Rows="1">
-                <controls:HTImageRadioButton />
-                <controls:HTImageRadioButton />
-                <controls:HTImageRadioButton />
-                <controls:HTImageRadioButton />
-                <controls:HTImageRadioButton />
-                <controls:HTImageRadioButton />
+                <controls:HTImageRadioButton ImageRadioButton_Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Main_64x64_Normal.png"
+                                             ImageRadioButton_MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Main_64x64_Pressed.png"
+                                             ImageRadioButton_MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Main_64x64_Pressed.png"
+                                             Height="80"
+                                             Content="Main"
+                                             FontSize="25"
+                                             FontFamily="#PingFang SC Bold"
+                                             FontWeight="Bold"
+                                             ImageHeight="35"
+                                             ImageWidth="35"
+                                             VerticalContentAlignment="Center"
+                                             Command="{Binding MainViewSelectMenuCommand}"
+                                             CommandParameter="Main"
+                                             IsChecked="True" />
+                <controls:HTImageRadioButton ImageRadioButton_Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Production_64x64_Normal.png"
+                                             ImageRadioButton_MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Production_64x64_Pressed.png"
+                                             ImageRadioButton_MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Production_64x64_Pressed.png"
+                                             Height="80"
+                                             Content="Production"
+                                             FontSize="25"
+                                             FontFamily="#PingFang SC Bold"
+                                             FontWeight="Bold"
+                                             ImageHeight="35"
+                                             ImageWidth="35"
+                                             VerticalContentAlignment="Center"
+                                             Command="{Binding MainViewSelectMenuCommand}"
+                                             CommandParameter="Main"
+                                             IsChecked="False"/>
+                <controls:HTImageRadioButton ImageRadioButton_Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Engineering_64x64_Normal.png"
+                                             ImageRadioButton_MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Engineering_64x64_Pressed.png"
+                                             ImageRadioButton_MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Engineering_64x64_Pressed.png"
+                                             Height="80"
+                                             Content="Engineering"
+                                             FontSize="25"
+                                             FontFamily="#PingFang SC Bold"
+                                             FontWeight="Bold"
+                                             ImageHeight="35"
+                                             ImageWidth="35"
+                                             VerticalContentAlignment="Center"
+                                             Command="{Binding MainViewSelectMenuCommand}"
+                                             CommandParameter="Main"/>
+                <controls:HTImageRadioButton ImageRadioButton_Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Calibration_64x64_Normal.png"
+                                             ImageRadioButton_MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Calibration_64x64_Pressed.png"
+                                             ImageRadioButton_MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Calibration_64x64_Pressed.png"
+                                             Height="80"
+                                             Content="Calibration"
+                                             FontSize="25"
+                                             FontFamily="#PingFang SC Bold"
+                                             FontWeight="Bold"
+                                             ImageHeight="35"
+                                             ImageWidth="35"
+                                             VerticalContentAlignment="Center"
+                                             Command="{Binding MainViewSelectMenuCommand}"
+                                             CommandParameter="Main"/>
+                <controls:HTImageRadioButton ImageRadioButton_Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Data_64x64_Normal.png"
+                                             ImageRadioButton_MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Data_64x64_Pressed.png"
+                                             ImageRadioButton_MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Data_64x64_Pressed.png"
+                                             Height="80"
+                                             Content="Data"
+                                             FontSize="25"
+                                             FontFamily="#PingFang SC Bold"
+                                             FontWeight="Bold"
+                                             ImageHeight="35"
+                                             ImageWidth="35"
+                                             VerticalContentAlignment="Center"
+                                             Command="{Binding MainViewSelectMenuCommand}"
+                                             CommandParameter="Main"/>
+                <controls:HTImageRadioButton ImageRadioButton_Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Warning_64x64_Normal.png"
+                                             ImageRadioButton_MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Warning_64x64_Pressed.png"
+                                             ImageRadioButton_MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Warning_64x64_Pressed.png"
+                                             Height="80"
+                                             Content="Warning"
+                                             FontSize="25"
+                                             FontFamily="#PingFang SC Bold"
+                                             FontWeight="Bold"
+                                             ImageHeight="35"
+                                             ImageWidth="35"
+                                             VerticalContentAlignment="Center"
+                                             Command="{Binding MainViewSelectMenuCommand}"
+                                             CommandParameter="Main"/>
             </UniformGrid>
         </Border>
     </Grid>
