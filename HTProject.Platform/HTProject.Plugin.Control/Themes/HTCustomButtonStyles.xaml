@@ -2,9 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:converters="clr-namespace:HTProject.Plugin.Base.Converters;assembly=HTProject.Plugin.Base"
                     xmlns:controls="clr-namespace:HTProject.Plugin.Control.Controls">
-
     <converters:StringToCollapsedConverter x:Key="StringToCollapsedConverter" />
-
     <Style x:Key="HTButtonStyle"
            TargetType="{x:Type controls:HTCustomButton}">
         <Setter Property="Cursor"
@@ -104,8 +102,8 @@
                             Width="{Binding Width, RelativeSource={RelativeSource TemplatedParent}}">
                         <Border.ToolTip>
                             <controls:HTCustomToolTip HorizontalAlignment="Center"
-                                                    Visibility="{Binding TxtToolTip,Converter={StaticResource StringToCollapsedConverter},RelativeSource={RelativeSource TemplatedParent}}"
-                                                    Content="{Binding TxtToolTip, RelativeSource={RelativeSource TemplatedParent}}" />
+                                                      Visibility="{Binding TxtToolTip,Converter={StaticResource StringToCollapsedConverter},RelativeSource={RelativeSource TemplatedParent}}"
+                                                      Content="{Binding TxtToolTip, RelativeSource={RelativeSource TemplatedParent}}" />
                         </Border.ToolTip>
                         <StackPanel x:Name="Panel"
                                     Orientation="Horizontal"
@@ -259,7 +257,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
     <Style x:Key="IconOnlyButtonStyle"
            TargetType="{x:Type controls:HTCustomIconButton}">
         <Setter Property="Cursor"
@@ -292,8 +289,8 @@
                             Width="{Binding Width, RelativeSource={RelativeSource TemplatedParent}}">
                         <Border.ToolTip>
                             <controls:HTCustomToolTip x:Name="ToolTip"
-                                                    Content="{Binding TxtToolTip, RelativeSource={RelativeSource TemplatedParent}}"
-                                                    ToolTipType="NormalToolTip" />
+                                                      Content="{Binding TxtToolTip, RelativeSource={RelativeSource TemplatedParent}}"
+                                                      ToolTipType="NormalToolTip" />
                         </Border.ToolTip>
                         <StackPanel x:Name="Panel"
                                     HorizontalAlignment="Center"
@@ -350,14 +347,201 @@
             </Setter.Value>
         </Setter>
     </Style>
-
+    <Style x:Key="HTIconTextButtonStyle"
+           TargetType="{x:Type controls:HTCustomIconTextButton}">
+        <Setter Property="Cursor"
+                Value="Hand" />
+        <Setter Property="Width"
+                Value="160" />
+        <Setter Property="Height"
+                Value="34" />
+        <Setter Property="Margin"
+                Value="0,3" />
+        <Setter Property="MinWidth"
+                Value="0" />
+        <Setter Property="MinHeight"
+                Value="0" />
+        <Setter Property="Content"
+                Value="CustomButton" />
+        <Setter Property="TxtToolTip"
+                Value="" />
+        <Setter Property="CornerRadius"
+                Value="4" />
+        <Setter Property="BorderBrush"
+                Value="#FFA9A9AA" />
+        <Setter Property="BorderThickness"
+                Value="0.75" />
+        <Setter Property="FontSize"
+                Value="16" />
+        <Setter Property="Foreground"
+                Value="#FF4C4C4C" />
+        <Setter Property="FontFamily"
+                Value="Times New Roman" />
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0,1"
+                                     StartPoint="0,0">
+                    <GradientStop Color="#FFF2F2F2"
+                                  Offset="0" />
+                    <GradientStop Color="#FFE0E0E0"
+                                  Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="MouseOverBorderBrush"
+                Value="#FFA9A9AA" />
+        <Setter Property="MouseOverForeground"
+                Value="Black" />
+        <Setter Property="MouseOverBackground">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0,1"
+                                     StartPoint="0,0">
+                    <GradientStop Color="#289CCF"
+                                  Offset="0" />
+                    <GradientStop Color="#265596"
+                                  Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="MousePressedBorderBrush"
+                Value="#FFA9A9AA" />
+        <Setter Property="MousePressedForeground"
+                Value="Black" />
+        <Setter Property="MousePressedBackground">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0,1"
+                                     StartPoint="0,0">
+                    <GradientStop Color="#289CCF"
+                                  Offset="0" />
+                    <GradientStop Color="#265596"
+                                  Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="MouseDisableBorderBrush"
+                Value="#FFD5D4D4" />
+        <Setter Property="MouseDisableForeground"
+                Value="#FF9F9F9F" />
+        <Setter Property="MouseDisableBackground">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0,1"
+                                     StartPoint="0,0">
+                    <GradientStop Color="#FFF2F2F2"
+                                  Offset="0" />
+                    <GradientStop Color="#FFE8E8E8"
+                                  Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:HTCustomIconTextButton}">
+                    <Border x:Name="Border"
+                            BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource TemplatedParent}}"
+                            BorderThickness="{Binding BorderThickness, RelativeSource={RelativeSource TemplatedParent}}"
+                            Background="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}"
+                            CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource TemplatedParent}}"
+                            Height="{Binding Height, RelativeSource={RelativeSource TemplatedParent}}"
+                            SnapsToDevicePixels="True"
+                            Width="{Binding Width, RelativeSource={RelativeSource TemplatedParent}}">
+                        <Border.ToolTip>
+                            <controls:HTCustomToolTip HorizontalAlignment="Center"
+                                                      Visibility="{Binding TxtToolTip,Converter={StaticResource StringToCollapsedConverter},RelativeSource={RelativeSource TemplatedParent}}"
+                                                      Content="{Binding TxtToolTip, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Border.ToolTip>
+                        <Grid x:Name="Panel"
+                              VerticalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Image x:Name="Img"
+                                   Grid.Column="0"
+                                   Source="{TemplateBinding Icon}"
+                                   Width="{TemplateBinding IconWidth}"
+                                   Height="{TemplateBinding IconHeight}"
+                                   Stretch="Uniform"
+                                   Margin="20,0,8,0"
+                                   VerticalAlignment="Center" />
+                            <TextBlock x:Name="Txt"
+                                       Grid.Column="1"
+                                       Foreground="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}"
+                                       FontSize="{Binding FontSize, RelativeSource={RelativeSource TemplatedParent}}"
+                                       FontFamily="{Binding FontFamily, RelativeSource={RelativeSource TemplatedParent}}"
+                                       FontWeight="{Binding FontWeight, RelativeSource={RelativeSource TemplatedParent}}"
+                                       Text="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Margin="0"
+                                       Padding="0" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <!--<Trigger Property="IsOn" Value="True">
+                            <Setter Property="Source" TargetName="Img" Value="{Binding MousePressedDisplayIcon, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Setter Property="Background" TargetName="Border" Value="{Binding MousePressedBackground, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <Setter Property="BorderBrush" TargetName="Border" Value="{Binding MousePressedBorderBrush, RelativeSource={RelativeSource TemplatedParent}}"/>
+                        </Trigger>-->
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Source"
+                                    TargetName="Img"
+                                    Value="{Binding MouseOverIcon, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter Property="Foreground"
+                                    TargetName="Txt"
+                                    Value="{Binding MouseOverForeground, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter Property="Background"
+                                    TargetName="Border"
+                                    Value="{Binding MouseOverBackground, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="Border"
+                                    Value="{Binding MouseOverBorderBrush, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+                            <Setter Property="Source"
+                                    TargetName="Img"
+                                    Value="{Binding MousePressedIcon, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter Property="Foreground"
+                                    TargetName="Txt"
+                                    Value="{Binding MousePressedForeground, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter Property="Background"
+                                    TargetName="Border"
+                                    Value="{Binding MousePressedBackground, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="Border"
+                                    Value="{Binding MousePressedBorderBrush, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter Property="Source"
+                                    TargetName="Img"
+                                    Value="{Binding MouseDisableIcon, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter Property="Foreground"
+                                    TargetName="Txt"
+                                    Value="{Binding MouseDisableForeground, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter Property="Background"
+                                    TargetName="Border"
+                                    Value="{Binding MouseDisableBackground, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="Border"
+                                    Value="{Binding MouseDisableBorderBrush, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
     <!--定义CustomButton控件默认样式-->
     <Style BasedOn="{StaticResource HTButtonStyle}"
            TargetType="{x:Type controls:HTCustomButton}"
            x:Key="{x:Type controls:HTCustomButton}" />
-    
     <!--定义CustomButton控件默认样式-->
     <Style BasedOn="{StaticResource IconOnlyButtonStyle}"
            TargetType="{x:Type controls:HTCustomIconButton}"
            x:Key="{x:Type controls:HTCustomIconButton}" />
+    <!--定义CustomButton控件默认样式-->
+    <Style BasedOn="{StaticResource HTIconTextButtonStyle}"
+           TargetType="{x:Type controls:HTCustomIconTextButton}"
+           x:Key="{x:Type controls:HTCustomIconTextButton}" />
 </ResourceDictionary>

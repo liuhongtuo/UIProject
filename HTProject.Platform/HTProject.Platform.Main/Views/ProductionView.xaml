@@ -10,6 +10,18 @@
       Width="1600"
       Height="740"
       Title="ProductionView">
+    <Page.Resources>
+        <ResourceDictionary>
+            <LinearGradientBrush x:Key="LotButtonBackground_Pressed"
+                                 StartPoint="0,0"
+                                 EndPoint="0,1">
+                <GradientStop Offset="0"
+                              Color="#FF0987F7" />
+                <GradientStop Offset="1"
+                              Color="#FF085080" />
+            </LinearGradientBrush>
+        </ResourceDictionary>
+    </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -18,14 +30,79 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
-                <ColumnDefinition  Width="300" />
+                <ColumnDefinition  Width="250" />
             </Grid.ColumnDefinitions>
             <Border Grid.Column="1"
                     BorderThickness="2,0,0,0"
                     BorderBrush="#BEBEBE">
-                <StackPanel>
-                    
-                </StackPanel>
+                <UniformGrid Columns="1" Margin="0,20">
+                    <controls:HTCustomIconTextButton Content="Initialize Lot"
+                                                     Height="60"
+                                                     Width="200"
+                                                     CornerRadius="10"
+                                                     FontSize="20"
+                                                     IconWidth="30"
+                                                     IconHeight="30"
+                                                     Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/ProductionIcons/Initial_64x64_Normal.png"
+                                                     MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/ProductionIcons/Initial_64x64_Normal.png"
+                                                     MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/ProductionIcons/Initial_64x64_Pressed.png"
+                                                     MousePressedForeground="White" />
+                    <controls:HTCustomIconTextButton Content="Start Lot"
+                                                     Height="60"
+                                                     Width="200"
+                                                     CornerRadius="10"
+                                                     FontSize="20"
+                                                     IconWidth="30"
+                                                     IconHeight="30"
+                                                     Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/ProductionIcons/Start_64x64_Normal.png"
+                                                     MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/ProductionIcons/Start_64x64_Normal.png"
+                                                     MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/ProductionIcons/Start_64x64_Pressed.png"
+                                                     MousePressedForeground="White" />
+                    <controls:HTCustomIconTextButton Content="Pasue Lot"
+                                                     Height="60"
+                                                     Width="200"
+                                                     CornerRadius="10"
+                                                     FontSize="20"
+                                                     IconWidth="30"
+                                                     IconHeight="30"
+                                                     Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/ProductionIcons/Pause_64x64_Normal.png"
+                                                     MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/ProductionIcons/Pause_64x64_Normal.png"
+                                                     MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/ProductionIcons/Pause_64x64_Pressed.png"
+                                                     MousePressedForeground="White" />
+                    <controls:HTCustomIconTextButton Content="Resume Lot"
+                                                     Height="60"
+                                                     Width="200"
+                                                     CornerRadius="10"
+                                                     FontSize="20"
+                                                     IconWidth="30"
+                                                     IconHeight="30"
+                                                     Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/ProductionIcons/Resume_64x64_Normal.png"
+                                                     MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/ProductionIcons/Resume_64x64_Normal.png"
+                                                     MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/ProductionIcons/Resume_64x64_Pressed.png"
+                                                     MousePressedForeground="White" />
+                    <controls:HTCustomIconTextButton Content="Abort Lot"
+                                                     Height="60"
+                                                     Width="200"
+                                                     CornerRadius="10"
+                                                     FontSize="20"
+                                                     IconWidth="30"
+                                                     IconHeight="30"
+                                                     Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/ProductionIcons/Abort_64x64_Normal.png"
+                                                     MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/ProductionIcons/Abort_64x64_Normal.png"
+                                                     MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/ProductionIcons/Abort_64x64_Pressed.png"
+                                                     MousePressedForeground="White" />
+                    <controls:HTCustomIconTextButton Content="Stop Lot"
+                                                     Height="60"
+                                                     Width="200"
+                                                     CornerRadius="10"
+                                                     FontSize="20"
+                                                     IconWidth="30"
+                                                     IconHeight="30"
+                                                     Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/ProductionIcons/Stop_64x64_Normal.png"
+                                                     MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/ProductionIcons/Stop_64x64_Normal.png"
+                                                     MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/ProductionIcons/Stop_64x64_Pressed.png"
+                                                     MousePressedForeground="White" />
+                </UniformGrid>
             </Border>
         </Grid>
         <Grid Grid.Row="1">

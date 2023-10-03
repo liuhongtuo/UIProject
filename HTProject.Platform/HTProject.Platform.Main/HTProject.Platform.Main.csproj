@@ -129,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="Views\EngineeringSubs\" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\EngineeringView.xaml">
