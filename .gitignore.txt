@@ -3,5 +3,5 @@
 ###############################################################################
 
 #忽略Debug目录及文件，忽视obj目录
-bin/
-obj/
+/HTProject.Common.Data/bin/
+/HTProject.Common.Data/obj/
