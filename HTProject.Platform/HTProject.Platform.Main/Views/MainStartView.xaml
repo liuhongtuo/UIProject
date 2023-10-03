@@ -236,7 +236,7 @@
                                              ImageRadioButton_MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Main_64x64_Pressed.png"
                                              ImageRadioButton_MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Main_64x64_Pressed.png"
                                              Height="80"
-                                             Content="Main"
+                                             Content="Home"
                                              FontSize="25"
                                              FontFamily="#PingFang SC Bold"
                                              FontWeight="Bold"

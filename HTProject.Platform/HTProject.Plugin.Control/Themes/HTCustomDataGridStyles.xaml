@@ -2,7 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:converters="clr-namespace:HTProject.Plugin.Base.Converters;assembly=HTProject.Plugin.Base"
                     xmlns:controls="clr-namespace:HTProject.Plugin.Control.Controls">
-
     <Style x:Key="DefaultColumnHeaderGripperStyle"
            TargetType="{x:Type Thumb}">
         <Setter Property="Width"
@@ -22,7 +21,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
     <Style x:Key="HeaderAndRowDarkStyle"
            TargetType="{x:Type controls:HTCustomDataGrid}">
         <Setter Property="DataGrid.IsReadOnly"
@@ -217,8 +215,7 @@
                             <ControlTemplate TargetType="{x:Type DataGridCell}">
                                 <TextBlock VerticalAlignment="Stretch"
                                            Padding="12,6,0,0">
-									<ContentPresenter />
-                                </TextBlock>
+									<ContentPresenter /></TextBlock>
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>
@@ -304,7 +301,6 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-
     <Style x:Key="OnlyHeaderDarkStyle"
            TargetType="{x:Type controls:HTCustomDataGrid}">
         <Setter Property="DataGrid.IsReadOnly"
@@ -499,8 +495,7 @@
                             <ControlTemplate TargetType="{x:Type DataGridCell}">
                                 <TextBlock VerticalAlignment="Stretch"
                                            Padding="12,6,0,0">
-									<ContentPresenter />
-                                </TextBlock>
+									<ContentPresenter /></TextBlock>
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>
@@ -586,9 +581,8 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-
-    <Style  x:Key="OnlyRowDarkStyle"
-            TargetType="{x:Type controls:HTCustomDataGrid}">
+    <Style x:Key="OnlyRowDarkStyle"
+           TargetType="{x:Type controls:HTCustomDataGrid}">
         <Setter Property="DataGrid.IsReadOnly"
                 Value="True" />
         <Setter Property="DataGrid.SelectionMode"
@@ -781,8 +775,7 @@
                             <ControlTemplate TargetType="{x:Type DataGridCell}">
                                 <TextBlock VerticalAlignment="Stretch"
                                            Padding="12,6,0,0">
-									<ContentPresenter />
-                                </TextBlock>
+									<ContentPresenter /></TextBlock>
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>
@@ -868,7 +861,6 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-
     <Style x:Key="HeaderAndRowWhiteStyle"
            TargetType="{x:Type controls:HTCustomDataGrid}">
         <Setter Property="DataGrid.IsReadOnly"
@@ -1063,8 +1055,7 @@
                             <ControlTemplate TargetType="{x:Type DataGridCell}">
                                 <TextBlock VerticalAlignment="Stretch"
                                            Padding="12,6,0,0">
-									<ContentPresenter />
-                                </TextBlock>
+									<ContentPresenter /></TextBlock>
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>
@@ -1150,7 +1141,6 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-
     <Style x:Key="StateToRowBackgroundStyle"
            TargetType="{x:Type controls:HTCustomDataGrid}">
         <Setter Property="DataGrid.IsReadOnly"
@@ -1266,8 +1256,7 @@
                             <ControlTemplate TargetType="{x:Type DataGridCell}">
                                 <TextBlock VerticalAlignment="Stretch"
                                            Padding="12,6,0,0">
-									<ContentPresenter />
-                                </TextBlock>
+									<ContentPresenter /></TextBlock>
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>
@@ -1353,11 +1342,9 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-
     <Style BasedOn="{StaticResource OnlyHeaderDarkStyle}"
            TargetType="{x:Type controls:HTCustomDataGrid}"
            x:Key="{x:Type controls:HTCustomDataGrid}" />
-
     <Style x:Key="DefaultDataGrid"
            TargetType="{x:Type DataGrid}">
         <Setter Property="UIElement.AllowDrop"
@@ -1461,8 +1448,7 @@
                             <ControlTemplate TargetType="{x:Type DataGridCell}">
                                 <TextBlock VerticalAlignment="Center"
                                            Margin="40,0,0,0">
-									<ContentPresenter />
-                                </TextBlock>
+									<ContentPresenter /></TextBlock>
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>
@@ -1477,7 +1463,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
     <Style x:Key="DarkColumnHeaderStyle"
            TargetType="{x:Type DataGrid}">
         <Setter Property="UIElement.AllowDrop"
@@ -1587,8 +1572,7 @@
                             <ControlTemplate TargetType="{x:Type DataGridCell}">
                                 <TextBlock VerticalAlignment="Center"
                                            Margin="40,0,0,0">
-									<ContentPresenter />
-                                </TextBlock>
+									<ContentPresenter /></TextBlock>
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>
@@ -1603,9 +1587,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-
     <Style BasedOn="{StaticResource DefaultDataGrid}"
            TargetType="{x:Type DataGrid}"
            x:Key="{x:Type DataGrid}" />
-
 </ResourceDictionary>
