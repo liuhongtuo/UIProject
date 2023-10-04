@@ -83,10 +83,55 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Managers\PageManager.cs" />
+    <Compile Include="ViewModels\CalibrationViewModel.cs" />
+    <Compile Include="ViewModels\DataViewModel.cs" />
+    <Compile Include="ViewModels\EngineeringSubs\DebugSubs\AssemblyStationViewModel.cs" />
+    <Compile Include="ViewModels\EngineeringSubs\DebugSubs\CollectingStationViewModel.cs" />
+    <Compile Include="ViewModels\EngineeringSubs\DebugSubs\DispensingStationViewModel.cs" />
+    <Compile Include="ViewModels\EngineeringSubs\DebugSubs\LoadingStationViewModel.cs" />
+    <Compile Include="ViewModels\EngineeringSubs\DebugSubs\RecheckStationViewModel.cs" />
+    <Compile Include="ViewModels\EngineeringSubs\IOInputViewModel.cs" />
+    <Compile Include="ViewModels\EngineeringSubs\IOOutputViewModel.cs" />
+    <Compile Include="ViewModels\EngineeringSubs\ManualDebugViewModel.cs" />
+    <Compile Include="ViewModels\EngineeringSubs\MCFCSettingViewModel.cs" />
     <Compile Include="ViewModels\EngineeringViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainStartViewModel.cs" />
     <Compile Include="ViewModels\ProductionViewModel.cs" />
+    <Compile Include="ViewModels\WarningViewModel.cs" />
+    <Compile Include="Views\CalibrationView.xaml.cs">
+      <DependentUpon>CalibrationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DataView.xaml.cs">
+      <DependentUpon>DataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EngineeringSubs\DebugSubs\AssemblyStationView.xaml.cs">
+      <DependentUpon>AssemblyStationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EngineeringSubs\DebugSubs\CollectingStationView.xaml.cs">
+      <DependentUpon>CollectingStationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EngineeringSubs\DebugSubs\DispensingStationView.xaml.cs">
+      <DependentUpon>DispensingStationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EngineeringSubs\DebugSubs\LoadingStationView.xaml.cs">
+      <DependentUpon>LoadingStationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EngineeringSubs\DebugSubs\RecheckStationView.xaml.cs">
+      <DependentUpon>RecheckStationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EngineeringSubs\IOInputView.xaml.cs">
+      <DependentUpon>IOInputView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EngineeringSubs\IOOutputView.xaml.cs">
+      <DependentUpon>IOOutputView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EngineeringSubs\ManualDebugView.xaml.cs">
+      <DependentUpon>ManualDebugView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EngineeringSubs\MCFCSettingView.xaml.cs">
+      <DependentUpon>MCFCSettingView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EngineeringView.xaml.cs">
       <DependentUpon>EngineeringView.xaml</DependentUpon>
     </Compile>
@@ -98,6 +143,9 @@
     </Compile>
     <Compile Include="Views\ProductionView.xaml.cs">
       <DependentUpon>ProductionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WarningView.xaml.cs">
+      <DependentUpon>WarningView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -129,9 +177,52 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="Views\EngineeringSubs\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\CalibrationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EngineeringSubs\DebugSubs\AssemblyStationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EngineeringSubs\DebugSubs\CollectingStationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EngineeringSubs\DebugSubs\DispensingStationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EngineeringSubs\DebugSubs\LoadingStationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EngineeringSubs\DebugSubs\RecheckStationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EngineeringSubs\IOInputView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EngineeringSubs\IOOutputView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EngineeringSubs\ManualDebugView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EngineeringSubs\MCFCSettingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\EngineeringView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -145,6 +236,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ProductionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WarningView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
