@@ -1,6 +1,0 @@
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Base\bin\Debug\HTProject.Plugin.Base.dll
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Base\bin\Debug\HTProject.Plugin.Base.pdb
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Base\obj\Debug\HTProject.Plugin.Base.csproj.CoreCompileInputs.cache
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Base\obj\Debug\HTProject.Plugin.Base.dll
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Base\obj\Debug\HTProject.Plugin.Base.pdb
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Plugin.Base\obj\Debug\HTProject.Plugin.Base.csproj.AssemblyReference.cache

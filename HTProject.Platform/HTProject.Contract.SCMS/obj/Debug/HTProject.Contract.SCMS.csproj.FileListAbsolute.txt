@@ -1,5 +1,0 @@
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Contract.SCMS\bin\Debug\HTProject.Contract.SCMS.dll
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Contract.SCMS\bin\Debug\HTProject.Contract.SCMS.pdb
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Contract.SCMS\obj\Debug\HTProject.Contract.SCMS.csproj.CoreCompileInputs.cache
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Contract.SCMS\obj\Debug\HTProject.Contract.SCMS.dll
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Contract.SCMS\obj\Debug\HTProject.Contract.SCMS.pdb
