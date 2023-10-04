@@ -62,6 +62,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <Style x:Key="DefaultIconTabItem"
            TargetType="{x:Type controls:HTCustomIconTabItem}">
         <Setter Property="FontSize"
@@ -100,6 +101,29 @@
                     <ControlTemplate.Triggers>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource Mode=Self}}"
+                                           Value="true" />
+                                <Condition Binding="{Binding Path=TabStripPlacement, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TabControl, AncestorLevel=1}}"
+                                           Value="Top" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Foreground"
+                                    TargetName="Txt"
+                                    Value="#FF000000" />
+                            <!--<Setter Property="FontWeight" TargetName="Txt" Value="Bold"/>-->
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding Path=IsEnabled, RelativeSource={RelativeSource Mode=Self}}"
+                                           Value="false" />
+                                <Condition Binding="{Binding Path=TabStripPlacement, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TabControl, AncestorLevel=1}}"
+                                           Value="Top" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Foreground"
+                                    TargetName="Txt"
+                                    Value="#FF838383" />
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
                                 <Condition Value="true"
                                            Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" />
                                 <Condition Value="Top"
@@ -124,14 +148,15 @@
                             </Setter>
                             <Setter TargetName="UnderLine"
                                     Property="BorderThickness"
-                                    Value="0,0,0,2" />
+                                    Value="0,0,0,3" />
                         </MultiDataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="DefaultTabControl"
+    
+    <Style x:Key="DefaultCustomTabControl"
            TargetType="{x:Type TabControl}">
         <Setter Property="Template">
             <Setter.Value>
@@ -169,18 +194,123 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
+    <Style x:Key="DefaultHorizontalIconTabItem"
+           TargetType="{x:Type controls:HTCustomHorizontalIconTabItem}">
+        <Setter Property="FontSize"
+                Value="16" />
+        <Setter Property="Foreground"
+                Value="#9A9A9A" />
+        <Setter Property="FontFamily"
+                Value="#PingFang SC Medium" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:HTCustomHorizontalIconTabItem}">
+                    <Grid>
+                        <Border Name="UnderLine"
+                                Width="{TemplateBinding Width}" />
+                        <Grid VerticalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Image x:Name="Img"
+                                   Source="{TemplateBinding Icon}"
+                                   Width="{TemplateBinding IconWidth}"
+                                   Height="{TemplateBinding IconHeight}"
+                                   Stretch="Uniform"
+                                   Margin="{TemplateBinding Padding}"
+                                   VerticalAlignment="Center" />
+                            <TextBlock Name="Txt"
+                                       Grid.Column="1"
+                                       Margin="{TemplateBinding Padding}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Text="{TemplateBinding Header}"
+                                       ToolTip="{TemplateBinding Header}"
+                                       FontSize="{TemplateBinding FontSize}"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       FontFamily="{TemplateBinding FontFamily}" />
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource Mode=Self}}"
+                                           Value="true" />
+                                <Condition Binding="{Binding Path=TabStripPlacement, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TabControl, AncestorLevel=1}}"
+                                           Value="Left" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Foreground"
+                                    TargetName="Txt"
+                                    Value="#FF000000" />
+                            <!--<Setter Property="FontWeight" TargetName="Txt" Value="Bold"/>-->
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding Path=IsEnabled, RelativeSource={RelativeSource Mode=Self}}"
+                                           Value="false" />
+                                <Condition Binding="{Binding Path=TabStripPlacement, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TabControl, AncestorLevel=1}}"
+                                           Value="Left" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Foreground"
+                                    TargetName="Txt"
+                                    Value="#FF838383" />
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Value="true"
+                                           Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" />
+                                <Condition Value="Left"
+                                           Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type TabControl}}}" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Panel.ZIndex"
+                                    Value="1" />
+                            <Setter TargetName="Txt"
+                                    Property="Foreground"
+                                    Value="#000000" />
+                            <Setter TargetName="UnderLine"
+                                    Property="BorderBrush">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0,0"
+                                                         EndPoint="0,1">
+                                        <GradientStop Color="#0561C6"
+                                                      Offset="0" />
+                                        <GradientStop Color="#68789E"
+                                                      Offset="1" />
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter TargetName="UnderLine"
+                                    Property="BorderThickness"
+                                    Value="0,0,3,0" />
+                        </MultiDataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
     <!--定义TabItem控件默认样式-->
     <Style BasedOn="{StaticResource DefaultTabItem}"
            TargetType="{x:Type TabItem}"
            x:Key="{x:Type TabItem}" />
+    
     <!--定义TabItem控件默认样式-->
     <Style BasedOn="{StaticResource DefaultIconTabItem}"
            TargetType="{x:Type controls:HTCustomIconTabItem}"
            x:Key="{x:Type controls:HTCustomIconTabItem}" />
+    
+    <!--定义TabItem控件默认样式-->
+    <Style BasedOn="{StaticResource DefaultHorizontalIconTabItem}"
+           TargetType="{x:Type controls:HTCustomHorizontalIconTabItem}"
+           x:Key="{x:Type controls:HTCustomHorizontalIconTabItem}" />
+    
     <!--定义TabControl控件默认样式-->
-    <Style BasedOn="{StaticResource DefaultTabControl}"
+    <!--<Style BasedOn="{StaticResource DefaultCustomTabControl}"
            TargetType="{x:Type TabControl}"
-           x:Key="{x:Type TabControl}" />
+           x:Key="{x:Type TabControl}" />-->
+    
     <Style x:Key="{x:Type controls:HTCustomCloseTabItem}"
            TargetType="{x:Type controls:HTCustomCloseTabItem}">
         <Setter Property="FontSize"
@@ -264,6 +394,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <Style x:Key="CustomUnderLineIconCloseTabItem"
            TargetType="{x:Type controls:HTCustomIconCloseTabItem}">
         <Setter Property="FontSize"
@@ -359,6 +490,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <Style x:Key="CustomRectBorderIconCloseTabItem"
            TargetType="{x:Type controls:HTCustomIconCloseTabItem}">
         <Setter Property="FontSize"

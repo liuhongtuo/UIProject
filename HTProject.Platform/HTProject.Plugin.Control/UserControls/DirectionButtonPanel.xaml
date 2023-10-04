@@ -47,6 +47,8 @@
                                              Grid.Column="0"
                                              Width="34"
                                              Height="34"
+                                             IconHeight="20"
+                                             IconWidth="20"
                                              ButtonType="OnlyIcon"
                                              Visibility="{Binding IsShowHorizontalDirection, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                              Icon="{Binding BtnAdjustLeft_Icon,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"

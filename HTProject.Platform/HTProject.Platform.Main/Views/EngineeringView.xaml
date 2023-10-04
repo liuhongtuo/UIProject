@@ -13,7 +13,7 @@
       Height="740"
       Title="EngineeringView">
     <Grid>
-        <TabControl>
+        <TabControl Style="{StaticResource DefaultCustomTabControl}">
             <controls:HTCustomIconTabItem Header="Manual Debug"
                                           Height="50"
                                           FontSize="18"
