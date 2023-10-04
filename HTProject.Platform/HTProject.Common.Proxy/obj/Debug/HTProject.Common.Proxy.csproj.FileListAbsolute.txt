@@ -1,6 +1,0 @@
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Common.Proxy\bin\Debug\HTProject.Common.Proxy.dll
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Common.Proxy\bin\Debug\HTProject.Common.Proxy.pdb
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Common.Proxy\obj\Debug\HTProject.Common.Proxy.csproj.AssemblyReference.cache
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Common.Proxy\obj\Debug\HTProject.Common.Proxy.csproj.CoreCompileInputs.cache
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Common.Proxy\obj\Debug\HTProject.Common.Proxy.dll
-E:\SW\WPF\UIProject\HTProject.Platform\HTProject.Common.Proxy\obj\Debug\HTProject.Common.Proxy.pdb
