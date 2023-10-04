@@ -3,5 +3,13 @@
 ###############################################################################
 
 #忽略Debug目录及文件，忽视obj目录
-/HTProject.Common.Data/bin/
-/HTProject.Common.Data/obj/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+[Bb]uild/
+bld/
+[Bb]in/
+[Oo]bj/
+/HTProject.Common.Data/bin
+/HTProject.Common.Data/obj
