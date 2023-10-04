@@ -2,6 +2,11 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio#
 ###############################################################################
 
+#忽略压缩文件
+*.7z
+*.zip
+*.rar
+
 #忽略Debug目录及文件，忽视obj目录
 [Dd]ebug/
 [Dd]ebugPublic/
