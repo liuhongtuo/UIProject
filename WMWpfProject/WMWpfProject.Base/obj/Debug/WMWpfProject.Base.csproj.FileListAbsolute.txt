@@ -1,6 +1,0 @@
-E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject.Base\bin\Debug\WMWpfProject.Base.dll
-E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject.Base\bin\Debug\WMWpfProject.Base.pdb
-E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject.Base\obj\Debug\WMWpfProject.Base.csproj.CoreCompileInputs.cache
-E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject.Base\obj\Debug\WMWpfProject.Base.dll
-E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject.Base\obj\Debug\WMWpfProject.Base.pdb
-E:\SW\WPF\UIProject\WMWpfProject\WMWpfProject.Base\obj\Debug\WMWpfProject.Base.csproj.AssemblyReference.cache
