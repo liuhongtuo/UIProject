@@ -11,5 +11,6 @@
 bld/
 [Bb]in/
 [Oo]bj/
+.vs/
 /HTProject.Common.Data/bin
 /HTProject.Common.Data/obj
