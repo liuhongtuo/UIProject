@@ -21,8 +21,8 @@
                  RenderOptions.BitmapScalingMode="NearestNeighbor">
             <Grid Name="canvas">
                 <Grid.Clip>
-                    <EllipseGeometry RadiusX="60"
-                                     RadiusY="60"
+                    <EllipseGeometry RadiusX="80"
+                                     RadiusY="80"
                                      Center="60,60"></EllipseGeometry>
                 </Grid.Clip>
                 <Ellipse Panel.ZIndex="-1"
