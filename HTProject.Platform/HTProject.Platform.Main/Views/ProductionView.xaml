@@ -113,8 +113,15 @@
                   StrokeThickness="2"
                   Stroke="#BEBEBE"
                   StrokeDashArray="5,5" />
-            <controls:HTCustomDataGrid ColumnHeaderHeight="50">
-                <DataGrid.Columns>
+            <controls:HTCustomDataGrid x:Name="dgridLotInfoList"
+                                       ColumnHeaderHeight="50"
+                                       RowHeight="40"
+                                       ItemsSource="{Binding TestList}"
+                                       SelectedItem="{Binding SelectedTestItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                       AutoGenerateColumns="False"
+                                       GridLinesVisibility="None"
+                                       CanUserAddRows="False">
+                <controls:HTCustomDataGrid.Columns>
                     <DataGridTextColumn Header="Carrier Code"
                                         MinWidth="100"
                                         Width="150"
@@ -162,7 +169,7 @@
                                         MinWidth="120"
                                         Binding="{Binding Comment}"
                                         IsReadOnly="True"></DataGridTextColumn>
-                </DataGrid.Columns>
+                </controls:HTCustomDataGrid.Columns>
             </controls:HTCustomDataGrid>
         </Grid>
     </Grid>
