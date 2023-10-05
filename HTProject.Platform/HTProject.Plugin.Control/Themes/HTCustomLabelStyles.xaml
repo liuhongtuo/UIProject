@@ -42,8 +42,8 @@
                             Padding="{TemplateBinding Padding}"
                             SnapsToDevicePixels="true">
                         <StackPanel Orientation="Horizontal">
-                            <Image Width="30"
-                                   Height="30"
+                            <Image Width="{TemplateBinding IconWidth}"
+                                   Height="{TemplateBinding IconHeight}"
                                    x:Name="Img"
                                    VerticalAlignment="Center"
                                    Margin="0,0,10,0"

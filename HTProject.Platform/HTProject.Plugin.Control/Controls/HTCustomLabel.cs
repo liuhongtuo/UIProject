@@ -160,5 +160,37 @@ namespace HTProject.Plugin.Control.Controls
         /// </summary>
         public static readonly DependencyProperty NormalIconProperty
             = DependencyProperty.Register("NormalIcon", typeof(ImageSource), typeof(HTCustomIconLabel), new PropertyMetadata(null));
+
+        /// <summary>
+        /// 注册按钮图标宽度属性
+        /// </summary>
+        public double IconWidth
+        {
+            get { return (double)GetValue(IconWidthProperty); }
+            set { SetValue(IconWidthProperty, value); }
+        }
+
+        /// <summary>
+        /// 注册按钮图标宽度属性
+        /// </summary>
+        public static readonly DependencyProperty IconWidthProperty =
+            DependencyProperty.Register("IconWidth", typeof(double), typeof(HTCustomIconLabel), new PropertyMetadata(25.0));
+
+
+
+        /// <summary>
+        /// 注册按钮图标高度属性
+        /// </summary>
+        public double IconHeight
+        {
+            get { return (double)GetValue(IconHeightProperty); }
+            set { SetValue(IconHeightProperty, value); }
+        }
+
+        /// <summary>
+        /// 注册按钮图标高度属性
+        /// </summary>
+        public static readonly DependencyProperty IconHeightProperty =
+            DependencyProperty.Register("IconHeight", typeof(double), typeof(HTCustomIconLabel), new PropertyMetadata(25.0));
     }
 }

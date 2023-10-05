@@ -11,6 +11,7 @@
         <GradientStop Offset="1"
                       Color="#d6d4d4" />
     </LinearGradientBrush>
+    
     <LinearGradientBrush x:Key="HeaderBackground_Pressed"
                          StartPoint="0,0"
                          EndPoint="0,1">
@@ -19,6 +20,7 @@
         <GradientStop Offset="1"
                       Color="#FF085080" />
     </LinearGradientBrush>
+    
     <Style x:Key="HTCustomRadioButtonStyle"
            TargetType="{x:Type controls:HTCustomRadioButton}">
         <Setter Property="FrameworkElement.Cursor"
@@ -55,7 +57,7 @@
                                     SnapsToDevicePixels="True" />
                         </Border>
                         <TextBlock Name="Txt"
-                                   Margin="5,0,0,0"
+                                   Margin="10,0,0,0"
                                    VerticalAlignment="Center"
                                    Text="{Binding OptionTxt, RelativeSource={RelativeSource TemplatedParent}}"
                                    FontSize="{Binding FontSize, RelativeSource={RelativeSource TemplatedParent}}"
@@ -118,6 +120,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <Style x:Key="HTMainViewRadioButton"
            TargetType="{x:Type controls:HTImageRadioButton}">
         <Setter Property="Cursor"
@@ -243,6 +246,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <!--标准RadioButton-->
     <Style BasedOn="{StaticResource HTCustomRadioButtonStyle}"
            TargetType="{x:Type controls:HTCustomRadioButton}"
