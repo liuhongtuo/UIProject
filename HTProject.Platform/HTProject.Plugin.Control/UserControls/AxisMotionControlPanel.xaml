@@ -1,0 +1,382 @@
+﻿<UserControl x:Class="HTProject.Plugin.Control.UserControls.AxisMotionControlPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:HTProject.Plugin.Control.UserControls"
+             xmlns:controls="clr-namespace:HTProject.Plugin.Control.Controls"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="1420">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="boolToVisibility" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border BorderBrush="#4c4c4c"
+            BorderThickness="1"
+            CornerRadius="10">
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Border BorderBrush="#4c4c4c"
+                    BorderThickness="0,0,0,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="120" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="110" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="1"
+                           Grid.Column="0"
+                           Content="Encoder: "
+                           FontSize="18"
+                           Foreground="#4c4c4c"
+                           FontFamily="#PingFang SC Bold"
+                           VerticalAlignment="Center" />
+                    <Label Grid.Row="2"
+                           Grid.Column="0"
+                           Content="Actual: "
+                           FontSize="18"
+                           Foreground="#4c4c4c"
+                           FontFamily="#PingFang SC Bold"
+                           VerticalAlignment="Center" />
+                    <Label Grid.Row="3"
+                           Grid.Column="0"
+                           Content="Move: "
+                           FontSize="18"
+                           Foreground="#4c4c4c"
+                           FontFamily="#PingFang SC Bold"
+                           VerticalAlignment="Center" />
+                    <StackPanel Grid.Row="0"
+                                Grid.Column="1"
+                                Grid.RowSpan="4"
+                                Height="160"
+                                Visibility="{Binding IsContainXAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}">
+                        <Label Content="X(mm)"
+                               FontSize="18"
+                               Height="40"
+                               Foreground="#4c4c4c"
+                               FontFamily="#PingFang SC Bold"
+                               VerticalAlignment="Center"
+                               VerticalContentAlignment="Center"
+                               HorizontalAlignment="Center" />
+                        <controls:HTCustomTextBox Width="90"
+                                                  Margin="5,3"
+                                                  IsReadOnly="True" />
+                        <controls:HTCustomTextBox Width="90"
+                                                  Margin="5,3"
+                                                  IsReadOnly="True" />
+                        <controls:HTCustomTextBox Width="90"
+                                                  Margin="5,3"
+                                                  IsReadOnly="False" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="0"
+                                Grid.Column="2"
+                                Grid.RowSpan="4"
+                                Height="160"
+                                Visibility="{Binding IsContainYAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}">
+                        <Label Content="Y(mm)"
+                               FontSize="18"
+                               Height="40"
+                               Foreground="#4c4c4c"
+                               FontFamily="#PingFang SC Bold"
+                               VerticalAlignment="Center"
+                               VerticalContentAlignment="Center"
+                               HorizontalAlignment="Center" />
+                        <controls:HTCustomTextBox Width="90"
+                                                  Margin="5,3"
+                                                  IsReadOnly="True" />
+                        <controls:HTCustomTextBox Width="90"
+                                                  Margin="5,3"
+                                                  IsReadOnly="True" />
+                        <controls:HTCustomTextBox Width="90"
+                                                  Margin="5,3"
+                                                  IsReadOnly="False" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="0"
+                                Grid.Column="3"
+                                Grid.RowSpan="4"
+                                Height="160"
+                                Visibility="{Binding IsContainZAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}">
+                        <Label Content="Z(mm)"
+                               FontSize="18"
+                               Height="40"
+                               Foreground="#4c4c4c"
+                               FontFamily="#PingFang SC Bold"
+                               VerticalAlignment="Center"
+                               VerticalContentAlignment="Center"
+                               HorizontalAlignment="Center" />
+                        <controls:HTCustomTextBox Width="90"
+                                                  Margin="5,3"
+                                                  IsReadOnly="True" />
+                        <controls:HTCustomTextBox Width="90"
+                                                  Margin="5,3"
+                                                  IsReadOnly="True" />
+                        <controls:HTCustomTextBox Width="90"
+                                                  Margin="5,3"
+                                                  IsReadOnly="False" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="0"
+                                Grid.Column="4"
+                                Grid.RowSpan="4"
+                                Height="160"
+                                Visibility="{Binding IsContainRXAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}">
+                        <Label Content="RX(°)"
+                               FontSize="18"
+                               Height="40"
+                               Foreground="#4c4c4c"
+                               FontFamily="#PingFang SC Bold"
+                               VerticalAlignment="Center"
+                               VerticalContentAlignment="Center"
+                               HorizontalAlignment="Center" />
+                        <controls:HTCustomTextBox Width="90"
+                                                  Margin="5,3"
+                                                  IsReadOnly="True" />
+                        <controls:HTCustomTextBox Width="90"
+                                                  Margin="5,3"
+                                                  IsReadOnly="True" />
+                        <controls:HTCustomTextBox Width="90"
+                                                  Margin="5,3"
+                                                  IsReadOnly="False" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="0"
+                                Grid.Column="5"
+                                Grid.RowSpan="4"
+                                Height="160"
+                                Visibility="{Binding IsContainRYAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}">
+                        <Label Content="RY(°)"
+                               FontSize="18"
+                               Height="40"
+                               Foreground="#4c4c4c"
+                               FontFamily="#PingFang SC Bold"
+                               VerticalAlignment="Center"
+                               VerticalContentAlignment="Center"
+                               HorizontalAlignment="Center" />
+                        <controls:HTCustomTextBox Width="90"
+                                                  Margin="5,3"
+                                                  IsReadOnly="True" />
+                        <controls:HTCustomTextBox Width="90"
+                                                  Margin="5,3"
+                                                  IsReadOnly="True" />
+                        <controls:HTCustomTextBox Width="90"
+                                                  Margin="5,3"
+                                                  IsReadOnly="False" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="0"
+                                Grid.Column="6"
+                                Grid.RowSpan="4"
+                                Height="160"
+                                Visibility="{Binding IsContainRZAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}">
+                        <Label Content="RZ(°)"
+                               FontSize="18"
+                               Height="40"
+                               Foreground="#4c4c4c"
+                               FontFamily="#PingFang SC Bold"
+                               VerticalAlignment="Center"
+                               VerticalContentAlignment="Center"
+                               HorizontalAlignment="Center" />
+                        <controls:HTCustomTextBox Width="90"
+                                                  Margin="5,3"
+                                                  IsReadOnly="True" />
+                        <controls:HTCustomTextBox Width="90"
+                                                  Margin="5,3"
+                                                  IsReadOnly="True" />
+                        <controls:HTCustomTextBox Width="90"
+                                                  Margin="5,3"
+                                                  IsReadOnly="False" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="4"
+                                Grid.Column="1"
+                                Grid.ColumnSpan="7"
+                                Orientation="Horizontal">
+                        <Label Content="X"
+                               Foreground="#4c4c4c"
+                               FontSize="14"
+                               FontFamily="#PingFang SC Bold"
+                               Visibility="{Binding IsContainXAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
+                        <Label Content="Y"
+                               Foreground="#4c4c4c"
+                               FontSize="14"
+                               FontFamily="#PingFang SC Bold"
+                               Visibility="{Binding IsContainYAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
+                        <local:DirectionButtonPanel Grid.Row="4"
+                                                    Grid.Column="1"
+                                                    Grid.ColumnSpan="2"
+                                                    Height="120"
+                                                    Width="120"
+                                                    IsShowSlantDirection="{Binding IsShowSlantDirection, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                                    IsShowHorizontalDirection="{Binding IsContainXAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                                    IsShowVerticalDirection="{Binding IsContainYAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
+                        <Label Content="Z"
+                               Foreground="#4c4c4c"
+                               FontSize="14"
+                               FontFamily="#PingFang SC Bold"
+                               Visibility="{Binding IsContainZAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
+                        <Label Content="RZ"
+                               Foreground="#4c4c4c"
+                               FontSize="14"
+                               FontFamily="#PingFang SC Bold"
+                               Visibility="{Binding IsContainRZAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
+                        <local:DirectionButtonPanel Grid.Row="4"
+                                                    Grid.Column="1"
+                                                    Grid.ColumnSpan="2"
+                                                    Height="120"
+                                                    Width="120"
+                                                    IsShowSlantDirection="False"
+                                                    HorizontalAlignment="Left"
+                                                    BtnAdjustLeft_Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftRotate_64x64_Normal.png"
+                                                    BtnAdjustLeft_MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftRotate_64x64_Pressed.png"
+                                                    BtnAdjustLeft_MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftRotate_64x64_Pressed.png"
+                                                    BtnAdjustLeft_MouseDisableIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftRotate_64x64_Disable.png"
+                                                    BtnAdjustRight_Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightRotate_64x64_Normal.png"
+                                                    BtnAdjustRight_MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightRotate_64x64_Normal.png"
+                                                    BtnAdjustRight_MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightRotate_64x64_Normal.png"
+                                                    BtnAdjustRight_MouseDisableIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightRotate_64x64_Normal.png"
+                                                    IsShowHorizontalDirection="{Binding IsContainRZAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                                    IsShowVerticalDirection="{Binding IsContainZAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
+                        <Label Content="RX"
+                               Foreground="#4c4c4c"
+                               FontSize="14"
+                               FontFamily="#PingFang SC Bold"
+                               Visibility="{Binding IsContainRXAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
+                        <Label Content="RY"
+                               Foreground="#4c4c4c"
+                               FontSize="14"
+                               FontFamily="#PingFang SC Bold"
+                               Visibility="{Binding IsContainRYAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
+                        <local:DirectionButtonPanel Grid.Row="4"
+                                                    Grid.Column="1"
+                                                    Grid.ColumnSpan="2"
+                                                    Height="120"
+                                                    Width="120"
+                                                    IsShowSlantDirection="False"
+                                                    HorizontalAlignment="Left"
+                                                    BtnAdjustUp_Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowUpRotate_64x64_Normal.png"
+                                                    BtnAdjustUp_MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowUpRotate_64x64_Pressed.png"
+                                                    BtnAdjustUp_MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowUpRotate_64x64_Pressed.png"
+                                                    BtnAdjustUp_MouseDisableIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowUpRotate_64x64_Disable.png"
+                                                    BtnAdjustDown_Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowDownRotate_64x64_Normal.png"
+                                                    BtnAdjustDown_MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowDownRotate_64x64_Normal.png"
+                                                    BtnAdjustDown_MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowDownRotate_64x64_Normal.png"
+                                                    BtnAdjustDown_MouseDisableIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowDownRotate_64x64_Normal.png"
+                                                    BtnAdjustLeft_Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftRotate_64x64_Normal.png"
+                                                    BtnAdjustLeft_MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftRotate_64x64_Pressed.png"
+                                                    BtnAdjustLeft_MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftRotate_64x64_Pressed.png"
+                                                    BtnAdjustLeft_MouseDisableIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftRotate_64x64_Disable.png"
+                                                    BtnAdjustRight_Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightRotate_64x64_Normal.png"
+                                                    BtnAdjustRight_MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightRotate_64x64_Normal.png"
+                                                    BtnAdjustRight_MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightRotate_64x64_Normal.png"
+                                                    BtnAdjustRight_MouseDisableIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightRotate_64x64_Normal.png"
+                                                    IsShowHorizontalDirection="{Binding IsContainRXAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                                    IsShowVerticalDirection="{Binding IsContainRYAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
+                        <StackPanel Grid.Row="4"
+                                    Grid.Column="3"
+                                    Margin="10,0,0,0">
+                            <controls:HTCustomRadioButton OptionTxt="Long Distance"
+                                                          VerticalAlignment="Center"
+                                                          Height="40" />
+                            <controls:HTCustomRadioButton OptionTxt="Medium Distance"
+                                                          VerticalAlignment="Center"
+                                                          Height="40" />
+                            <controls:HTCustomRadioButton OptionTxt="Short Distance"
+                                                          VerticalAlignment="Center"
+                                                          Height="40" />
+                        </StackPanel>
+                    </StackPanel>
+                    <controls:HTCustomButton Grid.Row="1"
+                                             Grid.Column="7"
+                                             Content="Start Moving"
+                                             Width="100" />
+                    <controls:HTCustomButton Grid.Row="2"
+                                             Grid.Column="7"
+                                             Content="Stop Moving"
+                                             Width="100" />
+                </Grid>
+            </Border>
+            <GridSplitter Grid.Column="1"
+                          Width="1"
+                          HorizontalAlignment="Center"
+                          BorderBrush="#4c4c4c"
+                          BorderThickness="1" />
+            <Border Grid.Column="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+                    <controls:HTCustomDataGrid x:Name="dgridPositionList"
+                                               Margin="10"
+                                               ColumnHeaderHeight="50"
+                                               RowHeight="40"
+                                               ItemsSource="{Binding TestList}"
+                                               SelectedItem="{Binding SelectedTestItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                               AutoGenerateColumns="False"
+                                               GridLinesVisibility="None"
+                                               CanUserAddRows="False">
+                        <controls:HTCustomDataGrid.Columns>
+                            <DataGridTextColumn Header="Position Name"
+                                                MinWidth="100"
+                                                Width="auto" />
+                            <DataGridTextColumn Header="X(mm)"
+                                                MinWidth="70"
+                                                Width="auto"
+                                                Visibility="{Binding IsContainXAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
+                            <DataGridTextColumn Header="Y(mm)"
+                                                MinWidth="70"
+                                                Width="auto"
+                                                Visibility="{Binding IsContainYAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
+                            <DataGridTextColumn Header="Z(mm)"
+                                                MinWidth="70"
+                                                Width="auto"
+                                                Visibility="{Binding IsContainZAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
+                            <DataGridTextColumn Header="RX(°)"
+                                                MinWidth="70"
+                                                Width="auto"
+                                                Visibility="{Binding IsContainRXAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
+                            <DataGridTextColumn Header="RY(°)"
+                                                MinWidth="70"
+                                                Width="auto"
+                                                Visibility="{Binding IsContainRYAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
+                            <DataGridTextColumn Header="RZ(°)"
+                                                MinWidth="70"
+                                                Width="auto"
+                                                Visibility="{Binding IsContainRZAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
+                        </controls:HTCustomDataGrid.Columns>
+                    </controls:HTCustomDataGrid>
+                    <UniformGrid Grid.Row="1"
+                                 Rows="1"
+                                 Columns="4"
+                                 HorizontalAlignment="Stretch">
+                        <controls:HTCustomButton Content="Add Position"
+                                                 Width="130" />
+                        <controls:HTCustomButton Content="Clear Position"
+                                                 Width="130" />
+                        <controls:HTCustomButton Content="Delete Position"
+                                                 Width="130" />
+                        <controls:HTCustomButton Content="Move To Position"
+                                                 Width="130" />
+                    </UniformGrid>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>
