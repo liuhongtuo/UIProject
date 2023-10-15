@@ -806,7 +806,7 @@
     <Resource Include="Icons\EngineeringIcons\ArrowDownRotate_64x64_Pressed.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Icons\EngineeringIcons\ArrowUpRotate_64x64_Disablel.png">
+    <Resource Include="Icons\EngineeringIcons\ArrowUpRotate_64x64_Disable.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Icons\EngineeringIcons\ArrowUpRotate_64x64_Normal.png">

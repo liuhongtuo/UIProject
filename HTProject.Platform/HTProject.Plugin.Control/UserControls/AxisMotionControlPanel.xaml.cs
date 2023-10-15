@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PropertyChanged;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,7 @@ namespace HTProject.Plugin.Control.UserControls
     /// <summary>
     /// AxisMotionControlPanel.xaml 的交互逻辑
     /// </summary>
+    [ImplementPropertyChanged]
     public partial class AxisMotionControlPanel : UserControl
     {
         public AxisMotionControlPanel()
@@ -36,7 +38,18 @@ namespace HTProject.Plugin.Control.UserControls
         }
 
         public static readonly DependencyProperty IsContainXAxisProperty =
-            DependencyProperty.Register("IsContainXAxis", typeof(bool), typeof(AxisMotionControlPanel), new PropertyMetadata(true));
+            DependencyProperty.Register("IsContainXAxis", typeof(bool), typeof(AxisMotionControlPanel), new PropertyMetadata(true, new PropertyChangedCallback((sender, args) =>
+            {
+                var axisMotionControlPanel = (AxisMotionControlPanel)sender;
+                if (axisMotionControlPanel.IsContainXAxis)
+                {
+                    axisMotionControlPanel.DataGrid_X.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    axisMotionControlPanel.DataGrid_X.Visibility = Visibility.Collapsed;
+                }
+            })));
 
 
         /// <summary>
@@ -49,7 +62,18 @@ namespace HTProject.Plugin.Control.UserControls
         }
 
         public static readonly DependencyProperty IsContainYAxisProperty =
-            DependencyProperty.Register("IsContainYAxis", typeof(bool), typeof(AxisMotionControlPanel), new PropertyMetadata(true));
+            DependencyProperty.Register("IsContainYAxis", typeof(bool), typeof(AxisMotionControlPanel), new PropertyMetadata(true, new PropertyChangedCallback((sender, args) =>
+            {
+                var axisMotionControlPanel = (AxisMotionControlPanel)sender;
+                if (axisMotionControlPanel.IsContainYAxis)
+                {
+                    axisMotionControlPanel.DataGrid_Y.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    axisMotionControlPanel.DataGrid_Y.Visibility = Visibility.Collapsed;
+                }
+            })));
 
 
         /// <summary>
@@ -62,7 +86,18 @@ namespace HTProject.Plugin.Control.UserControls
         }
 
         public static readonly DependencyProperty IsContainZAxisProperty =
-            DependencyProperty.Register("IsContainZAxis", typeof(bool), typeof(AxisMotionControlPanel), new PropertyMetadata(true));
+            DependencyProperty.Register("IsContainZAxis", typeof(bool), typeof(AxisMotionControlPanel), new PropertyMetadata(true, new PropertyChangedCallback((sender, args) =>
+            {
+                var axisMotionControlPanel = (AxisMotionControlPanel)sender;
+                if (axisMotionControlPanel.IsContainZAxis)
+                {
+                    axisMotionControlPanel.DataGrid_Z.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    axisMotionControlPanel.DataGrid_Z.Visibility = Visibility.Collapsed;
+                }
+            })));
 
 
         /// <summary>
@@ -75,7 +110,18 @@ namespace HTProject.Plugin.Control.UserControls
         }
 
         public static readonly DependencyProperty IsContainRXAxisProperty =
-            DependencyProperty.Register("IsContainRXAxis", typeof(bool), typeof(AxisMotionControlPanel), new PropertyMetadata(true));
+            DependencyProperty.Register("IsContainRXAxis", typeof(bool), typeof(AxisMotionControlPanel), new PropertyMetadata(true, new PropertyChangedCallback((sender, args) =>
+            {
+                var axisMotionControlPanel = (AxisMotionControlPanel)sender;
+                if (axisMotionControlPanel.IsContainRXAxis)
+                {
+                    axisMotionControlPanel.DataGrid_RX.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    axisMotionControlPanel.DataGrid_RX.Visibility = Visibility.Collapsed;
+                }
+            })));
 
 
         /// <summary>
@@ -88,8 +134,18 @@ namespace HTProject.Plugin.Control.UserControls
         }
 
         public static readonly DependencyProperty IsContainRYAxisProperty =
-            DependencyProperty.Register("IsContainRYAxis", typeof(bool), typeof(AxisMotionControlPanel), new PropertyMetadata(true));
-
+            DependencyProperty.Register("IsContainRYAxis", typeof(bool), typeof(AxisMotionControlPanel), new PropertyMetadata(true, new PropertyChangedCallback((sender, args) =>
+            {
+                var axisMotionControlPanel = (AxisMotionControlPanel)sender;
+                if (axisMotionControlPanel.IsContainRYAxis)
+                {
+                    axisMotionControlPanel.DataGrid_RY.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    axisMotionControlPanel.DataGrid_RY.Visibility = Visibility.Collapsed;
+                }
+            })));
 
         /// <summary>
         /// 控制面板是否包含RZ轴
@@ -101,8 +157,18 @@ namespace HTProject.Plugin.Control.UserControls
         }
 
         public static readonly DependencyProperty IsContainRZAxisProperty =
-            DependencyProperty.Register("IsContainRZAxis", typeof(bool), typeof(AxisMotionControlPanel), new PropertyMetadata(true));
-
+            DependencyProperty.Register("IsContainRZAxis", typeof(bool), typeof(AxisMotionControlPanel), new PropertyMetadata(true, new PropertyChangedCallback((sender, args) =>
+            {
+                var axisMotionControlPanel = (AxisMotionControlPanel)sender;
+                if (axisMotionControlPanel.IsContainRZAxis)
+                {
+                    axisMotionControlPanel.DataGrid_RZ.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    axisMotionControlPanel.DataGrid_RZ.Visibility = Visibility.Collapsed;
+                }
+            })));
 
 
         public bool IsShowSlantDirection
@@ -111,9 +177,28 @@ namespace HTProject.Plugin.Control.UserControls
             set { SetValue(IsShowSlantDirectionProperty, value); }
         }
 
-        // Using a DependencyProperty as the backing store for IsShowSlantDirection.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty IsShowSlantDirectionProperty =
             DependencyProperty.Register("IsShowSlantDirection", typeof(bool), typeof(AxisMotionControlPanel), new PropertyMetadata(true));
+
+    }
+
+    /// <summary>
+    /// 定义数据代理，用于绑定DataGrid的列
+    /// DataGridtextColumn不能直接绑定显示隐藏原因是其不在可视化树中
+    /// 不能继承UserControl的DataContext
+    /// </summary>
+    public class BindingProxy : Freezable
+    {
+        protected override Freezable CreateInstanceCore() => new BindingProxy();
+
+        public object Data
+        {
+            get { return (object)GetValue(DataProperty); }
+            set { SetValue(DataProperty, value); }
+        }
+
+        public static readonly DependencyProperty DataProperty =
+            DependencyProperty.Register("Data", typeof(object), typeof(BindingProxy), new UIPropertyMetadata(null));
 
     }
 }

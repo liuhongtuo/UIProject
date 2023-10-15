@@ -28,41 +28,41 @@ namespace HTProject.Plugin.Control.UserControls
         #region DependencyProperty
 
         #region BtnAdjustLeft
-        public string BtnAdjustLeft_Icon
+        public ImageSource BtnAdjustLeft_Icon
         {
-            get { return (string)GetValue(BtnAdjustLeft_IconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustLeft_IconProperty); }
             set { SetValue(BtnAdjustLeft_IconProperty, value); }
         }
 
 
         public static readonly DependencyProperty BtnAdjustLeft_IconProperty =
-            DependencyProperty.Register("BtnAdjustLeft_Icon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeft_64x64_Normal.png"));
-        public string BtnAdjustLeft_MouseOverIcon
+            DependencyProperty.Register("BtnAdjustLeft_Icon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeft_64x64_Normal.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustLeft_MouseOverIcon
         {
-            get { return (string)GetValue(BtnAdjustLeft_MouseOverIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustLeft_MouseOverIconProperty); }
             set { SetValue(BtnAdjustLeft_MouseOverIconProperty, value); }
         }
 
 
         public static readonly DependencyProperty BtnAdjustLeft_MouseOverIconProperty =
-            DependencyProperty.Register("BtnAdjustLeft_MouseOverIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeft_64x64_Pressed.png"));
-        public string BtnAdjustLeft_MousePressedIcon
+            DependencyProperty.Register("BtnAdjustLeft_MouseOverIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeft_64x64_Pressed.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustLeft_MousePressedIcon
         {
-            get { return (string)GetValue(BtnAdjustLeft_MousePressedIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustLeft_MousePressedIconProperty); }
             set { SetValue(BtnAdjustLeft_MousePressedIconProperty, value); }
         }
 
 
         public static readonly DependencyProperty BtnAdjustLeft_MousePressedIconProperty =
-            DependencyProperty.Register("BtnAdjustLeft_MousePressedIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeft_64x64_Pressed.png"));
-        public string BtnAdjustLeft_MouseDisableIcon
+            DependencyProperty.Register("BtnAdjustLeft_MousePressedIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeft_64x64_Pressed.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustLeft_MouseDisableIcon
         {
-            get { return (string)GetValue(BtnAdjustLeft_MouseDisableIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustLeft_MouseDisableIconProperty); }
             set { SetValue(BtnAdjustLeft_MouseDisableIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustLeft_MouseDisableIconProperty =
-            DependencyProperty.Register("BtnAdjustLeft_MouseDisableIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeft_64x64_disable.png"));
+            DependencyProperty.Register("BtnAdjustLeft_MouseDisableIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeft_64x64_disable.png", UriKind.Absolute))));
 
         public string BtnAdjustLeft_TxtToolTip
         {
@@ -76,38 +76,38 @@ namespace HTProject.Plugin.Control.UserControls
         #endregion
 
         #region BtnAdjustRight
-        public string BtnAdjustRight_Icon
+        public ImageSource BtnAdjustRight_Icon
         {
-            get { return (string)GetValue(BtnAdjustRight_IconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustRight_IconProperty); }
             set { SetValue(BtnAdjustRight_IconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustRight_IconProperty =
-            DependencyProperty.Register("BtnAdjustRight_Icon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRight_64x64_Normal.png"));
-        public string BtnAdjustRight_MouseOverIcon
+            DependencyProperty.Register("BtnAdjustRight_Icon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRight_64x64_Normal.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustRight_MouseOverIcon
         {
-            get { return (string)GetValue(BtnAdjustRight_MouseOverIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustRight_MouseOverIconProperty); }
             set { SetValue(BtnAdjustRight_MouseOverIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustRight_MouseOverIconProperty =
-            DependencyProperty.Register("BtnAdjustRight_MouseOverIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRight_64x64_Pressed.png"));
-        public string BtnAdjustRight_MousePressedIcon
+            DependencyProperty.Register("BtnAdjustRight_MouseOverIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRight_64x64_Pressed.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustRight_MousePressedIcon
         {
-            get { return (string)GetValue(BtnAdjustRight_MousePressedIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustRight_MousePressedIconProperty); }
             set { SetValue(BtnAdjustRight_MousePressedIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustRight_MousePressedIconProperty =
-            DependencyProperty.Register("BtnAdjustRight_MousePressedIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRight_64x64_Pressed.png"));
-        public string BtnAdjustRight_MouseDisableIcon
+            DependencyProperty.Register("BtnAdjustRight_MousePressedIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRight_64x64_Pressed.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustRight_MouseDisableIcon
         {
-            get { return (string)GetValue(BtnAdjustRight_MouseDisableIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustRight_MouseDisableIconProperty); }
             set { SetValue(BtnAdjustRight_MouseDisableIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustRight_MouseDisableIconProperty =
-            DependencyProperty.Register("BtnAdjustRight_MouseDisableIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRight_64x64_disable.png"));
+            DependencyProperty.Register("BtnAdjustRight_MouseDisableIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRight_64x64_disable.png", UriKind.Absolute))));
 
         public string BtnAdjustRight_TxtToolTip
         {
@@ -120,38 +120,38 @@ namespace HTProject.Plugin.Control.UserControls
         #endregion
 
         #region BtnAdjustUp
-        public string BtnAdjustUp_Icon
+        public ImageSource BtnAdjustUp_Icon
         {
-            get { return (string)GetValue(BtnAdjustUp_IconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustUp_IconProperty); }
             set { SetValue(BtnAdjustUp_IconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustUp_IconProperty =
-            DependencyProperty.Register("BtnAdjustUp_Icon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowUp_64x64_Normal.png"));
-        public string BtnAdjustUp_MouseOverIcon
+            DependencyProperty.Register("BtnAdjustUp_Icon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowUp_64x64_Normal.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustUp_MouseOverIcon
         {
-            get { return (string)GetValue(BtnAdjustUp_MouseOverIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustUp_MouseOverIconProperty); }
             set { SetValue(BtnAdjustUp_MouseOverIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustUp_MouseOverIconProperty =
-            DependencyProperty.Register("BtnAdjustUp_MouseOverIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowUp_64x64_Pressed.png"));
-        public string BtnAdjustUp_MousePressedIcon
+            DependencyProperty.Register("BtnAdjustUp_MouseOverIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowUp_64x64_Pressed.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustUp_MousePressedIcon
         {
-            get { return (string)GetValue(BtnAdjustUp_MousePressedIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustUp_MousePressedIconProperty); }
             set { SetValue(BtnAdjustUp_MousePressedIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustUp_MousePressedIconProperty =
-            DependencyProperty.Register("BtnAdjustUp_MousePressedIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowUp_64x64_Pressed.png"));
-        public string BtnAdjustUp_MouseDisableIcon
+            DependencyProperty.Register("BtnAdjustUp_MousePressedIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowUp_64x64_Pressed.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustUp_MouseDisableIcon
         {
-            get { return (string)GetValue(BtnAdjustUp_MouseDisableIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustUp_MouseDisableIconProperty); }
             set { SetValue(BtnAdjustUp_MouseDisableIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustUp_MouseDisableIconProperty =
-            DependencyProperty.Register("BtnAdjustUp_MouseDisableIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowUp_64x64_disable.png"));
+            DependencyProperty.Register("BtnAdjustUp_MouseDisableIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowUp_64x64_disable.png", UriKind.Absolute))));
 
         public string BtnAdjustUp_TxtToolTip
         {
@@ -165,38 +165,38 @@ namespace HTProject.Plugin.Control.UserControls
         #endregion
 
         #region BtnAdjustDown
-        public string BtnAdjustDown_Icon
+        public ImageSource BtnAdjustDown_Icon
         {
-            get { return (string)GetValue(BtnAdjustDown_IconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustDown_IconProperty); }
             set { SetValue(BtnAdjustDown_IconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustDown_IconProperty =
-            DependencyProperty.Register("BtnAdjustDown_Icon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowDown_64x64_Normal.png"));
-        public string BtnAdjustDown_MouseOverIcon
+            DependencyProperty.Register("BtnAdjustDown_Icon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowDown_64x64_Normal.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustDown_MouseOverIcon
         {
-            get { return (string)GetValue(BtnAdjustDown_MouseOverIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustDown_MouseOverIconProperty); }
             set { SetValue(BtnAdjustDown_MouseOverIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustDown_MouseOverIconProperty =
-            DependencyProperty.Register("BtnAdjustDown_MouseOverIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowDown_64x64_Pressed.png"));
-        public string BtnAdjustDown_MousePressedIcon
+            DependencyProperty.Register("BtnAdjustDown_MouseOverIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowDown_64x64_Pressed.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustDown_MousePressedIcon
         {
-            get { return (string)GetValue(BtnAdjustDown_MousePressedIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustDown_MousePressedIconProperty); }
             set { SetValue(BtnAdjustDown_MousePressedIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustDown_MousePressedIconProperty =
-            DependencyProperty.Register("BtnAdjustDown_MousePressedIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowDown_64x64_Pressed.png"));
-        public string BtnAdjustDown_MouseDisableIcon
+            DependencyProperty.Register("BtnAdjustDown_MousePressedIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowDown_64x64_Pressed.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustDown_MouseDisableIcon
         {
-            get { return (string)GetValue(BtnAdjustDown_MouseDisableIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustDown_MouseDisableIconProperty); }
             set { SetValue(BtnAdjustDown_MouseDisableIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustDown_MouseDisableIconProperty =
-            DependencyProperty.Register("BtnAdjustDown_MouseDisableIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowDown_64x64_disable.png"));
+            DependencyProperty.Register("BtnAdjustDown_MouseDisableIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowDown_64x64_disable.png", UriKind.Absolute))));
 
         public string BtnAdjustDown_TxtToolTip
         {
@@ -210,39 +210,39 @@ namespace HTProject.Plugin.Control.UserControls
         #endregion
 
         #region BtnAdjustLeftUp
-        public string BtnAdjustLeftUp_Icon
+        public ImageSource BtnAdjustLeftUp_Icon
         {
-            get { return (string)GetValue(BtnAdjustLeftUp_IconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustLeftUp_IconProperty); }
             set { SetValue(BtnAdjustLeftUp_IconProperty, value); }
         }
 
 
         public static readonly DependencyProperty BtnAdjustLeftUp_IconProperty =
-            DependencyProperty.Register("BtnAdjustLeftUp_Icon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftUp_64x64_Normal.png"));
-        public string BtnAdjustLeftUp_MouseOverIcon
+            DependencyProperty.Register("BtnAdjustLeftUp_Icon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftUp_64x64_Normal.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustLeftUp_MouseOverIcon
         {
-            get { return (string)GetValue(BtnAdjustLeftUp_MouseOverIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustLeftUp_MouseOverIconProperty); }
             set { SetValue(BtnAdjustLeftUp_MouseOverIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustLeftUp_MouseOverIconProperty =
-            DependencyProperty.Register("BtnAdjustLeftUp_MouseOverIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftUp_64x64_Pressed.png"));
-        public string BtnAdjustLeftUp_MousePressedIcon
+            DependencyProperty.Register("BtnAdjustLeftUp_MouseOverIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftUp_64x64_Pressed.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustLeftUp_MousePressedIcon
         {
-            get { return (string)GetValue(BtnAdjustLeftUp_MousePressedIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustLeftUp_MousePressedIconProperty); }
             set { SetValue(BtnAdjustLeftUp_MousePressedIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustLeftUp_MousePressedIconProperty =
-            DependencyProperty.Register("BtnAdjustLeftUp_MousePressedIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftUp_64x64_Pressed.png"));
-        public string BtnAdjustLeftUp_MouseDisableIcon
+            DependencyProperty.Register("BtnAdjustLeftUp_MousePressedIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftUp_64x64_Pressed.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustLeftUp_MouseDisableIcon
         {
-            get { return (string)GetValue(BtnAdjustLeftUp_MouseDisableIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustLeftUp_MouseDisableIconProperty); }
             set { SetValue(BtnAdjustLeftUp_MouseDisableIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustLeftUp_MouseDisableIconProperty =
-            DependencyProperty.Register("BtnAdjustLeftUp_MouseDisableIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftUp_64x64_Disable.png"));
+            DependencyProperty.Register("BtnAdjustLeftUp_MouseDisableIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftUp_64x64_Disable.png", UriKind.Absolute))));
 
         public string BtnAdjustLeftUp_TxtToolTip
         {
@@ -256,38 +256,38 @@ namespace HTProject.Plugin.Control.UserControls
         #endregion
 
         #region BtnAdjustRightUp
-        public string BtnAdjustRightUp_Icon
+        public ImageSource BtnAdjustRightUp_Icon
         {
-            get { return (string)GetValue(BtnAdjustRightUp_IconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustRightUp_IconProperty); }
             set { SetValue(BtnAdjustRightUp_IconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustRightUp_IconProperty =
-            DependencyProperty.Register("BtnAdjustRightUp_Icon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightUp_64x64_Normal.png"));
-        public string BtnAdjustRightUp_MouseOverIcon
+            DependencyProperty.Register("BtnAdjustRightUp_Icon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightUp_64x64_Normal.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustRightUp_MouseOverIcon
         {
-            get { return (string)GetValue(BtnAdjustRightUp_MouseOverIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustRightUp_MouseOverIconProperty); }
             set { SetValue(BtnAdjustRightUp_MouseOverIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustRightUp_MouseOverIconProperty =
-            DependencyProperty.Register("BtnAdjustRightUp_MouseOverIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightUp_64x64_Pressed.png"));
-        public string BtnAdjustRightUp_MousePressedIcon
+            DependencyProperty.Register("BtnAdjustRightUp_MouseOverIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightUp_64x64_Pressed.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustRightUp_MousePressedIcon
         {
-            get { return (string)GetValue(BtnAdjustRightUp_MousePressedIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustRightUp_MousePressedIconProperty); }
             set { SetValue(BtnAdjustRightUp_MousePressedIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustRightUp_MousePressedIconProperty =
-            DependencyProperty.Register("BtnAdjustRightUp_MousePressedIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightUp_64x64_Pressed.png"));
-        public string BtnAdjustRightUp_MouseDisableIcon
+            DependencyProperty.Register("BtnAdjustRightUp_MousePressedIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightUp_64x64_Pressed.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustRightUp_MouseDisableIcon
         {
-            get { return (string)GetValue(BtnAdjustRightUp_MouseDisableIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustRightUp_MouseDisableIconProperty); }
             set { SetValue(BtnAdjustRightUp_MouseDisableIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustRightUp_MouseDisableIconProperty =
-            DependencyProperty.Register("BtnAdjustRightUp_MouseDisableIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightUp_64x64_Disable.png"));
+            DependencyProperty.Register("BtnAdjustRightUp_MouseDisableIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightUp_64x64_Disable.png", UriKind.Absolute))));
 
         public string BtnAdjustRightUp_TxtToolTip
         {
@@ -301,38 +301,38 @@ namespace HTProject.Plugin.Control.UserControls
         #endregion
 
         #region BtnAdjustLeftDown
-        public string BtnAdjustLeftDown_Icon
+        public ImageSource BtnAdjustLeftDown_Icon
         {
-            get { return (string)GetValue(BtnAdjustLeftDown_IconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustLeftDown_IconProperty); }
             set { SetValue(BtnAdjustLeftDown_IconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustLeftDown_IconProperty =
-            DependencyProperty.Register("BtnAdjustLeftDown_Icon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftDown_64x64_Normal.png"));
-        public string BtnAdjustLeftDown_MouseOverIcon
+            DependencyProperty.Register("BtnAdjustLeftDown_Icon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftDown_64x64_Normal.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustLeftDown_MouseOverIcon
         {
-            get { return (string)GetValue(BtnAdjustLeftDown_MouseOverIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustLeftDown_MouseOverIconProperty); }
             set { SetValue(BtnAdjustLeftDown_MouseOverIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustLeftDown_MouseOverIconProperty =
-            DependencyProperty.Register("BtnAdjustLeftDown_MouseOverIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftDown_64x64_Pressed.png"));
-        public string BtnAdjustLeftDown_MousePressedIcon
+            DependencyProperty.Register("BtnAdjustLeftDown_MouseOverIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftDown_64x64_Pressed.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustLeftDown_MousePressedIcon
         {
-            get { return (string)GetValue(BtnAdjustLeftDown_MousePressedIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustLeftDown_MousePressedIconProperty); }
             set { SetValue(BtnAdjustLeftDown_MousePressedIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustLeftDown_MousePressedIconProperty =
-            DependencyProperty.Register("BtnAdjustLeftDown_MousePressedIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftDown_64x64_Pressed.png"));
-        public string BtnAdjustLeftDown_MouseDisableIcon
+            DependencyProperty.Register("BtnAdjustLeftDown_MousePressedIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftDown_64x64_Pressed.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustLeftDown_MouseDisableIcon
         {
-            get { return (string)GetValue(BtnAdjustLeftDown_MouseDisableIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustLeftDown_MouseDisableIconProperty); }
             set { SetValue(BtnAdjustLeftDown_MouseDisableIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustLeftDown_MouseDisableIconProperty =
-            DependencyProperty.Register("BtnAdjustLeftDown_MouseDisableIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftDown_64x64_Disable.png"));
+            DependencyProperty.Register("BtnAdjustLeftDown_MouseDisableIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftDown_64x64_Disable.png", UriKind.Absolute))));
 
         public string BtnAdjustLeftDown_TxtToolTip
         {
@@ -345,38 +345,38 @@ namespace HTProject.Plugin.Control.UserControls
         #endregion
 
         #region BtnAdjustRightDown
-        public string BtnAdjustRightDown_Icon
+        public ImageSource BtnAdjustRightDown_Icon
         {
-            get { return (string)GetValue(BtnAdjustRightDown_IconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustRightDown_IconProperty); }
             set { SetValue(BtnAdjustRightDown_IconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustRightDown_IconProperty =
-            DependencyProperty.Register("BtnAdjustRightDown_Icon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightDown_64x64_Normal.png"));
-        public string BtnAdjustRightDown_MouseOverIcon
+            DependencyProperty.Register("BtnAdjustRightDown_Icon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightDown_64x64_Normal.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustRightDown_MouseOverIcon
         {
-            get { return (string)GetValue(BtnAdjustRightDown_MouseOverIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustRightDown_MouseOverIconProperty); }
             set { SetValue(BtnAdjustRightDown_MouseOverIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustRightDown_MouseOverIconProperty =
-            DependencyProperty.Register("BtnAdjustRightDown_MouseOverIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightDown_64x64_Pressed.png"));
-        public string BtnAdjustRightDown_MousePressedIcon
+            DependencyProperty.Register("BtnAdjustRightDown_MouseOverIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightDown_64x64_Pressed.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustRightDown_MousePressedIcon
         {
-            get { return (string)GetValue(BtnAdjustRightDown_MousePressedIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustRightDown_MousePressedIconProperty); }
             set { SetValue(BtnAdjustRightDown_MousePressedIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustRightDown_MousePressedIconProperty =
-            DependencyProperty.Register("BtnAdjustRightDown_MousePressedIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightDown_64x64_Pressed.png"));
-        public string BtnAdjustRightDown_MouseDisableIcon
+            DependencyProperty.Register("BtnAdjustRightDown_MousePressedIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightDown_64x64_Pressed.png", UriKind.Absolute))));
+        public ImageSource BtnAdjustRightDown_MouseDisableIcon
         {
-            get { return (string)GetValue(BtnAdjustRightDown_MouseDisableIconProperty); }
+            get { return (ImageSource)GetValue(BtnAdjustRightDown_MouseDisableIconProperty); }
             set { SetValue(BtnAdjustRightDown_MouseDisableIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnAdjustRightDown_MouseDisableIconProperty =
-            DependencyProperty.Register("BtnAdjustRightDown_MouseDisableIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightDown_64x64_Disable.png"));
+            DependencyProperty.Register("BtnAdjustRightDown_MouseDisableIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(new BitmapImage(new Uri("pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightDown_64x64_Disable.png", UriKind.Absolute))));
 
         public string BtnAdjustRightDown_TxtToolTip
         {
@@ -424,38 +424,38 @@ namespace HTProject.Plugin.Control.UserControls
 
         #region BtnCapture
 
-        public string BtnCapture_Icon
+        public ImageSource BtnCapture_Icon
         {
-            get { return (string)GetValue(BtnCapture_IconProperty); }
+            get { return (ImageSource)GetValue(BtnCapture_IconProperty); }
             set { SetValue(BtnCapture_IconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnCapture_IconProperty =
-            DependencyProperty.Register("BtnCapture_Icon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/CameraControl.png"));
-        public string BtnCapture_MouseOverIcon
+            DependencyProperty.Register("BtnCapture_Icon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(null));
+        public ImageSource BtnCapture_MouseOverIcon
         {
-            get { return (string)GetValue(BtnCapture_MouseOverIconProperty); }
+            get { return (ImageSource)GetValue(BtnCapture_MouseOverIconProperty); }
             set { SetValue(BtnCapture_MouseOverIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnCapture_MouseOverIconProperty =
-            DependencyProperty.Register("BtnCapture_MouseOverIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/CameraControl.png"));
-        public string BtnCapture_MousePressedIcon
+            DependencyProperty.Register("BtnCapture_MouseOverIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(null));
+        public ImageSource BtnCapture_MousePressedIcon
         {
-            get { return (string)GetValue(BtnCapture_MousePressedIconProperty); }
+            get { return (ImageSource)GetValue(BtnCapture_MousePressedIconProperty); }
             set { SetValue(BtnCapture_MousePressedIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnCapture_MousePressedIconProperty =
-            DependencyProperty.Register("BtnCapture_MousePressedIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/CameraControl.png"));
-        public string BtnCapture_MouseDisableIcon
+            DependencyProperty.Register("BtnCapture_MousePressedIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(null));
+        public ImageSource BtnCapture_MouseDisableIcon
         {
-            get { return (string)GetValue(BtnCapture_MouseDisableIconProperty); }
+            get { return (ImageSource)GetValue(BtnCapture_MouseDisableIconProperty); }
             set { SetValue(BtnCapture_MouseDisableIconProperty, value); }
         }
 
         public static readonly DependencyProperty BtnCapture_MouseDisableIconProperty =
-            DependencyProperty.Register("BtnCapture_MouseDisableIcon", typeof(string), typeof(DirectionButtonPanel), new PropertyMetadata(@"pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/CameraControl.png"));
+            DependencyProperty.Register("BtnCapture_MouseDisableIcon", typeof(ImageSource), typeof(DirectionButtonPanel), new PropertyMetadata(null));
 
         public string BtnCapture_TxtToolTip
         {

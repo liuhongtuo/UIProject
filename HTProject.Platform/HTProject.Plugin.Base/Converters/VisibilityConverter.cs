@@ -140,4 +140,31 @@ namespace HTProject.Plugin.Base.Converters
             return null;
         }
     }
+
+    public class MultiBoolToVisibilityConverter : IMultiValueConverter
+    {
+        public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (values == null || values.Count() < 2
+                || values[0] == DependencyProperty.UnsetValue
+                || values[1] == DependencyProperty.UnsetValue)
+            {
+                return Visibility.Collapsed;
+            }
+
+            bool isDirection1Visibility = System.Convert.ToBoolean(values[0]);
+            bool isDirection2Visibility = System.Convert.ToBoolean(values[1]);
+
+            if (isDirection1Visibility || isDirection2Visibility)
+            {
+                return Visibility.Visible;
+            }
+            return Visibility.Collapsed;
+        }
+
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

@@ -5,8 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:HTProject.Plugin.Control.UserControls"
              xmlns:controls="clr-namespace:HTProject.Plugin.Control.Controls"
+             xmlns:converters="clr-namespace:HTProject.Plugin.Base.Converters;assembly=HTProject.Plugin.Base"
              mc:Ignorable="d"
-             d:DesignHeight="300"
+             MinWidth="1000"
+             d:DesignHeight="400"
              d:DesignWidth="1420">
     <UserControl.Resources>
         <ResourceDictionary>
@@ -14,18 +16,26 @@
                 <ResourceDictionary Source="../Themes/Generic.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <BooleanToVisibilityConverter x:Key="boolToVisibility" />
+            <converters:MultiBoolToVisibilityConverter x:Key="multiBoolToVisibilityConverter" />
+            <local:BindingProxy x:Key="dataContextProxy"
+                                Data="{Binding}" />
         </ResourceDictionary>
     </UserControl.Resources>
     <Border BorderBrush="#4c4c4c"
             BorderThickness="1"
             CornerRadius="10">
-        <Grid Margin="10">
+        <Grid Margin="10,10,10,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="20" />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <Border BorderBrush="#4c4c4c"
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+            <Border Grid.Column="0"
+                    BorderBrush="#4c4c4c"
                     BorderThickness="0,0,0,0">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -43,8 +53,14 @@
                         <ColumnDefinition Width="auto" />
                         <ColumnDefinition Width="auto" />
                         <ColumnDefinition Width="auto" />
-                        <ColumnDefinition Width="110" />
                     </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0"
+                           Grid.Column="0"
+                           Content="Axis: "
+                           FontSize="18"
+                           Foreground="#4c4c4c"
+                           FontFamily="#PingFang SC Bold"
+                           VerticalAlignment="Center" />
                     <Label Grid.Row="1"
                            Grid.Column="0"
                            Content="Encoder: "
@@ -205,8 +221,9 @@
                                                   IsReadOnly="False" />
                     </StackPanel>
                     <StackPanel Grid.Row="4"
-                                Grid.Column="1"
+                                Grid.Column="0"
                                 Grid.ColumnSpan="7"
+                                HorizontalAlignment="Right"
                                 Orientation="Horizontal">
                         <Label Content="X"
                                Foreground="#4c4c4c"
@@ -225,7 +242,20 @@
                                                     Width="120"
                                                     IsShowSlantDirection="{Binding IsShowSlantDirection, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                                     IsShowHorizontalDirection="{Binding IsContainXAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                                    IsShowVerticalDirection="{Binding IsContainYAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
+                                                    IsShowVerticalDirection="{Binding IsContainYAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}">
+                            <local:DirectionButtonPanel.Visibility>
+                                <MultiBinding Converter="{StaticResource multiBoolToVisibilityConverter}">
+                                    <Binding Path="IsContainXAxis"
+                                             RelativeSource="{RelativeSource Mode=FindAncestor,AncestorType=UserControl}"
+                                             UpdateSourceTrigger="PropertyChanged"
+                                             Mode="OneWay" />
+                                    <Binding Path="IsContainYAxis"
+                                             RelativeSource="{RelativeSource Mode=FindAncestor,AncestorType=UserControl}"
+                                             UpdateSourceTrigger="PropertyChanged"
+                                             Mode="OneWay" />
+                                </MultiBinding>
+                            </local:DirectionButtonPanel.Visibility>
+                        </local:DirectionButtonPanel>
                         <Label Content="Z"
                                Foreground="#4c4c4c"
                                FontSize="14"
@@ -252,7 +282,20 @@
                                                     BtnAdjustRight_MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightRotate_64x64_Normal.png"
                                                     BtnAdjustRight_MouseDisableIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightRotate_64x64_Normal.png"
                                                     IsShowHorizontalDirection="{Binding IsContainRZAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                                    IsShowVerticalDirection="{Binding IsContainZAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
+                                                    IsShowVerticalDirection="{Binding IsContainZAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}">
+                            <local:DirectionButtonPanel.Visibility>
+                                <MultiBinding Converter="{StaticResource multiBoolToVisibilityConverter}">
+                                    <Binding Path="IsContainZAxis"
+                                             RelativeSource="{RelativeSource Mode=FindAncestor,AncestorType=UserControl}"
+                                             UpdateSourceTrigger="PropertyChanged"
+                                             Mode="OneWay" />
+                                    <Binding Path="IsContainRZAxis"
+                                             RelativeSource="{RelativeSource Mode=FindAncestor,AncestorType=UserControl}"
+                                             UpdateSourceTrigger="PropertyChanged"
+                                             Mode="OneWay" />
+                                </MultiBinding>
+                            </local:DirectionButtonPanel.Visibility>
+                        </local:DirectionButtonPanel>
                         <Label Content="RX"
                                Foreground="#4c4c4c"
                                FontSize="14"
@@ -275,9 +318,9 @@
                                                     BtnAdjustUp_MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowUpRotate_64x64_Pressed.png"
                                                     BtnAdjustUp_MouseDisableIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowUpRotate_64x64_Disable.png"
                                                     BtnAdjustDown_Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowDownRotate_64x64_Normal.png"
-                                                    BtnAdjustDown_MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowDownRotate_64x64_Normal.png"
-                                                    BtnAdjustDown_MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowDownRotate_64x64_Normal.png"
-                                                    BtnAdjustDown_MouseDisableIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowDownRotate_64x64_Normal.png"
+                                                    BtnAdjustDown_MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowDownRotate_64x64_Pressed.png"
+                                                    BtnAdjustDown_MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowDownRotate_64x64_Pressed.png"
+                                                    BtnAdjustDown_MouseDisableIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowDownRotate_64x64_Disable.png"
                                                     BtnAdjustLeft_Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftRotate_64x64_Normal.png"
                                                     BtnAdjustLeft_MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftRotate_64x64_Pressed.png"
                                                     BtnAdjustLeft_MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowLeftRotate_64x64_Pressed.png"
@@ -287,7 +330,20 @@
                                                     BtnAdjustRight_MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightRotate_64x64_Normal.png"
                                                     BtnAdjustRight_MouseDisableIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/ArrowRightRotate_64x64_Normal.png"
                                                     IsShowHorizontalDirection="{Binding IsContainRXAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                                    IsShowVerticalDirection="{Binding IsContainRYAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
+                                                    IsShowVerticalDirection="{Binding IsContainRYAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}">
+                            <local:DirectionButtonPanel.Visibility>
+                                <MultiBinding Converter="{StaticResource multiBoolToVisibilityConverter}">
+                                    <Binding Path="IsContainRXAxis"
+                                             RelativeSource="{RelativeSource Mode=FindAncestor,AncestorType=UserControl}"
+                                             UpdateSourceTrigger="PropertyChanged"
+                                             Mode="OneWay" />
+                                    <Binding Path="IsContainRYAxis"
+                                             RelativeSource="{RelativeSource Mode=FindAncestor,AncestorType=UserControl}"
+                                             UpdateSourceTrigger="PropertyChanged"
+                                             Mode="OneWay" />
+                                </MultiBinding>
+                            </local:DirectionButtonPanel.Visibility>
+                        </local:DirectionButtonPanel>
                         <StackPanel Grid.Row="4"
                                     Grid.Column="3"
                                     Margin="10,0,0,0">
@@ -296,20 +352,13 @@
                                                           Height="40" />
                             <controls:HTCustomRadioButton OptionTxt="Medium Distance"
                                                           VerticalAlignment="Center"
-                                                          Height="40" />
+                                                          Height="40" 
+                                                          IsChecked="True"/>
                             <controls:HTCustomRadioButton OptionTxt="Short Distance"
                                                           VerticalAlignment="Center"
                                                           Height="40" />
                         </StackPanel>
                     </StackPanel>
-                    <controls:HTCustomButton Grid.Row="1"
-                                             Grid.Column="7"
-                                             Content="Start Moving"
-                                             Width="100" />
-                    <controls:HTCustomButton Grid.Row="2"
-                                             Grid.Column="7"
-                                             Content="Stop Moving"
-                                             Width="100" />
                 </Grid>
             </Border>
             <GridSplitter Grid.Column="1"
@@ -321,12 +370,13 @@
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition />
-                        <RowDefinition Height="50" />
+                        <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
                     <controls:HTCustomDataGrid x:Name="dgridPositionList"
                                                Margin="10"
                                                ColumnHeaderHeight="50"
                                                RowHeight="40"
+                                               Width="auto"
                                                ItemsSource="{Binding TestList}"
                                                SelectedItem="{Binding SelectedTestItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                AutoGenerateColumns="False"
@@ -334,48 +384,61 @@
                                                CanUserAddRows="False">
                         <controls:HTCustomDataGrid.Columns>
                             <DataGridTextColumn Header="Position Name"
-                                                MinWidth="100"
+                                                MinWidth="200"
                                                 Width="auto" />
-                            <DataGridTextColumn Header="X(mm)"
-                                                MinWidth="70"
-                                                Width="auto"
-                                                Visibility="{Binding IsContainXAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
-                            <DataGridTextColumn Header="Y(mm)"
-                                                MinWidth="70"
-                                                Width="auto"
-                                                Visibility="{Binding IsContainYAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
-                            <DataGridTextColumn Header="Z(mm)"
-                                                MinWidth="70"
-                                                Width="auto"
-                                                Visibility="{Binding IsContainZAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
-                            <DataGridTextColumn Header="RX(°)"
-                                                MinWidth="70"
-                                                Width="auto"
-                                                Visibility="{Binding IsContainRXAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
-                            <DataGridTextColumn Header="RY(°)"
-                                                MinWidth="70"
-                                                Width="auto"
-                                                Visibility="{Binding IsContainRYAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
-                            <DataGridTextColumn Header="RZ(°)"
-                                                MinWidth="70"
-                                                Width="auto"
-                                                Visibility="{Binding IsContainRZAxis, Converter={StaticResource boolToVisibility},RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
+                            <DataGridTextColumn x:Name="DataGrid_X"
+                                                Header="X(mm)"
+                                                Width="70" />
+                            <DataGridTextColumn x:Name="DataGrid_Y"
+                                                Header="Y(mm)"
+                                                Width="70" />
+                            <DataGridTextColumn x:Name="DataGrid_Z"
+                                                Header="Z(mm)"
+                                                Width="70" />
+                            <DataGridTextColumn x:Name="DataGrid_RX"
+                                                Header="RX(°)"
+                                                Width="70" />
+                            <DataGridTextColumn x:Name="DataGrid_RY"
+                                                Header="RY(°)"
+                                                Width="70" />
+                            <DataGridTextColumn x:Name="DataGrid_RZ"
+                                                Header="RZ(°)"
+                                                Width="70" />
                         </controls:HTCustomDataGrid.Columns>
                     </controls:HTCustomDataGrid>
-                    <UniformGrid Grid.Row="1"
-                                 Rows="1"
-                                 Columns="4"
-                                 HorizontalAlignment="Stretch">
-                        <controls:HTCustomButton Content="Add Position"
-                                                 Width="130" />
-                        <controls:HTCustomButton Content="Clear Position"
-                                                 Width="130" />
-                        <controls:HTCustomButton Content="Delete Position"
-                                                 Width="130" />
-                        <controls:HTCustomButton Content="Move To Position"
-                                                 Width="130" />
-                    </UniformGrid>
                 </Grid>
+            </Border>
+            <Border Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    BorderBrush="#4c4c4c"
+                    BorderThickness="0,1,0,0">
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right">
+                    <controls:HTCustomButton Content="Start Moving"
+                                             Width="150"
+                                             Margin="10,0" />
+                    <controls:HTCustomButton Content="Stop Moving"
+                                             Width="150"
+                                             Margin="10,0" />
+                    <Border BorderBrush="#BEBEBE"
+                            Height="40"
+                            Margin="10,0"
+                            BorderThickness="0,0,2,0" />
+                    <controls:HTCustomButton Content="Add Position"
+                                             Width="150"
+                                             Margin="10,0" />
+                    <controls:HTCustomButton Content="Delete Position"
+                                             Width="150"
+                                             Margin="10,0" />
+                    <controls:HTCustomButton Content="Clear Position"
+                                             Width="150"
+                                             Margin="10,0" />
+                    <controls:HTCustomButton Content="Move To Position"
+                                             Width="150"
+                                             Margin="10,0,10,0"
+                                             Visibility="Collapsed" />
+                </StackPanel>
             </Border>
         </Grid>
     </Border>
