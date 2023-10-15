@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using HTProject.Plugin.Control.Windows;
+using PropertyChanged;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,11 +20,15 @@ namespace HTProject.Platform.Main.Views
     /// <summary>
     /// Interaction logic for MainStartView.xaml
     /// </summary>
+    [ImplementPropertyChanged]
     public partial class MainStartView : HTSkinSimpleWindow
     {
         public MainStartView()
         {
             InitializeComponent();
+            this.DataContext = this;
         }
+
+        public bool IsContainXAxis { get; set; } = false;
     }
 }

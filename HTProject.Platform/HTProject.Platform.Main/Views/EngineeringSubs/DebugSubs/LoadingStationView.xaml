@@ -10,14 +10,15 @@
              d:DesignHeight="450"
              d:DesignWidth="800"
              Width="1420"
-             Height="690">
+             Height="900">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
             <RowDefinition />
             <RowDefinition  Height="60" />
         </Grid.RowDefinitions>
-        <Grid>
+        <Grid Grid.Row="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40" />
                 <RowDefinition />
@@ -28,189 +29,62 @@
                                         FontWeight="SemiBold"
                                         Padding="0"
                                         VerticalContentAlignment="Center"
-                                        Content="Position Setting"
+                                        Content="Loading Station Position Setting"
                                         IconHeight="20"
                                         IconWidth="20"
                                         Margin="10,0,0,0"
                                         NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/Menu_64x64_Normal.png" />
             <Grid Grid.Row="1"
                   Margin="20,0,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                <Border BorderBrush="#4c4c4c"
-                        BorderThickness="1"
-                        CornerRadius="10">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="40" />
-                            <RowDefinition Height="40" />
-                            <RowDefinition Height="40" />
-                            <RowDefinition Height="40" />
-                            <RowDefinition Height="120" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100" />
-                            <ColumnDefinition Width="100" />
-                            <ColumnDefinition Width="100" />
-                            <ColumnDefinition Width="100" />
-                            <ColumnDefinition Width="110" />
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Row="0"
-                               Grid.Column="1"
-                               Content="X(mm) "
-                               FontSize="18"
-                               Foreground="#4c4c4c"
-                               FontFamily="#PingFang SC Bold"
-                               VerticalAlignment="Center"
-                               HorizontalAlignment="Center" />
-                        <Label Grid.Row="0"
-                               Grid.Column="2"
-                               Content="Y(mm) "
-                               FontSize="18"
-                               Foreground="#4c4c4c"
-                               FontFamily="#PingFang SC Bold"
-                               VerticalAlignment="Center"
-                               HorizontalAlignment="Center" />
-                        <Label Grid.Row="0"
-                               Grid.Column="3"
-                               Content="Z(mm) "
-                               FontSize="18"
-                               Foreground="#4c4c4c"
-                               FontFamily="#PingFang SC Bold"
-                               VerticalAlignment="Center"
-                               HorizontalAlignment="Center" />
-                        <Label Grid.Row="1"
-                               Grid.Column="0"
-                               Content="Encoder: "
-                               FontSize="18"
-                               Foreground="#4c4c4c"
-                               FontFamily="#PingFang SC Bold"
-                               VerticalAlignment="Center" />
-                        <controls:HTCustomTextBox Grid.Row="1"
-                                                  Grid.Column="1"
-                                                  Width="90"
-                                                  IsReadOnly="True" />
-                        <controls:HTCustomTextBox Grid.Row="1"
-                                                  Grid.Column="2"
-                                                  Width="90"
-                                                  IsReadOnly="True" />
-                        <controls:HTCustomTextBox Grid.Row="1"
-                                                  Grid.Column="3"
-                                                  Width="90"
-                                                  IsReadOnly="True" />
-                        <Label Grid.Row="2"
-                               Grid.Column="0"
-                               Content="Actual: "
-                               FontSize="18"
-                               Foreground="#4c4c4c"
-                               FontFamily="#PingFang SC Bold"
-                               VerticalAlignment="Center" />
-                        <controls:HTCustomTextBox Grid.Row="2"
-                                                  Grid.Column="1"
-                                                  Width="90"
-                                                  IsReadOnly="True" />
-                        <controls:HTCustomTextBox Grid.Row="2"
-                                                  Grid.Column="2"
-                                                  Width="90"
-                                                  IsReadOnly="True" />
-                        <controls:HTCustomTextBox Grid.Row="2"
-                                                  Grid.Column="3"
-                                                  Width="90"
-                                                  IsReadOnly="True" />
-                        <Label Grid.Row="3"
-                               Grid.Column="0"
-                               Content="Move: "
-                               FontSize="18"
-                               Foreground="#4c4c4c"
-                               FontFamily="#PingFang SC Bold"
-                               VerticalAlignment="Center" />
-                        <controls:HTCustomTextBox Grid.Row="3"
-                                                  Grid.Column="1"
-                                                  Width="90" />
-                        <controls:HTCustomTextBox Grid.Row="3"
-                                                  Grid.Column="2"
-                                                  Width="90" />
-                        <controls:HTCustomTextBox Grid.Row="3"
-                                                  Grid.Column="3"
-                                                  Width="90" />
-                        <userControls:DirectionButtonPanel Grid.Row="4"
-                                                           Grid.Column="1"
-                                                           Grid.ColumnSpan="2"
-                                                           Height="120"
-                                                           Width="120"
-                                                           IsShowSlantDirection="True"
-                                                           HorizontalAlignment="Left" />
-                        <StackPanel Grid.Row="4"
-                                    Grid.Column="3"
-                                    Margin="-55,0,0,0">
-                            <controls:HTCustomRadioButton OptionTxt="Long Distance"
-                                                          VerticalAlignment="Center"
-                                                          Height="40" />
-                            <controls:HTCustomRadioButton OptionTxt="Medium Distance"
-                                                          VerticalAlignment="Center"
-                                                          Height="40" />
-                            <controls:HTCustomRadioButton OptionTxt="Short Distance"
-                                                          VerticalAlignment="Center"
-                                                          Height="40" />
-                        </StackPanel>
-                        <controls:HTCustomButton Grid.Row="1"
-                                                 Grid.Column="4"
-                                                 Content="Start Moving"
-                                                 Width="100" />
-                        <controls:HTCustomButton Grid.Row="2"
-                                                 Grid.Column="4"
-                                                 Content="Stop Moving"
-                                                 Width="100" />
-                    </Grid>
-                </Border>
-                <Border Grid.Column="1"
-                        BorderBrush="#4c4c4c"
-                        BorderThickness="1"
-                        CornerRadius="10"
-                        Margin="20,0">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition Height="50" />
-                        </Grid.RowDefinitions>
-                        <controls:HTCustomDataGrid x:Name="dgridPositionList"
-                                                   Margin="10"
-                                                   ColumnHeaderHeight="50"
-                                                   RowHeight="40"
-                                                   ItemsSource="{Binding TestList}"
-                                                   SelectedItem="{Binding SelectedTestItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                                   AutoGenerateColumns="False"
-                                                   GridLinesVisibility="None"
-                                                   CanUserAddRows="False">
-                            <controls:HTCustomDataGrid.Columns>
-                                <DataGridTextColumn Header="Position Name"
-                                                    MinWidth="200"
-                                                    Width="auto" />
-                                <DataGridTextColumn Header="X(mm)"
-                                                    MinWidth="200"
-                                                    Width="auto" />
-                                <DataGridTextColumn Header="Y(mm)"
-                                                    MinWidth="200"
-                                                    Width="auto" />
-                                <DataGridTextColumn Header="Z(mm)"
-                                                    MinWidth="200"
-                                                    Width="auto" />
-                            </controls:HTCustomDataGrid.Columns>
-                        </controls:HTCustomDataGrid>
-                        <UniformGrid Grid.Row="1"
-                                     Rows="1"
-                                     Columns="4"
-                                     HorizontalAlignment="Stretch">
-                            <controls:HTCustomButton Content="Add Position" />
-                            <controls:HTCustomButton Content="Clear Position" />
-                            <controls:HTCustomButton Content="Delete Position" />
-                            <controls:HTCustomButton Content="Move To Position" />
-                        </UniformGrid>
-                    </Grid>
-                </Border>
+                <userControls:AxisMotionControlPanel Grid.Row="1"
+                                                     IsContainXAxis="False"
+                                                     IsContainYAxis="False"
+                                                     IsContainRXAxis="False"
+                                                     IsContainRYAxis="False"
+                                                     IsContainRZAxis="False"
+                                                     Width="1000"
+                                                     HorizontalAlignment="Left" />
             </Grid>
         </Grid>
+        <Grid Grid.Row="1"
+              Margin="0,10,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <controls:HTCustomIconLabel FontSize="18"
+                                        Foreground="#4c4c4c"
+                                        FontFamily="#PingFang SC Bold"
+                                        FontWeight="SemiBold"
+                                        Padding="0"
+                                        VerticalContentAlignment="Center"
+                                        Content="Unloading Station Position Setting"
+                                        IconHeight="20"
+                                        IconWidth="20"
+                                        Margin="10,0,0,0"
+                                        NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/Menu_64x64_Normal.png" />
+            <Grid Grid.Row="1"
+                  Margin="20,0,0,0">
+                <userControls:AxisMotionControlPanel Grid.Row="1"
+                                                     IsContainXAxis="False"
+                                                     IsContainYAxis="False"
+                                                     IsContainRXAxis="False"
+                                                     IsContainRYAxis="False"
+                                                     IsContainRZAxis="False"
+                                                     Width="1000"
+                                                     HorizontalAlignment="Left" />
+            </Grid>
+            
+        </Grid>
+        <Border Grid.Row="3"
+                BorderBrush="#4c4c4c"
+                BorderThickness="0,1,0,0">
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+                <controls:HTCustomButton Content="Accept"
+                                         Width="150"
+                                         Margin="10,0" />                
+            </StackPanel>
+        </Border>
     </Grid>
 </UserControl>

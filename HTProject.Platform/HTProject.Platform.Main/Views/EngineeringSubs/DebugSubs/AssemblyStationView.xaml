@@ -4,11 +4,56 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HTProject.Platform.Main.Views.EngineeringSubs.DebugSubs"
+             xmlns:controls="clr-namespace:HTProject.Plugin.Control.Controls;assembly=HTProject.Plugin.Control"
+             xmlns:userControls="clr-namespace:HTProject.Plugin.Control.UserControls;assembly=HTProject.Plugin.Control"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Width="1420"
-             Height="690">
+             Height="900">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition  Height="60" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <controls:HTCustomIconLabel FontSize="18"
+                                        Foreground="#4c4c4c"
+                                        FontFamily="#PingFang SC Bold"
+                                        FontWeight="SemiBold"
+                                        Padding="0"
+                                        VerticalContentAlignment="Center"
+                                        Content="Position Setting"
+                                        IconHeight="20"
+                                        IconWidth="20"
+                                        Margin="10,0,0,0"
+                                        NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/Menu_64x64_Normal.png" />
+            <Grid Grid.Row="1"
+                  Margin="20,0,0,0">
+                <userControls:AxisMotionControlPanel Grid.Row="1"
+                                                     IsContainXAxis="True"
+                                                     IsContainYAxis="True"
+                                                     IsContainZAxis="True"
+                                                     IsContainRXAxis="True"
+                                                     IsContainRYAxis="True"
+                                                     IsContainRZAxis="True"
+                                                     Width="1380"
+                                                     HorizontalAlignment="Left" />
+            </Grid>
+        </Grid>
+        <Border Grid.Row="2"
+                BorderBrush="#4c4c4c"
+                BorderThickness="0,1,0,0">
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+                <controls:HTCustomButton Content="Accept"
+                                         Width="150"
+                                         Margin="10,0" />
+            </StackPanel>
+        </Border>
     </Grid>
 </UserControl>

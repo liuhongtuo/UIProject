@@ -227,7 +227,9 @@
                 </StackPanel>
             </Grid>
         </Border>
-        
+        <Border Grid.Row="1">
+
+        </Border>
         <Border Grid.Row="2"
                 BorderThickness="0"
                 BorderBrush="Black"
