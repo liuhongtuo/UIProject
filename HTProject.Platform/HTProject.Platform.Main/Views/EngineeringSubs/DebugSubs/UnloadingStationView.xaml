@@ -1,8 +1,8 @@
-﻿<UserControl x:Class="HTProject.Platform.Main.Views.EngineeringSubs.DebugSubs.LoadingStationView"
+﻿<UserControl x:Class="HTProject.Platform.Main.Views.EngineeringSubs.DebugSubs.UnloadingStationView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HTProject.Platform.Main.Views.EngineeringSubs.DebugSubs"
              xmlns:controls="clr-namespace:HTProject.Plugin.Control.Controls;assembly=HTProject.Plugin.Control"
              xmlns:userControls="clr-namespace:HTProject.Plugin.Control.UserControls;assembly=HTProject.Plugin.Control"
@@ -13,8 +13,7 @@
              Height="900">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition />
             <RowDefinition  Height="60" />
         </Grid.RowDefinitions>
@@ -46,14 +45,14 @@
                                                      HorizontalAlignment="Left" />
             </Grid>
         </Grid>
-        <Border Grid.Row="3"
+        <Border Grid.Row="2"
                 BorderBrush="#4c4c4c"
                 BorderThickness="0,1,0,0">
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Right">
                 <controls:HTCustomButton Content="Accept"
                                          Width="150"
-                                         Margin="10,0" />                
+                                         Margin="10,0" />
             </StackPanel>
         </Border>
     </Grid>

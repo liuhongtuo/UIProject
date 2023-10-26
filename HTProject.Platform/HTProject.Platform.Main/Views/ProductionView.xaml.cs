@@ -18,7 +18,7 @@ namespace HTProject.Platform.Main.Views
     /// <summary>
     /// Interaction logic for ProductionView.xaml
     /// </summary>
-    public partial class ProductionView : Page
+    public partial class ProductionView : UserControl
     {
         public ProductionView()
         {

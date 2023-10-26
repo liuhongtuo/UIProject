@@ -6,11 +6,12 @@
                             xmlns:wondows="clr-namespace:HTProject.Plugin.Control.Windows;assembly=HTProject.Plugin.Control"
                             xmlns:controls="clr-namespace:HTProject.Plugin.Control.Controls;assembly=HTProject.Plugin.Control"
                             xmlns:userControls="clr-namespace:HTProject.Plugin.Control.UserControls;assembly=HTProject.Plugin.Control"
+                            xmlns:cal="http://www.caliburnproject.org"
                             xmlns:local="clr-namespace:HTProject.Platform.Main.Views"
                             mc:Ignorable="d"
                             Title=""
-                            Width="1600"
-                            Height="900"
+                            Width="1680"
+                            Height="1050"
                             MinWidth="1024"
                             MinHeight="768"
                             ResizeMode="CanResizeWithGrip"
@@ -228,7 +229,7 @@
             </Grid>
         </Border>
         <Border Grid.Row="1">
-
+            <ContentControl cal:View.Model="{Binding ScreenContent,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
         </Border>
         <Border Grid.Row="2"
                 BorderThickness="0"
@@ -247,7 +248,7 @@
                                              ImageWidth="35"
                                              VerticalContentAlignment="Center"
                                              Command="{Binding MainViewSelectMenuCommand}"
-                                             CommandParameter="Main"
+                                             CommandParameter="Home"
                                              IsChecked="True" />
                 <controls:HTImageRadioButton ImageRadioButton_Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Production_64x64_Normal.png"
                                              ImageRadioButton_MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Production_64x64_Pressed.png"
@@ -261,8 +262,8 @@
                                              ImageWidth="35"
                                              VerticalContentAlignment="Center"
                                              Command="{Binding MainViewSelectMenuCommand}"
-                                             CommandParameter="Main"
-                                             IsChecked="False"/>
+                                             CommandParameter="Production"
+                                             IsChecked="False" />
                 <controls:HTImageRadioButton ImageRadioButton_Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Engineering_64x64_Normal.png"
                                              ImageRadioButton_MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Engineering_64x64_Pressed.png"
                                              ImageRadioButton_MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Engineering_64x64_Pressed.png"
@@ -275,7 +276,7 @@
                                              ImageWidth="35"
                                              VerticalContentAlignment="Center"
                                              Command="{Binding MainViewSelectMenuCommand}"
-                                             CommandParameter="Main"/>
+                                             CommandParameter="Engineering" />
                 <controls:HTImageRadioButton ImageRadioButton_Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Calibration_64x64_Normal.png"
                                              ImageRadioButton_MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Calibration_64x64_Pressed.png"
                                              ImageRadioButton_MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Calibration_64x64_Pressed.png"
@@ -288,7 +289,7 @@
                                              ImageWidth="35"
                                              VerticalContentAlignment="Center"
                                              Command="{Binding MainViewSelectMenuCommand}"
-                                             CommandParameter="Main"/>
+                                             CommandParameter="Calibration" />
                 <controls:HTImageRadioButton ImageRadioButton_Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Data_64x64_Normal.png"
                                              ImageRadioButton_MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Data_64x64_Pressed.png"
                                              ImageRadioButton_MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Data_64x64_Pressed.png"
@@ -301,7 +302,7 @@
                                              ImageWidth="35"
                                              VerticalContentAlignment="Center"
                                              Command="{Binding MainViewSelectMenuCommand}"
-                                             CommandParameter="Main"/>
+                                             CommandParameter="Data" />
                 <controls:HTImageRadioButton ImageRadioButton_Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Warning_64x64_Normal.png"
                                              ImageRadioButton_MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Warning_64x64_Pressed.png"
                                              ImageRadioButton_MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/MainListIcons/Warning_64x64_Pressed.png"
@@ -314,7 +315,7 @@
                                              ImageWidth="35"
                                              VerticalContentAlignment="Center"
                                              Command="{Binding MainViewSelectMenuCommand}"
-                                             CommandParameter="Main"/>
+                                             CommandParameter="Warning" />
             </UniformGrid>
         </Border>
     </Grid>

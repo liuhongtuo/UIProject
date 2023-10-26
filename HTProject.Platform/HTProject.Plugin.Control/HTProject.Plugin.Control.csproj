@@ -82,6 +82,9 @@
     <Compile Include="UserControls\DirectionButtonPanel.xaml.cs">
       <DependentUpon>DirectionButtonPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\IOInputListPanel.xaml.cs">
+      <DependentUpon>IOInputListPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\TricolourLight.xaml.cs">
       <DependentUpon>TricolourLight.xaml</DependentUpon>
     </Compile>
@@ -183,6 +186,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\DirectionButtonPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\IOInputListPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -813,6 +820,14 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Icons\EngineeringIcons\ArrowUpRotate_64x64_Pressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\SignalLightIcons\IOLight_Flash_64x64.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\SignalLightIcons\IOLight_Normal_64x64.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

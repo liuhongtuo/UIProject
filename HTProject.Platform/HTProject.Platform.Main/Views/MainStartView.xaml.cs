@@ -26,9 +26,6 @@ namespace HTProject.Platform.Main.Views
         public MainStartView()
         {
             InitializeComponent();
-            this.DataContext = this;
         }
-
-        public bool IsContainXAxis { get; set; } = false;
     }
 }

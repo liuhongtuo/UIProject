@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HTProject.Platform.Main.Views
+namespace HTProject.Platform.Main.Views.EngineeringSubs.DebugSubs
 {
     /// <summary>
-    /// DataView.xaml 的交互逻辑
+    /// UnloadingStationView.xaml 的交互逻辑
     /// </summary>
-    public partial class DataView : UserControl
+    public partial class UnloadingStationView : UserControl
     {
-        public DataView()
+        public UnloadingStationView()
         {
             InitializeComponent();
         }

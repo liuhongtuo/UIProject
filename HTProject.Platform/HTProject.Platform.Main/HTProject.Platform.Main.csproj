@@ -56,6 +56,7 @@
       <HintPath>..\..\ThridOfPartReference\PropertyChanged.Fody.1.52.1\Lib\dotnet\PropertyChanged.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Interactivity">
       <HintPath>..\..\ThridOfPartReference\Prism.Wpf.6.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
@@ -82,6 +83,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Managers\ExecuteManager.cs" />
     <Compile Include="Managers\PageManager.cs" />
     <Compile Include="ViewModels\CalibrationViewModel.cs" />
     <Compile Include="ViewModels\DataViewModel.cs" />
@@ -90,6 +92,7 @@
     <Compile Include="ViewModels\EngineeringSubs\DebugSubs\DispensingStationViewModel.cs" />
     <Compile Include="ViewModels\EngineeringSubs\DebugSubs\LoadingStationViewModel.cs" />
     <Compile Include="ViewModels\EngineeringSubs\DebugSubs\RecheckStationViewModel.cs" />
+    <Compile Include="ViewModels\EngineeringSubs\DebugSubs\UnloadingStationViewModel.cs" />
     <Compile Include="ViewModels\EngineeringSubs\IOInputViewModel.cs" />
     <Compile Include="ViewModels\EngineeringSubs\IOOutputViewModel.cs" />
     <Compile Include="ViewModels\EngineeringSubs\ManualDebugViewModel.cs" />
@@ -119,6 +122,9 @@
     </Compile>
     <Compile Include="Views\EngineeringSubs\DebugSubs\RecheckStationView.xaml.cs">
       <DependentUpon>RecheckStationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EngineeringSubs\DebugSubs\UnloadingStationView.xaml.cs">
+      <DependentUpon>UnloadingStationView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EngineeringSubs\IOInputView.xaml.cs">
       <DependentUpon>IOInputView.xaml</DependentUpon>
@@ -204,6 +210,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\EngineeringSubs\DebugSubs\RecheckStationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EngineeringSubs\DebugSubs\UnloadingStationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

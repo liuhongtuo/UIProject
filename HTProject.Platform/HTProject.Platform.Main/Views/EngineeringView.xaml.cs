@@ -18,7 +18,7 @@ namespace HTProject.Platform.Main.Views
     /// <summary>
     /// Interaction logic for EngineeringView.xaml
     /// </summary>
-    public partial class EngineeringView : Page
+    public partial class EngineeringView : UserControl
     {
         public EngineeringView()
         {

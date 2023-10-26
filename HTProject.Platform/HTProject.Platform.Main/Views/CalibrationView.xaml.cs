@@ -18,7 +18,7 @@ namespace HTProject.Platform.Main.Views
     /// <summary>
     /// CalibrationView.xaml 的交互逻辑
     /// </summary>
-    public partial class CalibrationView : Page
+    public partial class CalibrationView : UserControl
     {
         public CalibrationView()
         {

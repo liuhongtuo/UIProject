@@ -18,7 +18,7 @@ namespace HTProject.Platform.Main.Views
     /// <summary>
     /// WarningView.xaml 的交互逻辑
     /// </summary>
-    public partial class WarningView : Page
+    public partial class WarningView : UserControl
     {
         public WarningView()
         {
