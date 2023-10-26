@@ -21,7 +21,7 @@
                                           IconHeight="25"
                                           Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/ProductionIcons/Initial_64x64_Normal.png"
                                           Width="200">
-                <ContentControl cal:View.Model="{Binding ScreenContent,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+                <ContentControl cal:View.Model="{Binding ManualDebugView,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
             </controls:HTCustomIconTabItem>
             <controls:HTCustomIconTabItem Header="I/O Input"
                                           Height="50"
@@ -29,21 +29,27 @@
                                           FontFamily="Microsoft YaHei"
                                           IconHeight="25"
                                           Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/ProductionIcons/Initial_64x64_Normal.png"
-                                          Width="200" />
+                                          Width="200">
+                <ContentControl cal:View.Model="{Binding IOInputView,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+            </controls:HTCustomIconTabItem>
             <controls:HTCustomIconTabItem Header="I/O Output"
                                           Height="50"
                                           FontSize="18"
                                           FontFamily="Microsoft YaHei"
                                           IconHeight="25"
                                           Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/ProductionIcons/Initial_64x64_Normal.png"
-                                          Width="200" />
+                                          Width="200">
+                <ContentControl cal:View.Model="{Binding IOOutputView,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+            </controls:HTCustomIconTabItem>
             <controls:HTCustomIconTabItem Header="MCFC Setting"
                                           Height="50"
                                           FontSize="18"
                                           FontFamily="Microsoft YaHei"
                                           IconHeight="25"
                                           Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/ProductionIcons/Initial_64x64_Normal.png"
-                                          Width="200" />
+                                          Width="200">
+                <ContentControl cal:View.Model="{Binding MCFCSettingView,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+            </controls:HTCustomIconTabItem>
         </TabControl>
     </Grid>
 </UserControl>

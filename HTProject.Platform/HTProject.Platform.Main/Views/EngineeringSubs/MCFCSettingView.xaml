@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:HTProject.Platform.Main.Views.EngineeringSubs"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             Width="1600"
-             Height="690">
+             Width="1640"
+             Height="820">
     <Grid>
             
     </Grid>

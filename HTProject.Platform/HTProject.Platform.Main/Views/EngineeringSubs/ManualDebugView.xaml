@@ -6,28 +6,227 @@
              xmlns:local="clr-namespace:HTProject.Platform.Main.Views.EngineeringSubs"
              xmlns:controls="clr-namespace:HTProject.Plugin.Control.Controls;assembly=HTProject.Plugin.Control"
              xmlns:userControls="clr-namespace:HTProject.Plugin.Control.UserControls;assembly=HTProject.Plugin.Control"
+             xmlns:cal="http://www.caliburnproject.org"
              mc:Ignorable="d"
              d:DesignHeight="450"
              d:DesignWidth="800"
-             Width="1600"
-             Height="690">
+             Width="1640"
+             Height="820">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="TabItem.Selected.Background"
+                         Color="#FFFFFF" />
+        <SolidColorBrush x:Key="TabItem.Selected.Border"
+                         Color="#ACACAC" />
+        <Style x:Key="StationTabControlStyle"
+               TargetType="{x:Type TabControl}">
+            <Setter Property="Padding"
+                    Value="2" />
+            <Setter Property="HorizontalContentAlignment"
+                    Value="Center" />
+            <Setter Property="VerticalContentAlignment"
+                    Value="Center" />
+            <Setter Property="Background"
+                    Value="{StaticResource TabItem.Selected.Background}" />
+            <Setter Property="BorderBrush"
+                    Value="{StaticResource TabItem.Selected.Border}" />
+            <Setter Property="BorderThickness"
+                    Value="1,0,0,0" />
+            <Setter Property="Foreground"
+                    Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabControl}">
+                        <Grid x:Name="templateRoot"
+                              ClipToBounds="true"
+                              SnapsToDevicePixels="true"
+                              KeyboardNavigation.TabNavigation="Local">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition x:Name="ColumnDefinition0" />
+                                <ColumnDefinition x:Name="ColumnDefinition1"
+                                                  Width="0" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition x:Name="RowDefinition0"
+                                               Height="Auto" />
+                                <RowDefinition x:Name="RowDefinition1"
+                                               Height="*" />
+                            </Grid.RowDefinitions>
+                            <TabPanel x:Name="headerPanel"
+                                      Background="Transparent"
+                                      Grid.Column="0"
+                                      IsItemsHost="true"
+                                      Margin="2,2,2,0"
+                                      Grid.Row="0"
+                                      KeyboardNavigation.TabIndex="1"
+                                      Panel.ZIndex="1" />
+                            <Border x:Name="contentPanel"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    Background="{TemplateBinding Background}"
+                                    Grid.Column="0"
+                                    KeyboardNavigation.DirectionalNavigation="Contained"
+                                    Grid.Row="1"
+                                    KeyboardNavigation.TabIndex="2"
+                                    KeyboardNavigation.TabNavigation="Local">
+                                <ContentPresenter x:Name="PART_SelectedContentHost"
+                                                  ContentSource="SelectedContent"
+                                                  Margin="{TemplateBinding Padding}"
+                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="TabStripPlacement"
+                                     Value="Bottom">
+                                <Setter Property="Grid.Row"
+                                        TargetName="headerPanel"
+                                        Value="1" />
+                                <Setter Property="Grid.Row"
+                                        TargetName="contentPanel"
+                                        Value="0" />
+                                <Setter Property="Height"
+                                        TargetName="RowDefinition0"
+                                        Value="*" />
+                                <Setter Property="Height"
+                                        TargetName="RowDefinition1"
+                                        Value="Auto" />
+                                <Setter Property="Margin"
+                                        TargetName="headerPanel"
+                                        Value="2,0,2,2" />
+                            </Trigger>
+                            <Trigger Property="TabStripPlacement"
+                                     Value="Left">
+                                <Setter Property="Grid.Row"
+                                        TargetName="headerPanel"
+                                        Value="0" />
+                                <Setter Property="Grid.Row"
+                                        TargetName="contentPanel"
+                                        Value="0" />
+                                <Setter Property="Grid.Column"
+                                        TargetName="headerPanel"
+                                        Value="0" />
+                                <Setter Property="Grid.Column"
+                                        TargetName="contentPanel"
+                                        Value="1" />
+                                <Setter Property="Width"
+                                        TargetName="ColumnDefinition0"
+                                        Value="Auto" />
+                                <Setter Property="Width"
+                                        TargetName="ColumnDefinition1"
+                                        Value="*" />
+                                <Setter Property="Height"
+                                        TargetName="RowDefinition0"
+                                        Value="*" />
+                                <Setter Property="Height"
+                                        TargetName="RowDefinition1"
+                                        Value="0" />
+                                <Setter Property="Margin"
+                                        TargetName="headerPanel"
+                                        Value="2,2,0,2" />
+                            </Trigger>
+                            <Trigger Property="TabStripPlacement"
+                                     Value="Right">
+                                <Setter Property="Grid.Row"
+                                        TargetName="headerPanel"
+                                        Value="0" />
+                                <Setter Property="Grid.Row"
+                                        TargetName="contentPanel"
+                                        Value="0" />
+                                <Setter Property="Grid.Column"
+                                        TargetName="headerPanel"
+                                        Value="1" />
+                                <Setter Property="Grid.Column"
+                                        TargetName="contentPanel"
+                                        Value="0" />
+                                <Setter Property="Width"
+                                        TargetName="ColumnDefinition0"
+                                        Value="*" />
+                                <Setter Property="Width"
+                                        TargetName="ColumnDefinition1"
+                                        Value="Auto" />
+                                <Setter Property="Height"
+                                        TargetName="RowDefinition0"
+                                        Value="*" />
+                                <Setter Property="Height"
+                                        TargetName="RowDefinition1"
+                                        Value="0" />
+                                <Setter Property="Margin"
+                                        TargetName="headerPanel"
+                                        Value="0,2,2,2" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled"
+                                     Value="false">
+                                <Setter Property="TextElement.Foreground"
+                                        TargetName="templateRoot"
+                                        Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
     <Grid>
-        <TabControl TabStripPlacement="Left">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Border BorderBrush="#ACACAC"
+                BorderThickness="0,0,0,1">
+            <StackPanel Grid.Row="0"
+                        Margin="20,0"
+                        Orientation="Horizontal">
+                <controls:HTCustomIconLabel FontSize="18"
+                                            Foreground="#4c4c4c"
+                                            FontFamily="#PingFang SC Bold"
+                                            FontWeight="SemiBold"
+                                            Padding="0"
+                                            VerticalContentAlignment="Center"
+                                            Content="Station Parameter Setting:"
+                                            IconHeight="20"
+                                            IconWidth="20"
+                                            Margin="0,0,20,0"
+                                            NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/Menu_64x64_Normal.png" />
+                <controls:HTCustomButton Content="Parameter Import"
+                                         Margin="0,0,20,0" />
+                <controls:HTCustomButton Content="Parameter Export"
+                                         Margin="0,0,20,0" />
+                <controls:HTCustomButton Content="Parameter Save"
+                                         Margin="0,0,20,0" />
+            </StackPanel>
+        </Border>
+        <TabControl TabStripPlacement="Left"
+                    Grid.Row="1"
+                    Style="{DynamicResource StationTabControlStyle}">
             <controls:HTCustomHorizontalIconTabItem Header="Loading Station"
                                                     Height="40"
-                                                    Width="180"></controls:HTCustomHorizontalIconTabItem>
+                                                    Width="180">
+                <ContentControl cal:View.Model="{Binding MCFCSettingView,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+            </controls:HTCustomHorizontalIconTabItem>
+            <controls:HTCustomHorizontalIconTabItem Header="Unloading Station"
+                                                    Height="40"
+                                                    Width="180">
+                <ContentControl cal:View.Model="{Binding MCFCSettingView,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+            </controls:HTCustomHorizontalIconTabItem>
             <controls:HTCustomHorizontalIconTabItem Header="Collecting Station"
                                                     Height="40"
-                                                    Width="180"></controls:HTCustomHorizontalIconTabItem>
+                                                    Width="180">
+                <ContentControl cal:View.Model="{Binding MCFCSettingView,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+            </controls:HTCustomHorizontalIconTabItem>
             <controls:HTCustomHorizontalIconTabItem Header="Dispensing Station"
                                                     Height="40"
-                                                    Width="180"></controls:HTCustomHorizontalIconTabItem>
+                                                    Width="180">
+                <ContentControl cal:View.Model="{Binding MCFCSettingView,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+            </controls:HTCustomHorizontalIconTabItem>
             <controls:HTCustomHorizontalIconTabItem Header="Assembly Station"
                                                     Height="40"
-                                                    Width="180"></controls:HTCustomHorizontalIconTabItem>
+                                                    Width="180">
+                <ContentControl cal:View.Model="{Binding MCFCSettingView,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+            </controls:HTCustomHorizontalIconTabItem>
             <controls:HTCustomHorizontalIconTabItem Header="Recheck Station"
                                                     Height="40"
-                                                    Width="180"></controls:HTCustomHorizontalIconTabItem>
+                                                    Width="180">
+                <ContentControl cal:View.Model="{Binding MCFCSettingView,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+            </controls:HTCustomHorizontalIconTabItem>
         </TabControl>
     </Grid>
 </UserControl>
