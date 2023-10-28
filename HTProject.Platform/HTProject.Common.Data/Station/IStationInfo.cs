@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HTProject.Common.File
+namespace HTProject.Common.Data.Station
 {
-    public class Class1
+    interface IStationInfo
     {
     }
 }
