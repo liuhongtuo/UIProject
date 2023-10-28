@@ -10,6 +10,6 @@
              d:DesignHeight="450"
              d:DesignWidth="800"
              Width="1460"
-             Height="760">
+             Height="740">
     <Grid></Grid>
 </UserControl>

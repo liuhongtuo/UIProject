@@ -8,7 +8,7 @@
              xmlns:userControls="clr-namespace:HTProject.Plugin.Control.UserControls;assembly=HTProject.Plugin.Control"
              mc:Ignorable="d"
              Width="1640"
-             Height="880">
+             Height="850">
     <UserControl.Resources>
         <ResourceDictionary>
             <LinearGradientBrush x:Key="LotButtonBackground_Pressed"

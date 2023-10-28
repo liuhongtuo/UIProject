@@ -23,7 +23,6 @@
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    Text="{TemplateBinding Header}"
-                                   ToolTip="{TemplateBinding Header}"
                                    FontSize="{TemplateBinding FontSize}"
                                    Foreground="{TemplateBinding Foreground}"
                                    FontFamily="{TemplateBinding FontFamily}" />
@@ -68,7 +67,7 @@
         <Setter Property="FontSize"
                 Value="16" />
         <Setter Property="Foreground"
-                Value="#9A9A9A" />
+                Value="#4c4c4c" />
         <Setter Property="FontFamily"
                 Value="#PingFang SC Medium" />
         <Setter Property="Template">
@@ -92,7 +91,6 @@
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"
                                        Text="{TemplateBinding Header}"
-                                       ToolTip="{TemplateBinding Header}"
                                        FontSize="{TemplateBinding FontSize}"
                                        Foreground="{TemplateBinding Foreground}"
                                        FontFamily="{TemplateBinding FontFamily}" />
@@ -108,7 +106,7 @@
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Foreground"
                                     TargetName="Txt"
-                                    Value="#FF000000" />
+                                    Value="#FF0561C6" />
                             <!--<Setter Property="FontWeight" TargetName="Txt" Value="Bold"/>-->
                         </MultiDataTrigger>
                         <MultiDataTrigger>
@@ -133,7 +131,7 @@
                                     Value="1" />
                             <Setter TargetName="Txt"
                                     Property="Foreground"
-                                    Value="#000000" />
+                                    Value="#FF0561C6" />
                             <Setter TargetName="UnderLine"
                                     Property="BorderBrush">
                                 <Setter.Value>
@@ -200,7 +198,7 @@
         <Setter Property="FontSize"
                 Value="16" />
         <Setter Property="Foreground"
-                Value="#9A9A9A" />
+                Value="#4C4C4C" />
         <Setter Property="FontFamily"
                 Value="#PingFang SC Medium" />
         <Setter Property="Template">
@@ -227,7 +225,6 @@
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Left"
                                        Text="{TemplateBinding Header}"
-                                       ToolTip="{TemplateBinding Header}"
                                        FontSize="{TemplateBinding FontSize}"
                                        Foreground="{TemplateBinding Foreground}"
                                        FontFamily="{TemplateBinding FontFamily}" />
@@ -243,7 +240,7 @@
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Foreground"
                                     TargetName="Txt"
-                                    Value="#FF000000" />
+                                    Value="#FF0561C6" />
                             <!--<Setter Property="FontWeight" TargetName="Txt" Value="Bold"/>-->
                         </MultiDataTrigger>
                         <MultiDataTrigger>
@@ -268,7 +265,7 @@
                                     Value="1" />
                             <Setter TargetName="Txt"
                                     Property="Foreground"
-                                    Value="#000000" />
+                                    Value="#FF0561C6" />
                             <Setter TargetName="UnderLine"
                                     Property="BorderBrush">
                                 <Setter.Value>

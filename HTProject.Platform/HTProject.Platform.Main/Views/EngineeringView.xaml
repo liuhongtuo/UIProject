@@ -11,7 +11,7 @@
              d:DesignHeight="450"
              d:DesignWidth="800"
              Width="1640"
-             Height="880">
+             Height="850">
     <Grid>
         <TabControl Style="{StaticResource DefaultCustomTabControl}">
             <controls:HTCustomIconTabItem Header="Manual Debug"

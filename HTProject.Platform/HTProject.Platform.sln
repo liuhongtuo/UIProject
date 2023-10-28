@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTProject.Module.SCMS", "HT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTProject.Contract.MEMS", "HTProject.Contract.MEMS\HTProject.Contract.MEMS.csproj", "{09D890DE-6409-496D-92B1-D613E3CEF035}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTProject.Module.MEMS", "HTProject.Module.MEMS\HTProject.Module.MEMS.csproj", "{E8E57364-AEB5-4715-B138-B2EE19617DB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{09D890DE-6409-496D-92B1-D613E3CEF035}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09D890DE-6409-496D-92B1-D613E3CEF035}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09D890DE-6409-496D-92B1-D613E3CEF035}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8E57364-AEB5-4715-B138-B2EE19617DB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8E57364-AEB5-4715-B138-B2EE19617DB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8E57364-AEB5-4715-B138-B2EE19617DB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8E57364-AEB5-4715-B138-B2EE19617DB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,6 +105,7 @@ Global
 		{56FBB470-A75C-4E85-BA32-51058151210D} = {156152FD-0DD9-4D7F-B777-E34600F28F50}
 		{A86B9DB7-A402-40FC-93C0-AB247280A7EC} = {156152FD-0DD9-4D7F-B777-E34600F28F50}
 		{09D890DE-6409-496D-92B1-D613E3CEF035} = {6F52F6B1-820D-4DA3-AE12-ED688C7FA8A2}
+		{E8E57364-AEB5-4715-B138-B2EE19617DB2} = {156152FD-0DD9-4D7F-B777-E34600F28F50}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {55456B79-14DD-46B4-B115-2418166BB9BB}
