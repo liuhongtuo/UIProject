@@ -86,6 +86,9 @@
     <Compile Include="UserControls\IOInputListPanel.xaml.cs">
       <DependentUpon>IOInputListPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\IOOutputListPanel.xaml.cs">
+      <DependentUpon>IOOutputListPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\TricolourLight.xaml.cs">
       <DependentUpon>TricolourLight.xaml</DependentUpon>
     </Compile>
@@ -191,6 +194,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\IOInputListPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\IOOutputListPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -10,7 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using CommonLog = Common.Logging;
 using System.Windows.Input;
+using System.Windows;
 
 namespace HTProject.Platform.Main.ViewModels
 {
@@ -19,7 +21,12 @@ namespace HTProject.Platform.Main.ViewModels
     [ImplementPropertyChanged]
     public class MainStartViewModel : Screen
     {
+        #region Field
+        private readonly CommonLog.ILog logger = CommonLog.LogManager.GetLogger(typeof(MainStartViewModel));
+        private Window _targetWindow;
+        #endregion
 
+        #region Properity
         #region Main Menu Select
 
         public Screen HomeView { get; set; }
@@ -47,6 +54,7 @@ namespace HTProject.Platform.Main.ViewModels
         public LightState YellowState { get; set; } = LightState.Normal;
         public LightState BlueState { get; set; } = LightState.Normal;
         public LightState GreenState { get; set; } = LightState.Normal;
+        #endregion
 
 
         public MainStartViewModel()
@@ -137,5 +145,21 @@ namespace HTProject.Platform.Main.ViewModels
             }
             NotifyOfPropertyChange(nameof(ScreenContent));
         }
+
+        public void MinimizedWindowClickCommand(object sender, RoutedEventArgs e)
+        {
+            var window = Application.Current.MainWindow;
+            if (window == null) return;
+            window.WindowState = WindowState.Minimized;
+        }
+
+        public void ClosedWindowClickCommand(object sender, RoutedEventArgs e)
+        {
+            var window = Application.Current.MainWindow;
+            if (window == null) return;
+            window.Close();
+            Application.Current.Shutdown(0);
+        }
+
     }
 }

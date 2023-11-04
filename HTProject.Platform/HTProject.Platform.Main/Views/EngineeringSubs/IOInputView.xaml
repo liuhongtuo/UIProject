@@ -4,10 +4,53 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:HTProject.Platform.Main.Views.EngineeringSubs"
+             xmlns:controls="clr-namespace:HTProject.Plugin.Control.Controls;assembly=HTProject.Plugin.Control"
+             xmlns:userControls="clr-namespace:HTProject.Plugin.Control.UserControls;assembly=HTProject.Plugin.Control"
+             xmlns:cal="http://www.caliburnproject.org"
              mc:Ignorable="d"
              d:DesignHeight="450"
              d:DesignWidth="800"
              Width="1640"
              Height="800">
-    <Grid></Grid>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Border BorderBrush="#ACACAC"
+                BorderThickness="0,0,0,1">
+            <StackPanel Grid.Row="0"
+                        Margin="20,0"
+                        Orientation="Horizontal">
+                <controls:HTCustomIconLabel FontSize="18"
+                                            Foreground="#4c4c4c"
+                                            FontFamily="#PingFang SC Bold"
+                                            FontWeight="SemiBold"
+                                            Padding="0"
+                                            VerticalContentAlignment="Center"
+                                            Content="Station Parameter Setting:"
+                                            IconHeight="20"
+                                            IconWidth="20"
+                                            Margin="0,0,20,0"
+                                            NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/Menu_64x64_Normal.png" />
+                <controls:HTCustomButton Content="Parameter Import"
+                                         Margin="0,0,20,0" />
+                <controls:HTCustomButton Content="Parameter Export"
+                                         Margin="0,0,20,0" />
+                <controls:HTCustomButton Content="Parameter Save"
+                                         Margin="0,0,20,0" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1"
+                BorderBrush="#ACACAC"
+                BorderThickness="1"
+                Margin="20"
+                CornerRadius="15">
+            <controls:HTScrollViewer Margin="20">
+                <userControls:IOInputListPanel Columns="3"
+                                               DescribeWidth="350"
+                                               ItemsSource="{Binding IOInputDatas,UpdateSourceTrigger=PropertyChanged}" />
+            </controls:HTScrollViewer>
+        </Border>
+    </Grid>
 </UserControl>

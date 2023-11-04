@@ -8,6 +8,7 @@
                             xmlns:userControls="clr-namespace:HTProject.Plugin.Control.UserControls;assembly=HTProject.Plugin.Control"
                             xmlns:cal="http://www.caliburnproject.org"
                             xmlns:local="clr-namespace:HTProject.Platform.Main.Views"
+                            xmlns:shell="clr-namespace:System.Windows.Input;assembly=System.ObjectModel"
                             mc:Ignorable="d"
                             Title=""
                             Width="1680"
@@ -217,14 +218,16 @@
                                                  ButtonType="OnlyIcon"
                                                  Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Minimize_64x64_Normal.png"
                                                  MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Minimize_64x64_Over.png"
-                                                 MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Minimize_64x64_Pressed.png" />
+                                                 MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Minimize_64x64_Pressed.png"
+                                                 cal:Message.Attach="[Event Click] = [Action MinimizedWindowClickCommand($source,$eventArgs)]" />
                     <controls:HTCustomIconButton Width="40"
                                                  Height="40"
                                                  Margin="15,0,0,0"
                                                  ButtonType="OnlyIcon"
                                                  Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Exit_64x64_Normal.png"
                                                  MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Exit_64x64_Pressed.png"
-                                                 MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Exit_64x64_Pressed.png" />
+                                                 MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Exit_64x64_Pressed.png"
+                                                 cal:Message.Attach="[Event Click] = [Action ClosedWindowClickCommand($source,$eventArgs)]" />
                 </StackPanel>
             </Grid>
         </Border>

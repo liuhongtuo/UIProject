@@ -115,6 +115,24 @@
     <Compile Include="ViewModels\MainStartViewModel.cs" />
     <Compile Include="ViewModels\ProductionViewModel.cs" />
     <Compile Include="ViewModels\WarningViewModel.cs" />
+    <Compile Include="Views\CalibrationSubs\AssemblyStationCalibrationView.xaml.cs">
+      <DependentUpon>AssemblyStationCalibrationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CalibrationSubs\CollectingStationCalibrationView.xaml.cs">
+      <DependentUpon>CollectingStationCalibrationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CalibrationSubs\DispensingStationCalibrationView.xaml.cs">
+      <DependentUpon>DispensingStationCalibrationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CalibrationSubs\LoadingStationCalibrationView.xaml.cs">
+      <DependentUpon>LoadingStationCalibrationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CalibrationSubs\RecheckStationCalibrationView.xaml.cs">
+      <DependentUpon>RecheckStationCalibrationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CalibrationSubs\UnloadingStationCalibrationView.xaml.cs">
+      <DependentUpon>UnloadingStationCalibrationView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CalibrationView.xaml.cs">
       <DependentUpon>CalibrationView.xaml</DependentUpon>
     </Compile>
@@ -199,6 +217,30 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\CalibrationSubs\AssemblyStationCalibrationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CalibrationSubs\CollectingStationCalibrationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CalibrationSubs\DispensingStationCalibrationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CalibrationSubs\LoadingStationCalibrationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CalibrationSubs\RecheckStationCalibrationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CalibrationSubs\UnloadingStationCalibrationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CalibrationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -269,6 +311,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HTProject.Common.Data\HTProject.Common.Data.csproj">
+      <Project>{DAFCEE0F-4D51-4B7C-9AC5-F024A51C5951}</Project>
+      <Name>HTProject.Common.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HTProject.Plugin.Base\HTProject.Plugin.Base.csproj">
       <Project>{aaa29475-b5ed-4350-99b0-287c1066807a}</Project>
       <Name>HTProject.Plugin.Base</Name>

@@ -42,8 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IOData\IOData.cs" />
+    <Compile Include="IOData\IOInputData.cs" />
+    <Compile Include="IOData\IOOutputData.cs" />
+    <Compile Include="ProductData\CarrierInfo.cs" />
+    <Compile Include="ProductData\MaterialInfo.cs" />
+    <Compile Include="ProductData\ProductData.cs" />
+    <Compile Include="ProductData\TrayInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Station\IStationInfo.cs" />
+    <Compile Include="StationData\IStationInfo.cs" />
     <Compile Include="Vector\RxRy.cs" />
     <Compile Include="Vector\XY.cs" />
     <Compile Include="Vector\XYRz.cs" />
@@ -54,7 +61,7 @@
     <Compile Include="Vector\ZRxRy.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Lot\" />
+    <Folder Include="LotData\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

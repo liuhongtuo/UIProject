@@ -68,7 +68,7 @@ namespace HTProject.Plugin.Control.Windows
         private void StoryboardHide()
         {
             //启动最小化动画
-            StoryboardSlowHide.Begin(this);
+            //StoryboardSlowHide.Begin(this);
             Task.Factory.StartNew(() =>
             {
                 Thread.Sleep(1000);
@@ -85,7 +85,7 @@ namespace HTProject.Plugin.Control.Windows
         private void WindowRestore()
         {
             Opacity = 0;
-            StoryboardSlowShow.Begin(this);
+            //StoryboardSlowShow.Begin(this);
             Task.Factory.StartNew(() =>
             {
                 Thread.Sleep(20);
@@ -107,7 +107,7 @@ namespace HTProject.Plugin.Control.Windows
             source = HwndSource.FromHwnd(Handle);
             if (source == null)
             { throw new Exception("Cannot get HwndSource instance."); }
-            source.AddHook(new HwndSourceHook(this.WndProc));
+            //source.AddHook(new HwndSourceHook(this.WndProc));
         }
 
         private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)

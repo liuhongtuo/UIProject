@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace HTProject.Plugin.Control.UserControls
 {
     /// <summary>
-    /// IOInputListPanel.xaml 的交互逻辑
+    /// IOOutputListPanel.xaml 的交互逻辑
     /// </summary>
-    public partial class IOInputListPanel : ListView
+    public partial class IOOutputListPanel : ListView
     {
-        public IOInputListPanel()
+        public IOOutputListPanel()
         {
             InitializeComponent();
         }
@@ -31,7 +31,7 @@ namespace HTProject.Plugin.Control.UserControls
             set { SetValue(StateStringProperty, value); }
         }
         public static readonly DependencyProperty StateStringProperty =
-            DependencyProperty.Register("StateString", typeof(string), typeof(IOInputListPanel), new PropertyMetadata("✔"));
+            DependencyProperty.Register("StateString", typeof(string), typeof(IOOutputListPanel), new PropertyMetadata("✔"));
 
 
         public int Columns
@@ -40,7 +40,7 @@ namespace HTProject.Plugin.Control.UserControls
             set { SetValue(ColumnsProperty, value); }
         }
         public static readonly DependencyProperty ColumnsProperty =
-            DependencyProperty.Register("Columns", typeof(int), typeof(IOInputListPanel), new PropertyMetadata(4));
+            DependencyProperty.Register("Columns", typeof(int), typeof(IOOutputListPanel), new PropertyMetadata(4));
 
 
         public bool IsCheckComplate
@@ -49,7 +49,7 @@ namespace HTProject.Plugin.Control.UserControls
             set { SetValue(IsCheckComplateProperty, value); }
         }
         public static readonly DependencyProperty IsCheckComplateProperty =
-            DependencyProperty.Register("IsCheckComplate", typeof(bool), typeof(IOInputListPanel), new PropertyMetadata(false));
+            DependencyProperty.Register("IsCheckComplate", typeof(bool), typeof(IOOutputListPanel), new PropertyMetadata(false));
 
 
         public int ImageWidth
@@ -58,7 +58,7 @@ namespace HTProject.Plugin.Control.UserControls
             set { SetValue(ImageWidthProperty, value); }
         }
         public static readonly DependencyProperty ImageWidthProperty =
-            DependencyProperty.Register("ImageWidth", typeof(int), typeof(IOInputListPanel), new PropertyMetadata(20));
+            DependencyProperty.Register("ImageWidth", typeof(int), typeof(IOOutputListPanel), new PropertyMetadata(20));
 
 
         public int ImageHeight
@@ -67,7 +67,7 @@ namespace HTProject.Plugin.Control.UserControls
             set { SetValue(ImageHeightProperty, value); }
         }
         public static readonly DependencyProperty ImageHeightProperty =
-            DependencyProperty.Register("ImageHeight", typeof(int), typeof(IOInputListPanel), new PropertyMetadata(20));
+            DependencyProperty.Register("ImageHeight", typeof(int), typeof(IOOutputListPanel), new PropertyMetadata(20));
 
 
         public int DescribeWidth
@@ -78,7 +78,16 @@ namespace HTProject.Plugin.Control.UserControls
 
         // Using a DependencyProperty as the backing store for DescribeWidth.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty DescribeWidthProperty =
-            DependencyProperty.Register("DescribeWidth", typeof(int), typeof(IOInputListPanel), new PropertyMetadata(200));
+            DependencyProperty.Register("DescribeWidth", typeof(int), typeof(IOOutputListPanel), new PropertyMetadata(200));
+
+        public ICommand IOOutputClickCommand
+        {
+            get { return (ICommand)GetValue(IOOutputClickCommandProperty); }
+            set { SetValue(IOOutputClickCommandProperty, value); }
+        }
+
+        public static readonly DependencyProperty IOOutputClickCommandProperty =
+            DependencyProperty.Register("IOOutputClickCommand", typeof(ICommand), typeof(IOOutputListPanel), new PropertyMetadata(null));
 
         private void IODescribe_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
