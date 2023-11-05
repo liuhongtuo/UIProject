@@ -14,6 +14,11 @@ namespace HTProject.Common.Data.MCFCData
         public string Name { get; set; }
 
         /// <summary>
+        /// 参数值
+        /// </summary>
+        public string Value { get; set; }
+
+        /// <summary>
         /// 参数描述信息
         /// </summary>
         public string Description { get; set; }

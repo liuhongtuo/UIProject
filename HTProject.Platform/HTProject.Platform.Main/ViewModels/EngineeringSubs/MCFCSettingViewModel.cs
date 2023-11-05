@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using HTProject.Common.Data.MCFCData;
+using HTProject.Platform.Main.Views.EngineeringSubs;
 using PropertyChanged;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,7 @@ namespace HTProject.Platform.Main.ViewModels.EngineeringSubs
         public ItemNodeInfo DispensingStationMCFCInfo { get; set; } = new ItemNodeInfo();
         public ItemNodeInfo AssemblyStationMCFCInfo { get; set; } = new ItemNodeInfo();
         public ItemNodeInfo RecheckStationMCFCInfo { get; set; } = new ItemNodeInfo();
+        public ItemNodeInfo SelectedItemNodeInfo { get; set; } = new ItemNodeInfo();
         #endregion
 
         #region Constructor
@@ -35,6 +37,19 @@ namespace HTProject.Platform.Main.ViewModels.EngineeringSubs
             TotalMCFCList.Add(AssemblyStationMCFCInfo);
             TotalMCFCList.Add(RecheckStationMCFCInfo);
         }
+        #endregion
+
+        #region Command
+        public void OnMCFCTreeSelectionChanged()
+        {
+            var mcfcSettingView = this.GetView() as MCFCSettingView;
+            var item = mcfcSettingView.treeViewDirectory.SelectedItem as ItemNodeInfo;
+            if (item == null)
+                return;
+            SelectedItemNodeInfo = item;
+            NotifyOfPropertyChange(nameof(SelectedItemNodeInfo));
+        }
+
         #endregion
 
         #region Private Method

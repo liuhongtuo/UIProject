@@ -1,9 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:s="clr-namespace:System;assembly=mscorlib"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <ResourceDictionary.MergedDictionaries>
-
-    </ResourceDictionary.MergedDictionaries>
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:HTProject.Plugin.Base.Converters;assembly=HTProject.Plugin.Base"
+                    xmlns:controls="clr-namespace:HTProject.Plugin.Control.Controls">
     <!--#region Slider-->
     <Style x:Key="HTSlider"
            TargetType="Slider">
@@ -76,21 +74,12 @@
                                                         <Style.Resources>
                                                             <ResourceDictionary />
                                                         </Style.Resources>
-                                                        <Setter Property="FrameworkElement.OverridesDefaultStyle">
-                                                            <Setter.Value>
-                                                                <s:Boolean>True</s:Boolean>
-                                                            </Setter.Value>
-                                                        </Setter>
-                                                        <Setter Property="KeyboardNavigation.IsTabStop">
-                                                            <Setter.Value>
-                                                                <s:Boolean>False</s:Boolean>
-                                                            </Setter.Value>
-                                                        </Setter>
-                                                        <Setter Property="UIElement.Focusable">
-                                                            <Setter.Value>
-                                                                <s:Boolean>False</s:Boolean>
-                                                            </Setter.Value>
-                                                        </Setter>
+                                                        <Setter Property="FrameworkElement.OverridesDefaultStyle"
+                                                                Value="True" />
+                                                        <Setter Property="KeyboardNavigation.IsTabStop"
+                                                                Value="False" />
+                                                        <Setter Property="UIElement.Focusable"
+                                                                Value="False" />
                                                         <Setter Property="Control.Template">
                                                             <Setter.Value>
                                                                 <ControlTemplate TargetType="RepeatButton">
@@ -109,26 +98,14 @@
                                                         <Style.Resources>
                                                             <ResourceDictionary />
                                                         </Style.Resources>
-                                                        <Setter Property="UIElement.Focusable">
-                                                            <Setter.Value>
-                                                                <s:Boolean>False</s:Boolean>
-                                                            </Setter.Value>
-                                                        </Setter>
-                                                        <Setter Property="FrameworkElement.OverridesDefaultStyle">
-                                                            <Setter.Value>
-                                                                <s:Boolean>True</s:Boolean>
-                                                            </Setter.Value>
-                                                        </Setter>
-                                                        <Setter Property="FrameworkElement.Height">
-                                                            <Setter.Value>
-                                                                <s:Double>11</s:Double>
-                                                            </Setter.Value>
-                                                        </Setter>
-                                                        <Setter Property="FrameworkElement.Width">
-                                                            <Setter.Value>
-                                                                <s:Double>22</s:Double>
-                                                            </Setter.Value>
-                                                        </Setter>
+                                                        <Setter Property="UIElement.Focusable"
+                                                                Value="False" />
+                                                        <Setter Property="FrameworkElement.OverridesDefaultStyle"
+                                                                Value="True" />
+                                                        <Setter Property="FrameworkElement.Height"
+                                                                Value="11" />
+                                                        <Setter Property="FrameworkElement.Width"
+                                                                Value="22" />
                                                         <Setter Property="TextElement.Foreground">
                                                             <Setter.Value>
                                                                 <SolidColorBrush>#FF808080</SolidColorBrush>
@@ -173,7 +150,8 @@
                                                                               StrokeThickness="1" />
                                                                     </Canvas>
                                                                     <ControlTemplate.Triggers>
-                                                                        <Trigger Property="UIElement.IsMouseOver">
+                                                                        <Trigger Property="UIElement.IsMouseOver"
+                                                                                 Value="True">
                                                                             <Setter TargetName="Background"
                                                                                     Property="Shape.Fill">
                                                                                 <Setter.Value>
@@ -196,9 +174,6 @@
                                                                                     <SolidColorBrush>#FF3C7FB1</SolidColorBrush>
                                                                                 </Setter.Value>
                                                                             </Setter>
-                                                                            <Trigger.Value>
-                                                                                <s:Boolean>True</s:Boolean>
-                                                                            </Trigger.Value>
                                                                         </Trigger>
                                                                         <Trigger Property="TextElement.Foreground">
                                                                             <Setter TargetName="Background"
@@ -227,7 +202,8 @@
                                                                                 <SolidColorBrush>#FF0000FF</SolidColorBrush>
                                                                             </Trigger.Value>
                                                                         </Trigger>
-                                                                        <Trigger Property="Thumb.IsDragging">
+                                                                        <Trigger Property="Thumb.IsDragging"
+                                                                                 Value="True">
                                                                             <Setter TargetName="Background"
                                                                                     Property="Shape.Fill">
                                                                                 <Setter.Value>
@@ -250,11 +226,9 @@
                                                                                     <SolidColorBrush>#FF2C628B</SolidColorBrush>
                                                                                 </Setter.Value>
                                                                             </Setter>
-                                                                            <Trigger.Value>
-                                                                                <s:Boolean>True</s:Boolean>
-                                                                            </Trigger.Value>
                                                                         </Trigger>
-                                                                        <Trigger Property="UIElement.IsEnabled">
+                                                                        <Trigger Property="UIElement.IsEnabled"
+                                                                                 Value="False">
                                                                             <Setter TargetName="Background"
                                                                                     Property="Shape.Fill">
                                                                                 <Setter.Value>
@@ -285,9 +259,6 @@
                                                                                     <StreamGeometry>M4.5,-8.5L-4.5,-8.5 -4.5,4.5 -0.5,8.5 0.5,8.5 4.5,4.5z</StreamGeometry>
                                                                                 </Setter.Value>
                                                                             </Setter>
-                                                                            <Trigger.Value>
-                                                                                <s:Boolean>False</s:Boolean>
-                                                                            </Trigger.Value>
                                                                         </Trigger>
                                                                     </ControlTemplate.Triggers>
                                                                 </ControlTemplate>
@@ -307,21 +278,12 @@
                                                         <Style.Resources>
                                                             <ResourceDictionary />
                                                         </Style.Resources>
-                                                        <Setter Property="FrameworkElement.OverridesDefaultStyle">
-                                                            <Setter.Value>
-                                                                <s:Boolean>True</s:Boolean>
-                                                            </Setter.Value>
-                                                        </Setter>
-                                                        <Setter Property="KeyboardNavigation.IsTabStop">
-                                                            <Setter.Value>
-                                                                <s:Boolean>False</s:Boolean>
-                                                            </Setter.Value>
-                                                        </Setter>
-                                                        <Setter Property="UIElement.Focusable">
-                                                            <Setter.Value>
-                                                                <s:Boolean>False</s:Boolean>
-                                                            </Setter.Value>
-                                                        </Setter>
+                                                        <Setter Property="FrameworkElement.OverridesDefaultStyle"
+                                                                Value="True" />
+                                                        <Setter Property="KeyboardNavigation.IsTabStop"
+                                                                Value="False" />
+                                                        <Setter Property="UIElement.Focusable"
+                                                                Value="False" />
                                                         <Setter Property="Control.Template">
                                                             <Setter.Value>
                                                                 <ControlTemplate TargetType="RepeatButton">
@@ -351,26 +313,14 @@
                                                 <Style.Resources>
                                                     <ResourceDictionary />
                                                 </Style.Resources>
-                                                <Setter Property="UIElement.Focusable">
-                                                    <Setter.Value>
-                                                        <s:Boolean>False</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="FrameworkElement.OverridesDefaultStyle">
-                                                    <Setter.Value>
-                                                        <s:Boolean>True</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="FrameworkElement.Height">
-                                                    <Setter.Value>
-                                                        <s:Double>10</s:Double>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="FrameworkElement.Width">
-                                                    <Setter.Value>
-                                                        <s:Double>18</s:Double>
-                                                    </Setter.Value>
-                                                </Setter>
+                                                <Setter Property="UIElement.Focusable"
+                                                        Value="False" />
+                                                <Setter Property="FrameworkElement.OverridesDefaultStyle"
+                                                        Value="True" />
+                                                <Setter Property="FrameworkElement.Height"
+                                                        Value="10" />
+                                                <Setter Property="FrameworkElement.Width"
+                                                        Value="18" />
                                                 <Setter Property="TextElement.Foreground">
                                                     <Setter.Value>
                                                         <SolidColorBrush>#FF808080</SolidColorBrush>
@@ -415,7 +365,8 @@
                                                                       StrokeThickness="1" />
                                                             </Canvas>
                                                             <ControlTemplate.Triggers>
-                                                                <Trigger Property="UIElement.IsMouseOver">
+                                                                <Trigger Property="UIElement.IsMouseOver"
+                                                                         Value="True">
                                                                     <Setter TargetName="Background"
                                                                             Property="Shape.Fill">
                                                                         <Setter.Value>
@@ -438,9 +389,6 @@
                                                                             <SolidColorBrush>#FF3C7FB1</SolidColorBrush>
                                                                         </Setter.Value>
                                                                     </Setter>
-                                                                    <Trigger.Value>
-                                                                        <s:Boolean>True</s:Boolean>
-                                                                    </Trigger.Value>
                                                                 </Trigger>
                                                                 <Trigger Property="TextElement.Foreground">
                                                                     <Setter TargetName="Background"
@@ -469,7 +417,8 @@
                                                                         <SolidColorBrush>#FF0000FF</SolidColorBrush>
                                                                     </Trigger.Value>
                                                                 </Trigger>
-                                                                <Trigger Property="Thumb.IsDragging">
+                                                                <Trigger Property="Thumb.IsDragging"
+                                                                         Value="True">
                                                                     <Setter TargetName="Background"
                                                                             Property="Shape.Fill">
                                                                         <Setter.Value>
@@ -492,11 +441,9 @@
                                                                             <SolidColorBrush>#FF2C628B</SolidColorBrush>
                                                                         </Setter.Value>
                                                                     </Setter>
-                                                                    <Trigger.Value>
-                                                                        <s:Boolean>True</s:Boolean>
-                                                                    </Trigger.Value>
                                                                 </Trigger>
-                                                                <Trigger Property="UIElement.IsEnabled">
+                                                                <Trigger Property="UIElement.IsEnabled"
+                                                                         Value="False">
                                                                     <Setter TargetName="Background"
                                                                             Property="Shape.Fill">
                                                                         <Setter.Value>
@@ -521,9 +468,6 @@
                                                                             <SolidColorBrush>#FFAEB1AF</SolidColorBrush>
                                                                         </Setter.Value>
                                                                     </Setter>
-                                                                    <Trigger.Value>
-                                                                        <s:Boolean>False</s:Boolean>
-                                                                    </Trigger.Value>
                                                                 </Trigger>
                                                             </ControlTemplate.Triggers>
                                                         </ControlTemplate>
@@ -556,26 +500,14 @@
                                                 <Style.Resources>
                                                     <ResourceDictionary />
                                                 </Style.Resources>
-                                                <Setter Property="UIElement.Focusable">
-                                                    <Setter.Value>
-                                                        <s:Boolean>False</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="FrameworkElement.OverridesDefaultStyle">
-                                                    <Setter.Value>
-                                                        <s:Boolean>True</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="FrameworkElement.Height">
-                                                    <Setter.Value>
-                                                        <s:Double>10</s:Double>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="FrameworkElement.Width">
-                                                    <Setter.Value>
-                                                        <s:Double>18</s:Double>
-                                                    </Setter.Value>
-                                                </Setter>
+                                                <Setter Property="UIElement.Focusable"
+                                                        Value="False" />
+                                                <Setter Property="FrameworkElement.OverridesDefaultStyle"
+                                                        Value="True" />
+                                                <Setter Property="FrameworkElement.Height"
+                                                        Value="10" />
+                                                <Setter Property="FrameworkElement.Width"
+                                                        Value="18" />
                                                 <Setter Property="TextElement.Foreground">
                                                     <Setter.Value>
                                                         <SolidColorBrush>#FF808080</SolidColorBrush>
@@ -620,7 +552,8 @@
                                                                       StrokeThickness="1" />
                                                             </Canvas>
                                                             <ControlTemplate.Triggers>
-                                                                <Trigger Property="UIElement.IsMouseOver">
+                                                                <Trigger Property="UIElement.IsMouseOver"
+                                                                         Value="True">
                                                                     <Setter TargetName="Background"
                                                                             Property="Shape.Fill">
                                                                         <Setter.Value>
@@ -643,9 +576,6 @@
                                                                             <SolidColorBrush>#FF3C7FB1</SolidColorBrush>
                                                                         </Setter.Value>
                                                                     </Setter>
-                                                                    <Trigger.Value>
-                                                                        <s:Boolean>True</s:Boolean>
-                                                                    </Trigger.Value>
                                                                 </Trigger>
                                                                 <Trigger Property="TextElement.Foreground">
                                                                     <Setter TargetName="Background"
@@ -674,7 +604,8 @@
                                                                         <SolidColorBrush>#FF0000FF</SolidColorBrush>
                                                                     </Trigger.Value>
                                                                 </Trigger>
-                                                                <Trigger Property="Thumb.IsDragging">
+                                                                <Trigger Property="Thumb.IsDragging"
+                                                                         Value="True">
                                                                     <Setter TargetName="Background"
                                                                             Property="Shape.Fill">
                                                                         <Setter.Value>
@@ -697,11 +628,9 @@
                                                                             <SolidColorBrush>#FF2C628B</SolidColorBrush>
                                                                         </Setter.Value>
                                                                     </Setter>
-                                                                    <Trigger.Value>
-                                                                        <s:Boolean>True</s:Boolean>
-                                                                    </Trigger.Value>
                                                                 </Trigger>
-                                                                <Trigger Property="UIElement.IsEnabled">
+                                                                <Trigger Property="UIElement.IsEnabled"
+                                                                         Value="False">
                                                                     <Setter TargetName="Background"
                                                                             Property="Shape.Fill">
                                                                         <Setter.Value>
@@ -726,9 +655,6 @@
                                                                             <SolidColorBrush>#FFAEB1AF</SolidColorBrush>
                                                                         </Setter.Value>
                                                                     </Setter>
-                                                                    <Trigger.Value>
-                                                                        <s:Boolean>False</s:Boolean>
-                                                                    </Trigger.Value>
                                                                 </Trigger>
                                                             </ControlTemplate.Triggers>
                                                         </ControlTemplate>
@@ -764,27 +690,23 @@
                                         <x:Static Member="TickPlacement.Both" />
                                     </Trigger.Value>
                                 </Trigger>
-                                <Trigger Property="Slider.IsSelectionRangeEnabled">
+                                <Trigger Property="Slider.IsSelectionRangeEnabled"
+                                         Value="True">
                                     <Setter TargetName="PART_SelectionRange"
                                             Property="UIElement.Visibility">
                                         <Setter.Value>
                                             <x:Static Member="Visibility.Visible" />
                                         </Setter.Value>
                                     </Setter>
-                                    <Trigger.Value>
-                                        <s:Boolean>True</s:Boolean>
-                                    </Trigger.Value>
                                 </Trigger>
-                                <Trigger Property="UIElement.IsKeyboardFocused">
+                                <Trigger Property="UIElement.IsKeyboardFocused"
+                                         Value="True">
                                     <Setter TargetName="Thumb"
                                             Property="TextElement.Foreground">
                                         <Setter.Value>
                                             <SolidColorBrush>#FF0000FF</SolidColorBrush>
                                         </Setter.Value>
                                     </Setter>
-                                    <Trigger.Value>
-                                        <s:Boolean>True</s:Boolean>
-                                    </Trigger.Value>
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
@@ -798,11 +720,8 @@
         <Style.Resources>
             <ResourceDictionary />
         </Style.Resources>
-        <Setter Property="Stylus.IsPressAndHoldEnabled">
-            <Setter.Value>
-                <s:Boolean>False</s:Boolean>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="Stylus.IsPressAndHoldEnabled"
+                Value="False" />
         <Setter Property="Panel.Background">
             <Setter.Value>
                 <SolidColorBrush>#00FFFFFF</SolidColorBrush>
@@ -866,21 +785,12 @@
                                                 <Style.Resources>
                                                     <ResourceDictionary />
                                                 </Style.Resources>
-                                                <Setter Property="FrameworkElement.OverridesDefaultStyle">
-                                                    <Setter.Value>
-                                                        <s:Boolean>True</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="KeyboardNavigation.IsTabStop">
-                                                    <Setter.Value>
-                                                        <s:Boolean>False</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="UIElement.Focusable">
-                                                    <Setter.Value>
-                                                        <s:Boolean>False</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
+                                                <Setter Property="FrameworkElement.OverridesDefaultStyle"
+                                                        Value="True" />
+                                                <Setter Property="KeyboardNavigation.IsTabStop"
+                                                        Value="False" />
+                                                <Setter Property="UIElement.Focusable"
+                                                        Value="False" />
                                                 <Setter Property="Control.Template">
                                                     <Setter.Value>
                                                         <ControlTemplate TargetType="RepeatButton">
@@ -899,26 +809,14 @@
                                                 <Style.Resources>
                                                     <ResourceDictionary />
                                                 </Style.Resources>
-                                                <Setter Property="UIElement.Focusable">
-                                                    <Setter.Value>
-                                                        <s:Boolean>False</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="FrameworkElement.OverridesDefaultStyle">
-                                                    <Setter.Value>
-                                                        <s:Boolean>True</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="FrameworkElement.Height">
-                                                    <Setter.Value>
-                                                        <s:Double>15</s:Double>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="FrameworkElement.Width">
-                                                    <Setter.Value>
-                                                        <s:Double>15</s:Double>
-                                                    </Setter.Value>
-                                                </Setter>
+                                                <Setter Property="UIElement.Focusable"
+                                                        Value="False" />
+                                                <Setter Property="FrameworkElement.OverridesDefaultStyle"
+                                                        Value="True" />
+                                                <Setter Property="FrameworkElement.Height"
+                                                        Value="15" />
+                                                <Setter Property="FrameworkElement.Width"
+                                                        Value="15" />
                                                 <Setter Property="TextElement.Foreground">
                                                     <Setter.Value>
                                                         <SolidColorBrush>#FF808080</SolidColorBrush>
@@ -1063,21 +961,12 @@
                                                 <Style.Resources>
                                                     <ResourceDictionary />
                                                 </Style.Resources>
-                                                <Setter Property="FrameworkElement.OverridesDefaultStyle">
-                                                    <Setter.Value>
-                                                        <s:Boolean>True</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="KeyboardNavigation.IsTabStop">
-                                                    <Setter.Value>
-                                                        <s:Boolean>False</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="UIElement.Focusable">
-                                                    <Setter.Value>
-                                                        <s:Boolean>False</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
+                                                <Setter Property="FrameworkElement.OverridesDefaultStyle"
+                                                        Value="True" />
+                                                <Setter Property="KeyboardNavigation.IsTabStop"
+                                                        Value="True" />
+                                                <Setter Property="UIElement.Focusable"
+                                                        Value="True" />
                                                 <Setter Property="Control.Template">
                                                     <Setter.Value>
                                                         <ControlTemplate TargetType="RepeatButton">
@@ -1107,26 +996,14 @@
                                         <Style.Resources>
                                             <ResourceDictionary />
                                         </Style.Resources>
-                                        <Setter Property="UIElement.Focusable">
-                                            <Setter.Value>
-                                                <s:Boolean>False</s:Boolean>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Setter Property="FrameworkElement.OverridesDefaultStyle">
-                                            <Setter.Value>
-                                                <s:Boolean>True</s:Boolean>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Setter Property="FrameworkElement.Height">
-                                            <Setter.Value>
-                                                <s:Double>18</s:Double>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Setter Property="FrameworkElement.Width">
-                                            <Setter.Value>
-                                                <s:Double>10</s:Double>
-                                            </Setter.Value>
-                                        </Setter>
+                                        <Setter Property="UIElement.Focusable"
+                                                Value="True" />
+                                        <Setter Property="FrameworkElement.OverridesDefaultStyle"
+                                                Value="True" />
+                                        <Setter Property="FrameworkElement.Height"
+                                                Value="18" />
+                                        <Setter Property="FrameworkElement.Width"
+                                                Value="10" />
                                         <Setter Property="TextElement.Foreground">
                                             <Setter.Value>
                                                 <SolidColorBrush>#FF808080</SolidColorBrush>
@@ -1171,7 +1048,8 @@
                                                               StrokeThickness="1" />
                                                     </Canvas>
                                                     <ControlTemplate.Triggers>
-                                                        <Trigger Property="UIElement.IsMouseOver">
+                                                        <Trigger Property="UIElement.IsMouseOver"
+                                                                 Value="True">
                                                             <Setter TargetName="Background"
                                                                     Property="Shape.Fill">
                                                                 <Setter.Value>
@@ -1194,9 +1072,6 @@
                                                                     <SolidColorBrush>#FF3C7FB1</SolidColorBrush>
                                                                 </Setter.Value>
                                                             </Setter>
-                                                            <Trigger.Value>
-                                                                <s:Boolean>True</s:Boolean>
-                                                            </Trigger.Value>
                                                         </Trigger>
                                                         <Trigger Property="TextElement.Foreground">
                                                             <Setter TargetName="Background"
@@ -1225,7 +1100,8 @@
                                                                 <SolidColorBrush>#FF0000FF</SolidColorBrush>
                                                             </Trigger.Value>
                                                         </Trigger>
-                                                        <Trigger Property="Thumb.IsDragging">
+                                                        <Trigger Property="Thumb.IsDragging"
+                                                                 Value="True">
                                                             <Setter TargetName="Background"
                                                                     Property="Shape.Fill">
                                                                 <Setter.Value>
@@ -1248,11 +1124,9 @@
                                                                     <SolidColorBrush>#FF2C628B</SolidColorBrush>
                                                                 </Setter.Value>
                                                             </Setter>
-                                                            <Trigger.Value>
-                                                                <s:Boolean>True</s:Boolean>
-                                                            </Trigger.Value>
                                                         </Trigger>
-                                                        <Trigger Property="UIElement.IsEnabled">
+                                                        <Trigger Property="UIElement.IsEnabled"
+                                                                 Value="False">
                                                             <Setter TargetName="Background"
                                                                     Property="Shape.Fill">
                                                                 <Setter.Value>
@@ -1283,9 +1157,6 @@
                                                                     <StreamGeometry>M4.5,-8.5L-4.5,-8.5 -4.5,4.5 -0.5,8.5 0.5,8.5 4.5,4.5z</StreamGeometry>
                                                                 </Setter.Value>
                                                             </Setter>
-                                                            <Trigger.Value>
-                                                                <s:Boolean>False</s:Boolean>
-                                                            </Trigger.Value>
                                                         </Trigger>
                                                     </ControlTemplate.Triggers>
                                                 </ControlTemplate>
@@ -1318,26 +1189,14 @@
                                         <Style.Resources>
                                             <ResourceDictionary />
                                         </Style.Resources>
-                                        <Setter Property="UIElement.Focusable">
-                                            <Setter.Value>
-                                                <s:Boolean>False</s:Boolean>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Setter Property="FrameworkElement.OverridesDefaultStyle">
-                                            <Setter.Value>
-                                                <s:Boolean>True</s:Boolean>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Setter Property="FrameworkElement.Height">
-                                            <Setter.Value>
-                                                <s:Double>18</s:Double>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Setter Property="FrameworkElement.Width">
-                                            <Setter.Value>
-                                                <s:Double>10</s:Double>
-                                            </Setter.Value>
-                                        </Setter>
+                                        <Setter Property="UIElement.Focusable"
+                                                Value="False" />
+                                        <Setter Property="FrameworkElement.OverridesDefaultStyle"
+                                                Value="True" />
+                                        <Setter Property="FrameworkElement.Height"
+                                                Value="18" />
+                                        <Setter Property="FrameworkElement.Width"
+                                                Value="10" />
                                         <Setter Property="TextElement.Foreground">
                                             <Setter.Value>
                                                 <SolidColorBrush>#FF808080</SolidColorBrush>
@@ -1377,7 +1236,8 @@
                                                               StrokeThickness="1" />
                                                     </Canvas>
                                                     <ControlTemplate.Triggers>
-                                                        <Trigger Property="UIElement.IsMouseOver">
+                                                        <Trigger Property="UIElement.IsMouseOver"
+                                                                 Value="True">
                                                             <Setter TargetName="Background"
                                                                     Property="Shape.Fill">
                                                                 <Setter.Value>
@@ -1400,9 +1260,6 @@
                                                                     <SolidColorBrush>#FF3C7FB1</SolidColorBrush>
                                                                 </Setter.Value>
                                                             </Setter>
-                                                            <Trigger.Value>
-                                                                <s:Boolean>True</s:Boolean>
-                                                            </Trigger.Value>
                                                         </Trigger>
                                                         <Trigger Property="TextElement.Foreground">
                                                             <Setter TargetName="Background"
@@ -1431,7 +1288,8 @@
                                                                 <SolidColorBrush>#FF0000FF</SolidColorBrush>
                                                             </Trigger.Value>
                                                         </Trigger>
-                                                        <Trigger Property="Thumb.IsDragging">
+                                                        <Trigger Property="Thumb.IsDragging"
+                                                                 Value="True">
                                                             <Setter TargetName="Background"
                                                                     Property="Shape.Fill">
                                                                 <Setter.Value>
@@ -1454,11 +1312,9 @@
                                                                     <SolidColorBrush>#FF2C628B</SolidColorBrush>
                                                                 </Setter.Value>
                                                             </Setter>
-                                                            <Trigger.Value>
-                                                                <s:Boolean>True</s:Boolean>
-                                                            </Trigger.Value>
                                                         </Trigger>
-                                                        <Trigger Property="UIElement.IsEnabled">
+                                                        <Trigger Property="UIElement.IsEnabled"
+                                                                 Value="False">
                                                             <Setter TargetName="Background"
                                                                     Property="Shape.Fill">
                                                                 <Setter.Value>
@@ -1489,9 +1345,6 @@
                                                                     <StreamGeometry>M4.5,-8.5L-4.5,-8.5 -4.5,4.5 -0.5,8.5 0.5,8.5 4.5,4.5z</StreamGeometry>
                                                                 </Setter.Value>
                                                             </Setter>
-                                                            <Trigger.Value>
-                                                                <s:Boolean>False</s:Boolean>
-                                                            </Trigger.Value>
                                                         </Trigger>
                                                     </ControlTemplate.Triggers>
                                                 </ControlTemplate>
@@ -1527,27 +1380,23 @@
                                 <x:Static Member="TickPlacement.Both" />
                             </Trigger.Value>
                         </Trigger>
-                        <Trigger Property="Slider.IsSelectionRangeEnabled">
+                        <Trigger Property="Slider.IsSelectionRangeEnabled"
+                                 Value="True">
                             <Setter TargetName="PART_SelectionRange"
                                     Property="UIElement.Visibility">
                                 <Setter.Value>
                                     <x:Static Member="Visibility.Visible" />
                                 </Setter.Value>
                             </Setter>
-                            <Trigger.Value>
-                                <s:Boolean>True</s:Boolean>
-                            </Trigger.Value>
                         </Trigger>
-                        <Trigger Property="UIElement.IsKeyboardFocused">
+                        <Trigger Property="UIElement.IsKeyboardFocused"
+                                 Value="True">
                             <Setter TargetName="Thumb"
                                     Property="TextElement.Foreground">
                                 <Setter.Value>
                                     <SolidColorBrush>#FF0000FF</SolidColorBrush>
                                 </Setter.Value>
                             </Setter>
-                            <Trigger.Value>
-                                <s:Boolean>True</s:Boolean>
-                            </Trigger.Value>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -1624,21 +1473,12 @@
                                                         <Style.Resources>
                                                             <ResourceDictionary />
                                                         </Style.Resources>
-                                                        <Setter Property="FrameworkElement.OverridesDefaultStyle">
-                                                            <Setter.Value>
-                                                                <s:Boolean>True</s:Boolean>
-                                                            </Setter.Value>
-                                                        </Setter>
-                                                        <Setter Property="KeyboardNavigation.IsTabStop">
-                                                            <Setter.Value>
-                                                                <s:Boolean>False</s:Boolean>
-                                                            </Setter.Value>
-                                                        </Setter>
-                                                        <Setter Property="UIElement.Focusable">
-                                                            <Setter.Value>
-                                                                <s:Boolean>False</s:Boolean>
-                                                            </Setter.Value>
-                                                        </Setter>
+                                                        <Setter Property="FrameworkElement.OverridesDefaultStyle"
+                                                                Value="True" />
+                                                        <Setter Property="KeyboardNavigation.IsTabStop"
+                                                                Value="False" />
+                                                        <Setter Property="UIElement.Focusable"
+                                                                Value="False" />
                                                         <Setter Property="Control.Template">
                                                             <Setter.Value>
                                                                 <ControlTemplate TargetType="RepeatButton">
@@ -1657,26 +1497,14 @@
                                                         <Style.Resources>
                                                             <ResourceDictionary />
                                                         </Style.Resources>
-                                                        <Setter Property="UIElement.Focusable">
-                                                            <Setter.Value>
-                                                                <s:Boolean>False</s:Boolean>
-                                                            </Setter.Value>
-                                                        </Setter>
-                                                        <Setter Property="FrameworkElement.OverridesDefaultStyle">
-                                                            <Setter.Value>
-                                                                <s:Boolean>True</s:Boolean>
-                                                            </Setter.Value>
-                                                        </Setter>
-                                                        <Setter Property="FrameworkElement.Height">
-                                                            <Setter.Value>
-                                                                <s:Double>11</s:Double>
-                                                            </Setter.Value>
-                                                        </Setter>
-                                                        <Setter Property="FrameworkElement.Width">
-                                                            <Setter.Value>
-                                                                <s:Double>22</s:Double>
-                                                            </Setter.Value>
-                                                        </Setter>
+                                                        <Setter Property="UIElement.Focusable"
+                                                                Value="False" />
+                                                        <Setter Property="FrameworkElement.OverridesDefaultStyle"
+                                                                Value="True" />
+                                                        <Setter Property="FrameworkElement.Height"
+                                                                Value="11" />
+                                                        <Setter Property="FrameworkElement.Width"
+                                                                Value="22" />
                                                         <Setter Property="TextElement.Foreground">
                                                             <Setter.Value>
                                                                 <SolidColorBrush>#FF808080</SolidColorBrush>
@@ -1721,7 +1549,8 @@
                                                                               StrokeThickness="1" />
                                                                     </Canvas>
                                                                     <ControlTemplate.Triggers>
-                                                                        <Trigger Property="UIElement.IsMouseOver">
+                                                                        <Trigger Property="UIElement.IsMouseOver"
+                                                                                 Value="True">
                                                                             <Setter TargetName="Background"
                                                                                     Property="Shape.Fill">
                                                                                 <Setter.Value>
@@ -1744,9 +1573,6 @@
                                                                                     <SolidColorBrush>#FF3C7FB1</SolidColorBrush>
                                                                                 </Setter.Value>
                                                                             </Setter>
-                                                                            <Trigger.Value>
-                                                                                <s:Boolean>True</s:Boolean>
-                                                                            </Trigger.Value>
                                                                         </Trigger>
                                                                         <Trigger Property="TextElement.Foreground">
                                                                             <Setter TargetName="Background"
@@ -1775,7 +1601,8 @@
                                                                                 <SolidColorBrush>#FF0000FF</SolidColorBrush>
                                                                             </Trigger.Value>
                                                                         </Trigger>
-                                                                        <Trigger Property="Thumb.IsDragging">
+                                                                        <Trigger Property="Thumb.IsDragging"
+                                                                                 Value="True">
                                                                             <Setter TargetName="Background"
                                                                                     Property="Shape.Fill">
                                                                                 <Setter.Value>
@@ -1798,11 +1625,9 @@
                                                                                     <SolidColorBrush>#FF2C628B</SolidColorBrush>
                                                                                 </Setter.Value>
                                                                             </Setter>
-                                                                            <Trigger.Value>
-                                                                                <s:Boolean>True</s:Boolean>
-                                                                            </Trigger.Value>
                                                                         </Trigger>
-                                                                        <Trigger Property="UIElement.IsEnabled">
+                                                                        <Trigger Property="UIElement.IsEnabled"
+                                                                                 Value="False">
                                                                             <Setter TargetName="Background"
                                                                                     Property="Shape.Fill">
                                                                                 <Setter.Value>
@@ -1833,9 +1658,6 @@
                                                                                     <StreamGeometry>M4.5,-8.5L-4.5,-8.5 -4.5,4.5 -0.5,8.5 0.5,8.5 4.5,4.5z</StreamGeometry>
                                                                                 </Setter.Value>
                                                                             </Setter>
-                                                                            <Trigger.Value>
-                                                                                <s:Boolean>False</s:Boolean>
-                                                                            </Trigger.Value>
                                                                         </Trigger>
                                                                     </ControlTemplate.Triggers>
                                                                 </ControlTemplate>
@@ -1855,21 +1677,12 @@
                                                         <Style.Resources>
                                                             <ResourceDictionary />
                                                         </Style.Resources>
-                                                        <Setter Property="FrameworkElement.OverridesDefaultStyle">
-                                                            <Setter.Value>
-                                                                <s:Boolean>True</s:Boolean>
-                                                            </Setter.Value>
-                                                        </Setter>
-                                                        <Setter Property="KeyboardNavigation.IsTabStop">
-                                                            <Setter.Value>
-                                                                <s:Boolean>False</s:Boolean>
-                                                            </Setter.Value>
-                                                        </Setter>
-                                                        <Setter Property="UIElement.Focusable">
-                                                            <Setter.Value>
-                                                                <s:Boolean>False</s:Boolean>
-                                                            </Setter.Value>
-                                                        </Setter>
+                                                        <Setter Property="FrameworkElement.OverridesDefaultStyle"
+                                                                Value="True" />
+                                                        <Setter Property="KeyboardNavigation.IsTabStop"
+                                                                Value="False" />
+                                                        <Setter Property="UIElement.Focusable"
+                                                                Value="False" />
                                                         <Setter Property="Control.Template">
                                                             <Setter.Value>
                                                                 <ControlTemplate TargetType="RepeatButton">
@@ -1899,26 +1712,14 @@
                                                 <Style.Resources>
                                                     <ResourceDictionary />
                                                 </Style.Resources>
-                                                <Setter Property="UIElement.Focusable">
-                                                    <Setter.Value>
-                                                        <s:Boolean>False</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="FrameworkElement.OverridesDefaultStyle">
-                                                    <Setter.Value>
-                                                        <s:Boolean>True</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="FrameworkElement.Height">
-                                                    <Setter.Value>
-                                                        <s:Double>10</s:Double>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="FrameworkElement.Width">
-                                                    <Setter.Value>
-                                                        <s:Double>18</s:Double>
-                                                    </Setter.Value>
-                                                </Setter>
+                                                <Setter Property="UIElement.Focusable"
+                                                        Value="False" />
+                                                <Setter Property="FrameworkElement.OverridesDefaultStyle"
+                                                        Value="True" />
+                                                <Setter Property="FrameworkElement.Height"
+                                                        Value="10" />
+                                                <Setter Property="FrameworkElement.Width"
+                                                        Value="18" />
                                                 <Setter Property="TextElement.Foreground">
                                                     <Setter.Value>
                                                         <SolidColorBrush>#FF808080</SolidColorBrush>
@@ -1963,7 +1764,8 @@
                                                                       StrokeThickness="1" />
                                                             </Canvas>
                                                             <ControlTemplate.Triggers>
-                                                                <Trigger Property="UIElement.IsMouseOver">
+                                                                <Trigger Property="UIElement.IsMouseOver"
+                                                                         Value="True">
                                                                     <Setter TargetName="Background"
                                                                             Property="Shape.Fill">
                                                                         <Setter.Value>
@@ -1986,9 +1788,6 @@
                                                                             <SolidColorBrush>#FF3C7FB1</SolidColorBrush>
                                                                         </Setter.Value>
                                                                     </Setter>
-                                                                    <Trigger.Value>
-                                                                        <s:Boolean>True</s:Boolean>
-                                                                    </Trigger.Value>
                                                                 </Trigger>
                                                                 <Trigger Property="TextElement.Foreground">
                                                                     <Setter TargetName="Background"
@@ -2017,7 +1816,8 @@
                                                                         <SolidColorBrush>#FF0000FF</SolidColorBrush>
                                                                     </Trigger.Value>
                                                                 </Trigger>
-                                                                <Trigger Property="Thumb.IsDragging">
+                                                                <Trigger Property="Thumb.IsDragging"
+                                                                         Value="True">
                                                                     <Setter TargetName="Background"
                                                                             Property="Shape.Fill">
                                                                         <Setter.Value>
@@ -2040,11 +1840,9 @@
                                                                             <SolidColorBrush>#FF2C628B</SolidColorBrush>
                                                                         </Setter.Value>
                                                                     </Setter>
-                                                                    <Trigger.Value>
-                                                                        <s:Boolean>True</s:Boolean>
-                                                                    </Trigger.Value>
                                                                 </Trigger>
-                                                                <Trigger Property="UIElement.IsEnabled">
+                                                                <Trigger Property="UIElement.IsEnabled"
+                                                                         Value="False">
                                                                     <Setter TargetName="Background"
                                                                             Property="Shape.Fill">
                                                                         <Setter.Value>
@@ -2069,9 +1867,6 @@
                                                                             <SolidColorBrush>#FFAEB1AF</SolidColorBrush>
                                                                         </Setter.Value>
                                                                     </Setter>
-                                                                    <Trigger.Value>
-                                                                        <s:Boolean>False</s:Boolean>
-                                                                    </Trigger.Value>
                                                                 </Trigger>
                                                             </ControlTemplate.Triggers>
                                                         </ControlTemplate>
@@ -2104,26 +1899,14 @@
                                                 <Style.Resources>
                                                     <ResourceDictionary />
                                                 </Style.Resources>
-                                                <Setter Property="UIElement.Focusable">
-                                                    <Setter.Value>
-                                                        <s:Boolean>False</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="FrameworkElement.OverridesDefaultStyle">
-                                                    <Setter.Value>
-                                                        <s:Boolean>True</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="FrameworkElement.Height">
-                                                    <Setter.Value>
-                                                        <s:Double>10</s:Double>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="FrameworkElement.Width">
-                                                    <Setter.Value>
-                                                        <s:Double>18</s:Double>
-                                                    </Setter.Value>
-                                                </Setter>
+                                                <Setter Property="UIElement.Focusable"
+                                                        Value="False" />
+                                                <Setter Property="FrameworkElement.OverridesDefaultStyle"
+                                                        Value="True" />
+                                                <Setter Property="FrameworkElement.Height"
+                                                        Value="10" />
+                                                <Setter Property="FrameworkElement.Width"
+                                                        Value="18" />
                                                 <Setter Property="TextElement.Foreground">
                                                     <Setter.Value>
                                                         <SolidColorBrush>#FF808080</SolidColorBrush>
@@ -2168,7 +1951,8 @@
                                                                       StrokeThickness="1" />
                                                             </Canvas>
                                                             <ControlTemplate.Triggers>
-                                                                <Trigger Property="UIElement.IsMouseOver">
+                                                                <Trigger Property="UIElement.IsMouseOver"
+                                                                         Value="True">
                                                                     <Setter TargetName="Background"
                                                                             Property="Shape.Fill">
                                                                         <Setter.Value>
@@ -2191,9 +1975,6 @@
                                                                             <SolidColorBrush>#FF3C7FB1</SolidColorBrush>
                                                                         </Setter.Value>
                                                                     </Setter>
-                                                                    <Trigger.Value>
-                                                                        <s:Boolean>True</s:Boolean>
-                                                                    </Trigger.Value>
                                                                 </Trigger>
                                                                 <Trigger Property="TextElement.Foreground">
                                                                     <Setter TargetName="Background"
@@ -2222,7 +2003,8 @@
                                                                         <SolidColorBrush>#FF0000FF</SolidColorBrush>
                                                                     </Trigger.Value>
                                                                 </Trigger>
-                                                                <Trigger Property="Thumb.IsDragging">
+                                                                <Trigger Property="Thumb.IsDragging"
+                                                                         Value="True">
                                                                     <Setter TargetName="Background"
                                                                             Property="Shape.Fill">
                                                                         <Setter.Value>
@@ -2245,11 +2027,9 @@
                                                                             <SolidColorBrush>#FF2C628B</SolidColorBrush>
                                                                         </Setter.Value>
                                                                     </Setter>
-                                                                    <Trigger.Value>
-                                                                        <s:Boolean>True</s:Boolean>
-                                                                    </Trigger.Value>
                                                                 </Trigger>
-                                                                <Trigger Property="UIElement.IsEnabled">
+                                                                <Trigger Property="UIElement.IsEnabled"
+                                                                         Value="False">
                                                                     <Setter TargetName="Background"
                                                                             Property="Shape.Fill">
                                                                         <Setter.Value>
@@ -2274,9 +2054,6 @@
                                                                             <SolidColorBrush>#FFAEB1AF</SolidColorBrush>
                                                                         </Setter.Value>
                                                                     </Setter>
-                                                                    <Trigger.Value>
-                                                                        <s:Boolean>False</s:Boolean>
-                                                                    </Trigger.Value>
                                                                 </Trigger>
                                                             </ControlTemplate.Triggers>
                                                         </ControlTemplate>
@@ -2312,27 +2089,23 @@
                                         <x:Static Member="TickPlacement.Both" />
                                     </Trigger.Value>
                                 </Trigger>
-                                <Trigger Property="Slider.IsSelectionRangeEnabled">
+                                <Trigger Property="Slider.IsSelectionRangeEnabled"
+                                         Value="True">
                                     <Setter TargetName="PART_SelectionRange"
                                             Property="UIElement.Visibility">
                                         <Setter.Value>
                                             <x:Static Member="Visibility.Visible" />
                                         </Setter.Value>
                                     </Setter>
-                                    <Trigger.Value>
-                                        <s:Boolean>True</s:Boolean>
-                                    </Trigger.Value>
                                 </Trigger>
-                                <Trigger Property="UIElement.IsKeyboardFocused">
+                                <Trigger Property="UIElement.IsKeyboardFocused"
+                                         Value="True">
                                     <Setter TargetName="Thumb"
                                             Property="TextElement.Foreground">
                                         <Setter.Value>
                                             <SolidColorBrush>#FF0000FF</SolidColorBrush>
                                         </Setter.Value>
                                     </Setter>
-                                    <Trigger.Value>
-                                        <s:Boolean>True</s:Boolean>
-                                    </Trigger.Value>
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
@@ -2352,11 +2125,8 @@
                                   ShadowDepth="0" />
             </Setter.Value>
         </Setter>
-        <Setter Property="Stylus.IsPressAndHoldEnabled">
-            <Setter.Value>
-                <s:Boolean>False</s:Boolean>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="Stylus.IsPressAndHoldEnabled"
+                Value="False" />
         <Setter Property="Panel.Background">
             <Setter.Value>
                 <SolidColorBrush>#00FFFFFF</SolidColorBrush>
@@ -2414,21 +2184,12 @@
                                                 <Style.Resources>
                                                     <ResourceDictionary />
                                                 </Style.Resources>
-                                                <Setter Property="FrameworkElement.OverridesDefaultStyle">
-                                                    <Setter.Value>
-                                                        <s:Boolean>True</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="KeyboardNavigation.IsTabStop">
-                                                    <Setter.Value>
-                                                        <s:Boolean>False</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="UIElement.Focusable">
-                                                    <Setter.Value>
-                                                        <s:Boolean>False</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
+                                                <Setter Property="FrameworkElement.OverridesDefaultStyle"
+                                                        Value="True" />
+                                                <Setter Property="KeyboardNavigation.IsTabStop"
+                                                        Value="False" />
+                                                <Setter Property="UIElement.Focusable"
+                                                        Value="False" />
                                                 <Setter Property="Control.Template">
                                                     <Setter.Value>
                                                         <ControlTemplate TargetType="RepeatButton">
@@ -2447,26 +2208,14 @@
                                                 <Style.Resources>
                                                     <ResourceDictionary />
                                                 </Style.Resources>
-                                                <Setter Property="UIElement.Focusable">
-                                                    <Setter.Value>
-                                                        <s:Boolean>False</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="FrameworkElement.OverridesDefaultStyle">
-                                                    <Setter.Value>
-                                                        <s:Boolean>True</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="FrameworkElement.Height">
-                                                    <Setter.Value>
-                                                        <s:Double>20</s:Double>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="FrameworkElement.Width">
-                                                    <Setter.Value>
-                                                        <s:Double>20</s:Double>
-                                                    </Setter.Value>
-                                                </Setter>
+                                                <Setter Property="UIElement.Focusable"
+                                                        Value="False" />
+                                                <Setter Property="FrameworkElement.OverridesDefaultStyle"
+                                                        Value="True" />
+                                                <Setter Property="FrameworkElement.Height"
+                                                        Value="20" />
+                                                <Setter Property="FrameworkElement.Width"
+                                                        Value="20" />
                                                 <Setter Property="TextElement.Foreground">
                                                     <Setter.Value>
                                                         <SolidColorBrush>#FF808080</SolidColorBrush>
@@ -2613,21 +2362,12 @@
                                                 <Style.Resources>
                                                     <ResourceDictionary />
                                                 </Style.Resources>
-                                                <Setter Property="FrameworkElement.OverridesDefaultStyle">
-                                                    <Setter.Value>
-                                                        <s:Boolean>True</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="KeyboardNavigation.IsTabStop">
-                                                    <Setter.Value>
-                                                        <s:Boolean>False</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
-                                                <Setter Property="UIElement.Focusable">
-                                                    <Setter.Value>
-                                                        <s:Boolean>False</s:Boolean>
-                                                    </Setter.Value>
-                                                </Setter>
+                                                <Setter Property="FrameworkElement.OverridesDefaultStyle"
+                                                        Value="True" />
+                                                <Setter Property="KeyboardNavigation.IsTabStop"
+                                                        Value="False" />
+                                                <Setter Property="UIElement.Focusable"
+                                                        Value="False" />
                                                 <Setter Property="Control.Template">
                                                     <Setter.Value>
                                                         <ControlTemplate TargetType="RepeatButton">
@@ -2657,26 +2397,14 @@
                                         <Style.Resources>
                                             <ResourceDictionary />
                                         </Style.Resources>
-                                        <Setter Property="UIElement.Focusable">
-                                            <Setter.Value>
-                                                <s:Boolean>False</s:Boolean>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Setter Property="FrameworkElement.OverridesDefaultStyle">
-                                            <Setter.Value>
-                                                <s:Boolean>True</s:Boolean>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Setter Property="FrameworkElement.Height">
-                                            <Setter.Value>
-                                                <s:Double>18</s:Double>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Setter Property="FrameworkElement.Width">
-                                            <Setter.Value>
-                                                <s:Double>10</s:Double>
-                                            </Setter.Value>
-                                        </Setter>
+                                        <Setter Property="UIElement.Focusable"
+                                                Value="False" />
+                                        <Setter Property="FrameworkElement.OverridesDefaultStyle"
+                                                Value="True" />
+                                        <Setter Property="FrameworkElement.Height"
+                                                Value="18" />
+                                        <Setter Property="FrameworkElement.Width"
+                                                Value="10" />
                                         <Setter Property="TextElement.Foreground">
                                             <Setter.Value>
                                                 <SolidColorBrush>#FF808080</SolidColorBrush>
@@ -2721,7 +2449,8 @@
                                                               StrokeThickness="1" />
                                                     </Canvas>
                                                     <ControlTemplate.Triggers>
-                                                        <Trigger Property="UIElement.IsMouseOver">
+                                                        <Trigger Property="UIElement.IsMouseOver"
+                                                                 Value="True">
                                                             <Setter TargetName="Background"
                                                                     Property="Shape.Fill">
                                                                 <Setter.Value>
@@ -2744,9 +2473,6 @@
                                                                     <SolidColorBrush>#FF3C7FB1</SolidColorBrush>
                                                                 </Setter.Value>
                                                             </Setter>
-                                                            <Trigger.Value>
-                                                                <s:Boolean>True</s:Boolean>
-                                                            </Trigger.Value>
                                                         </Trigger>
                                                         <Trigger Property="TextElement.Foreground">
                                                             <Setter TargetName="Background"
@@ -2775,7 +2501,8 @@
                                                                 <SolidColorBrush>#FF0000FF</SolidColorBrush>
                                                             </Trigger.Value>
                                                         </Trigger>
-                                                        <Trigger Property="Thumb.IsDragging">
+                                                        <Trigger Property="Thumb.IsDragging"
+                                                                 Value="True">
                                                             <Setter TargetName="Background"
                                                                     Property="Shape.Fill">
                                                                 <Setter.Value>
@@ -2798,11 +2525,9 @@
                                                                     <SolidColorBrush>#FF2C628B</SolidColorBrush>
                                                                 </Setter.Value>
                                                             </Setter>
-                                                            <Trigger.Value>
-                                                                <s:Boolean>True</s:Boolean>
-                                                            </Trigger.Value>
                                                         </Trigger>
-                                                        <Trigger Property="UIElement.IsEnabled">
+                                                        <Trigger Property="UIElement.IsEnabled"
+                                                                 Value="False">
                                                             <Setter TargetName="Background"
                                                                     Property="Shape.Fill">
                                                                 <Setter.Value>
@@ -2833,9 +2558,6 @@
                                                                     <StreamGeometry>M4.5,-8.5L-4.5,-8.5 -4.5,4.5 -0.5,8.5 0.5,8.5 4.5,4.5z</StreamGeometry>
                                                                 </Setter.Value>
                                                             </Setter>
-                                                            <Trigger.Value>
-                                                                <s:Boolean>False</s:Boolean>
-                                                            </Trigger.Value>
                                                         </Trigger>
                                                     </ControlTemplate.Triggers>
                                                 </ControlTemplate>
@@ -2868,26 +2590,14 @@
                                         <Style.Resources>
                                             <ResourceDictionary />
                                         </Style.Resources>
-                                        <Setter Property="UIElement.Focusable">
-                                            <Setter.Value>
-                                                <s:Boolean>False</s:Boolean>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Setter Property="FrameworkElement.OverridesDefaultStyle">
-                                            <Setter.Value>
-                                                <s:Boolean>True</s:Boolean>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Setter Property="FrameworkElement.Height">
-                                            <Setter.Value>
-                                                <s:Double>18</s:Double>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Setter Property="FrameworkElement.Width">
-                                            <Setter.Value>
-                                                <s:Double>10</s:Double>
-                                            </Setter.Value>
-                                        </Setter>
+                                        <Setter Property="UIElement.Focusable"
+                                                Value="False" />
+                                        <Setter Property="FrameworkElement.OverridesDefaultStyle"
+                                                Value="True" />
+                                        <Setter Property="FrameworkElement.Height"
+                                                Value="18" />
+                                        <Setter Property="FrameworkElement.Width"
+                                                Value="10" />
                                         <Setter Property="TextElement.Foreground">
                                             <Setter.Value>
                                                 <SolidColorBrush>#FF808080</SolidColorBrush>
@@ -2927,7 +2637,8 @@
                                                               StrokeThickness="1" />
                                                     </Canvas>
                                                     <ControlTemplate.Triggers>
-                                                        <Trigger Property="UIElement.IsMouseOver">
+                                                        <Trigger Property="UIElement.IsMouseOver"
+                                                                 Value="True">
                                                             <Setter TargetName="Background"
                                                                     Property="Shape.Fill">
                                                                 <Setter.Value>
@@ -2950,9 +2661,6 @@
                                                                     <SolidColorBrush>#FF3C7FB1</SolidColorBrush>
                                                                 </Setter.Value>
                                                             </Setter>
-                                                            <Trigger.Value>
-                                                                <s:Boolean>True</s:Boolean>
-                                                            </Trigger.Value>
                                                         </Trigger>
                                                         <Trigger Property="TextElement.Foreground">
                                                             <Setter TargetName="Background"
@@ -2981,7 +2689,8 @@
                                                                 <SolidColorBrush>#FF0000FF</SolidColorBrush>
                                                             </Trigger.Value>
                                                         </Trigger>
-                                                        <Trigger Property="Thumb.IsDragging">
+                                                        <Trigger Property="Thumb.IsDragging"
+                                                                 Value="True">
                                                             <Setter TargetName="Background"
                                                                     Property="Shape.Fill">
                                                                 <Setter.Value>
@@ -3004,11 +2713,9 @@
                                                                     <SolidColorBrush>#FF2C628B</SolidColorBrush>
                                                                 </Setter.Value>
                                                             </Setter>
-                                                            <Trigger.Value>
-                                                                <s:Boolean>True</s:Boolean>
-                                                            </Trigger.Value>
                                                         </Trigger>
-                                                        <Trigger Property="UIElement.IsEnabled">
+                                                        <Trigger Property="UIElement.IsEnabled"
+                                                                 Value="False">
                                                             <Setter TargetName="Background"
                                                                     Property="Shape.Fill">
                                                                 <Setter.Value>
@@ -3039,9 +2746,6 @@
                                                                     <StreamGeometry>M4.5,-8.5L-4.5,-8.5 -4.5,4.5 -0.5,8.5 0.5,8.5 4.5,4.5z</StreamGeometry>
                                                                 </Setter.Value>
                                                             </Setter>
-                                                            <Trigger.Value>
-                                                                <s:Boolean>False</s:Boolean>
-                                                            </Trigger.Value>
                                                         </Trigger>
                                                     </ControlTemplate.Triggers>
                                                 </ControlTemplate>
@@ -3077,27 +2781,23 @@
                                 <x:Static Member="TickPlacement.Both" />
                             </Trigger.Value>
                         </Trigger>
-                        <Trigger Property="Slider.IsSelectionRangeEnabled">
+                        <Trigger Property="Slider.IsSelectionRangeEnabled"
+                                 Value="True">
                             <Setter TargetName="PART_SelectionRange"
                                     Property="UIElement.Visibility">
                                 <Setter.Value>
                                     <x:Static Member="Visibility.Visible" />
                                 </Setter.Value>
                             </Setter>
-                            <Trigger.Value>
-                                <s:Boolean>True</s:Boolean>
-                            </Trigger.Value>
                         </Trigger>
-                        <Trigger Property="UIElement.IsKeyboardFocused">
+                        <Trigger Property="UIElement.IsKeyboardFocused"
+                                 Value="True">
                             <Setter TargetName="Thumb"
                                     Property="TextElement.Foreground">
                                 <Setter.Value>
                                     <SolidColorBrush>#FF0000FF</SolidColorBrush>
                                 </Setter.Value>
                             </Setter>
-                            <Trigger.Value>
-                                <s:Boolean>True</s:Boolean>
-                            </Trigger.Value>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -3125,309 +2825,4 @@
                           Offset="1" />
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
-    <Style x:Key="GridSplitterForResizeColStyle"
-           TargetType="{x:Type GridSplitter}">
-        <Setter Property="TextElement.Foreground"
-                Value="#FF204D89" />
-        <Setter Property="Border.BorderBrush"
-                Value="#FF6593CF" />
-        <Setter Property="Border.BorderThickness"
-                Value="0" />
-        <Setter Property="Panel.Background"
-                Value="{StaticResource panelBackgroundBrush}" />
-        <Setter Property="UIElement.Focusable"
-                Value="False" />
-        <Setter Property="UIElement.SnapsToDevicePixels"
-                Value="True" />
-        <Setter Property="Padding"
-                Value="0" />
-        <Setter Property="Cursor"
-                Value="SizeWE" />
-        <Setter Property="HorizontalAlignment"
-                Value="Center" />
-        <Setter Property="VerticalAlignment"
-                Value="Stretch" />
-        <Setter Property="Width"
-                Value="8" />
-        <Setter Property="Margin"
-                Value="0" />
-        <Setter Property="ResizeDirection"
-                Value="Columns" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type GridSplitter}">
-                    <Border BorderBrush="{TemplateBinding Border.BorderBrush}"
-                            BorderThickness="{TemplateBinding Border.BorderThickness}"
-                            Background="{TemplateBinding Panel.Background}">
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource panelBackgroundBrush}">
-                            <Canvas Width="6"
-                                    Height="50">
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="1" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="5" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="9" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="13" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="17" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="21" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="25" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="29" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="33" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="37" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="41" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="45" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="49" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="0" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="4" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="8" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="12" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="16" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="20" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="24" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="28" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="32" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="36" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="40" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="44" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="0"
-                                           Canvas.Top="48" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="1" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="5" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="9" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="13" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="17" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="21" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="25" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="29" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="33" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="37" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="41" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="45" />
-                                <Rectangle Fill="{StaticResource rectbackgroundBrush}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="49" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="0" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="4" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="8" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="12" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="16" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="20" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="24" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="28" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="32" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="36" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="40" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="44" />
-                                <Rectangle Fill="{TemplateBinding TextElement.Foreground}"
-                                           Width="2"
-                                           Height="2"
-                                           Canvas.Left="4"
-                                           Canvas.Top="48" />
-                            </Canvas>
-                        </Border>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
 </ResourceDictionary>

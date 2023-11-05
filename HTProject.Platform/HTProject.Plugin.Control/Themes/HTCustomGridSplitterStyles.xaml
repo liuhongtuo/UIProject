@@ -20,7 +20,7 @@
                           Offset="1" />
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
-    <Style x:Key="GridSplitterForResizeColStyle"
+    <Style x:Key="HTGridSplitterForResizeColStyle"
            TargetType="{x:Type GridSplitter}">
         <Setter Property="TextElement.Foreground"
                 Value="#FF204D89" />
