@@ -45,6 +45,9 @@
     <Compile Include="IOData\IOData.cs" />
     <Compile Include="IOData\IOInputData.cs" />
     <Compile Include="IOData\IOOutputData.cs" />
+    <Compile Include="MCFCData\ItemNodeInfo.cs" />
+    <Compile Include="MCFCData\MCFCInformationAttribute.cs" />
+    <Compile Include="MCFCData\SystemMCFCInfo.cs" />
     <Compile Include="ProductData\CarrierInfo.cs" />
     <Compile Include="ProductData\MaterialInfo.cs" />
     <Compile Include="ProductData\ProductData.cs" />
