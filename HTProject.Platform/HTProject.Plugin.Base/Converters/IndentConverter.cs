@@ -15,8 +15,8 @@ namespace HTProject.Plugin.Base.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            double indent = 18.0;
-            double offset = 18.0;
+            double indent = 31.0;
+            double offset = 31.0;
             UIElement uIElement = value as TreeViewItem;
             while (uIElement.GetType() != typeof(TreeView))
             {

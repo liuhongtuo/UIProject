@@ -8,7 +8,7 @@
         <Setter Property="Margin"
                 Value="0" />
         <Setter Property="FontSize"
-                Value="16" />
+                Value="18" />
         <Setter Property="Foreground"
                 Value="#041430" />
         <Setter Property="FontFamily"
@@ -27,7 +27,7 @@
                     </FrameworkTemplate.Resources>
                     <StackPanel>
                         <Border Name="Border"
-                                Height="32"
+                                Height="36"
                                 Margin="0,2,0,2"
                                 UseLayoutRounding="True"
                                 Background="#00FFFFFF"
@@ -40,7 +40,7 @@
                                 <ToggleButton Name="Expander"
                                               ClickMode="Press"
                                               Margin="0,0,8,0"
-                                              Width="36"
+                                              Width="65"
                                               VerticalAlignment="Center"
                                               IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}">
                                     <Control.Template>
@@ -54,13 +54,13 @@
                                     <ContentControl.Content>
                                         <StackPanel Orientation="Horizontal">
                                             <Image Name="ExpanderIcon"
-                                                   Width="12"
-                                                   Height="18"
-                                                   Margin="0,0,6,0"
+                                                   Width="26"
+                                                   Height="26"
+                                                   Margin="0,0,5,0"
                                                    Source="../Icons/right_20x20_normal.png" />
                                             <Image Name="FolderOrFileIcon"
-                                                   Width="18"
-                                                   Height="18"
+                                                   Width="30"
+                                                   Height="30"
                                                    Source="../Icons/OpenFile_normal_36x36.png" />
                                         </StackPanel>
                                     </ContentControl.Content>
@@ -102,13 +102,13 @@
                                     Value="Collapsed" />
                             <Setter TargetName="Expander"
                                     Property="Width"
-                                    Value="18" />
+                                    Value="35" />
                         </Trigger>
                         <Trigger Property="TreeViewItem.IsSelected"
                                  Value="True">
                             <Setter TargetName="Border"
                                     Property="Border.CornerRadius"
-                                    Value="1" />
+                                    Value="4" />
                             <Setter TargetName="Border"
                                     Property="Background"
                                     Value="#DFF2FF" />

@@ -44,7 +44,7 @@
         <Border Background="{DynamicResource HeaderBackground}">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="160" />
+                    <ColumnDefinition Width="240" />
                     <ColumnDefinition Width="230" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="150" />
@@ -53,14 +53,17 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0"
                             Grid.Row="0"
+                            Margin="0,0,0,0"
                             Orientation="Horizontal">
-                    <Image Width="86"
-                           Height="72"
-                           Margin="32,0,0,0" />
+                    <Image Width="200"
+                           Height="60"
+                           Margin="20,0,0,0"
+                           Stretch="Uniform"
+                           Source="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/BoZhon_260x32.bmp" />
                 </StackPanel>
                 <StackPanel Grid.Column="1"
                             Orientation="Horizontal">
-                    <controls:HTCustomIconLabel FontSize="18"
+                    <controls:HTCustomIconLabel FontSize="20"
                                                 Foreground="#4c4c4c"
                                                 FontFamily="#PingFang SC Bold"
                                                 Padding="0"
@@ -84,7 +87,7 @@
                                 Margin="0,0,0,0">
                         <StackPanel Orientation="Horizontal"
                                     VerticalAlignment="Center">
-                            <controls:HTCustomIconLabel FontSize="18"
+                            <controls:HTCustomIconLabel FontSize="20"
                                                         Foreground="#4c4c4c"
                                                         FontFamily="#PingFang SC Bold"
                                                         Padding="0"
@@ -93,7 +96,7 @@
                                                         Height="30"
                                                         NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Machine_64x64.png"
                                                         Margin="0,0,0,0" />
-                            <Label FontSize="18"
+                            <Label FontSize="20"
                                    Foreground="#4c4c4c"
                                    FontFamily="#PingFang SC Bold"
                                    Padding="0"
@@ -105,7 +108,7 @@
                         <StackPanel Orientation="Horizontal"
                                     VerticalAlignment="Center"
                                     Margin="20,0,0,0">
-                            <controls:HTCustomIconLabel FontSize="18"
+                            <controls:HTCustomIconLabel FontSize="20"
                                                         Foreground="#4c4c4c"
                                                         FontFamily="#PingFang SC Bold"
                                                         Padding="0"
@@ -113,7 +116,7 @@
                                                         NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Version_64x64.png"
                                                         Content="Version :"
                                                         Height="30" />
-                            <Label FontSize="18"
+                            <Label FontSize="20"
                                    Foreground="#4c4c4c"
                                    FontFamily="#PingFang SC Bold"
                                    Padding="0"
@@ -131,7 +134,7 @@
                                 Margin="0,0,0,0">
                         <StackPanel Orientation="Horizontal"
                                     VerticalAlignment="Center">
-                            <controls:HTCustomIconLabel FontSize="18"
+                            <controls:HTCustomIconLabel FontSize="20"
                                                         Foreground="#4c4c4c"
                                                         FontFamily="#PingFang SC Bold"
                                                         Padding="0"
@@ -140,7 +143,7 @@
                                                         Height="30"
                                                         NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/User_64x64.png"
                                                         Margin="0,0,0,0" />
-                            <Label FontSize="18"
+                            <Label FontSize="20"
                                    Foreground="#4c4c4c"
                                    FontFamily="#PingFang SC Bold"
                                    Padding="0"
@@ -152,7 +155,7 @@
                         <StackPanel Orientation="Horizontal"
                                     Margin="20,0,20,0"
                                     VerticalAlignment="Center">
-                            <controls:HTCustomIconLabel FontSize="18"
+                            <controls:HTCustomIconLabel FontSize="20"
                                                         Foreground="#4c4c4c"
                                                         FontFamily="#PingFang SC Bold"
                                                         Padding="0"
@@ -160,7 +163,7 @@
                                                         Content="Level :"
                                                         NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/HeaderIcons/Level_64x64.png"
                                                         Height="30" />
-                            <Label FontSize="18"
+                            <Label FontSize="20"
                                    Foreground="#4c4c4c"
                                    FontFamily="#PingFang SC Bold"
                                    Padding="0"

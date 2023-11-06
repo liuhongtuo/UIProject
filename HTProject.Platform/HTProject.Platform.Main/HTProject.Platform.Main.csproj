@@ -101,7 +101,18 @@
     </Compile>
     <Compile Include="Managers\ExecuteManager.cs" />
     <Compile Include="Managers\PageManager.cs" />
+    <Compile Include="ViewModels\CalibrationSubs\AssemblyStationCalibrationViewModel.cs" />
+    <Compile Include="ViewModels\CalibrationSubs\CollectingStationCalibrationViewModel.cs" />
+    <Compile Include="ViewModels\CalibrationSubs\DispensingStationCalibrationViewModel.cs" />
+    <Compile Include="ViewModels\CalibrationSubs\LoadingStationCalibrationViewModel.cs" />
+    <Compile Include="ViewModels\CalibrationSubs\RecheckStationCalibrationViewModel.cs" />
+    <Compile Include="ViewModels\CalibrationSubs\UnloadingStationCalibrationViewModel.cs" />
     <Compile Include="ViewModels\CalibrationViewModel.cs" />
+    <Compile Include="ViewModels\DataSubs\AssemblyStationDataViewModel.cs" />
+    <Compile Include="ViewModels\DataSubs\CollectingStationDataViewModel.cs" />
+    <Compile Include="ViewModels\DataSubs\DispensingStationDataViewModel.cs" />
+    <Compile Include="ViewModels\DataSubs\RecheckStationDataViewModel.cs" />
+    <Compile Include="ViewModels\DataSubs\TotalDataViewModel.cs" />
     <Compile Include="ViewModels\DataViewModel.cs" />
     <Compile Include="ViewModels\EngineeringSubs\DebugSubs\AssemblyStationViewModel.cs" />
     <Compile Include="ViewModels\EngineeringSubs\DebugSubs\CollectingStationViewModel.cs" />
@@ -138,6 +149,21 @@
     </Compile>
     <Compile Include="Views\CalibrationView.xaml.cs">
       <DependentUpon>CalibrationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DataSubs\AssemblyStationDataView.xaml.cs">
+      <DependentUpon>AssemblyStationDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DataSubs\CollectingStationDataView.xaml.cs">
+      <DependentUpon>CollectingStationDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DataSubs\DispensingStationDataView.xaml.cs">
+      <DependentUpon>DispensingStationDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DataSubs\RecheckStationDataView.xaml.cs">
+      <DependentUpon>RecheckStationDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DataSubs\TotalDataView.xaml.cs">
+      <DependentUpon>TotalDataView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DataView.xaml.cs">
       <DependentUpon>DataView.xaml</DependentUpon>
@@ -245,6 +271,26 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CalibrationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DataSubs\AssemblyStationDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DataSubs\CollectingStationDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DataSubs\DispensingStationDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DataSubs\RecheckStationDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DataSubs\TotalDataView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
