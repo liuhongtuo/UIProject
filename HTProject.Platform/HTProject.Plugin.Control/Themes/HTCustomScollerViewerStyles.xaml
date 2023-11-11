@@ -2,13 +2,13 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <SolidColorBrush x:Key="ScrollBar.Static.Background"
-                     Color="#F5F5F5" />
+                     Color="#DAD9D9" />
     <SolidColorBrush x:Key="ScrollBar.Static.Border"
                      Color="#DAD9D9" />
     <SolidColorBrush x:Key="ScrollBar.Static.Glyph"
                      Color="#606060" />
     <SolidColorBrush x:Key="ScrollBar.Static.Thumb"
-                     Color="#d8d8d8" />
+                     Color="#A9A9A9" />
 
     <SolidColorBrush x:Key="ScrollBar.MouseOver.Background"
                      Color="#A9A9A9" />
@@ -45,7 +45,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Thumb}">
                     <Border Name="rectangle"
-                            CornerRadius="8"
+                            CornerRadius="5"
                             SnapsToDevicePixels="True"
                             Height="{TemplateBinding Height}"
                             Width="{TemplateBinding Width}"
@@ -86,7 +86,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Thumb}">
                     <Border Name="rectangle"
-                            CornerRadius="8"
+                            CornerRadius="5"
                             SnapsToDevicePixels="True"
                             Height="{TemplateBinding Height}"
                             Width="{TemplateBinding Width}"
@@ -233,11 +233,11 @@
         <Setter Property="Foreground"
                 Value="{DynamicResource SystemColors.ControlTextBrushKey}" />
         <Setter Property="BorderThickness"
-                Value="1" />
+                Value="0" />
         <Setter Property="Width"
-                Value="16" />
+                Value="10" />
         <Setter Property="MinWidth"
-                Value="16" />
+                Value="10" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ScrollBar}">
@@ -251,8 +251,10 @@
                         <Border Grid.Row="1"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5"
                                 Background="{TemplateBinding Background}" />
                         <RepeatButton Name="PART_LineUpButton"
+                                      Visibility="Collapsed"
                                       Width="16"
                                       Height="16"
                                       Command="{x:Static ScrollBar.LineUpCommand}"
@@ -281,6 +283,7 @@
                             </Track.Thumb>
                         </Track>
                         <RepeatButton Name="PART_LineDownButton"
+                                      Visibility="Collapsed"
                                       Command="{x:Static ScrollBar.LineDownCommand}"
                                       IsEnabled="{TemplateBinding IsMouseOver}"
                                       Grid.Row="2"
@@ -358,11 +361,11 @@
                 <Setter Property="MinWidth"
                         Value="0" />
                 <Setter Property="Height"
-                        Value="16" />
+                        Value="10" />
                 <Setter Property="MinHeight"
-                        Value="16" />
+                        Value="10" />
                 <Setter Property="BorderThickness"
-                        Value="0,1" />
+                        Value="0,0" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type ScrollBar}">
@@ -376,8 +379,10 @@
                                 <Border BorderBrush="{TemplateBinding BorderBrush}"
                                         BorderThickness="{TemplateBinding BorderThickness}"
                                         Background="{TemplateBinding Background}"
+                                        CornerRadius="5"
                                         Grid.Column="1" />
                                 <RepeatButton Name="PART_LineLeftButton"
+                                              Visibility="Collapsed"
                                               Width="16"
                                               Height="16"
                                               Command="{x:Static ScrollBar.LineLeftCommand}"
@@ -405,6 +410,7 @@
                                     </Track.Thumb>
                                 </Track>
                                 <RepeatButton Name="PART_LineRightButton"
+                                              Visibility="Collapsed"
                                               Width="16"
                                               Height="16"
                                               Grid.Column="2"
@@ -515,7 +521,7 @@
                                    Maximum="{TemplateBinding ScrollableHeight}"
                                    Minimum="0"
                                    Grid.Row="0"
-                                   Width="16"
+                                   Width="10"
                                    Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
                                    ViewportSize="{TemplateBinding ViewportHeight}"
                                    Style="{DynamicResource DefaultScrollBar}"

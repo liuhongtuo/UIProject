@@ -56,15 +56,16 @@
                 BorderThickness="1"
                 Margin="20"
                 CornerRadius="15">
-            <controls:HTScrollViewer Margin="20,0">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="12" />
-                        <ColumnDefinition Width="500"
-                                          MinWidth="500"
-                                          MaxWidth="700" />
-                    </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="12" />
+                    <ColumnDefinition Width="500"
+                                      MinWidth="500"
+                                      MaxWidth="700" />
+                </Grid.ColumnDefinitions>
+                <controls:HTScrollViewer Margin="20,0,5,0"
+                                         VerticalScrollBarVisibility="Auto">
                     <TreeView Grid.Column="0"
                               x:Name="treeViewDirectory"
                               BorderThickness="0"
@@ -97,198 +98,198 @@
                             </interactivity:EventTrigger>
                         </interactivity:Interaction.Triggers>
                     </TreeView>
-                    <GridSplitter Grid.Column="1"
-                                  Width="10"
-                                  Margin="0.5"
-                                  BorderThickness="1,0,1,0"
-                                  Background="Transparent"
-                                  BorderBrush="Gray"
-                                  Style="{DynamicResource HTGridSplitterForResizeColStyle}" />
-                    <Grid Grid.Column="2"
-                          Margin="10,0">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="40" />
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="60" />
-                        </Grid.RowDefinitions>
-                        <controls:HTCustomIconLabel FontSize="18"
-                                                    Foreground="#4c4c4c"
-                                                    FontFamily="#PingFang SC Bold"
-                                                    FontWeight="SemiBold"
-                                                    Padding="0"
-                                                    VerticalContentAlignment="Center"
-                                                    Content="Parameter Info:"
-                                                    IconHeight="20"
-                                                    IconWidth="20"
-                                                    Margin="0,0,20,0"
-                                                    NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/Menu_64x64_Normal.png" />
-                        <Border Grid.Row="1">
-                            <Grid Margin="30,0,0,0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="40" />
-                                    <RowDefinition Height="40" />
-                                    <RowDefinition Height="Auto"
-                                                   MinHeight="40" />
-                                    <RowDefinition Height="40" />
-                                    <RowDefinition Height="Auto"
-                                                   MinHeight="40" />
-                                    <RowDefinition Height="40" />
-                                    <RowDefinition Height="40" />
-                                    <RowDefinition Height="40" />
-                                </Grid.RowDefinitions>
-                                <!--<绑定控件的宽度使用，无实际意义>-->
-                                <Border Margin="150,0,0,0"
-                                        x:Name="bingWidthBorder" />
-                                <StackPanel Grid.Row="0"
-                                            Orientation="Horizontal">
-                                    <Label Content="Name :"
-                                           FontSize="18"
+                </controls:HTScrollViewer>
+                <GridSplitter Grid.Column="1"
+                              Width="10"
+                              Margin="0.5"
+                              BorderThickness="1,0,1,0"
+                              Background="Transparent"
+                              BorderBrush="Gray"
+                              Style="{DynamicResource HTGridSplitterForResizeColStyle}" />
+                <Grid Grid.Column="2"
+                      Margin="10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+                    <controls:HTCustomIconLabel FontSize="18"
+                                                Foreground="#4c4c4c"
+                                                FontFamily="#PingFang SC Bold"
+                                                FontWeight="SemiBold"
+                                                Padding="0"
+                                                VerticalContentAlignment="Center"
+                                                Content="Parameter Info:"
+                                                IconHeight="20"
+                                                IconWidth="20"
+                                                Margin="0,0,20,0"
+                                                NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/Menu_64x64_Normal.png" />
+                    <Border Grid.Row="1">
+                        <Grid Margin="30,0,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="Auto"
+                                               MinHeight="40" />
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="Auto"
+                                               MinHeight="40" />
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="40" />
+                            </Grid.RowDefinitions>
+                            <!--<绑定控件的宽度使用，无实际意义>-->
+                            <Border Margin="150,0,0,0"
+                                    x:Name="bingWidthBorder" />
+                            <StackPanel Grid.Row="0"
+                                        Orientation="Horizontal">
+                                <Label Content="Name :"
+                                       FontSize="18"
+                                       Foreground="#4c4c4c"
+                                       FontFamily="#PingFang SC Bold"
+                                       Padding="0"
+                                       VerticalContentAlignment="Center" />
+                                <TextBlock FontSize="18"
+                                           Margin="20,0,0,0"
                                            Foreground="#4c4c4c"
                                            FontFamily="#PingFang SC Bold"
                                            Padding="0"
-                                           VerticalContentAlignment="Center" />
-                                    <TextBlock FontSize="18"
-                                               Margin="20,0,0,0"
-                                               Foreground="#4c4c4c"
-                                               FontFamily="#PingFang SC Bold"
-                                               Padding="0"
-                                               VerticalAlignment="Center"
-                                               Text="{Binding SelectedItemNodeInfo.Name,UpdateSourceTrigger=PropertyChanged,Mode=OneWay}" />
-                                </StackPanel>
-                                <StackPanel Grid.Row="1"
-                                            Orientation="Horizontal">
-                                    <Label Content="Value :"
-                                           FontSize="18"
-                                           Foreground="#4c4c4c"
-                                           FontFamily="#PingFang SC Bold"
-                                           Padding="0"
-                                           VerticalContentAlignment="Center" />
-                                    <controls:HTCustomTextBox FontSize="18"
-                                                              Margin="20,0,0,0"
-                                                              Foreground="#4c4c4c"
-                                                              FontFamily="#PingFang SC Bold"
-                                                              Padding="0"
-                                                              VerticalAlignment="Center"
-                                                              Text="{Binding SelectedItemNodeInfo.Value,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
-                                </StackPanel>
-                                <StackPanel Grid.Row="2"
-                                            Orientation="Horizontal">
-                                    <Label Content="Description :"
-                                           FontSize="18"
-                                           Foreground="#4c4c4c"
-                                           FontFamily="#PingFang SC Bold"
-                                           Padding="0"
-                                           VerticalContentAlignment="Center" />
-                                    <controls:HTCustomTextBox Text="{Binding SelectedItemNodeInfo.Description,UpdateSourceTrigger=PropertyChanged,Mode=OneWay}"
-                                                              Width="{Binding ElementName=bingWidthBorder,Path=ActualWidth,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
-                                                              Margin="20,0,0,0"
-                                                              FontSize="18"
-                                                              Foreground="#4c4c4c"
-                                                              FontFamily="#PingFang SC Bold"
-                                                              Padding="0"
-                                                              VerticalAlignment="Center"
-                                                              Style="{StaticResource HTRichTextBox}" />
-                                </StackPanel>
-                                <StackPanel Grid.Row="3"
-                                            Orientation="Horizontal">
-                                    <Label Content="Unit :"
-                                           FontSize="18"
-                                           Foreground="#4c4c4c"
-                                           FontFamily="#PingFang SC Bold"
-                                           Padding="0"
-                                           VerticalContentAlignment="Center" />
-                                    <TextBlock FontSize="18"
-                                               Margin="20,0,0,0"
-                                               Foreground="#4c4c4c"
-                                               FontFamily="#PingFang SC Bold"
-                                               Padding="0"
-                                               VerticalAlignment="Center"
-                                               Text="{Binding SelectedItemNodeInfo.Unit,UpdateSourceTrigger=PropertyChanged,Mode=OneWay}" />
-                                </StackPanel>
-                                <StackPanel Grid.Row="4"
-                                            Orientation="Horizontal">
-                                    <Label Content="Available Value :"
-                                           FontSize="18"
-                                           Foreground="#4c4c4c"
-                                           FontFamily="#PingFang SC Bold"
-                                           Padding="0"
-                                           VerticalContentAlignment="Center" />
-                                    <controls:HTCustomTextBox Text="{Binding SelectedItemNodeInfo.AvailableValue,UpdateSourceTrigger=PropertyChanged,Mode=OneWay}"
-                                                              Width="{Binding ElementName=bingWidthBorder,Path=ActualWidth,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
-                                                              Margin="20,0,0,0"
-                                                              FontSize="18"
-                                                              Foreground="#4c4c4c"
-                                                              FontFamily="#PingFang SC Bold"
-                                                              Padding="0"
-                                                              VerticalAlignment="Center"
-                                                              Style="{StaticResource HTRichTextBox}" />
-                                </StackPanel>
-                                <StackPanel Grid.Row="5"
-                                            Orientation="Horizontal">
-                                    <Label Content="Range :"
-                                           FontSize="18"
-                                           Foreground="#4c4c4c"
-                                           FontFamily="#PingFang SC Bold"
-                                           Padding="0"
-                                           VerticalContentAlignment="Center" />
-                                    <TextBlock FontSize="18"
-                                               Margin="20,0,0,0"
-                                               Foreground="#4c4c4c"
-                                               FontFamily="#PingFang SC Bold"
-                                               Padding="0"
-                                               VerticalAlignment="Center"
-                                               Text="{Binding SelectedItemNodeInfo.Range,UpdateSourceTrigger=PropertyChanged,Mode=OneWay}" />
-                                </StackPanel>
-                                <StackPanel Grid.Row="6"
-                                            Orientation="Horizontal">
-                                    <Label Content="Precision :"
-                                           FontSize="18"
-                                           Foreground="#4c4c4c"
-                                           FontFamily="#PingFang SC Bold"
-                                           Padding="0"
-                                           VerticalContentAlignment="Center" />
-                                    <TextBlock FontSize="18"
-                                               Margin="20,0,0,0"
-                                               Foreground="#4c4c4c"
-                                               FontFamily="#PingFang SC Bold"
-                                               Padding="0"
-                                               VerticalAlignment="Center"
-                                               Text="{Binding SelectedItemNodeInfo.Precision,UpdateSourceTrigger=PropertyChanged,Mode=OneWay}" />
-                                </StackPanel>
-                                <StackPanel Grid.Row="7"
-                                            Orientation="Horizontal">
-                                    <Label Content="Default Value :"
-                                           FontSize="18"
-                                           Foreground="#4c4c4c"
-                                           FontFamily="#PingFang SC Bold"
-                                           Padding="0"
-                                           VerticalContentAlignment="Center" />
-                                    <TextBlock FontSize="18"
-                                               Margin="20,0,0,0"
-                                               Foreground="#4c4c4c"
-                                               FontFamily="#PingFang SC Bold"
-                                               Padding="0"
-                                               VerticalAlignment="Center"
-                                               Text="{Binding SelectedItemNodeInfo.DefaultValue,UpdateSourceTrigger=PropertyChanged,Mode=OneWay}" />
-                                </StackPanel>
-                            </Grid>
-                        </Border>
-                        <Border Grid.Row="2"
-                                BorderBrush="#4c4c4c"
-                                BorderThickness="0,1,0,0">
-                            <StackPanel Orientation="Horizontal"
-                                        HorizontalAlignment="Right">
-                                <controls:HTCustomButton Content="Accept"
-                                                         Width="150"
-                                                         Margin="10,0" />
-                                <controls:HTCustomButton Content="Save"
-                                                         Width="150"
-                                                         Margin="10,0" />
+                                           VerticalAlignment="Center"
+                                           Text="{Binding SelectedItemNodeInfo.Name,UpdateSourceTrigger=PropertyChanged,Mode=OneWay}" />
                             </StackPanel>
-                        </Border>
-                    </Grid>
+                            <StackPanel Grid.Row="1"
+                                        Orientation="Horizontal">
+                                <Label Content="Value :"
+                                       FontSize="18"
+                                       Foreground="#4c4c4c"
+                                       FontFamily="#PingFang SC Bold"
+                                       Padding="0"
+                                       VerticalContentAlignment="Center" />
+                                <controls:HTCustomTextBox FontSize="18"
+                                                          Margin="20,0,0,0"
+                                                          Foreground="#4c4c4c"
+                                                          FontFamily="#PingFang SC Bold"
+                                                          Padding="0"
+                                                          VerticalAlignment="Center"
+                                                          Text="{Binding SelectedItemNodeInfo.Value,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+                            </StackPanel>
+                            <StackPanel Grid.Row="2"
+                                        Orientation="Horizontal">
+                                <Label Content="Description :"
+                                       FontSize="18"
+                                       Foreground="#4c4c4c"
+                                       FontFamily="#PingFang SC Bold"
+                                       Padding="0"
+                                       VerticalContentAlignment="Center" />
+                                <controls:HTCustomTextBox Text="{Binding SelectedItemNodeInfo.Description,UpdateSourceTrigger=PropertyChanged,Mode=OneWay}"
+                                                          Width="{Binding ElementName=bingWidthBorder,Path=ActualWidth,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
+                                                          Margin="20,0,0,0"
+                                                          FontSize="18"
+                                                          Foreground="#4c4c4c"
+                                                          FontFamily="#PingFang SC Bold"
+                                                          Padding="0"
+                                                          VerticalAlignment="Center"
+                                                          Style="{StaticResource HTRichTextBox}" />
+                            </StackPanel>
+                            <StackPanel Grid.Row="3"
+                                        Orientation="Horizontal">
+                                <Label Content="Unit :"
+                                       FontSize="18"
+                                       Foreground="#4c4c4c"
+                                       FontFamily="#PingFang SC Bold"
+                                       Padding="0"
+                                       VerticalContentAlignment="Center" />
+                                <TextBlock FontSize="18"
+                                           Margin="20,0,0,0"
+                                           Foreground="#4c4c4c"
+                                           FontFamily="#PingFang SC Bold"
+                                           Padding="0"
+                                           VerticalAlignment="Center"
+                                           Text="{Binding SelectedItemNodeInfo.Unit,UpdateSourceTrigger=PropertyChanged,Mode=OneWay}" />
+                            </StackPanel>
+                            <StackPanel Grid.Row="4"
+                                        Orientation="Horizontal">
+                                <Label Content="Available Value :"
+                                       FontSize="18"
+                                       Foreground="#4c4c4c"
+                                       FontFamily="#PingFang SC Bold"
+                                       Padding="0"
+                                       VerticalContentAlignment="Center" />
+                                <controls:HTCustomTextBox Text="{Binding SelectedItemNodeInfo.AvailableValue,UpdateSourceTrigger=PropertyChanged,Mode=OneWay}"
+                                                          Width="{Binding ElementName=bingWidthBorder,Path=ActualWidth,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
+                                                          Margin="20,0,0,0"
+                                                          FontSize="18"
+                                                          Foreground="#4c4c4c"
+                                                          FontFamily="#PingFang SC Bold"
+                                                          Padding="0"
+                                                          VerticalAlignment="Center"
+                                                          Style="{StaticResource HTRichTextBox}" />
+                            </StackPanel>
+                            <StackPanel Grid.Row="5"
+                                        Orientation="Horizontal">
+                                <Label Content="Range :"
+                                       FontSize="18"
+                                       Foreground="#4c4c4c"
+                                       FontFamily="#PingFang SC Bold"
+                                       Padding="0"
+                                       VerticalContentAlignment="Center" />
+                                <TextBlock FontSize="18"
+                                           Margin="20,0,0,0"
+                                           Foreground="#4c4c4c"
+                                           FontFamily="#PingFang SC Bold"
+                                           Padding="0"
+                                           VerticalAlignment="Center"
+                                           Text="{Binding SelectedItemNodeInfo.Range,UpdateSourceTrigger=PropertyChanged,Mode=OneWay}" />
+                            </StackPanel>
+                            <StackPanel Grid.Row="6"
+                                        Orientation="Horizontal">
+                                <Label Content="Precision :"
+                                       FontSize="18"
+                                       Foreground="#4c4c4c"
+                                       FontFamily="#PingFang SC Bold"
+                                       Padding="0"
+                                       VerticalContentAlignment="Center" />
+                                <TextBlock FontSize="18"
+                                           Margin="20,0,0,0"
+                                           Foreground="#4c4c4c"
+                                           FontFamily="#PingFang SC Bold"
+                                           Padding="0"
+                                           VerticalAlignment="Center"
+                                           Text="{Binding SelectedItemNodeInfo.Precision,UpdateSourceTrigger=PropertyChanged,Mode=OneWay}" />
+                            </StackPanel>
+                            <StackPanel Grid.Row="7"
+                                        Orientation="Horizontal">
+                                <Label Content="Default Value :"
+                                       FontSize="18"
+                                       Foreground="#4c4c4c"
+                                       FontFamily="#PingFang SC Bold"
+                                       Padding="0"
+                                       VerticalContentAlignment="Center" />
+                                <TextBlock FontSize="18"
+                                           Margin="20,0,0,0"
+                                           Foreground="#4c4c4c"
+                                           FontFamily="#PingFang SC Bold"
+                                           Padding="0"
+                                           VerticalAlignment="Center"
+                                           Text="{Binding SelectedItemNodeInfo.DefaultValue,UpdateSourceTrigger=PropertyChanged,Mode=OneWay}" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Row="2"
+                            BorderBrush="#4c4c4c"
+                            BorderThickness="0,1,0,0">
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Right">
+                            <controls:HTCustomButton Content="Accept"
+                                                     Width="150"
+                                                     Margin="10,0" />
+                            <controls:HTCustomButton Content="Save"
+                                                     Width="150"
+                                                     Margin="10,0" />
+                        </StackPanel>
+                    </Border>
                 </Grid>
-            </controls:HTScrollViewer>
+            </Grid>
         </Border>
     </Grid>
 </UserControl>

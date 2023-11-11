@@ -46,7 +46,8 @@
                 BorderThickness="1"
                 Margin="20"
                 CornerRadius="15">
-            <controls:HTScrollViewer Margin="20">
+            <controls:HTScrollViewer Margin="20"
+                                     VerticalScrollBarVisibility="Auto">
                 <userControls:IOInputListPanel Columns="3"
                                                DescribeWidth="350"
                                                ItemsSource="{Binding IOInputDatas,UpdateSourceTrigger=PropertyChanged}" />
