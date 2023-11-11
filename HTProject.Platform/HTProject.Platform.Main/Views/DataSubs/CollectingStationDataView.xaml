@@ -7,6 +7,7 @@
              xmlns:controls="clr-namespace:HTProject.Plugin.Control.Controls;assembly=HTProject.Plugin.Control"
              xmlns:userControls="clr-namespace:HTProject.Plugin.Control.UserControls;assembly=HTProject.Plugin.Control"
              xmlns:cal="http://www.caliburnproject.org"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d"
              d:DesignHeight="450"
              d:DesignWidth="800"
@@ -219,7 +220,8 @@
                               Background="Transparent"
                               BorderBrush="Gray"
                               Style="{DynamicResource HTGridSplitterForResizeColStyle}" />
-                <Grid Grid.Column="4">
+                <Grid Grid.Column="4"
+                      Margin="10,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40" />
                         <RowDefinition Height="*" />
@@ -239,6 +241,25 @@
                                                 IconWidth="20"
                                                 Margin="0,0,20,0"
                                                 NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/Menu_64x64_Normal.png" />
+                    <Border Grid.Row="1"
+                            BorderThickness="1"
+                            CornerRadius="10"
+                            BorderBrush="#ACACAC">
+                        <lvc:CartesianChart LegendLocation="Bottom">
+                            <lvc:CartesianChart.Series>
+                                <lvc:ScatterSeries Title="X" />
+                                <lvc:ScatterSeries Title="Y"
+                                                   PointGeometry="{x:Static lvc:DefaultGeometries.Square}" />
+                                <lvc:ScatterSeries Title="Z"
+                                                   PointGeometry="{x:Static lvc:DefaultGeometries.Triangle}" />
+                            </lvc:CartesianChart.Series>
+                            <lvc:CartesianChart.AxisY>
+                                <lvc:Axis Title="Offset(mm)"
+                                          FontSize="14"
+                                          Unit="1" />
+                            </lvc:CartesianChart.AxisY>
+                        </lvc:CartesianChart>
+                    </Border>
                     <GridSplitter Grid.Row="2"
                                   VerticalAlignment="Center"
                                   Height="3"
@@ -257,6 +278,22 @@
                                                 IconWidth="20"
                                                 Margin="0,0,20,0"
                                                 NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/Menu_64x64_Normal.png" />
+                    <Border Grid.Row="4"
+                            BorderThickness="1"
+                            CornerRadius="10"
+                            BorderBrush="#ACACAC">
+                        <lvc:PieChart LegendLocation="Bottom"
+                                      Margin="50">
+                            <lvc:PieChart.Series>
+                                <lvc:PieSeries Title="OK"
+                                               DataLabels="True" Values="6"
+                                               Fill="Green"/>
+                                <lvc:PieSeries Title="NG"
+                                               DataLabels="True"
+                                               Values="4" />
+                            </lvc:PieChart.Series>
+                        </lvc:PieChart>
+                    </Border>
                 </Grid>
             </Grid>
         </Border>
