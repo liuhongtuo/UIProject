@@ -47,7 +47,7 @@
                     <ColumnDefinition Width="240" />
                     <ColumnDefinition Width="230" />
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="120" />
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="135" />
                 </Grid.ColumnDefinitions>
@@ -148,7 +148,7 @@
                                    FontFamily="#PingFang SC Bold"
                                    Padding="0"
                                    VerticalContentAlignment="Center"
-                                   Content="{Binding UserName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                   Content="Admin"
                                    Height="30"
                                    Margin="4,0,0,0" />
                         </StackPanel>
@@ -168,7 +168,7 @@
                                    FontFamily="#PingFang SC Bold"
                                    Padding="0"
                                    VerticalContentAlignment="Center"
-                                   Content="{Binding Role,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                   Content="Admin"
                                    Margin="4,0,0,0"
                                    Height="30" />
                         </StackPanel>

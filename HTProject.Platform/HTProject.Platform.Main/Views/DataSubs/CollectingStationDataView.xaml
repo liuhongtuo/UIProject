@@ -168,7 +168,7 @@
                               Background="Transparent"
                               BorderBrush="#ACACAC" />
                 <Border Grid.Column="2"
-                        Margin="5,0">
+                        Margin="10,0">
                     <controls:HTCustomDataGrid x:Name="dgridLotInfoList"
                                                ColumnHeaderHeight="50"
                                                RowHeight="40"
@@ -225,7 +225,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40" />
                         <RowDefinition Height="*" />
-                        <RowDefinition Height="20" />
+                        <RowDefinition Height="10" />
                         <RowDefinition Height="40" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
@@ -244,6 +244,7 @@
                     <Border Grid.Row="1"
                             BorderThickness="1"
                             CornerRadius="10"
+                            Margin="0,0,0,5"
                             BorderBrush="#ACACAC">
                         <lvc:CartesianChart LegendLocation="Bottom">
                             <lvc:CartesianChart.Series>
@@ -281,6 +282,7 @@
                     <Border Grid.Row="4"
                             BorderThickness="1"
                             CornerRadius="10"
+                            Margin="0,0,0,5"
                             BorderBrush="#ACACAC">
                         <lvc:PieChart LegendLocation="Bottom"
                                       Margin="50">

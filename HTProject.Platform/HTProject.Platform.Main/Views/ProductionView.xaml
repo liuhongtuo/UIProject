@@ -29,9 +29,10 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
+                <ColumnDefinition  Width="200" />
                 <ColumnDefinition  Width="250" />
             </Grid.ColumnDefinitions>
-            <Border Grid.Column="1"
+            <Border Grid.Column="2"
                     BorderThickness="2,0,0,0"
                     BorderBrush="#BEBEBE">
                 <UniformGrid Columns="1"

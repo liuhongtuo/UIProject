@@ -198,32 +198,32 @@
             <controls:HTCustomHorizontalIconTabItem Header="Loading Station"
                                                     Height="40"
                                                     Width="180">
-                <ContentControl cal:View.Model="{Binding LoadingStationView,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+                <ContentControl cal:View.Model="{Binding LoadingStationCalibrationView,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
             </controls:HTCustomHorizontalIconTabItem>
             <controls:HTCustomHorizontalIconTabItem Header="Unloading Station"
                                                     Height="40"
                                                     Width="180">
-                <ContentControl cal:View.Model="{Binding UnloadingStationView,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+                <ContentControl cal:View.Model="{Binding UnloadingStationCalibrationView,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
             </controls:HTCustomHorizontalIconTabItem>
             <controls:HTCustomHorizontalIconTabItem Header="Collecting Station"
                                                     Height="40"
                                                     Width="180">
-                <ContentControl cal:View.Model="{Binding CollectingStationView,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+                <ContentControl cal:View.Model="{Binding CollectingStationCalibrationView,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
             </controls:HTCustomHorizontalIconTabItem>
             <controls:HTCustomHorizontalIconTabItem Header="Dispensing Station"
                                                     Height="40"
                                                     Width="180">
-                <ContentControl cal:View.Model="{Binding DispensingStationView,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+                <ContentControl cal:View.Model="{Binding DispensingStationCalibrationView,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
             </controls:HTCustomHorizontalIconTabItem>
             <controls:HTCustomHorizontalIconTabItem Header="Assembly Station"
                                                     Height="40"
                                                     Width="180">
-                <ContentControl cal:View.Model="{Binding AssemblyStationView,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+                <ContentControl cal:View.Model="{Binding AssemblyStationCalibrationView,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
             </controls:HTCustomHorizontalIconTabItem>
             <controls:HTCustomHorizontalIconTabItem Header="Recheck Station"
                                                     Height="40"
                                                     Width="180">
-                <ContentControl cal:View.Model="{Binding RecheckStationView,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+                <ContentControl cal:View.Model="{Binding RecheckStationCalibrationView,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
             </controls:HTCustomHorizontalIconTabItem>
         </TabControl>
     </Grid>
