@@ -4,8 +4,269 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:HTProject.Platform.Main.Views"
+             xmlns:controls="clr-namespace:HTProject.Plugin.Control.Controls;assembly=HTProject.Plugin.Control"
+             xmlns:userControls="clr-namespace:HTProject.Plugin.Control.UserControls;assembly=HTProject.Plugin.Control"
+             xmlns:cal="http://www.caliburnproject.org"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
              Width="1640"
              Height="850">
-    <Grid></Grid>
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/HTProject.Plugin.Control;Component/Themes/HTCustomGridSplitterStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0"
+                BorderBrush="#ACACAC"
+                BorderThickness="0,0,0,1">
+            <Grid  Margin="15,0,15,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <controls:HTCustomIconLabel Grid.Column="0"
+                                            FontSize="18"
+                                            Foreground="#4c4c4c"
+                                            FontFamily="#PingFang SC Bold"
+                                            FontWeight="Normal"
+                                            Padding="0"
+                                            VerticalContentAlignment="Center"
+                                            Content="Start Time:"
+                                            IconHeight="20"
+                                            IconWidth="20"
+                                            Margin="0,0,0,0"
+                                            NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/DataIcons/Calendar_64x64_Normal.png" />
+                <controls:HTCustomTextBox Grid.Column="1"
+                                          HorizontalAlignment="Left"
+                                          Width="200"
+                                          FontSize="18"
+                                          Foreground="#4c4c4c"
+                                          FontFamily="#PingFang SC Bold"
+                                          WaterMark="2023-12-01" />
+                <controls:HTCustomIconLabel Grid.Column="3"
+                                            FontSize="18"
+                                            Foreground="#4c4c4c"
+                                            FontFamily="#PingFang SC Bold"
+                                            FontWeight="Normal"
+                                            Padding="0"
+                                            VerticalContentAlignment="Center"
+                                            Content="End Time:"
+                                            IconHeight="20"
+                                            IconWidth="20"
+                                            Margin="0,0,0,0"
+                                            NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/DataIcons/Calendar_64x64_Normal.png" />
+                <controls:HTCustomTextBox Grid.Column="4"
+                                          HorizontalAlignment="Left"
+                                          Width="200"
+                                          FontSize="18"
+                                          Foreground="#4c4c4c"
+                                          FontFamily="#PingFang SC Bold"
+                                          WaterMark="2023-12-31" />
+                <controls:HTCustomIconLabel Grid.Column="6"
+                                            FontSize="18"
+                                            Foreground="#4c4c4c"
+                                            FontFamily="#PingFang SC Bold"
+                                            FontWeight="Normal"
+                                            Padding="0"
+                                            VerticalContentAlignment="Center"
+                                            Content="Module:"
+                                            IconHeight="20"
+                                            IconWidth="20"
+                                            Margin="0,0,0,0"
+                                            NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/DataIcons/Station_64x64_Normal.png" />
+                <controls:HTCustomTextBox Grid.Column="7"
+                                          HorizontalAlignment="Left"
+                                          Width="200"
+                                          FontSize="18"
+                                          Foreground="#4c4c4c"
+                                          FontFamily="#PingFang SC Bold"
+                                          WaterMark="Engineering" />
+                <controls:HTCustomIconTextButton Grid.Column="11"
+                                                 Content="Search"
+                                                 Width="200"
+                                                 FontSize="20"
+                                                 Foreground="#4c4c4c"
+                                                 FontFamily="#PingFang SC Bold"
+                                                 FontWeight="Normal"
+                                                 HorizontalAlignment="Right"
+                                                 IconWidth="20"
+                                                 IconHeight="20"
+                                                 Icon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/DataIcons/Search_64x64_Normal.png"
+                                                 MouseOverIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/DataIcons/Search_64x64_Normal.png"
+                                                 MousePressedIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/DataIcons/Search_64x64_Pressed.png"
+                                                 MousePressedForeground="White" />
+            </Grid>
+        </Border>
+        <Border Grid.Row="1"
+                BorderBrush="#ACACAC"
+                BorderThickness="1"
+                Margin="10"
+                CornerRadius="15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="12" />
+                    <ColumnDefinition Width="500"
+                                      MinWidth="300"
+                                      MaxWidth="700" />
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0"
+                        Margin="10,0">
+                    <controls:HTCustomDataGrid x:Name="dgridLotInfoList"
+                                               ColumnHeaderHeight="50"
+                                               RowHeight="40"
+                                               ItemsSource="{Binding TestList}"
+                                               SelectedItem="{Binding SelectedTestItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                               AutoGenerateColumns="False"
+                                               GridLinesVisibility="None"
+                                               CanUserAddRows="False">
+                        <controls:HTCustomDataGrid.Columns>
+                            <DataGridTextColumn Header="No"
+                                                MinWidth="50"
+                                                Width="50"
+                                                Binding="{Binding Name}"
+                                                IsReadOnly="True"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Time"
+                                                MinWidth="100"
+                                                Width="120"
+                                                Binding="{Binding Name}"
+                                                IsReadOnly="True"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Module Name"
+                                                MinWidth="120"
+                                                Width="120"
+                                                Binding="{Binding DeviceId}"
+                                                IsReadOnly="True"></DataGridTextColumn>
+                            <DataGridTextColumn Header="View Name"
+                                                MinWidth="120"
+                                                Width="120"
+                                                Binding="{Binding LayerId}"
+                                                IsReadOnly="True"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Operator"
+                                                MinWidth="110"
+                                                Binding="{Binding CreatedBy}"
+                                                IsReadOnly="True"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Event Name"
+                                                MinWidth="110"
+                                                Binding="{Binding CreateTime}"
+                                                IsReadOnly="True"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Discription"
+                                                MinWidth="110"
+                                                Binding="{Binding Comment}"
+                                                IsReadOnly="True"></DataGridTextColumn>
+                        </controls:HTCustomDataGrid.Columns>
+                    </controls:HTCustomDataGrid>
+                </Border>
+                <GridSplitter Grid.Column="1"
+                              Width="10"
+                              Margin="0.5"
+                              BorderThickness="1,0,1,0"
+                              Background="Transparent"
+                              BorderBrush="Gray"
+                              Style="{DynamicResource HTGridSplitterForResizeColStyle}" />
+                <Grid Grid.Column="2"
+                      Margin="10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <controls:HTCustomIconLabel Grid.Row="0"
+                                                FontSize="18"
+                                                Foreground="#4c4c4c"
+                                                FontFamily="#PingFang SC Bold"
+                                                FontWeight="SemiBold"
+                                                Padding="0"
+                                                VerticalContentAlignment="Center"
+                                                Content="Module Scatter Diagram:"
+                                                IconHeight="20"
+                                                IconWidth="20"
+                                                Margin="0,0,20,0"
+                                                NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/Menu_64x64_Normal.png" />
+                    <Border Grid.Row="1"
+                            BorderThickness="1"
+                            CornerRadius="10"
+                            Margin="0,0,0,5"
+                            BorderBrush="#ACACAC">
+                        <lvc:CartesianChart LegendLocation="Bottom">
+                            <lvc:CartesianChart.Series>
+                                <lvc:ColumnSeries Title="Production" />
+                                <lvc:ColumnSeries Title="Engineering" />
+                                <lvc:ColumnSeries Title="Calibration" />
+                            </lvc:CartesianChart.Series>
+                            <lvc:CartesianChart.AxisX>
+                                <lvc:Axis Title="Date"
+                                          FontSize="14"
+                                          Unit="1" />
+                            </lvc:CartesianChart.AxisX>
+                            <lvc:CartesianChart.AxisY>
+                                <lvc:Axis Title="Times"
+                                          FontSize="14"
+                                          Unit="1" />
+                            </lvc:CartesianChart.AxisY>
+                        </lvc:CartesianChart>
+                    </Border>
+                    <GridSplitter Grid.Row="2"
+                                  VerticalAlignment="Center"
+                                  Height="3"
+                                  BorderThickness="0,1,0,0"
+                                  Background="Transparent"
+                                  BorderBrush="#ACACAC" />
+                    <controls:HTCustomIconLabel Grid.Row="3"
+                                                FontSize="18"
+                                                Foreground="#4c4c4c"
+                                                FontFamily="#PingFang SC Bold"
+                                                FontWeight="SemiBold"
+                                                Padding="0"
+                                                VerticalContentAlignment="Center"
+                                                Content="Module Pie Diagram:"
+                                                IconHeight="20"
+                                                IconWidth="20"
+                                                Margin="0,0,20,0"
+                                                NormalIcon="pack://application:,,,/HTProject.Plugin.Control;Component/Icons/EngineeringIcons/Menu_64x64_Normal.png" />
+                    <Border Grid.Row="4"
+                            BorderThickness="1"
+                            CornerRadius="10"
+                            Margin="0,0,0,5"
+                            BorderBrush="#ACACAC">
+                        <lvc:PieChart LegendLocation="Bottom"
+                                      Margin="50">
+                            <lvc:PieChart.Series>
+                                <lvc:PieSeries Title="Production"
+                                               DataLabels="True"
+                                               Values="6"
+                                               Fill="YellowGreen" />
+                                <lvc:PieSeries Title="Engineering"
+                                               DataLabels="True"
+                                               Values="4" />
+                                <lvc:PieSeries Title="Calibration"
+                                               DataLabels="True"
+                                               Values="6"
+                                               Fill="Violet" />
+                            </lvc:PieChart.Series>
+                        </lvc:PieChart>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
 </UserControl>
